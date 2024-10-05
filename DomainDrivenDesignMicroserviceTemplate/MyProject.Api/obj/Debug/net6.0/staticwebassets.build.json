@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "j4C/u7KSKflDHHeRbFCBbawlzuoXDX6HGJc2kG4JPDg=",
+  "Source": "MyProject.Api",
+  "BasePath": "_content/MyProject.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

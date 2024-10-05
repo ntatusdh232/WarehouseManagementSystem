@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "pUdMPhhl8EQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Phat Huy\\Source\\Repos\\WarehouseManagementSystem\\DomainDrivenDesignMicroserviceTemplate\\MyProject.Domain\\MyProject.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Phat Huy\\.nuget\\packages\\mediatr\\12.0.1\\mediatr.12.0.1.nupkg.sha512",
+    "C:\\Users\\Phat Huy\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Phat Huy\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,169 @@
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\appsettings.Development.json
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\appsettings.json
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Api.exe
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Api.deps.json
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Api.runtimeconfig.json
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Api.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Api.pdb
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\AutoMapper.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MediatR.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MediatR.Contracts.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Domain.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Infrastructure.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Domain.pdb
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Infrastructure.pdb
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.csproj.AssemblyReference.cache
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.GeneratedMSBuildEditorConfig.editorconfig
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.AssemblyInfoInputs.cache
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.AssemblyInfo.cs
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.csproj.CoreCompileInputs.cache
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.MvcApplicationPartsAssemblyInfo.cs
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.MvcApplicationPartsAssemblyInfo.cache
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\staticwebassets\msbuild.MyProject.Api.Microsoft.AspNetCore.StaticWebAssets.props
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\staticwebassets\msbuild.build.MyProject.Api.props
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.MyProject.Api.props
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.MyProject.Api.props
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\staticwebassets.pack.json
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\staticwebassets.build.json
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\staticwebassets.development.json
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\scopedcss\bundle\MyProject.Api.styles.css
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.csproj.CopyComplete
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\refint\MyProject.Api.dll
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.pdb
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.genruntimeconfig.cache
+D:\lab\công nghệ\domain driven design\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\ref\MyProject.Api.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\appsettings.Development.json
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\appsettings.json
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Api.exe
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Api.deps.json
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Api.runtimeconfig.json
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Api.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Api.pdb
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\AutoMapper.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MediatR.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MediatR.Contracts.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Domain.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Infrastructure.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Domain.pdb
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\bin\Debug\net6.0\MyProject.Infrastructure.pdb
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.csproj.AssemblyReference.cache
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.GeneratedMSBuildEditorConfig.editorconfig
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.AssemblyInfoInputs.cache
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.AssemblyInfo.cs
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.csproj.CoreCompileInputs.cache
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.MvcApplicationPartsAssemblyInfo.cs
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.MvcApplicationPartsAssemblyInfo.cache
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\staticwebassets\msbuild.MyProject.Api.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\staticwebassets\msbuild.build.MyProject.Api.props
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.MyProject.Api.props
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.MyProject.Api.props
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\staticwebassets.build.json
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\staticwebassets.development.json
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\scopedcss\bundle\MyProject.Api.styles.css
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.csproj.CopyComplete
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\refint\MyProject.Api.dll
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.pdb
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.genruntimeconfig.cache
+D:\Scheduling Maintenance\Backend\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\ref\MyProject.Api.dll
+C:\Users\Admin\source\repos\DomainDrivenDesignTemplate\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\DomainDrivenDesignTemplate\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\DomainDrivenDesignTemplate\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\DomainDrivenDesignTemplate\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.AssemblyInfo.cs
+C:\Users\Admin\source\repos\DomainDrivenDesignTemplate\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\DomainDrivenDesignTemplate\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Admin\source\repos\DomainDrivenDesignTemplate\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Admin\source\repos\DomainDrivenDesignTemplate\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.dll
+C:\Users\Admin\source\repos\DomainDrivenDesignTemplate\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\refint\MyProject.Api.dll
+C:\Users\Admin\source\repos\DomainDrivenDesignTemplate\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.pdb
+C:\Users\Phat Huy\Source\Repos\WarehouseManagementSystem\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.csproj.AssemblyReference.cache
+C:\Users\Phat Huy\Source\Repos\WarehouseManagementSystem\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Phat Huy\Source\Repos\WarehouseManagementSystem\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.AssemblyInfoInputs.cache
+C:\Users\Phat Huy\Source\Repos\WarehouseManagementSystem\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.AssemblyInfo.cs
+C:\Users\Phat Huy\Source\Repos\WarehouseManagementSystem\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.csproj.CoreCompileInputs.cache
+C:\Users\Phat Huy\Source\Repos\WarehouseManagementSystem\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Phat Huy\Source\Repos\WarehouseManagementSystem\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Phat Huy\Source\Repos\WarehouseManagementSystem\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.sourcelink.json
+C:\Users\Phat Huy\Source\Repos\WarehouseManagementSystem\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.dll
+C:\Users\Phat Huy\Source\Repos\WarehouseManagementSystem\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\refint\MyProject.Api.dll
+C:\Users\Phat Huy\Source\Repos\WarehouseManagementSystem\DomainDrivenDesignMicroserviceTemplate\MyProject.Api\obj\Debug\net6.0\MyProject.Api.pdb
