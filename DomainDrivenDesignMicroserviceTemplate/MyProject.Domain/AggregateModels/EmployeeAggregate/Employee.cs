@@ -1,17 +1,19 @@
-﻿namespace ChaWarehouseMicroservice.Domain.AggregateModels.EmployeeAggregate;
+﻿namespace MyProject.Domain.AggregateModels.EmployeeAggregate;
 
 public class Employee : Entity, IAggregateRoot
 {
-    public string EmployeeId { get; private set; }
-    public string FirstName { get; private set; }
-    public string LastName { get; private set; }
-    public DateTime DateOfBirth { get; private set; }
+    public string EmployeeId { get; private set; }  
+    public string EmployeeName { get; private set; }
 
-    public Employee(string employeeId, string firstName, string lastName, DateTime dateOfBirth)
+    public Employee(string employeeId, string employeeName)
     {
         EmployeeId = employeeId;
-        FirstName = firstName;
-        LastName = lastName;
-        DateOfBirth = dateOfBirth;
+        EmployeeName = employeeName;
+    }
+
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+    public Employee()
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+    {
     }
 }
