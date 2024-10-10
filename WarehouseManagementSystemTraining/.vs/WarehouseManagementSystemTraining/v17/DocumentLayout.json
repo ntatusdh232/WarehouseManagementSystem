@@ -1,0 +1,304 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\wms.infrastructure\\entityconfigurations\\goodsreceiptconfigurations\\goodsreceiptlotentitytypeconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|solutionrelative:wms.infrastructure\\entityconfigurations\\goodsreceiptconfigurations\\goodsreceiptlotentitytypeconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\wms.infrastructure\\entityconfigurations\\finishedproductconfigurations\\finishedproductinventoryentryentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|solutionrelative:wms.infrastructure\\entityconfigurations\\finishedproductconfigurations\\finishedproductinventoryentryentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\wms.infrastructure\\entityconfigurations\\employeeconfigurations\\employeeentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|solutionrelative:wms.infrastructure\\entityconfigurations\\employeeconfigurations\\employeeentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{336CC5F3-AAAB-4434-A01D-FC73998897BE}|ImportData\\ImportData.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\importdata\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{336CC5F3-AAAB-4434-A01D-FC73998897BE}|ImportData\\ImportData.csproj|solutionrelative:importdata\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\wms.domain\\aggregatemodels\\finishedproductaggregate\\finishedproductissue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|solutionrelative:wms.domain\\aggregatemodels\\finishedproductaggregate\\finishedproductissue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\wms.infrastructure\\entityconfigurations\\finishedproductconfigurations\\finishedproductissueentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|solutionrelative:wms.infrastructure\\entityconfigurations\\finishedproductconfigurations\\finishedproductissueentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D61F824F-DF30-4769-886C-CF34FF011FFC}|WMS.Api\\WMS.Api.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\wms.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D61F824F-DF30-4769-886C-CF34FF011FFC}|WMS.Api\\WMS.Api.csproj|solutionrelative:wms.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\wms.infrastructure\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|solutionrelative:wms.infrastructure\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\wms.infrastructure\\entityconfigurations\\warehouseconfigurations\\warehouseentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|solutionrelative:wms.infrastructure\\entityconfigurations\\warehouseconfigurations\\warehouseentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\wms.domain\\aggregatemodels\\warehouseaggregate\\warehouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|solutionrelative:wms.domain\\aggregatemodels\\warehouseaggregate\\warehouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\wms.infrastructure\\entityconfigurations\\itemconfigurations\\itemclassentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|solutionrelative:wms.infrastructure\\entityconfigurations\\itemconfigurations\\itemclassentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\wms.infrastructure\\entityconfigurations\\itemconfigurations\\itemlotentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|solutionrelative:wms.infrastructure\\entityconfigurations\\itemconfigurations\\itemlotentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\wms.infrastructure\\entityconfigurations\\goodsissueconfigurations\\goodsissueentryentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|solutionrelative:wms.infrastructure\\entityconfigurations\\goodsissueconfigurations\\goodsissueentryentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\wms.infrastructure\\entityconfigurations\\finishedproductconfigurations\\finishedproductreceiptentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|solutionrelative:wms.infrastructure\\entityconfigurations\\finishedproductconfigurations\\finishedproductreceiptentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\wms.infrastructure\\entityconfigurations\\finishedproductconfigurations\\finishedproductissueentryentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|solutionrelative:wms.infrastructure\\entityconfigurations\\finishedproductconfigurations\\finishedproductissueentryentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|d:\\code\\visualstudio\\c#\\training\\week11\\warehousemanagementsystemtraining\\wms.infrastructure\\entityconfigurations\\goodsissueconfigurations\\goodsissueentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|solutionrelative:wms.infrastructure\\entityconfigurations\\goodsissueconfigurations\\goodsissueentitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GoodsReceiptLotEntityTypeConfigurations.cs",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\GoodsReceiptConfigurations\\GoodsReceiptLotEntityTypeConfigurations.cs",
+              "RelativeDocumentMoniker": "WMS.Infrastructure\\EntityConfigurations\\GoodsReceiptConfigurations\\GoodsReceiptLotEntityTypeConfigurations.cs",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\GoodsReceiptConfigurations\\GoodsReceiptLotEntityTypeConfigurations.cs",
+              "RelativeToolTip": "WMS.Infrastructure\\EntityConfigurations\\GoodsReceiptConfigurations\\GoodsReceiptLotEntityTypeConfigurations.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T17:03:26.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeeEntityTypeConfiguration.cs",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\EmployeeConfigurations\\EmployeeEntityTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "WMS.Infrastructure\\EntityConfigurations\\EmployeeConfigurations\\EmployeeEntityTypeConfiguration.cs",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\EmployeeConfigurations\\EmployeeEntityTypeConfiguration.cs",
+              "RelativeToolTip": "WMS.Infrastructure\\EntityConfigurations\\EmployeeConfigurations\\EmployeeEntityTypeConfiguration.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T17:00:13.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\ImportData\\Program.cs",
+              "RelativeDocumentMoniker": "ImportData\\Program.cs",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\ImportData\\Program.cs",
+              "RelativeToolTip": "ImportData\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:55:34.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Warehouse.cs",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\WarehouseAggregate\\Warehouse.cs",
+              "RelativeDocumentMoniker": "WMS.Domain\\AggregateModels\\WarehouseAggregate\\Warehouse.cs",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\WarehouseAggregate\\Warehouse.cs",
+              "RelativeToolTip": "WMS.Domain\\AggregateModels\\WarehouseAggregate\\Warehouse.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAYAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:41:44.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ItemCLassEntityTypeConfiguration.cs",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\ItemConfigurations\\ItemCLassEntityTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "WMS.Infrastructure\\EntityConfigurations\\ItemConfigurations\\ItemCLassEntityTypeConfiguration.cs",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\ItemConfigurations\\ItemCLassEntityTypeConfiguration.cs",
+              "RelativeToolTip": "WMS.Infrastructure\\EntityConfigurations\\ItemConfigurations\\ItemCLassEntityTypeConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:41:22.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WarehouseEntityTypeConfiguration.cs",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\WarehouseConfigurations\\WarehouseEntityTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "WMS.Infrastructure\\EntityConfigurations\\WarehouseConfigurations\\WarehouseEntityTypeConfiguration.cs",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\WarehouseConfigurations\\WarehouseEntityTypeConfiguration.cs",
+              "RelativeToolTip": "WMS.Infrastructure\\EntityConfigurations\\WarehouseConfigurations\\WarehouseEntityTypeConfiguration.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAASwAkAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:41:08.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FinishedProductIssueEntityTypeConfiguration.cs",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductIssueEntityTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductIssueEntityTypeConfiguration.cs",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductIssueEntityTypeConfiguration.cs",
+              "RelativeToolTip": "WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductIssueEntityTypeConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAABsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:33:06.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FinishedProductInventoryEntryEntityTypeConfiguration.cs",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductInventoryEntryEntityTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductInventoryEntryEntityTypeConfiguration.cs",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductInventoryEntryEntityTypeConfiguration.cs",
+              "RelativeToolTip": "WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductInventoryEntryEntityTypeConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:32:55.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "WMS.Infrastructure\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\ApplicationDbContext.cs",
+              "RelativeToolTip": "WMS.Infrastructure\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:43:08.53Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "WMS.Api\\appsettings.json",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Api\\appsettings.json",
+              "RelativeToolTip": "WMS.Api\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-10T16:43:46.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FinishedProductIssue.cs",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\FinishedProductAggregate\\FinishedProductIssue.cs",
+              "RelativeDocumentMoniker": "WMS.Domain\\AggregateModels\\FinishedProductAggregate\\FinishedProductIssue.cs",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\FinishedProductAggregate\\FinishedProductIssue.cs",
+              "RelativeToolTip": "WMS.Domain\\AggregateModels\\FinishedProductAggregate\\FinishedProductIssue.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAQAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:35:18.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ItemLotEntityTypeConfiguration.cs",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\ItemConfigurations\\ItemLotEntityTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "WMS.Infrastructure\\EntityConfigurations\\ItemConfigurations\\ItemLotEntityTypeConfiguration.cs",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\ItemConfigurations\\ItemLotEntityTypeConfiguration.cs",
+              "RelativeToolTip": "WMS.Infrastructure\\EntityConfigurations\\ItemConfigurations\\ItemLotEntityTypeConfiguration.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAABEAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:36:58.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FinishedProductReceiptEntityTypeConfiguration.cs",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductReceiptEntityTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductReceiptEntityTypeConfiguration.cs",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductReceiptEntityTypeConfiguration.cs",
+              "RelativeToolTip": "WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductReceiptEntityTypeConfiguration.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAASwBgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:36:09.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GoodsIssueEntryEntityTypeConfiguration.cs",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\GoodsIssueConfigurations\\GoodsIssueEntryEntityTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "WMS.Infrastructure\\EntityConfigurations\\GoodsIssueConfigurations\\GoodsIssueEntryEntityTypeConfiguration.cs",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\GoodsIssueConfigurations\\GoodsIssueEntryEntityTypeConfiguration.cs",
+              "RelativeToolTip": "WMS.Infrastructure\\EntityConfigurations\\GoodsIssueConfigurations\\GoodsIssueEntryEntityTypeConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:34:45.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FinishedProductIssueEntryEntityTypeConfiguration.cs",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductIssueEntryEntityTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductIssueEntryEntityTypeConfiguration.cs",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductIssueEntryEntityTypeConfiguration.cs",
+              "RelativeToolTip": "WMS.Infrastructure\\EntityConfigurations\\FinishedProductConfigurations\\FinishedProductIssueEntryEntityTypeConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:34:36.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GoodsIssueEntityTypeConfiguration.cs",
+              "DocumentMoniker": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\GoodsIssueConfigurations\\GoodsIssueEntityTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "WMS.Infrastructure\\EntityConfigurations\\GoodsIssueConfigurations\\GoodsIssueEntityTypeConfiguration.cs",
+              "ToolTip": "D:\\CODE\\VisualStudio\\C#\\TRAINING\\Week11\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\GoodsIssueConfigurations\\GoodsIssueEntityTypeConfiguration.cs",
+              "RelativeToolTip": "WMS.Infrastructure\\EntityConfigurations\\GoodsIssueConfigurations\\GoodsIssueEntityTypeConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T16:35:02.239Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

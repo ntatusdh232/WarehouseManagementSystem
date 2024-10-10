@@ -1,0 +1,17 @@
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Infrastructure.deps.json
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Infrastructure.runtimeconfig.json
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Infrastructure.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Infrastructure.pdb
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Domain.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Domain.pdb
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.csproj.AssemblyReference.cache
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.AssemblyInfoInputs.cache
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.AssemblyInfo.cs
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.csproj.CoreCompileInputs.cache
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infr.677E6FEF.Up2Date
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\refint\WMS.Infrastructure.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.pdb
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.genruntimeconfig.cache
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\ref\WMS.Infrastructure.dll

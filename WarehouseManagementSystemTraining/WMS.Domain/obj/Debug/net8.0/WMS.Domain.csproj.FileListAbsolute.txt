@@ -1,0 +1,11 @@
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.deps.json
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.pdb
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.AssemblyInfoInputs.cache
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.AssemblyInfo.cs
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.csproj.CoreCompileInputs.cache
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\refint\WMS.Domain.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.pdb
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\ref\WMS.Domain.dll

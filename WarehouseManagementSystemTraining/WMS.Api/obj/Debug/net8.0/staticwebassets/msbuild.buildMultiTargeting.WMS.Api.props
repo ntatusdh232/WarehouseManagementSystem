@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\WMS.Api.props" />
+</Project>
