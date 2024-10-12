@@ -1,0 +1,184 @@
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Api.deps.json
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Api.runtimeconfig.json
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Api.exe
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\appsettings.Development.json
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\appsettings.json
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.View.staticwebassets.runtime.json
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.View.exe
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.View.deps.json
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.View.runtimeconfig.json
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.View.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.View.pdb
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Azure.Core.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Azure.Identity.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.Memory.Data.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.Security.Permissions.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.Windows.Extensions.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Api.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Domain.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Infrastructure.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Api.pdb
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Domain.pdb
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Infrastructure.pdb
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.csproj.AssemblyReference.cache
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.GeneratedMSBuildEditorConfig.editorconfig
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.AssemblyInfoInputs.cache
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.AssemblyInfo.cs
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.csproj.CoreCompileInputs.cache
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.MvcApplicationPartsAssemblyInfo.cs
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.MvcApplicationPartsAssemblyInfo.cache
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.RazorAssemblyInfo.cache
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.RazorAssemblyInfo.cs
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\staticwebassets.build.json
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\staticwebassets.development.json
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\staticwebassets\msbuild.WMS.View.Microsoft.AspNetCore.StaticWebAssets.props
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\staticwebassets\msbuild.build.WMS.View.props
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WMS.View.props
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WMS.View.props
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\staticwebassets.pack.json
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\scopedcss\bundle\WMS.View.styles.css
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\scopedcss\projectbundle\WMS.View.bundle.scp.css
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.csproj.Up2Date
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\refint\WMS.View.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.pdb
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.genruntimeconfig.cache
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\ref\WMS.View.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\ClosedXML.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\ClosedXML.Parser.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\ExcelNumberFormat.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\RBush.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\SixLabors.Fonts.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.IO.Packaging.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\appsettings.Development.json
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\appsettings.json
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Api.deps.json
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Api.runtimeconfig.json
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Api.exe
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.View.staticwebassets.runtime.json
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.View.exe
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.View.deps.json
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.View.runtimeconfig.json
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.View.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.View.pdb
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Azure.Core.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Azure.Identity.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\ClosedXML.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\ClosedXML.Parser.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\ExcelNumberFormat.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\RBush.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\SixLabors.Fonts.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.IO.Packaging.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.Memory.Data.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.Security.Permissions.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\System.Windows.Extensions.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Api.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Domain.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Infrastructure.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Api.pdb
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Domain.pdb
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Infrastructure.pdb
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.csproj.AssemblyReference.cache
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.GeneratedMSBuildEditorConfig.editorconfig
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.AssemblyInfoInputs.cache
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.AssemblyInfo.cs
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.csproj.CoreCompileInputs.cache
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.MvcApplicationPartsAssemblyInfo.cs
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.MvcApplicationPartsAssemblyInfo.cache
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.RazorAssemblyInfo.cache
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.RazorAssemblyInfo.cs
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\staticwebassets.build.json
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\staticwebassets.development.json
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\staticwebassets\msbuild.WMS.View.Microsoft.AspNetCore.StaticWebAssets.props
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\staticwebassets\msbuild.build.WMS.View.props
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WMS.View.props
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WMS.View.props
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\staticwebassets.pack.json
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\scopedcss\bundle\WMS.View.styles.css
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\scopedcss\projectbundle\WMS.View.bundle.scp.css
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.csproj.Up2Date
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\refint\WMS.View.dll
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.pdb
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.genruntimeconfig.cache
+D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\ref\WMS.View.dll

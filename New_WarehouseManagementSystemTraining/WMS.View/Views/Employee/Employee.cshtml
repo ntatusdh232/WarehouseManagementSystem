@@ -1,0 +1,78 @@
+﻿<!-- Danh sách nhân viên -->
+@model IEnumerable<WMS.Domain.AggregateModels.EmployeeAggregate.Employee>
+@{
+    var employeeCurrentPage = ViewBag.EmployeeCurrentPage as int? ?? 1;
+    var employeeTotalPages = ViewBag.EmployeeTotalPages as int? ?? 1;
+    var employeeSortField = ViewBag.EmployeeSortField as string ?? "EmployeeId"; // Thêm dòng này
+    var employeeSortDirection = ViewBag.EmployeeSortDirection as string ?? "asc"; // Thêm dòng này
+}
+
+<div class="container mt-4">
+    <div class="card bg-light shadow">
+        <div class="card-header bg-primary text-white text-center">
+            <h1 class="display-6">Danh sách nhân viên</h1>
+        </div>
+
+        <div class="card-body bg-white">
+            <table class="table table-hover table-bordered">
+                <thead class="bg-success text-white">
+                    <tr>
+                        <th>
+                            <a asp-action="Employee" asp-route-sortField="EmployeeId" asp-route-sortDirection="@(employeeSortField == "EmployeeId" && employeeSortDirection == "asc" ? "desc" : "asc")" class="text-white">ID nhân viên</a>
+                        </th>
+                        <th>
+                            <a asp-action="Employee" asp-route-sortField="EmployeeName" asp-route-sortDirection="@(employeeSortField == "EmployeeName" && employeeSortDirection == "asc" ? "desc" : "asc")" class="text-white">Tên nhân viên</a>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var employee in Model)
+                    {
+                        <tr>
+                            <td>@employee.EmployeeId</td>
+                            <td>@employee.EmployeeName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card-footer bg-dark text-white d-flex justify-content-between align-items-center">
+            @if (employeeCurrentPage > 1)
+            {
+                <a asp-action="Employee" asp-route-pageNumber="@(employeeCurrentPage - 1)" class="btn btn-outline-light">
+                    &larr; Trước
+                </a>
+            }
+            else
+            {
+                <a class="btn btn-outline-light disabled">
+                    &larr; Trước
+                </a>
+            }
+
+            <div class="text-center">
+                <form method="get" class="d-inline">
+                    <label for="pageInputEmployee" class="form-label">Trang:</label>
+                    <input id="pageInputEmployee" name="pageNumber" type="number" min="1" max="@employeeTotalPages" value="@employeeCurrentPage" class="form-control d-inline-block w-auto" />
+                    <button type="submit" class="btn btn-light">Đi</button>
+                </form>
+                <span>trên tổng @employeeTotalPages</span>
+            </div>
+
+            @if (employeeCurrentPage < employeeTotalPages)
+            {
+                <a asp-action="Employee" asp-route-pageNumber="@(employeeCurrentPage + 1)" class="btn btn-outline-light">
+                    Sau &rarr;
+                </a>
+            }
+            else
+            {
+                <a class="btn btn-outline-light disabled">
+                    Sau &rarr;
+                </a>
+            }
+        </div>
+    </div>
+</div>

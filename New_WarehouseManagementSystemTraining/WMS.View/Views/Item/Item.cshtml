@@ -1,0 +1,116 @@
+﻿@model IEnumerable<WMS.Domain.AggregateModels.ItemAggregate.ItemList>
+@{
+    var currentPage = ViewBag.CurrentPage as int? ?? 1;
+    var totalPages = ViewBag.TotalPages as int? ?? 1;
+    var sortField = ViewBag.SortField as string ?? "ItemId"; // Thêm dòng này
+    var sortDirection = ViewBag.SortDirection as string ?? "asc"; // Thêm dòng này
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header text-center" style="background-color: #007bff; color: white;">
+            <h1 class="display-6">Danh sách Item</h1>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-hover table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th>
+                            <a asp-action="Item" asp-route-sortField="ItemId" asp-route-sortDirection="@(sortField == "ItemId" && sortDirection == "asc" ? "desc" : "asc")">
+                                ID Item
+                            </a>
+                        </th>
+                        <th>
+                            <a asp-action="Item" asp-route-sortField="ItemName" asp-route-sortDirection="@(sortField == "ItemName" && sortDirection == "asc" ? "desc" : "asc")">
+                                Tên Item
+                            </a>
+                        </th>
+                        <th>
+                            <a asp-action="Item" asp-route-sortField="ItemType" asp-route-sortDirection="@(sortField == "ItemType" && sortDirection == "asc" ? "desc" : "asc")">
+                                Loại Item
+                            </a>
+                        </th>
+                        <th>
+                            <a asp-action="Item" asp-route-sortField="MinimumStockLevel" asp-route-sortDirection="@(sortField == "MinimumStockLevel" && sortDirection == "asc" ? "desc" : "asc")">
+                                Mức tồn kho tối thiểu
+                            </a>
+                        </th>
+                        <th>
+                            <a asp-action="Item" asp-route-sortField="PacketSize" asp-route-sortDirection="@(sortField == "PacketSize" && sortDirection == "asc" ? "desc" : "asc")">
+                                Kích thước gói
+                            </a>
+                        </th>
+                        <th>
+                            <a asp-action="Item" asp-route-sortField="PacketUnit" asp-route-sortDirection="@(sortField == "PacketUnit" && sortDirection == "asc" ? "desc" : "asc")">
+                                Đơn vị gói
+                            </a>
+                        </th>
+                        <th>
+                            <a asp-action="Item" asp-route-sortField="Price" asp-route-sortDirection="@(sortField == "Price" && sortDirection == "asc" ? "desc" : "asc")">
+                                Giá
+                            </a>
+                        </th>
+                        <th>
+                            <a asp-action="Item" asp-route-sortField="Unit" asp-route-sortDirection="@(sortField == "Unit" && sortDirection == "asc" ? "desc" : "asc")">
+                                Đơn vị
+                            </a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.ItemId</td>
+                            <td>@item.ItemName</td>
+                            <td>@item.ItemType</td>
+                            <td>@item.MinimumStockLevel</td>
+                            <td>@item.PacketSize</td>
+                            <td>@item.PacketUnit</td>
+                            <td>@item.Price</td>
+                            <td>@item.Unit</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card-footer d-flex justify-content-between align-items-center">
+            @if (currentPage > 1)
+            {
+                <a asp-action="Item" asp-route-pageNumber="@(currentPage - 1)" class="btn btn-outline-primary">
+                    &larr; Trước
+                </a>
+            }
+            else
+            {
+                <a class="btn btn-outline-primary disabled">
+                    &larr; Trước
+                </a>
+            }
+
+            <div class="text-center">
+                <form method="get" class="d-inline">
+                    <label for="pageInput" class="form-label">Trang:</label>
+                    <input id="pageInput" name="pageNumber" type="number" min="1" max="@totalPages" value="@currentPage" class="form-control d-inline-block w-auto" />
+                    <button type="submit" class="btn btn-primary">Đi</button>
+                </form>
+                <span>trên tổng @totalPages</span>
+            </div>
+
+            @if (currentPage < totalPages)
+            {
+                <a asp-action="Item" asp-route-pageNumber="@(currentPage + 1)" class="btn btn-outline-primary">
+                    Sau &rarr;
+                </a>
+            }
+            else
+            {
+                <a class="btn btn-outline-primary disabled">
+                    Sau &rarr;
+                </a>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,285 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|d:\\viamlab\u0027s project\\c#\\wms_github2\\new_warehousemanagementsystemtraining\\wms.infrastructure\\entityconfigurations\\itemconfigurations\\itementitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|solutionrelative:wms.infrastructure\\entityconfigurations\\itemconfigurations\\itementitytypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64192DA2-627D-4857-93A3-8A395085042D}|WMS.View\\WMS.View.csproj|d:\\viamlab\u0027s project\\c#\\wms_github2\\new_warehousemanagementsystemtraining\\wms.view\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64192DA2-627D-4857-93A3-8A395085042D}|WMS.View\\WMS.View.csproj|solutionrelative:wms.view\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64192DA2-627D-4857-93A3-8A395085042D}|WMS.View\\WMS.View.csproj|d:\\viamlab\u0027s project\\c#\\wms_github2\\new_warehousemanagementsystemtraining\\wms.view\\controllers\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64192DA2-627D-4857-93A3-8A395085042D}|WMS.View\\WMS.View.csproj|solutionrelative:wms.view\\controllers\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|d:\\viamlab\u0027s project\\c#\\wms_github2\\new_warehousemanagementsystemtraining\\wms.domain\\aggregatemodels\\employeeaggregate\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|solutionrelative:wms.domain\\aggregatemodels\\employeeaggregate\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|d:\\viamlab\u0027s project\\c#\\wms_github2\\new_warehousemanagementsystemtraining\\wms.domain\\aggregatemodels\\itemaggregate\\iitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|solutionrelative:wms.domain\\aggregatemodels\\itemaggregate\\iitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|d:\\viamlab\u0027s project\\c#\\wms_github2\\new_warehousemanagementsystemtraining\\wms.domain\\aggregatemodels\\itemaggregate\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|solutionrelative:wms.domain\\aggregatemodels\\itemaggregate\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|d:\\viamlab\u0027s project\\c#\\wms_github2\\new_warehousemanagementsystemtraining\\wms.domain\\aggregatemodels\\itemaggregate\\itemclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|solutionrelative:wms.domain\\aggregatemodels\\itemaggregate\\itemclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|d:\\viamlab\u0027s project\\c#\\wms_github2\\new_warehousemanagementsystemtraining\\wms.domain\\aggregatemodels\\itemaggregate\\itemlot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|solutionrelative:wms.domain\\aggregatemodels\\itemaggregate\\itemlot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|d:\\viamlab\u0027s project\\c#\\wms_github2\\new_warehousemanagementsystemtraining\\wms.domain\\aggregatemodels\\locationaggregate\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|solutionrelative:wms.domain\\aggregatemodels\\locationaggregate\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|d:\\viamlab\u0027s project\\c#\\wms_github2\\new_warehousemanagementsystemtraining\\wms.domain\\aggregatemodels\\lotadjustmentaggregate\\lotadjustment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|solutionrelative:wms.domain\\aggregatemodels\\lotadjustmentaggregate\\lotadjustment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|d:\\viamlab\u0027s project\\c#\\wms_github2\\new_warehousemanagementsystemtraining\\wms.domain\\aggregatemodels\\warehouseaggregate\\warehouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719B675A-65ED-4490-8DAC-D6FFC6A5A46A}|WMS.Domain\\WMS.Domain.csproj|solutionrelative:wms.domain\\aggregatemodels\\warehouseaggregate\\warehouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|d:\\viamlab\u0027s project\\c#\\wms_github2\\new_warehousemanagementsystemtraining\\wms.infrastructure\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|solutionrelative:wms.infrastructure\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64192DA2-627D-4857-93A3-8A395085042D}|WMS.View\\WMS.View.csproj|d:\\viamlab\u0027s project\\c#\\wms_github2\\new_warehousemanagementsystemtraining\\wms.view\\globalusing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64192DA2-627D-4857-93A3-8A395085042D}|WMS.View\\WMS.View.csproj|solutionrelative:wms.view\\globalusing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|d:\\viamlab\u0027s project\\c#\\wms_github2\\new_warehousemanagementsystemtraining\\wms.infrastructure\\repositories\\itemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E9FAC58-0CB1-44BF-B431-AB2347556B78}|WMS.Infrastructure\\WMS.Infrastructure.csproj|solutionrelative:wms.infrastructure\\repositories\\itemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64192DA2-627D-4857-93A3-8A395085042D}|WMS.View\\WMS.View.csproj|d:\\viamlab\u0027s project\\c#\\wms_github2\\new_warehousemanagementsystemtraining\\wms.view\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64192DA2-627D-4857-93A3-8A395085042D}|WMS.View\\WMS.View.csproj|solutionrelative:wms.view\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ItemEntityTypeConfiguration.cs",
+              "DocumentMoniker": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\ItemConfigurations\\ItemEntityTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "WMS.Infrastructure\\EntityConfigurations\\ItemConfigurations\\ItemEntityTypeConfiguration.cs",
+              "ToolTip": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\EntityConfigurations\\ItemConfigurations\\ItemEntityTypeConfiguration.cs",
+              "RelativeToolTip": "WMS.Infrastructure\\EntityConfigurations\\ItemConfigurations\\ItemEntityTypeConfiguration.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:38:05.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IItemRepository.cs",
+              "DocumentMoniker": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\ItemAggregate\\IItemRepository.cs",
+              "RelativeDocumentMoniker": "WMS.Domain\\AggregateModels\\ItemAggregate\\IItemRepository.cs",
+              "ToolTip": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\ItemAggregate\\IItemRepository.cs",
+              "RelativeToolTip": "WMS.Domain\\AggregateModels\\ItemAggregate\\IItemRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:24:55.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Item.cs",
+              "DocumentMoniker": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\ItemAggregate\\Item.cs",
+              "RelativeDocumentMoniker": "WMS.Domain\\AggregateModels\\ItemAggregate\\Item.cs",
+              "ToolTip": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\ItemAggregate\\Item.cs",
+              "RelativeToolTip": "WMS.Domain\\AggregateModels\\ItemAggregate\\Item.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:24:54.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ItemClass.cs",
+              "DocumentMoniker": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\ItemAggregate\\ItemClass.cs",
+              "RelativeDocumentMoniker": "WMS.Domain\\AggregateModels\\ItemAggregate\\ItemClass.cs",
+              "ToolTip": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\ItemAggregate\\ItemClass.cs",
+              "RelativeToolTip": "WMS.Domain\\AggregateModels\\ItemAggregate\\ItemClass.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:24:53.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ItemLot.cs",
+              "DocumentMoniker": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\ItemAggregate\\ItemLot.cs",
+              "RelativeDocumentMoniker": "WMS.Domain\\AggregateModels\\ItemAggregate\\ItemLot.cs",
+              "ToolTip": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\ItemAggregate\\ItemLot.cs",
+              "RelativeToolTip": "WMS.Domain\\AggregateModels\\ItemAggregate\\ItemLot.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:24:53.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Location.cs",
+              "DocumentMoniker": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\LocationAggregate\\Location.cs",
+              "RelativeDocumentMoniker": "WMS.Domain\\AggregateModels\\LocationAggregate\\Location.cs",
+              "ToolTip": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\LocationAggregate\\Location.cs",
+              "RelativeToolTip": "WMS.Domain\\AggregateModels\\LocationAggregate\\Location.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:24:51.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LotAdjustment.cs",
+              "DocumentMoniker": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\LotAdjustmentAggregate\\LotAdjustment.cs",
+              "RelativeDocumentMoniker": "WMS.Domain\\AggregateModels\\LotAdjustmentAggregate\\LotAdjustment.cs",
+              "ToolTip": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\LotAdjustmentAggregate\\LotAdjustment.cs",
+              "RelativeToolTip": "WMS.Domain\\AggregateModels\\LotAdjustmentAggregate\\LotAdjustment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:24:49.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Warehouse.cs",
+              "DocumentMoniker": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\WarehouseAggregate\\Warehouse.cs",
+              "RelativeDocumentMoniker": "WMS.Domain\\AggregateModels\\WarehouseAggregate\\Warehouse.cs",
+              "ToolTip": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\WarehouseAggregate\\Warehouse.cs",
+              "RelativeToolTip": "WMS.Domain\\AggregateModels\\WarehouseAggregate\\Warehouse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:24:48.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IEmployeeRepository.cs",
+              "DocumentMoniker": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\EmployeeAggregate\\IEmployeeRepository.cs",
+              "RelativeDocumentMoniker": "WMS.Domain\\AggregateModels\\EmployeeAggregate\\IEmployeeRepository.cs",
+              "ToolTip": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\AggregateModels\\EmployeeAggregate\\IEmployeeRepository.cs",
+              "RelativeToolTip": "WMS.Domain\\AggregateModels\\EmployeeAggregate\\IEmployeeRepository.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:07:00.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "WMS.View\\Controllers\\EmployeeController.cs",
+              "ToolTip": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "WMS.View\\Controllers\\EmployeeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADwAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:05:33.288Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ItemController.cs",
+              "DocumentMoniker": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\Controllers\\ItemController.cs",
+              "RelativeDocumentMoniker": "WMS.View\\Controllers\\ItemController.cs",
+              "ToolTip": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\Controllers\\ItemController.cs",
+              "RelativeToolTip": "WMS.View\\Controllers\\ItemController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:10:44.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\Repositories\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "WMS.Infrastructure\\Repositories\\EmployeeRepository.cs",
+              "ToolTip": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\Repositories\\EmployeeRepository.cs",
+              "RelativeToolTip": "WMS.Infrastructure\\Repositories\\EmployeeRepository.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAqwDgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:07:24.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ItemRepository.cs",
+              "DocumentMoniker": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\Repositories\\ItemRepository.cs",
+              "RelativeDocumentMoniker": "WMS.Infrastructure\\Repositories\\ItemRepository.cs",
+              "ToolTip": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\Repositories\\ItemRepository.cs",
+              "RelativeToolTip": "WMS.Infrastructure\\Repositories\\ItemRepository.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAIwEcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:10:46.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GlobalUsing.cs",
+              "DocumentMoniker": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\GlobalUsing.cs",
+              "RelativeDocumentMoniker": "WMS.View\\GlobalUsing.cs",
+              "ToolTip": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\GlobalUsing.cs",
+              "RelativeToolTip": "WMS.View\\GlobalUsing.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:14:52.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WMS.View\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\ViamLab\u0027s Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WMS.View\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:06:07.708Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<!-- Bootstrap classes -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-5 text-center">
+    <!-- Tiêu đề chính -->
+    <h1 class="display-4 text-primary">Warehouse Management System</h1>
+    <p class="lead">Quản lý thông tin một cách dễ dàng và nhanh chóng</p>
+</div>
+
+<div class="container mt-5">
+    <div class="row g-4 justify-content-center">
+
+        <!-- Card cho Item -->
+        <div class="col-md-4">
+            <div class="card border-primary shadow-sm h-100">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title text-primary">Item</h3>
+                    <p class="card-text flex-grow-1">Quản lý và theo dõi các sản phẩm trong hệ thống.</p>
+                    <form asp-controller="Item" asp-action="Item" method="get">
+                        <button type="submit" class="btn btn-outline-primary mt-auto">
+                            <i class="bi bi-box-seam"></i> Xem Item
+                        </button>
+                    </form>
+                    <!-- Nút trích xuất dữ liệu thành file Excel -->
+                    <form asp-controller="Item" asp-action="ExportToExcel" method="get" class="mt-2">
+                        <button type="submit" class="btn btn-outline-primary">
+                            <i class="bi bi-file-earmark-excel"></i> ImportExcelItem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card cho Employee -->
+        <div class="col-md-4">
+            <div class="card border-primary shadow-sm h-100">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title text-primary">Employee</h3>
+                    <p class="card-text flex-grow-1">Theo dõi và quản lý thông tin nhân viên trong tổ chức.</p>
+                    <form asp-controller="Employee" asp-action="Employee" method="get">
+                        <button type="submit" class="btn btn-outline-primary mt-auto">
+                            <i class="bi bi-person"></i> Xem Employee
+                        </button>
+                    </form>
+                    <!-- Nút trích xuất dữ liệu thành file Excel -->
+                    <form asp-controller="Employee" asp-action="ExportToExcel" method="get" class="mt-2">
+                        <button type="submit" class="btn btn-outline-primary">
+                            <i class="bi bi-file-earmark-excel"></i> ImportExcelEmployee
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
