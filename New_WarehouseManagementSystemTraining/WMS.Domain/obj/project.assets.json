@@ -8,24 +8,23 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Phat Huy\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\AnhTu\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj",
       "projectName": "WMS.Domain",
-      "projectPath": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj",
-      "packagesPath": "C:\\Users\\Phat Huy\\.nuget\\packages\\",
-      "outputPath": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\obj\\",
+      "projectPath": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj",
+      "packagesPath": "C:\\Users\\AnhTu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Phat Huy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\AnhTu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -33,7 +32,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -46,11 +44,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -72,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

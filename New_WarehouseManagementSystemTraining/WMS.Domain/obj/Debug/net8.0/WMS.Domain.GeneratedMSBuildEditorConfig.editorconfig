@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WMS.Domain
-build_property.ProjectDir = D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.Domain\
+build_property.ProjectDir = C:\Users\AnhTu\source\repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Domain\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

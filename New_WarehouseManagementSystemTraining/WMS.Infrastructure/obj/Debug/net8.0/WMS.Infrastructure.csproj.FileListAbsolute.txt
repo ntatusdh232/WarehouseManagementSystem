@@ -32,3 +32,21 @@ D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.In
 D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.pdb
 D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.genruntimeconfig.cache
 D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\ref\WMS.Infrastructure.dll
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Infrastructure.deps.json
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Infrastructure.runtimeconfig.json
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Infrastructure.dll
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Infrastructure.pdb
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Domain.dll
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Domain.pdb
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.AssemblyInfo.cs
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.sourcelink.json
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.csproj.CopyComplete
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.dll
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\refint\WMS.Infrastructure.dll
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.pdb
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.genruntimeconfig.cache
+C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\ref\WMS.Infrastructure.dll

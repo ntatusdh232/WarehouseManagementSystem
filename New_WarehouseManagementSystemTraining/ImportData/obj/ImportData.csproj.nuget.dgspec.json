@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\ImportData\\ImportData.csproj": {}
+    "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\ImportData\\ImportData.csproj": {}
   },
   "projects": {
-    "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\ImportDataFromExcel\\ImportDataFromExcel.csproj": {
+    "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\ImportDataFromExcel\\ImportDataFromExcel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\ImportDataFromExcel\\ImportDataFromExcel.csproj",
+        "projectUniqueName": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\ImportDataFromExcel\\ImportDataFromExcel.csproj",
         "projectName": "ImportDataFromExcel",
-        "projectPath": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\ImportDataFromExcel\\ImportDataFromExcel.csproj",
-        "packagesPath": "C:\\Users\\Phat Huy\\.nuget\\packages\\",
-        "outputPath": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\ImportDataFromExcel\\obj\\",
+        "projectPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\ImportDataFromExcel\\ImportDataFromExcel.csproj",
+        "packagesPath": "C:\\Users\\AnhTu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\ImportDataFromExcel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Phat Huy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\AnhTu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +25,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,11 +37,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -79,25 +72,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\ImportData\\ImportData.csproj": {
+    "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\ImportData\\ImportData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\ImportData\\ImportData.csproj",
+        "projectUniqueName": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\ImportData\\ImportData.csproj",
         "projectName": "ImportData",
-        "projectPath": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\ImportData\\ImportData.csproj",
-        "packagesPath": "C:\\Users\\Phat Huy\\.nuget\\packages\\",
-        "outputPath": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\ImportData\\obj\\",
+        "projectPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\ImportData\\ImportData.csproj",
+        "packagesPath": "C:\\Users\\AnhTu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\ImportData\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Phat Huy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\AnhTu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -105,18 +97,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\ImportDataFromExcel\\ImportDataFromExcel.csproj": {
-                "projectPath": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\ImportDataFromExcel\\ImportDataFromExcel.csproj"
+              "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\ImportDataFromExcel\\ImportDataFromExcel.csproj": {
+                "projectPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\ImportDataFromExcel\\ImportDataFromExcel.csproj"
               },
-              "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\WMS.Infrastructure.csproj": {
-                "projectPath": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\WMS.Infrastructure.csproj"
+              "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\WMS.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\WMS.Infrastructure.csproj"
               }
             }
           }
@@ -125,11 +116,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -151,25 +137,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj": {
+    "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj",
         "projectName": "WMS.Domain",
-        "projectPath": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj",
-        "packagesPath": "C:\\Users\\Phat Huy\\.nuget\\packages\\",
-        "outputPath": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\obj\\",
+        "projectPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj",
+        "packagesPath": "C:\\Users\\AnhTu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Phat Huy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\AnhTu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -177,7 +162,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -190,11 +174,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -216,25 +195,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\WMS.Infrastructure.csproj": {
+    "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\WMS.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\WMS.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\WMS.Infrastructure.csproj",
         "projectName": "WMS.Infrastructure",
-        "projectPath": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\WMS.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Phat Huy\\.nuget\\packages\\",
-        "outputPath": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\WMS.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\AnhTu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Phat Huy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\AnhTu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -242,15 +220,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj": {
-                "projectPath": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj"
+              "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj": {
+                "projectPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj"
               }
             }
           }
@@ -259,11 +236,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -307,7 +279,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

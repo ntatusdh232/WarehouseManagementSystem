@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "k1E0wT3maNA4+1+uJgkhX+XnzpdI5sCVu0X0VzlixPU=",
+  "Hash": "xY9z/hScz9eyegBt+O3Nb2e/a+X+OXdj0a1EOpmgIYA=",
   "Source": "WMS.View",
   "BasePath": "_content/WMS.View",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.Api\\WMS.Api.csproj",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.Api\\WMS.Api.csproj",
       "Version": 2,
       "Source": "WMS.Api",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
@@ -22,17 +22,17 @@
     {
       "Name": "WMS.View\\wwwroot",
       "Source": "WMS.View",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\obj\\Debug\\net8.0\\scopedcss\\bundle\\WMS.View.styles.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\obj\\Debug\\net8.0\\scopedcss\\bundle\\WMS.View.styles.css",
       "SourceId": "WMS.View",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "WMS.View.styles.css",
       "AssetKind": "All",
@@ -45,13 +45,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\obj\\Debug\\net8.0\\scopedcss\\bundle\\WMS.View.styles.css"
+      "OriginalItemSpec": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\obj\\Debug\\net8.0\\scopedcss\\bundle\\WMS.View.styles.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WMS.View.bundle.scp.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WMS.View.bundle.scp.css",
       "SourceId": "WMS.View",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "WMS.View.bundle.scp.css",
       "AssetKind": "All",
@@ -64,13 +64,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WMS.View.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WMS.View.bundle.scp.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\css\\site.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -86,10 +86,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\favicon.ico",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -105,10 +105,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\js\\site.js",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -124,10 +124,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -143,10 +143,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -162,10 +162,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -181,10 +181,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -200,10 +200,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -219,10 +219,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -257,10 +257,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -276,10 +276,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -295,10 +295,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -314,10 +314,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -333,10 +333,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -352,10 +352,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -371,10 +371,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -390,10 +390,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -409,10 +409,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -428,10 +428,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -447,10 +447,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -466,10 +466,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -485,10 +485,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -504,10 +504,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -523,10 +523,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -542,10 +542,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -561,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -580,10 +580,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -599,10 +599,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -618,10 +618,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -637,10 +637,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -656,10 +656,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -675,10 +675,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -694,10 +694,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -713,10 +713,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -732,10 +732,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -751,10 +751,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -770,10 +770,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -789,10 +789,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -808,10 +808,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -827,10 +827,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -846,10 +846,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -865,10 +865,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -884,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -903,10 +903,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -922,10 +922,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -941,10 +941,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -960,10 +960,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -979,10 +979,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -998,10 +998,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1017,10 +1017,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1036,10 +1036,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1055,10 +1055,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1074,10 +1074,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1093,10 +1093,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1112,10 +1112,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1131,10 +1131,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1150,10 +1150,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1169,10 +1169,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1188,10 +1188,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "WMS.View",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ViamLab's Project\\C#\\WMS_Github2\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\AnhTu\\Source\\Repos\\WarehouseManagementSystem\\New_WarehouseManagementSystemTraining\\WMS.View\\wwwroot\\",
       "BasePath": "_content/WMS.View",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
