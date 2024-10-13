@@ -1,6 +1,7 @@
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.deps.json
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.pdb
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.csproj.AssemblyReference.cache
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.GeneratedMSBuildEditorConfig.editorconfig
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.AssemblyInfoInputs.cache
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.AssemblyInfo.cs
@@ -9,38 +10,3 @@ D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Do
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\refint\WMS.Domain.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.pdb
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\ref\WMS.Domain.dll
-D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.deps.json
-D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.dll
-D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.pdb
-D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.GeneratedMSBuildEditorConfig.editorconfig
-D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.AssemblyInfoInputs.cache
-D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.AssemblyInfo.cs
-D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.csproj.CoreCompileInputs.cache
-D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.dll
-D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\refint\WMS.Domain.dll
-D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.pdb
-D:\ViamLab's Project\C#\WMS_Github2\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\ref\WMS.Domain.dll
-C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.deps.json
-C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.dll
-C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.pdb
-C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.AssemblyInfoInputs.cache
-C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.AssemblyInfo.cs
-C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.csproj.CoreCompileInputs.cache
-C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.sourcelink.json
-C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.dll
-C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\refint\WMS.Domain.dll
-C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.pdb
-C:\Users\AnhTu\Source\Repos\WarehouseManagementSystem\New_WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\ref\WMS.Domain.dll
-C:\Users\AnhTu\source\repos\WarehouseManagementSystem\WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.deps.json
-C:\Users\AnhTu\source\repos\WarehouseManagementSystem\WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.dll
-C:\Users\AnhTu\source\repos\WarehouseManagementSystem\WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.pdb
-C:\Users\AnhTu\source\repos\WarehouseManagementSystem\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\AnhTu\source\repos\WarehouseManagementSystem\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.AssemblyInfoInputs.cache
-C:\Users\AnhTu\source\repos\WarehouseManagementSystem\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.AssemblyInfo.cs
-C:\Users\AnhTu\source\repos\WarehouseManagementSystem\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.csproj.CoreCompileInputs.cache
-C:\Users\AnhTu\source\repos\WarehouseManagementSystem\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.sourcelink.json
-C:\Users\AnhTu\source\repos\WarehouseManagementSystem\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.dll
-C:\Users\AnhTu\source\repos\WarehouseManagementSystem\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\refint\WMS.Domain.dll
-C:\Users\AnhTu\source\repos\WarehouseManagementSystem\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.pdb
-C:\Users\AnhTu\source\repos\WarehouseManagementSystem\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\ref\WMS.Domain.dll

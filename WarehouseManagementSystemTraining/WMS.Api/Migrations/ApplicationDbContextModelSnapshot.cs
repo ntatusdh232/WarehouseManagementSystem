@@ -552,6 +552,69 @@ namespace WMS.Api.Migrations
                     b.ToTable("lotAdjustments");
                 });
 
+            modelBuilder.Entity("WMS.Domain.AggregateModels.UserAggregate.User", b =>
+                {
+                    b.Property<Guid>("UserUUID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("UserUUID");
+
+                    b.ToTable("users");
+                });
+
+            modelBuilder.Entity("WMS.Domain.AggregateModels.UserAggregate.UserAccount", b =>
+                {
+                    b.Property<int>("UserAccountId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserAccountId"));
+
+                    b.Property<string>("Account")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<Guid>("UserUUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("UserAccountId");
+
+                    b.HasIndex("UserUUID")
+                        .IsUnique();
+
+                    b.ToTable("userAccounts");
+                });
+
             modelBuilder.Entity("WMS.Domain.AggregateModels.WarehouseAggregate.Warehouse", b =>
                 {
                     b.Property<string>("WarehouseId")
@@ -812,6 +875,17 @@ namespace WMS.Api.Migrations
                     b.Navigation("Item");
                 });
 
+            modelBuilder.Entity("WMS.Domain.AggregateModels.UserAggregate.UserAccount", b =>
+                {
+                    b.HasOne("WMS.Domain.AggregateModels.UserAggregate.User", "User")
+                        .WithOne("UserAccounts")
+                        .HasForeignKey("WMS.Domain.AggregateModels.UserAggregate.UserAccount", "UserUUID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("WMS.Domain.AggregateModels.EmployeeAggregate.Employee", b =>
                 {
                     b.Navigation("GoodsReceiptLot")
@@ -859,6 +933,12 @@ namespace WMS.Api.Migrations
                         .IsRequired();
 
                     b.Navigation("ItemClasses");
+                });
+
+            modelBuilder.Entity("WMS.Domain.AggregateModels.UserAggregate.User", b =>
+                {
+                    b.Navigation("UserAccounts")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.WarehouseAggregate.Warehouse", b =>

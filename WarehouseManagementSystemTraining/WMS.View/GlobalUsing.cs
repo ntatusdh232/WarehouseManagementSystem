@@ -8,3 +8,4 @@ global using WMS.View.Models;
 global using WMS.Domain.AggregateModels.EmployeeAggregate;
 global using WMS.Domain.SeedWork;
 global using ClosedXML.Excel;
+global using System.Security.Cryptography;

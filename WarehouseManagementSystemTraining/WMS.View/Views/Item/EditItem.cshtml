@@ -1,0 +1,77 @@
+﻿@model WMS.Domain.AggregateModels.ItemAggregate.ItemList
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header text-center" style="background-color: #007bff; color: white;">
+            <h2>Edit Item</h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="UpdateItem" method="post">
+                <div class="mb-3">
+                    <label>ID Vật phẩm</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" value="@Model.ItemId" readonly />
+                    </div>
+                    <input type="hidden" name="ItemId" value="@Model.ItemId" />
+                </div>
+                <div class="mb-3">
+                    <label>Tên Vật phẩm</label>
+                    <input type="text" name="ItemName" class="form-control" value="@Model.ItemName" required />
+                </div>
+                <div class="mb-3">
+                    <label>Loại Vật phẩm</label>
+                    <input type="text" name="ItemType" class="form-control" value="@Model.ItemType" required />
+                </div>
+                <div class="mb-3">
+                    <label>Mức tồn kho tối thiểu</label>
+                    <input type="number" name="MinimumStockLevel" class="form-control" value="@Model.MinimumStockLevel" required />
+                </div>
+                <div class="mb-3">
+                    <label>Kích thước gói</label>
+                    <input type="number" name="PacketSize" class="form-control" value="@Model.PacketSize" required />
+                </div>
+                <div class="mb-3">
+                    <label>Đơn vị gói</label>
+                    <input type="text" name="PacketUnit" class="form-control" value="@Model.PacketUnit" required />
+                </div>
+                <div class="mb-3">
+                    <label>Giá</label>
+                    <input type="number" name="Price" class="form-control" value="@Model.Price" required />
+                </div>
+                <div class="mb-3">
+                    <label>Đơn vị</label>
+                    <input type="text" name="Unit" class="form-control" value="@Model.Unit" required />
+                </div>
+                <div class="d-flex justify-content-between mt-3">
+                    <button type="submit" class="btn btn-success">Update</button>
+                    <a asp-action="Item" class="btn btn-secondary">Close</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #E3F2FD; /* Màu nền nhẹ nhàng */
+        font-family: 'Arial', sans-serif; /* Font hiện đại */
+    }
+
+    .btn {
+        font-weight: bold; /* Chữ đậm cho nút */
+        border-radius: 20px; /* Bo tròn góc nút */
+        transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+    }
+
+    .btn-success:hover {
+        background-color: #28a745; /* Màu khi hover */
+    }
+
+    .btn-secondary:hover {
+        background-color: #6c757d; /* Màu khi hover */
+    }
+
+    .card {
+        border: none; /* Không có viền cho card */
+    }
+</style>

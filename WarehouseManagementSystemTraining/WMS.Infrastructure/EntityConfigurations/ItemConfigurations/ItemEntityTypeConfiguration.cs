@@ -53,8 +53,6 @@
                    .HasForeignKey(t => t.Itemid)
                    .OnDelete(DeleteBehavior.Cascade);
 
-
-
         }
     }
 }

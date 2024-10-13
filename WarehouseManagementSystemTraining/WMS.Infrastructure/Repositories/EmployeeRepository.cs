@@ -66,7 +66,63 @@ public class EmployeeRepository : IEmployeeRepository
                 break;
         }
 
-
         return employees;
+    }
+
+    public IXLWorksheet? GetEmployeeworksheet(IEnumerable<Employee> employees, IXLWorksheet? worksheet)
+    {
+        worksheet = worksheet ?? new XLWorkbook().Worksheets.Add("Employees");
+
+        worksheet.Cell(1, 1).Value = "EmployeeId";
+        worksheet.Cell(1, 2).Value = "EmployeeName";
+
+        for (int i = 0; i < employees.Count(); i++)
+        {
+            var employee = employees.ElementAt(i);
+            worksheet.Cell(i + 2, 1).Value = employee.EmployeeId;
+            worksheet.Cell(i + 2, 2).Value = employee.EmployeeName;
         }
+
+        return worksheet;
+    }
+
+    // thêm Employee vào Database
+    public async Task<Employee> AddEmployee(Employee employee)
+    {
+        try
+        {
+            _context.employees.Add(employee); // Thêm nhân viên vào DbSet
+            await _context.SaveChangesAsync(); // Lưu các thay đổi vào cơ sở dữ liệu
+            return employee;
+        }
+        catch (Exception ex)
+        {
+            // Xử lý lỗi nếu cần
+            throw new InvalidOperationException("Không thể thêm nhân viên vào cơ sở dữ liệu: " + ex.Message);
+        }
+    }
+
+    public List<Employee> GetPageEmployees(IEnumerable<Employee> employees, int pageNumber, int pageSize)
+    {
+        var pagedEmployees = employees
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+
+        return pagedEmployees;
+    }
+
+    public async Task UpdateEmployee(EmployeeList employee)
+    {
+        var existingEmployee = await _context.employees.FindAsync(employee.EmployeeId);
+        if (existingEmployee != null)
+        {
+            existingEmployee.EmployeeName = employee.EmployeeName;
+
+            _context.employees.Update(existingEmployee);
+            await _context.SaveChangesAsync();
+        }
+    }
+
+
 }

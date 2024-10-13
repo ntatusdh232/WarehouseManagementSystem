@@ -1,12 +1,17 @@
-﻿namespace WMS.View.Controllers
+﻿using WMS.Domain.AggregateModels.EmployeeAggregate;
+using WMS.Domain.SeedWork;
+
+namespace WMS.View.Controllers
 {
     public class ItemController : Controller
     {
         private readonly IItemRepository _itemRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public ItemController(IItemRepository itemRepository)
+        public ItemController(IItemRepository itemRepository, IUnitOfWork unitOfWork)
         {
             _itemRepository = itemRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<IActionResult> Item(string sortField = "ItemId", string sortDirection = "asc", int pageNumber = 1, int pageSize = 10)
@@ -14,38 +19,9 @@
             var items = await _itemRepository.GetItemLists();
             var totalItems = items.Count();
 
-            // Sorting logic
-            switch (sortField)
-            {
-                case "ItemId":
-                    items = sortDirection.ToLower() == "desc"
-                        ? items.OrderByDescending(i => i.ItemId).ToList()
-                        : items.OrderBy(i => i.ItemId).ToList();
-                    break;
+            items = _itemRepository.GetSort(sortField, sortDirection, items);
 
-                case "ItemName":
-                    items = sortDirection.ToLower() == "desc"
-                        ? items.OrderByDescending(i => i.ItemName).ToList()
-                        : items.OrderBy(i => i.ItemName).ToList();
-                    break;
-
-                case "ItemType":
-                    items = sortDirection.ToLower() == "desc"
-                        ? items.OrderByDescending(i => i.ItemType).ToList()
-                        : items.OrderBy(i => i.ItemType).ToList();
-                    break;
-
-                // Thêm các trường hợp khác nếu cần thiết cho các thuộc tính khác
-                default:
-                    // Sắp xếp mặc định theo ItemId
-                    items = items.OrderBy(i => i.ItemId).ToList();
-                    break;
-            }
-
-            var pagedItems = items
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
-                .ToList();
+            var pagedItems = _itemRepository.GetPageItems(items, pageNumber, pageSize);
 
             ViewBag.CurrentPage = pageNumber;
             ViewBag.TotalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
@@ -59,67 +35,14 @@
         {
             var items = await _itemRepository.GetItemLists();
 
-            // Sorting logic
-            switch (sortField)
-            {
-                case "ItemId":
-                    items = sortDirection.ToLower() == "desc"
-                        ? items.OrderByDescending(i => i.ItemId).ToList()
-                        : items.OrderBy(i => i.ItemId).ToList();
-                    break;
-
-                case "ItemName":
-                    items = sortDirection.ToLower() == "desc"
-                        ? items.OrderByDescending(i => i.ItemName).ToList()
-                        : items.OrderBy(i => i.ItemName).ToList();
-                    break;
-
-                case "ItemType":
-                    items = sortDirection.ToLower() == "desc"
-                        ? items.OrderByDescending(i => i.ItemType).ToList()
-                        : items.OrderBy(i => i.ItemType).ToList();
-                    break;
-                case "MinimumStockLevel":
-                    items = sortDirection.ToLower() == "desc"
-                        ? items.OrderByDescending(i => i.MinimumStockLevel).ToList()
-                        : items.OrderBy(i => i.MinimumStockLevel).ToList();
-                    break;
-
-                // Thêm các trường hợp khác nếu cần thiết cho các thuộc tính khác
-                default:
-                    // Sắp xếp mặc định theo ItemId
-                    items = items.OrderBy(i => i.ItemId).ToList();
-                    break;
-            }
+            items = _itemRepository.GetSort(sortField, sortDirection, items).ToList();
 
             // Create workbook and worksheet
             using (var workbook = new XLWorkbook())
             {
                 var worksheet = workbook.Worksheets.Add("Items");
 
-                // Add headers
-                worksheet.Cell(1, 1).Value = "ID Item";
-                worksheet.Cell(1, 2).Value = "Tên Item";
-                worksheet.Cell(1, 3).Value = "Loại Item";
-                worksheet.Cell(1, 4).Value = "Mức tồn kho tối thiểu";
-                worksheet.Cell(1, 5).Value = "Kích thước gói";
-                worksheet.Cell(1, 6).Value = "Đơn vị gói";
-                worksheet.Cell(1, 7).Value = "Giá";
-                worksheet.Cell(1, 8).Value = "Đơn vị";
-
-                // Add data
-                for (int i = 0; i < items.Count(); i++)
-                {
-                    var item = items.ElementAt(i);
-                    worksheet.Cell(i + 2, 1).Value = item.ItemId;
-                    worksheet.Cell(i + 2, 2).Value = item.ItemName;
-                    worksheet.Cell(i + 2, 3).Value = item.ItemType;
-                    worksheet.Cell(i + 2, 4).Value = item.MinimumStockLevel;
-                    worksheet.Cell(i + 2, 5).Value = item.PacketSize;
-                    worksheet.Cell(i + 2, 6).Value = item.PacketUnit;
-                    worksheet.Cell(i + 2, 7).Value = item.Price;
-                    worksheet.Cell(i + 2, 8).Value = item.Unit;
-                }
+                worksheet = _itemRepository.GetItemListworksheet(items, worksheet);     
 
                 using (var stream = new MemoryStream())
                 {
@@ -130,5 +53,115 @@
                 }
             }
         }
+        public IActionResult Create()
+        {
+            return View("CreateItem");
+        }
+
+        public async Task<IActionResult> SearchAndEditByItemId(string itemId, string action1)
+        {
+            // Kiểm tra xem ID nhân viên có được cung cấp không
+            if (string.IsNullOrEmpty(itemId))
+            {
+                TempData["ErrorMessage"] = "Vui lòng nhập ID Vat pham.";
+                return RedirectToAction("Item");
+            }
+
+            // Lấy thông tin nhân viên từ repository
+            var item = await _itemRepository.GetItemId(itemId);
+
+            if (action1 == "SearchItem") return View("ItemDetails", item);
+            if (action1 == "EditItem") return View("EditItem", item);
+
+            TempData["ErrorMessage"] = "Hành động không hợp lệ.";
+            return RedirectToAction("Item");
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateItem(Item item)
+        {
+            ModelState.Remove("GoodsReceiptLot");
+            ModelState.Remove("ItemClasses");
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _unitOfWork.BeginTransaction();
+
+                    await _itemRepository.AddItem(item);
+
+                    await _unitOfWork.CommitTransactionAsync();
+                    TempData["SuccessMessage"] = "Vật phẩm đã được lưu thành công!";
+                    return RedirectToAction("Item");
+                }
+                catch (Exception ex)
+                {
+                    _unitOfWork.RollbackTransaction();
+
+                    Console.WriteLine($"Error: {ex.Message}");
+                    Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+
+                    if (ex.InnerException != null)
+                    {
+                        Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
+                        Console.WriteLine($"Inner Stack Trace: {ex.InnerException.StackTrace}");
+                    }
+
+                    ModelState.AddModelError("", "Có lỗi xảy ra: " + ex.Message);
+                }
+            }
+            return View(item); // Nếu không hợp lệ, quay về view Create
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UpdateItem(ItemList item)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Kiểm tra xem các lỗi cụ thể là gì
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                foreach (var error in errors)
+                {
+                    Console.WriteLine(error.ErrorMessage);
+                }
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _unitOfWork.BeginTransaction();
+
+                    await _itemRepository.UpdateItem(item);
+
+                    await _unitOfWork.CommitTransactionAsync();
+                    TempData["SuccessMessage"] = "Vật phẩm đã được cập nhật thành công!";
+                    return RedirectToAction("Item");
+                }
+                catch (Exception ex)
+                {
+                    _unitOfWork.RollbackTransaction();
+
+                    Console.WriteLine($"Error: {ex.Message}");
+                    Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+
+                    if (ex.InnerException != null)
+                    {
+                        Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
+                        Console.WriteLine($"Inner Stack Trace: {ex.InnerException.StackTrace}");
+                    }
+
+                    ModelState.AddModelError("", "Có lỗi xảy ra: " + ex.Message);
+                }
+            }
+            return View("EditItem", item); // Nếu không hợp lệ, quay về view Edit
+        }
+
+
+
+
     }
 }

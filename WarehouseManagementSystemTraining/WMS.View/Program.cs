@@ -11,8 +11,10 @@ namespace WMS.View
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
             builder.Services.AddDbContext<ApplicationDbContext>(options => options
                             .UseSqlServer(connectionString));
+
             // Register the unit of work with scoped lifetime
             builder.Services.AddScoped<IUnitOfWork>(provider => provider.GetService<ApplicationDbContext>());
 

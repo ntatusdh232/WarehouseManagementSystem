@@ -6,4 +6,3 @@ global using WMS.Domain.AggregateModels.ItemAggregate;
 global using WMS.Domain.SeedWork;
 global using WMS.Infrastructure;
 global using WMS.Infrastructure.Repositories;
-

@@ -1214,6 +1214,9 @@
       "WMS.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "ClosedXML": "0.104.1"
+        },
         "compile": {
           "bin/placeholder/WMS.Domain.dll": {}
         },
@@ -1225,6 +1228,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "ClosedXML": "0.104.1",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
           "WMS.Domain": "1.0.0"
@@ -3507,23 +3511,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AnhTu\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Phat Huy\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\WarehouseManagementSystemTraining\\WMS.View\\WMS.View.csproj",
+      "projectUniqueName": "D:\\ViamLab's Project\\C#\\WMS_Github\\WarehouseManagementSystemTraining\\WMS.View\\WMS.View.csproj",
       "projectName": "WMS.View",
-      "projectPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\WarehouseManagementSystemTraining\\WMS.View\\WMS.View.csproj",
-      "packagesPath": "C:\\Users\\AnhTu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\WarehouseManagementSystemTraining\\WMS.View\\obj\\",
+      "projectPath": "D:\\ViamLab's Project\\C#\\WMS_Github\\WarehouseManagementSystemTraining\\WMS.View\\WMS.View.csproj",
+      "packagesPath": "C:\\Users\\Phat Huy\\.nuget\\packages\\",
+      "outputPath": "D:\\ViamLab's Project\\C#\\WMS_Github\\WarehouseManagementSystemTraining\\WMS.View\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\AnhTu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Phat Huy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3531,20 +3536,21 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\WarehouseManagementSystemTraining\\WMS.Api\\WMS.Api.csproj": {
-              "projectPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\WarehouseManagementSystemTraining\\WMS.Api\\WMS.Api.csproj"
+            "D:\\ViamLab's Project\\C#\\WMS_Github\\WarehouseManagementSystemTraining\\WMS.Api\\WMS.Api.csproj": {
+              "projectPath": "D:\\ViamLab's Project\\C#\\WMS_Github\\WarehouseManagementSystemTraining\\WMS.Api\\WMS.Api.csproj"
             },
-            "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj": {
-              "projectPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj"
+            "D:\\ViamLab's Project\\C#\\WMS_Github\\WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj": {
+              "projectPath": "D:\\ViamLab's Project\\C#\\WMS_Github\\WarehouseManagementSystemTraining\\WMS.Domain\\WMS.Domain.csproj"
             },
-            "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\WMS.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\AnhTu\\source\\repos\\WarehouseManagementSystem\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\WMS.Infrastructure.csproj"
+            "D:\\ViamLab's Project\\C#\\WMS_Github\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\WMS.Infrastructure.csproj": {
+              "projectPath": "D:\\ViamLab's Project\\C#\\WMS_Github\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\WMS.Infrastructure.csproj"
             }
           }
         }
@@ -3553,6 +3559,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3583,7 +3594,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

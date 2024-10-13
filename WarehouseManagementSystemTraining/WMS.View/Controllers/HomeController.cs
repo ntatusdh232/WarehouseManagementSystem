@@ -1,4 +1,4 @@
-namespace WMS.View.Controllers
+﻿namespace WMS.View.Controllers
 {
     public class HomeController : Controller
     {
@@ -17,6 +17,22 @@ namespace WMS.View.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult Home()
+        {
+            return View();
+        }
+        public IActionResult Login()
+        {
+            return RedirectToAction("Login", "UserAccount");
+            // return View("~/Views/UserAccount/Login.cshtml")
+        }
+
+        public IActionResult Register()
+        {
+            return RedirectToAction("Register", "UserAccount");
+            // return View("~/Views/UserAccount/Register.cshtml")
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

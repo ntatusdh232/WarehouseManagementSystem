@@ -1,0 +1,50 @@
+﻿@model WMS.Domain.AggregateModels.UserAggregate.UserAccountList
+
+@{
+    ViewData["Title"] = "Đăng Nhập";
+}
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" rel="stylesheet">
+
+<div class="container mt-5">
+    <h2 class="text-center">Đăng Nhập</h2>
+
+    <!-- Hiển thị thông báo thành công -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div id="successMessage" class="alert alert-success text-center font-weight-bold" style="display: none;">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div id="errorMessage" class="alert alert-danger text-center font-weight-bold" style="display: none;">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <div class="card shadow rounded">
+        <div class="card-body">
+            <form asp-action="LoginService" method="post">
+                <div class="form-group mb-3">
+                    <label for="username">Tên người dùng:</label>
+                    <input type="text" name="username" class="form-control" required />
+                </div>
+                <div class="form-group mb-4">
+                    <label for="password">Mật khẩu:</label>
+                    <input type="password" name="password" class="form-control" required />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-block">Đăng Nhập</button>
+                </div>
+            </form>
+
+            <div class="text-center mt-3">
+                <a asp-action="Register" class="btn btn-link">Chưa có tài khoản? Đăng Ký</a>
+            </div>
+        </div>
+    </div>
+</div>

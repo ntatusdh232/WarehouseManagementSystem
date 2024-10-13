@@ -1,0 +1,49 @@
+﻿@model WMS.Domain.AggregateModels.EmployeeAggregate.EmployeeList
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header text-center" style="background-color: #007bff; color: white;">
+            <h2>Edit Employee</h2>
+        </div>
+        <div class="card-body">
+            <!-- Form để nhập thông tin nhân viên -->
+            <form asp-action="UpdateEmployee" method="post">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>ID Nhân viên</th>
+                        <td>@Model.EmployeeId</td>
+                        <input type="hidden" name="EmployeeId" value="@Model.EmployeeId" />
+                    </tr>
+                    <tr>
+                        <th>Tên Nhân viên</th>
+                        <td>
+                            <input type="text" name="EmployeeName" class="form-control" value="@Model.EmployeeName" required />
+                        </td>
+                    </tr>
+                    <!-- Thêm các trường khác nếu cần -->
+                </table>
+
+                <div class="d-flex justify-content-between mt-3">
+                    <button type="submit" class="btn btn-success ">Update</button>
+                    <a asp-action="Employee" class="btn btn-primary ">Close</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #E3F2FD; /* Màu nền nhẹ nhàng */
+        font-family: 'Arial', sans-serif; /* Font hiện đại */
+    }
+
+    .btn {
+        font-weight: bold; /* Chữ đậm cho nút */
+        border-radius: 20px; /* Bo tròn góc nút */
+    }
+
+    .card {
+        border: none; /* Không có viền cho card */
+    }
+</style>

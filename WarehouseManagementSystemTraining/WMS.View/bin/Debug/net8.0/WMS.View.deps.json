@@ -642,12 +642,16 @@
         }
       },
       "WMS.Domain/1.0.0": {
+        "dependencies": {
+          "ClosedXML": "0.104.1"
+        },
         "runtime": {
           "WMS.Domain.dll": {}
         }
       },
       "WMS.Infrastructure/1.0.0": {
         "dependencies": {
+          "ClosedXML": "0.104.1",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
           "WMS.Domain": "1.0.0"

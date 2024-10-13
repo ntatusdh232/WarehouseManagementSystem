@@ -1,0 +1,97 @@
+﻿@model WMS.Domain.AggregateModels.UserAggregate.UserAccountList
+
+<!-- Đăng ký -->
+@{
+    ViewData["Title"] = "Đăng Ký";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">Đăng Ký</h2>
+    <div class="card shadow rounded">
+        <div class="card-body">
+            <form asp-action="RegisterService" method="post">
+                <div class="form-group mb-3">
+                    <label for="Account">Tên người dùng:</label>
+                    <input type="text" asp-for="Account" class="form-control" required />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Password">Mật khẩu:</label>
+                    <input type="password" asp-for="Password" class="form-control" required />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Name">Họ và Tên:</label>
+                    <input type="text" asp-for="Name" class="form-control" required />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Email">Email:</label>
+                    <input type="email" asp-for="Email" class="form-control" required />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Phone">Điện thoại:</label>
+                    <input type="text" asp-for="Phone" class="form-control" required />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Address">Địa chỉ:</label>
+                    <input type="text" asp-for="Address" class="form-control" required />
+                </div>
+                <div class="form-group mb-4">
+                    <label for="Position">Chức vụ:</label>
+                    <input type="text" asp-for="Position" class="form-control" required />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success btn-block">Đăng Ký</button>
+                </div>
+            </form>
+            <div class="text-center mt-3">
+                <a asp-action="Login" class="btn btn-link">Đã có tài khoản? Đăng Nhập</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+    body {
+        background-color: #F0F4F8; /* Màu nền nhẹ nhàng */
+        font-family: 'Arial', sans-serif; /* Font hiện đại */
+    }
+
+    .alert {
+        transition: opacity 0.5s ease; /* Hiệu ứng mờ cho thông báo */
+    }
+
+    .btn {
+        font-weight: bold; /* Chữ đậm cho nút */
+        border-radius: 20px; /* Bo tròn góc nút */
+    }
+
+    .card {
+        border: none; /* Không có viền cho card */
+        border-radius: 10px; /* Bo tròn góc card */
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem; /* Khoảng cách giữa các nhóm form */
+    }
+</style>
+
+<script>
+    // Tự động ẩn thông báo sau 3 giây
+    setTimeout(function () {
+        var successMessage = document.getElementById("successMessage");
+        var errorMessage = document.getElementById("errorMessage");
+
+        if (successMessage) {
+            successMessage.style.display = "block"; // Hiển thị thông báo thành công
+            setTimeout(function () { successMessage.style.opacity = 0; }, 100); // Hiệu ứng mờ
+            setTimeout(function () { successMessage.style.display = "none"; }, 5000); // Ẩn thông báo
+        }
+
+        if (errorMessage) {
+            errorMessage.style.display = "block"; // Hiển thị thông báo lỗi
+            setTimeout(function () { errorMessage.style.opacity = 0; }, 100); // Hiệu ứng mờ
+            setTimeout(function () { errorMessage.style.display = "none"; }, 5000); // Ẩn thông báo
+        }
+    }, 3000); // 3000ms = 3 giây
+</script>

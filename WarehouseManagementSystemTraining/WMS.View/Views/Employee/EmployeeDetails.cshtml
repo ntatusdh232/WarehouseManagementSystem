@@ -1,0 +1,49 @@
+﻿@model WMS.Domain.AggregateModels.EmployeeAggregate.EmployeeList
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header text-center" style="background-color: #007bff; color: white;">
+            <h2>Employee Detail</h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tr>
+                    <th>ID Nhân viên</th>
+                    <td>@Model.EmployeeId</td>
+                </tr>
+                <tr>
+                    <th>Tên Nhân viên</th>
+                    <td>@Model.EmployeeName</td>
+                </tr>
+            </table>
+
+            <!-- Nút trở lại trang danh sách Nhân viên -->
+            <div class="text-center mt-3">
+                <a asp-action="Employee" class="btn btn-primary">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #E3F2FD; /* Màu nền nhẹ nhàng */
+    }
+
+    .text-primary {
+        color: #007bff; /* Màu xanh công nghiệp */
+    }
+
+    h3 {
+        border-bottom: 2px solid #007bff; /* Đường viền dưới tiêu đề */
+        padding-bottom: 10px;
+    }
+
+    .btn {
+        font-weight: bold; /* Chữ đậm cho nút */
+    }
+
+    .list-unstyled li {
+        margin-bottom: 10px; /* Khoảng cách giữa các mục */
+    }
+</style>

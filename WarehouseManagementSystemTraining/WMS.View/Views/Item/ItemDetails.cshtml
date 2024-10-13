@@ -1,0 +1,73 @@
+﻿@model WMS.Domain.AggregateModels.ItemAggregate.ItemList
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header text-center" style="background-color: #007bff; color: white;">
+            <h2>Item Detail</h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tr>
+                    <th>ID Item</th>
+                    <td>@Model.ItemId</td>
+                </tr>
+                <tr>
+                    <th>Tên Item</th>
+                    <td>@Model.ItemName</td>
+                </tr>
+                <tr>
+                    <th>Loại Item</th>
+                    <td>@Model.ItemType</td>
+                </tr>
+                <tr>
+                    <th>Mức tồn kho tối thiểu</th>
+                    <td>@Model.MinimumStockLevel</td>
+                </tr>
+                <tr>
+                    <th>Kích thước gói</th>
+                    <td>@Model.PacketSize</td>
+                </tr>
+                <tr>
+                    <th>Đơn vị gói</th>
+                    <td>@Model.PacketUnit</td>
+                </tr>
+                <tr>
+                    <th>Giá</th>
+                    <td>@Model.Price</td>
+                </tr>
+                <tr>
+                    <th>Đơn vị</th>
+                    <td>@Model.Unit</td>
+                </tr>
+            </table>
+
+            <!-- Nút trở lại trang Item -->
+            <div class="text-center mt-3">
+                <a asp-action="Item" class="btn btn-primary">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #E3F2FD; /* Màu nền nhẹ nhàng */
+    }
+
+    .text-primary {
+        color: #007bff; /* Màu xanh công nghiệp */
+    }
+
+    h3 {
+        border-bottom: 2px solid #007bff; /* Đường viền dưới tiêu đề */
+        padding-bottom: 10px;
+    }
+
+    .btn {
+        font-weight: bold; /* Chữ đậm cho nút */
+    }
+
+    .list-unstyled li {
+        margin-bottom: 10px; /* Khoảng cách giữa các mục */
+    }
+</style>

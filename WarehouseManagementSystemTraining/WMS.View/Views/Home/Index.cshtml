@@ -1,64 +1,163 @@
-﻿@{
-    ViewData["Title"] = "Trang chủ";
-}
-
-<!-- Bootstrap classes -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<div class="container mt-5 text-center">
+﻿<div class="container mt-5 text-center">
     <!-- Tiêu đề chính -->
     <h1 class="display-4 text-primary">Warehouse Management System</h1>
-    <p class="lead">Quản lý thông tin một cách dễ dàng và nhanh chóng</p>
-</div>
+    <p class="lead">Giải pháp quản lý kho hiện đại</p>
 
-<div class="container mt-5">
-    <div class="row g-4 justify-content-center">
-
-        <!-- Card cho Item -->
-        <div class="col-md-4">
-            <div class="card border-primary shadow-sm h-100">
-                <div class="card-body d-flex flex-column">
-                    <h3 class="card-title text-primary">Item</h3>
-                    <p class="card-text flex-grow-1">Quản lý và theo dõi các sản phẩm trong hệ thống.</p>
-                    <form asp-controller="Item" asp-action="Item" method="get">
-                        <button type="submit" class="btn btn-outline-primary mt-auto">
-                            <i class="bi bi-box-seam"></i> Xem Item
-                        </button>
-                    </form>
-                    <!-- Nút trích xuất dữ liệu thành file Excel -->
-                    <form asp-controller="Item" asp-action="ExportToExcel" method="get" class="mt-2">
-                        <button type="submit" class="btn btn-outline-primary">
-                            <i class="bi bi-file-earmark-excel"></i> ImportExcelItem
-                        </button>
-                    </form>
+    <div class="row">
+        <div class="mt-5">
+            <div class="row justify-content-center mt-4">
+                <div class="col-lg-4 col-md-5 col-sm-6 mb-3">
+                    <!-- Nút Đăng Nhập -->
+                    <a asp-action="Login" controller="UserAccount" class="btn btn-primary btn-lg w-100">Đăng Nhập</a>
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 mb-3">
+                    <!-- Nút Đăng Ký -->
+                    <a asp-action="Register" controller="UserAccount" class="btn btn-success btn-lg w-100">Đăng Ký</a>
                 </div>
             </div>
         </div>
-
-        <!-- Card cho Employee -->
-        <div class="col-md-4">
-            <div class="card border-primary shadow-sm h-100">
-                <div class="card-body d-flex flex-column">
-                    <h3 class="card-title text-primary">Employee</h3>
-                    <p class="card-text flex-grow-1">Theo dõi và quản lý thông tin nhân viên trong tổ chức.</p>
-                    <form asp-controller="Employee" asp-action="Employee" method="get">
-                        <button type="submit" class="btn btn-outline-primary mt-auto">
-                            <i class="bi bi-person"></i> Xem Employee
-                        </button>
-                    </form>
-                    <!-- Nút trích xuất dữ liệu thành file Excel -->
-                    <form asp-controller="Employee" asp-action="ExportToExcel" method="get" class="mt-2">
-                        <button type="submit" class="btn btn-outline-primary">
-                            <i class="bi bi-file-earmark-excel"></i> ImportExcelEmployee
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
     </div>
+
+    <div class="mt-5">
+        <h3 class="text-secondary">Giới thiệu về hệ thống</h3>
+        <p class="text-muted">
+            Warehouse Management System là giải pháp hiện đại giúp bạn theo dõi, quản lý và tối ưu hóa quy trình lưu trữ hàng hóa.
+            Thiết kế giúp nâng cao hiệu suất, giảm thiểu sai sót và tiết kiệm thời gian cho doanh nghiệp.
+        </p>
+    </div>
+
+    <!-- Tính năng nổi bật -->
+    <div class="mt-5">
+        <h3 class="text-secondary">Tính năng nổi bật</h3>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-check-circle fs-1 text-primary"></i>
+                        <h5 class="card-title">Quản lý hàng tồn kho tự động</h5>
+                        <div class="image-container">
+                            <img src="~/lib/Images/WarehouseImages/inventory-control.png" class="img-fluid" alt="Sơ đồ hoạt động của hệ thống" />
+                        </div>
+                        <p class="text-muted">Quản lý kho hàng hiệu quả, tiết kiệm thời gian và chi phí.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-check-circle fs-1 text-primary"></i>
+                        <h5 class="card-title">Theo dõi vị trí hàng hóa trong kho</h5>
+                        <div class="image-container">
+                            <img src="~/lib/Images/WarehouseImages/thong-quan-ly-kho-hang-wms.jpg" class="img-fluid" alt="Các thành phần trong kho" />
+                        </div>
+                        <p class="text-muted">Giải pháp nâng cao hiệu suất làm việc.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-check-circle fs-1 text-primary"></i>
+                        <h5 class="card-title">Tối ưu hóa quy trình giao nhận hàng hóa</h5>
+                        <div class="image-container">
+                            <img src="~/lib/Images/WarehouseImages/thong-quan-ly-kho-hang-wms.jpg" class="img-fluid" alt="Các thành phần trong kho" />
+                        </div>
+                        <p class="text-muted">Giải pháp nâng cao hiệu suất làm việc.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-check-circle fs-1 text-primary"></i>
+                        <h5 class="card-title">Báo cáo hiệu suất kho hàng theo thời gian thực</h5>
+                        <div class="image-container">
+                            <img src="~/lib/Images/WarehouseImages/thong-quan-ly-kho-hang-wms.jpg" class="img-fluid" alt="Các thành phần trong kho" />
+                        </div>
+                        <p class="text-muted">Giải pháp nâng cao hiệu suất làm việc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thông tin liên hệ -->
+    <div class="mt-5">
+        <h3 class="text-secondary">Thông tin liên hệ</h3>
+        <ul class="row list-unstyled">
+            <div class="col-md-4">
+            <li><i class="bi bi-phone"></i> Số điện thoại:</li>
+            <p class="text-muted">0349711492</p>
+    </div>
+    <div class="col-md-4">
+        <li><i class="bi bi-geo-alt"></i> Địa chỉ:</li>
+        <p class="text-muted">An Thanh Ben Luc Long An</p>
+    </div>
+    <div class="col-md-4">
+        <li><i class="bi bi-envelope"></i> Email:</li>
+        <p class="text-muted">huy.nguyenph@gmail.com</p>
+    </div>
+    </ul>
+</div>
 </div>
 
-<!-- Bootstrap Icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Thêm Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+<!-- Thêm CSS tùy chỉnh -->
+<style>
+    body {
+        background-color: #f0f4f8; /* Màu nền xám sáng để cảm giác thoải mái và hiện đại */
+        color: #333; /* Màu chữ tối để dễ đọc */
+        font-family: 'Arial', sans-serif; /* Font chữ hiện đại */
+    }
+
+    .text-primary {
+        color: #007bff; /* Màu xanh công nghiệp */
+    }
+
+    h3 {
+        border-bottom: 2px solid #007bff; /* Đường viền dưới tiêu đề */
+        padding-bottom: 10px;
+        margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+    }
+
+    .btn {
+        font-weight: bold; /* Chữ đậm cho nút */
+        border-radius: 30px; /* Bo tròn góc nút */
+        transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+    }
+
+        .btn:hover {
+            background-color: #0056b3; /* Màu xanh đậm hơn khi hover */
+        }
+
+    .list-unstyled li {
+        margin-bottom: 10px; /* Khoảng cách giữa các mục */
+    }
+
+    .card {
+        border: 1px solid #e0e0e0; /* Đường viền nhẹ cho thẻ */
+        border-radius: 10px; /* Bo góc nhẹ */
+        transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển tiếp */
+    }
+
+        .card:hover {
+            transform: translateY(-5px); /* Hiệu ứng nâng lên khi hover */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng khi hover */
+        }
+
+    .image-container {
+        height: 200px; /* Chiều cao cố định cho hình ảnh */
+        overflow: hidden; /* Ẩn phần thừa của hình ảnh */
+        display: flex; /* Sử dụng flexbox để căn giữa hình ảnh */
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        margin-bottom: 15px; /* Khoảng cách dưới hình ảnh */
+    }
+
+        .image-container img {
+            max-height: 100%; /* Chiều cao tối đa bằng 100% của khối chứa */
+            width: auto; /* Giữ tỷ lệ khung hình */
+        }
+</style>

@@ -1,5 +1,7 @@
 ﻿using WMS.Domain.AggregateModels.LocationAggregate;
+using WMS.Domain.AggregateModels.UserAggregate;
 using WMS.Domain.AggregateModels.WarehouseAggregate;
+using WMS.Infrastructure.EntityConfigurations.UserConfigurations;
 using WMS.Infrastructure.EntityConfigurations.WarehouseConfigurations;
 
 namespace WMS.Infrastructure
@@ -12,6 +14,27 @@ namespace WMS.Infrastructure
         public async Task<int> SaveChangesAsync()
         {
             return await base.SaveChangesAsync();
+        }
+        public void BeginTransaction()
+        {
+            Database.BeginTransaction();
+        }
+        public async Task CommitTransactionAsync()
+        {
+            if (Database.CurrentTransaction != null)
+            {
+                await Database.CurrentTransaction.CommitAsync(); // Chỉ commit nếu có transaction
+            }
+            else
+            {
+                throw new InvalidOperationException("Không có transaction nào được khởi tạo.");
+            }
+        }
+
+
+        public void RollbackTransaction()
+        {
+            Database.CurrentTransaction.Rollback();
         }
 
         public DbSet<Employee> employees { get; set; }
@@ -40,6 +63,9 @@ namespace WMS.Infrastructure
         public DbSet<Location> locations { get; set; }
 
         public DbSet<LotAdjustment> lotAdjustments { get; set; }
+
+        public DbSet<User> users { get; set; }
+        public DbSet<UserAccount> userAccounts { get; set; }
 
         public DbSet<Warehouse> warehouses { get; set; }
 
@@ -70,6 +96,9 @@ namespace WMS.Infrastructure
             modelBuilder.ApplyConfiguration(new ItemLotEntityTypeConfiguration());
 
             modelBuilder.ApplyConfiguration(new LotAdjustmentEntityTypeConfiguration());
+
+            modelBuilder.ApplyConfiguration(new UserEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new UserAccountEntityTypeConfiguration());
 
             modelBuilder.ApplyConfiguration(new WarehouseEntityTypeConfiguration());
 

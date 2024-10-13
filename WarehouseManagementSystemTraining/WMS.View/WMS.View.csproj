@@ -7,18 +7,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Home\Login.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\WMS.Api\WMS.Api.csproj" />
     <ProjectReference Include="..\WMS.Domain\WMS.Domain.csproj" />
     <ProjectReference Include="..\WMS.Infrastructure\WMS.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\ItemService\" />
-    <Folder Include="Services\EmployeeService\" />
+    <PackageReference Include="ClosedXML" Version="0.104.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ClosedXML" Version="0.104.1" />
+    <UpToDateCheckInput Remove="Views\Home\Login.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Home\Login.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\UserAccount\Login.cshtml" />
   </ItemGroup>
 
 </Project>

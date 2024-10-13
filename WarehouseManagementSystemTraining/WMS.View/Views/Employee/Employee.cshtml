@@ -1,27 +1,58 @@
-﻿<!-- Danh sách nhân viên -->
-@model IEnumerable<WMS.Domain.AggregateModels.EmployeeAggregate.Employee>
+﻿@model IEnumerable<WMS.Domain.AggregateModels.EmployeeAggregate.Employee>
 @{
-    var employeeCurrentPage = ViewBag.EmployeeCurrentPage as int? ?? 1;
-    var employeeTotalPages = ViewBag.EmployeeTotalPages as int? ?? 1;
-    var employeeSortField = ViewBag.EmployeeSortField as string ?? "EmployeeId"; // Thêm dòng này
-    var employeeSortDirection = ViewBag.EmployeeSortDirection as string ?? "asc"; // Thêm dòng này
+    var employeeCurrentPage = ViewBag.CurrentPage as int? ?? 1;
+    var employeeTotalPages = ViewBag.TotalPages as int? ?? 1;
+    var employeeSortField = ViewBag.SortField as string ?? "EmployeeId";
+    var employeeSortDirection = ViewBag.SortDirection as string ?? "asc";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div id="successMessage" class="alert alert-success text-center font-weight-bold"
+         style="background-color: #28a745; color: white; font-size: 22px;">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div id="errorMessage" class="alert alert-danger text-center font-weight-bold"
+         style="background-color: #dc3545; color: white; font-size: 22px;">
+        @TempData["ErrorMessage"]
+    </div>
 }
 
 <div class="container mt-4">
-    <div class="card bg-light shadow">
-        <div class="card-header bg-primary text-white text-center">
+    <div class="card shadow">
+        <div class="card-header text-center" style="background-color: #007bff; color: white;">
             <h1 class="display-6">Danh sách nhân viên</h1>
+        </div>
+
+        <!-- Form tìm kiếm theo EmployeeId -->
+        <div class="mt-4">
+            <form asp-action="SearchAndEditByEmployeeId" method="get" class="d-flex justify-content-center">
+                <input type="text" name="employeeId" class="form-control w-25" placeholder="Nhập ID Nhân viên" required />
+
+                <!-- Nút Tìm kiếm -->
+                <input type="submit" name="action1" value="SearchEmployee" class="btn btn-primary ms-2" />
+
+                <!-- Nút Chỉnh sửa -->
+                <input type="submit" name="action1" value="EditEmployee" class="btn btn-success ms-2" />
+
+                <!-- Nút Tạo Nhân viên -->
+                <a asp-action="Create" class="btn btn-warning ms-2">CreateEmployee</a>
+            </form>
         </div>
 
         <div class="card-body bg-white">
             <table class="table table-hover table-bordered">
-                <thead class="bg-success text-white">
+                <thead class="table-primary">
                     <tr>
                         <th>
-                            <a asp-action="Employee" asp-route-sortField="EmployeeId" asp-route-sortDirection="@(employeeSortField == "EmployeeId" && employeeSortDirection == "asc" ? "desc" : "asc")" class="text-white">ID nhân viên</a>
+                            <a asp-action="Employee" asp-route-sortField="EmployeeId" asp-route-sortDirection="@(employeeSortField == "EmployeeId" && employeeSortDirection == "asc" ? "desc" : "asc")" class="text-black">ID nhân viên</a>
                         </th>
                         <th>
-                            <a asp-action="Employee" asp-route-sortField="EmployeeName" asp-route-sortDirection="@(employeeSortField == "EmployeeName" && employeeSortDirection == "asc" ? "desc" : "asc")" class="text-white">Tên nhân viên</a>
+                            <a asp-action="Employee" asp-route-sortField="EmployeeName" asp-route-sortDirection="@(employeeSortField == "EmployeeName" && employeeSortDirection == "asc" ? "desc" : "asc")" class="text-black">Tên nhân viên</a>
                         </th>
                     </tr>
                 </thead>
@@ -38,16 +69,16 @@
             </table>
         </div>
 
-        <div class="card-footer bg-dark text-white d-flex justify-content-between align-items-center">
+        <div class="card-footer d-flex justify-content-between align-items-center">
             @if (employeeCurrentPage > 1)
             {
-                <a asp-action="Employee" asp-route-pageNumber="@(employeeCurrentPage - 1)" class="btn btn-outline-light">
+                <a asp-action="Employee" asp-route-pageNumber="@(employeeCurrentPage - 1)" class="btn btn-outline-primary">
                     &larr; Trước
                 </a>
             }
             else
             {
-                <a class="btn btn-outline-light disabled">
+                <a class="btn btn-outline-primary disabled">
                     &larr; Trước
                 </a>
             }
@@ -56,23 +87,65 @@
                 <form method="get" class="d-inline">
                     <label for="pageInputEmployee" class="form-label">Trang:</label>
                     <input id="pageInputEmployee" name="pageNumber" type="number" min="1" max="@employeeTotalPages" value="@employeeCurrentPage" class="form-control d-inline-block w-auto" />
-                    <button type="submit" class="btn btn-light">Đi</button>
+                    <button type="submit" class="btn btn-primary">Đi</button>
                 </form>
                 <span>trên tổng @employeeTotalPages</span>
             </div>
 
             @if (employeeCurrentPage < employeeTotalPages)
             {
-                <a asp-action="Employee" asp-route-pageNumber="@(employeeCurrentPage + 1)" class="btn btn-outline-light">
+                <a asp-action="Employee" asp-route-pageNumber="@(employeeCurrentPage + 1)" class="btn btn-outline-primary">
                     Sau &rarr;
                 </a>
             }
             else
             {
-                <a class="btn btn-outline-light disabled">
+                <a class="btn btn-outline-primary disabled">
                     Sau &rarr;
                 </a>
             }
         </div>
     </div>
+    <div class="text-center mt-3">
+        <a asp-controller="Home" asp-action="Home" class="btn btn-outline-secondary">Home</a>
+    </div>
 </div>
+
+<style>
+    body {
+        background-color: #E3F2FD; /* Màu nền nhẹ nhàng */
+    }
+
+    .text-primary {
+        color: #007bff; /* Màu xanh công nghiệp */
+    }
+
+    h3 {
+        border-bottom: 2px solid #007bff; /* Đường viền dưới tiêu đề */
+        padding-bottom: 10px;
+    }
+
+    .btn {
+        font-weight: bold; /* Chữ đậm cho nút */
+    }
+
+    .list-unstyled li {
+        margin-bottom: 10px; /* Khoảng cách giữa các mục */
+    }
+</style>
+
+<script>
+    // Tự động ẩn thông báo sau 3 giây
+    setTimeout(function () {
+        var successMessage = document.getElementById("successMessage");
+        var errorMessage = document.getElementById("errorMessage");
+
+        if (successMessage) {
+            successMessage.style.display = "none"; // Ẩn thông báo thành công
+        }
+
+        if (errorMessage) {
+            errorMessage.style.display = "none"; // Ẩn thông báo lỗi
+        }
+    }, 3000); // 3000ms = 3 giây
+</script>

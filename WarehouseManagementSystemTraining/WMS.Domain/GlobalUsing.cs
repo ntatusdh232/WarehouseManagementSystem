@@ -2,3 +2,4 @@
 global using WMS.Domain.AggregateModels.EmployeeAggregate;
 global using WMS.Domain.AggregateModels.LocationAggregate;
 global using WMS.Domain.AggregateModels.GoodsReceiptAggregate;
+global using ClosedXML.Excel;

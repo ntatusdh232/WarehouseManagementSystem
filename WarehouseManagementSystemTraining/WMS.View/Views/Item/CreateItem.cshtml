@@ -1,0 +1,90 @@
+﻿@model WMS.Domain.AggregateModels.ItemAggregate.Item
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header text-center" style="background-color: #007bff; color: white;">
+            <h2>Create Item</h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="CreateItem" method="post">
+                <div class="mb-3">
+                    <label asp-for="ItemId" class="form-label"></label>
+                    <input asp-for="ItemId" class="form-control" />
+                    <span asp-validation-for="ItemId" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ItemName" class="form-label"></label>
+                    <input asp-for="ItemName" class="form-control" />
+                    <span asp-validation-for="ItemName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ItemType" class="form-label"></label>
+                    <input asp-for="ItemType" class="form-control" />
+                    <span asp-validation-for="ItemType" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Unit" class="form-label"></label>
+                    <input asp-for="Unit" class="form-control" />
+                    <span asp-validation-for="Unit" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="MinimumStockLevel" class="form-label"></label>
+                    <input asp-for="MinimumStockLevel" class="form-control" type="number" step="0.01" />
+                    <span asp-validation-for="MinimumStockLevel" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Price" class="form-label"></label>
+                    <input asp-for="Price" class="form-control" type="number" step="0.01" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="PacketSize" class="form-label"></label>
+                    <input asp-for="PacketSize" class="form-control" type="number" step="0.01" />
+                    <span asp-validation-for="PacketSize" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="PacketUnit" class="form-label"></label>
+                    <input asp-for="PacketUnit" class="form-control" />
+                    <span asp-validation-for="PacketUnit" class="text-danger"></span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-success">Create</button>
+                    <a asp-action="Item" class="btn btn-secondary">Close</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #E3F2FD; /* Màu nền nhẹ nhàng */
+        font-family: 'Arial', sans-serif; /* Font hiện đại */
+    }
+
+    .text-primary {
+        color: #007bff; /* Màu xanh công nghiệp */
+    }
+
+    h2 {
+        margin: 0; /* Giảm khoảng cách trên dưới cho tiêu đề */
+    }
+
+    .btn {
+        font-weight: bold; /* Chữ đậm cho nút */
+        border-radius: 20px; /* Bo tròn góc nút */
+        transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+    }
+
+    .btn-success:hover {
+        background-color: #28a745; /* Màu khi hover */
+    }
+
+    .btn-secondary:hover {
+        background-color: #6c757d; /* Màu khi hover */
+    }
+
+    .card {
+        border: none; /* Không có viền cho card */
+    }
+</style>
