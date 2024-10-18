@@ -1,17 +1,14 @@
-﻿using WMS.Domain.AggregateModels.EmployeeAggregate;
-using WMS.Domain.SeedWork;
+﻿using WMS.Domain.AggregateModels.ItemAggregate.All_IItemsRepository;
 
 namespace WMS.View.Controllers
 {
     public class ItemController : Controller
     {
         private readonly IItemRepository _itemRepository;
-        private readonly IUnitOfWork _unitOfWork;
 
-        public ItemController(IItemRepository itemRepository, IUnitOfWork unitOfWork)
+        public ItemController(IItemRepository itemRepository)
         {
             _itemRepository = itemRepository;
-            _unitOfWork = unitOfWork;
         }
 
         public async Task<IActionResult> Item(string sortField = "ItemId", string sortDirection = "asc", int pageNumber = 1, int pageSize = 10)
@@ -70,7 +67,15 @@ namespace WMS.View.Controllers
             // Lấy thông tin nhân viên từ repository
             var item = await _itemRepository.GetItemId(itemId);
 
+            // Kiểm tra xem item có tồn tại hay không
+            if (item == null)
+            {
+                TempData["ErrorMessage"] = "Không tìm thấy Vat pham với ID đã nhập.";
+                return RedirectToAction("Item");
+            }
+        
             if (action1 == "SearchItem") return View("ItemDetails", item);
+
             if (action1 == "EditItem") return View("EditItem", item);
 
             TempData["ErrorMessage"] = "Hành động không hợp lệ.";
@@ -88,17 +93,17 @@ namespace WMS.View.Controllers
             {
                 try
                 {
-                    _unitOfWork.BeginTransaction();
+                    _itemRepository.UnitOfWork.BeginTransaction();
 
                     await _itemRepository.AddItem(item);
 
-                    await _unitOfWork.CommitTransactionAsync();
+                    await _itemRepository.UnitOfWork.CommitTransactionAsync();
                     TempData["SuccessMessage"] = "Vật phẩm đã được lưu thành công!";
                     return RedirectToAction("Item");
                 }
                 catch (Exception ex)
                 {
-                    _unitOfWork.RollbackTransaction();
+                    _itemRepository.UnitOfWork.RollbackTransaction();
 
                     Console.WriteLine($"Error: {ex.Message}");
                     Console.WriteLine($"Stack Trace: {ex.StackTrace}");
@@ -112,6 +117,7 @@ namespace WMS.View.Controllers
                     ModelState.AddModelError("", "Có lỗi xảy ra: " + ex.Message);
                 }
             }
+            TempData["ErrorMessage"] = "Vật phẩm đã tồn tại.";
             return View(item); // Nếu không hợp lệ, quay về view Create
         }
 
@@ -133,17 +139,17 @@ namespace WMS.View.Controllers
             {
                 try
                 {
-                    _unitOfWork.BeginTransaction();
+                    _itemRepository.UnitOfWork.BeginTransaction();
 
                     await _itemRepository.UpdateItem(item);
 
-                    await _unitOfWork.CommitTransactionAsync();
+                    await _itemRepository.UnitOfWork.CommitTransactionAsync();
                     TempData["SuccessMessage"] = "Vật phẩm đã được cập nhật thành công!";
                     return RedirectToAction("Item");
                 }
                 catch (Exception ex)
                 {
-                    _unitOfWork.RollbackTransaction();
+                    _itemRepository.UnitOfWork.RollbackTransaction();
 
                     Console.WriteLine($"Error: {ex.Message}");
                     Console.WriteLine($"Stack Trace: {ex.StackTrace}");

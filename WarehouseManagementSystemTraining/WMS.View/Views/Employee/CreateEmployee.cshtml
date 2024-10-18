@@ -1,6 +1,14 @@
 ﻿@model WMS.Domain.AggregateModels.EmployeeAggregate.Employee
 
 <div class="container mt-5">
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div id="errorMessage" class="alert alert-danger text-center font-weight-bold"
+             style="background-color: #dc3545; color: white; font-size: 22px;">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
     <h1 class="text-center mb-4">Create New Employee</h1>
 
     <form asp-controller="Employee" asp-action="CreateEmployee" method="post" class="bg-light p-4 rounded shadow">
@@ -40,3 +48,14 @@
         font-weight: bold; /* Chữ đậm cho nhãn */
     }
 </style>
+
+<script>
+    // Tự động ẩn thông báo sau 3 giây
+    setTimeout(function () {
+        var errorMessage = document.getElementById("errorMessage");
+
+        if (errorMessage) {
+            errorMessage.style.display = "none"; // Ẩn thông báo lỗi
+        }
+    }, 3000); // 3000ms = 3 giây
+</script>

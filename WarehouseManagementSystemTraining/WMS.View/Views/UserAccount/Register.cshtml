@@ -7,6 +7,21 @@
 
 <div class="container mt-5">
     <h2 class="text-center">Đăng Ký</h2>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div id="successMessage" class="alert alert-success text-center font-weight-bold">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div id="errorMessage" class="alert alert-danger text-center font-weight-bold">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
     <div class="card shadow rounded">
         <div class="card-body">
             <form asp-action="RegisterService" method="post">

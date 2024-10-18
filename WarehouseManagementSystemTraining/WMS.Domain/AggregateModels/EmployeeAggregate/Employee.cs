@@ -1,6 +1,6 @@
 ﻿namespace WMS.Domain.AggregateModels.EmployeeAggregate
 {
-    public class Employee
+    public class Employee : IAggregateRoot
     {
         public string EmployeeId { get; set; }
         public string EmployeeName { get; set; }

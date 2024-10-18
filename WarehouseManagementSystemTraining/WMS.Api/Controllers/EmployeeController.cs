@@ -11,16 +11,80 @@
             _employeeRepository = employeeRepository;
         }
 
-        [HttpGet]
+        private IActionResult HandleInternalError(Exception ex) => StatusCode(500, $"Internal server error: {ex.Message}");
+
+        [HttpGet("Employee/GetployeeAll")]
         public async Task<IEnumerable<EmployeeList>> GetEmployeeALl()
         {
-            return await _employeeRepository.GetEmployeeLists();
+            return await _employeeRepository.GettAllAsync();
         }
 
-        [HttpGet("{employeeId}")]
+        [HttpGet("Employee/GetEmployByid/{employeeId}")]
         public async Task<EmployeeList> GetEmployeeId(string employeeId)
         {
-            return await _employeeRepository.GetEmployeeId(employeeId);
+            return await _employeeRepository.GetEmployeeById(employeeId);
         }
+
+        [HttpGet("Employee/GetEmployeeByName/{employeeName}")]
+        public async Task<EmployeeList> GetEmployeeName(string employeeName)
+        {
+            return await _employeeRepository.GetEmployeeByName(employeeName);
+        }
+
+        // POST: api/Employee
+        [HttpPost("Employee/AddEmployee")]
+        public async Task<IActionResult> AddEmployee([FromBody] EmployeeList employeeList)
+        {
+            try
+            {
+                // Kiểm tra nếu employeeList là null
+                if (employeeList == null)
+                {
+                    return BadRequest("Employee data is required.");
+                }
+
+                var addedEmployee = await _employeeRepository.Add(employeeList);
+
+                return Ok(addedEmployee);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Xử lý các lỗi khác
+                return HandleInternalError(ex);
+            }
+        }
+
+        // PUT: api/Employee/{employeeId}
+        [HttpPut("Employee/UpdateEmployee/{employeeId}")]
+        public async Task<IActionResult> UpdateEmployee(string employeeId, [FromBody] EmployeeList updatedEmployee)
+        {
+            try
+            {
+                // Kiểm tra nếu đối tượng đầu vào không hợp lệ
+                if (updatedEmployee == null || updatedEmployee.EmployeeId != employeeId)
+                {
+                    return BadRequest("Invalid employee data or mismatched ID.");
+                }
+
+                var employee = await _employeeRepository.Update(employeeId, updatedEmployee);
+
+                if (employee == null)
+                {
+                    return NotFound($"Employee with ID {employeeId} not found.");
+                }
+
+                return Ok(employee); 
+            }
+            catch (Exception ex)
+            {
+                return HandleInternalError(ex);
+            }
+        }
+
+
     }
 }

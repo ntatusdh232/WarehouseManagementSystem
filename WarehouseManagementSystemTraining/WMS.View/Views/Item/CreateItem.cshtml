@@ -2,6 +2,13 @@
 
 <div class="container mt-4">
     <div class="card shadow">
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div id="errorMessage" class="alert alert-danger text-center font-weight-bold"
+                 style="background-color: #dc3545; color: white; font-size: 22px;">
+                @TempData["ErrorMessage"]
+            </div>
+        }
         <div class="card-header text-center" style="background-color: #007bff; color: white;">
             <h2>Create Item</h2>
         </div>
@@ -88,3 +95,14 @@
         border: none; /* Không có viền cho card */
     }
 </style>
+
+<script>
+    // Tự động ẩn thông báo sau 3 giây
+    setTimeout(function () {
+        var errorMessage = document.getElementById("errorMessage");
+
+        if (errorMessage) {
+            errorMessage.style.display = "none"; // Ẩn thông báo lỗi
+        }
+    }, 3000); // 3000ms = 3 giây
+</script>

@@ -1,3 +1,5 @@
+using WMS.Domain.AggregateModels.ItemAggregate.All_IItemsRepository;
+
 namespace WMS.View
 {
     public class Program
@@ -21,6 +23,8 @@ namespace WMS.View
             // Register the repositories with scoped lifetime
             builder.Services.AddScoped<IItemRepository, ItemRepository>();
             builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            builder.Services.AddScoped<IUserAccountRepository, UserAccountRepository>();
+
 
             var app = builder.Build();
 

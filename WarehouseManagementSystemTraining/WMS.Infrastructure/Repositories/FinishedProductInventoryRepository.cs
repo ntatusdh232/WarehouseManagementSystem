@@ -1,0 +1,67 @@
+﻿namespace WMS.Infrastructure.Repositories
+{
+    public class FinishedProductInventoryRepository : BaseRepository, IFinishedProductInventoryRepository
+    {
+        public FinishedProductInventoryRepository(ApplicationDbContext context) : base(context)
+        {
+        }
+
+        public async Task<FinishedProductInventory> Add(FinishedProductInventory finishedProductInventory)
+        {
+            
+            // Kiểm tra Id có tồn tại trong SQL chưa, nếu có báo lỗi
+            var existingItem = await _context.finishedProductInventories.FindAsync(finishedProductInventory.FinishedProductInventoryId);
+            if (existingItem != null)
+            {
+                throw new ArgumentException($"Item with ID {finishedProductInventory.FinishedProductInventoryId} already exists.");
+            }
+            
+            await _context.finishedProductInventories.AddAsync(finishedProductInventory);
+            await _context.SaveChangesAsync();
+            return finishedProductInventory;
+        }
+
+        public async Task<IEnumerable<FinishedProductInventory>> GetAllFinishedProductInventory()
+        {
+            var finishedProductInventories = await _context.finishedProductInventories
+                .ToListAsync();
+
+            return finishedProductInventories;
+        }
+
+        public async Task Remove(string finishedProductInventoryId)
+        {
+            var finishedProductInventory = await _context.finishedProductInventories.FindAsync(finishedProductInventoryId);
+            if (finishedProductInventory == null)
+            {
+                throw new KeyNotFoundException();
+            }
+
+            _context.finishedProductInventories.Remove(finishedProductInventory);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<FinishedProductInventory> Update(string finishedProductInventoryId, FinishedProductInventory finishedProductInventory)
+        {
+            var existingItem = await _context.Set<FinishedProductInventory>().FindAsync(finishedProductInventoryId);
+
+            if (existingItem == null)
+            {
+                throw new KeyNotFoundException($"FinishedProductInventory with ID {finishedProductInventoryId} not found.");
+            }
+            existingItem.PurchaseOrderNumber = finishedProductInventory.PurchaseOrderNumber;
+            existingItem.Quantity = finishedProductInventory.Quantity;
+            existingItem.Timestamp = finishedProductInventory.Timestamp;
+            existingItem.Item = finishedProductInventory.Item;
+            existingItem.ItemId = finishedProductInventory.ItemId;
+
+            await _context.SaveChangesAsync();
+
+            return existingItem;
+        }
+
+
+
+
+    }
+}

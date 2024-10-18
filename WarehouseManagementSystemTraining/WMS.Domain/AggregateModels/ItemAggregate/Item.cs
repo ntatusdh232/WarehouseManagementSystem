@@ -1,6 +1,6 @@
 ﻿namespace WMS.Domain.AggregateModels.ItemAggregate
 {
-    public class Item
+    public class Item : IAggregateRoot
     {
         public string ItemType { get; set; }
         public string ItemId { get; set; } 
@@ -21,7 +21,7 @@
         }
     }
 
-    public class ItemList
+    public class ItemList : IAggregateRoot
     {
         public string ItemType { get; set; }
         public string ItemId { get; set; }
@@ -32,4 +32,5 @@
         public double? PacketSize { get; set; }
         public string? PacketUnit { get; set; }
     }
+
 }

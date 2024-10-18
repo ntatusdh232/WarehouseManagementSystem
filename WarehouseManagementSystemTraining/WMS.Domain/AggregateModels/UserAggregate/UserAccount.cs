@@ -1,6 +1,6 @@
 ﻿namespace WMS.Domain.AggregateModels.UserAggregate
 {
-    public class UserAccount
+    public class UserAccount : IAggregateRoot
     {
         public int UserAccountId { get; set; }
         public string Account { get; set; }

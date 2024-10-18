@@ -1,6 +1,6 @@
 ﻿namespace WMS.Domain.AggregateModels.GoodsIssueAggregate
 {
-    public class GoodsIssueLot
+    public class GoodsIssueLot : IAggregateRoot
     {
         public string GoodsIssueLotId { get; set; } 
         public double Quantity { get; set; }

@@ -1,24 +1,19 @@
-﻿using WMS.Domain.AggregateModels.LocationAggregate;
-using WMS.Domain.AggregateModels.UserAggregate;
-using WMS.Domain.AggregateModels.WarehouseAggregate;
-using WMS.Infrastructure.EntityConfigurations.UserConfigurations;
-using WMS.Infrastructure.EntityConfigurations.WarehouseConfigurations;
-
-namespace WMS.Infrastructure
+﻿namespace WMS.Infrastructure
 {
     public class ApplicationDbContext : DbContext, IUnitOfWork
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-        {
-        }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options){}
+
         public async Task<int> SaveChangesAsync()
         {
             return await base.SaveChangesAsync();
         }
+
         public void BeginTransaction()
         {
             Database.BeginTransaction();
         }
+
         public async Task CommitTransactionAsync()
         {
             if (Database.CurrentTransaction != null)

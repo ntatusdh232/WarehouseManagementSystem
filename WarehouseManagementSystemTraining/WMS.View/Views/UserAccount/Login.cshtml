@@ -14,17 +14,18 @@
     <!-- Hiển thị thông báo thành công -->
     @if (TempData["SuccessMessage"] != null)
     {
-        <div id="successMessage" class="alert alert-success text-center font-weight-bold" style="display: none;">
+        <div id="successMessage" class="alert alert-success text-center font-weight-bold">
             @TempData["SuccessMessage"]
         </div>
     }
 
     @if (TempData["ErrorMessage"] != null)
     {
-        <div id="errorMessage" class="alert alert-danger text-center font-weight-bold" style="display: none;">
+        <div id="errorMessage" class="alert alert-danger text-center font-weight-bold">
             @TempData["ErrorMessage"]
         </div>
     }
+
 
     <div class="card shadow rounded">
         <div class="card-body">
@@ -48,3 +49,23 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Tự động ẩn thông báo sau 3 giây
+    setTimeout(function () {
+        var successMessage = document.getElementById("successMessage");
+        var errorMessage = document.getElementById("errorMessage");
+
+        if (successMessage) {
+            successMessage.style.display = "block"; // Hiển thị thông báo thành công
+            setTimeout(function () { successMessage.style.opacity = 0; }, 100); // Hiệu ứng mờ
+            setTimeout(function () { successMessage.style.display = "none"; }, 5000); // Ẩn thông báo
+        }
+
+        if (errorMessage) {
+            errorMessage.style.display = "block"; // Hiển thị thông báo lỗi
+            setTimeout(function () { errorMessage.style.opacity = 0; }, 100); // Hiệu ứng mờ
+            setTimeout(function () { errorMessage.style.display = "none"; }, 5000); // Ẩn thông báo
+        }
+    }, 3000); // 3000ms = 3 giây
+</script>

@@ -1,6 +1,6 @@
 ﻿namespace WMS.Domain.AggregateModels.InventoryLogEntryAggregate
 {
-    public class InventoryLogEntry
+    public class InventoryLogEntry : IAggregateRoot
     {
         public string ItemLotId { get; set; }
         public double BeforeQuantity { get; set; } 

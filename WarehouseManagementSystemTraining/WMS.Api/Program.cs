@@ -1,4 +1,6 @@
-﻿namespace WMS.Api
+﻿using WMS.Domain.AggregateModels.FinishedProductAggregate.All_IFinishedProductsRepository;
+
+namespace WMS.Api
 {
     public class Program
     {
@@ -19,6 +21,9 @@
             // Register the repositories with scoped lifetime
             builder.Services.AddScoped<IItemRepository, ItemRepository>();
             builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            builder.Services.AddScoped<IUserAccountRepository, UserAccountRepository>();
+            builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            builder.Services.AddScoped<IFinishedProductInventoryRepository, FinishedProductInventoryRepository>();
 
 
             // Add MVC services to the container

@@ -1,6 +1,6 @@
 ﻿namespace WMS.Domain.AggregateModels.FinishedProductAggregate
 {
-    public class FinishedProductIssueEntry
+    public class FinishedProductIssueEntry : IAggregateRoot
     {
         public string FinishedProductIssueEntryId { get; set; }
         public string PurchaseOrderNumber { get; set; }

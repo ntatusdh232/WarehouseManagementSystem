@@ -1,6 +1,6 @@
 ﻿namespace WMS.Domain.AggregateModels.FinishedProductAggregate
 {
-    public class FinishedProductReceipt
+    public class FinishedProductReceipt : IAggregateRoot
     {
         public string FinishedProductReceiptId { get; set; }
         public DateTime Timestamp { get; set; }

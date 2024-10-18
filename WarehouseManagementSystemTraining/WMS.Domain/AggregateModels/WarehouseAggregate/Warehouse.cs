@@ -1,6 +1,6 @@
 ﻿namespace WMS.Domain.AggregateModels.WarehouseAggregate
 {
-    public class Warehouse
+    public class Warehouse : IAggregateRoot
     {
         public string WarehouseId { get; set; }
         public string WarehouseName { get; set; }

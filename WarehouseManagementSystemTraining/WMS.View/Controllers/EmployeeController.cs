@@ -1,17 +1,12 @@
-﻿using System.Collections.Generic;
-using WMS.Domain.SeedWork;
-
-namespace WMS.View.Controllers
+﻿namespace WMS.View.Controllers
 {
     public class EmployeeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
-        private readonly IUnitOfWork _unitOfWork;
 
-        public EmployeeController(IEmployeeRepository employeeRepository, IUnitOfWork unitOfWork)
+        public EmployeeController(IEmployeeRepository employeeRepository)
         {
             _employeeRepository = employeeRepository ?? throw new ArgumentNullException(nameof(employeeRepository));
-            _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         }
 
         // Phương thức Employee
@@ -75,7 +70,13 @@ namespace WMS.View.Controllers
             }
 
             // Lấy thông tin nhân viên từ repository
-            var employee = await _employeeRepository.GetEmployeeId(employeeId);
+            var employee = await _employeeRepository.GetEmployeeById(employeeId);
+
+            if (employee == null)
+            {
+                TempData["ErrorMessage"] = "Không tìm thấy Nhân viên với ID đã nhập.";
+                return RedirectToAction("Employee");
+            }
 
             if (action1 == "SearchEmployee") return View("EmployeeDetails", employee);
             if (action1 == "EditEmployee") return View("EditEmployee", employee);
@@ -95,16 +96,16 @@ namespace WMS.View.Controllers
             {
                 try
                 {
-                    _unitOfWork.BeginTransaction();
+                    _employeeRepository.UnitOfWork.BeginTransaction();
                     await _employeeRepository.AddEmployee(employee);
-                    await _unitOfWork.CommitTransactionAsync();
+                    await _employeeRepository.UnitOfWork.CommitTransactionAsync();
 
                     TempData["SuccessMessage"] = "Nhân viên đã được lưu thành công!";
                     return RedirectToAction("Employee");
                 }
                 catch (Exception ex)
                 {
-                    _unitOfWork.RollbackTransaction();
+                    _employeeRepository.UnitOfWork.RollbackTransaction();
 
                     Console.WriteLine($"Error: {ex.Message}");
                     Console.WriteLine($"Stack Trace: {ex.StackTrace}");
@@ -117,9 +118,9 @@ namespace WMS.View.Controllers
 
                     ModelState.AddModelError("", "Có lỗi xảy ra: " + ex.Message);
                 }
-
-
             }
+
+            TempData["ErrorMessage"] = "Nhân viên đã tồn tại.";
             return View(employee);
         }
 
@@ -132,18 +133,18 @@ namespace WMS.View.Controllers
             {
                 try
                 {
-                    _unitOfWork.BeginTransaction();
+                    _employeeRepository.UnitOfWork.BeginTransaction();
                     // Gọi repository để cập nhật thông tin nhân viên
                     await _employeeRepository.UpdateEmployee(employee);
                     // Lưu thay đổi
-                    await _unitOfWork.CommitTransactionAsync();
+                    await _employeeRepository.UnitOfWork.CommitTransactionAsync();
 
                     TempData["SuccessMessage"] = "Thông tin nhân viên đã được cập nhật thành công!";
                     return RedirectToAction("Employee");
                 }
                 catch (Exception ex)
                 {
-                    _unitOfWork.RollbackTransaction();
+                    _employeeRepository.UnitOfWork.RollbackTransaction();
 
                     Console.WriteLine($"Error: {ex.Message}");
                     Console.WriteLine($"Stack Trace: {ex.StackTrace}");

@@ -1,19 +1,95 @@
-﻿using WMS.Domain.AggregateModels.EmployeeAggregate;
+﻿using WMS.Domain.AggregateModels.ItemAggregate.All_IItemsRepository;
 
 namespace WMS.Infrastructure.Repositories
 {
-    public class ItemRepository : IItemRepository
+    public class ItemRepository : BaseRepository, IItemRepository
     {
-        private readonly ApplicationDbContext _context;
-        private readonly IUnitOfWork _unitOfWork;
+        public ItemRepository(ApplicationDbContext context) : base(context) { }
 
-        private List<ItemList> _itemlist { get; set; }
-
-        public ItemRepository(ApplicationDbContext context, IUnitOfWork unitOfWork)
+        public async Task <ItemList> Add(ItemList item)
         {
-            _context = context;
-            _unitOfWork = unitOfWork;
+            var existingItem = new Item
+            {
+                ItemType = item.ItemType,
+                ItemId = item.ItemId,
+                ItemName = item.ItemName,
+                Unit = item.Unit,
+                MinimumStockLevel = item.MinimumStockLevel,
+                Price = item.Price,
+                PacketSize = item.PacketSize,
+                PacketUnit = item.PacketUnit
+
+            };
+
+            await _context.Set<Item>().AddAsync(existingItem);
+            await _context.SaveChangesAsync();
+            return item;
         }
+
+        //public async Task<Item?> GetItemByEntityId(string entityId)
+        //{
+
+        //}
+
+        public async Task<IEnumerable<Item>> GetItemsByItemClass(string itemClassId)
+        {
+            var items = await _context.Set<Item>()
+                .Where(ic => ic.ItemClasses.Any(s => s.ItemClassId == itemClassId))
+                .ToListAsync();
+
+            return items;
+        }
+
+        public async Task <ItemList> Update(ItemList itemList)
+        {
+            // Fetch the existing Item from the database
+            var existingItem = await _context.Set<Item>().FindAsync(itemList.ItemId);
+
+            if (existingItem != null)
+            {
+                // Map properties from ItemList to Item
+                existingItem.ItemType = itemList.ItemType;
+                existingItem.ItemId = itemList.ItemId;
+                existingItem.ItemName = itemList.ItemName;
+                existingItem.Unit = itemList.Unit;
+                existingItem.MinimumStockLevel = itemList.MinimumStockLevel;
+                existingItem.Price = itemList.Price;
+                existingItem.PacketSize = itemList.PacketSize;
+                existingItem.PacketUnit = itemList.PacketUnit;
+
+
+                // Save changes to the database
+                await _context.SaveChangesAsync();
+
+                return itemList;
+            }
+            else
+            {
+                // Handle the case when the item is not found (optional)
+                throw new KeyNotFoundException($"Item with ID {itemList.ItemId} not found.");
+            }
+        }
+
+
+        public async Task<ItemList> GetItemById(string itemId)
+        {
+            var item = await _context.Set<Item>().FindAsync(itemId);
+            return new ItemList
+            {
+                ItemType = item?.ItemType ?? string.Empty,
+                ItemId = item?.ItemId ?? string.Empty,
+                ItemName = item?.ItemName ?? string.Empty,
+                Unit = item?.Unit ?? string.Empty,
+                MinimumStockLevel = item?.MinimumStockLevel ?? 0,
+                Price = item?.Price ?? 0,
+                PacketSize = item?.PacketSize,
+                PacketUnit = item?.PacketUnit
+            };
+        }
+
+
+
+
 
         public async Task<IEnumerable<ItemList>> GetItemLists()
         {
