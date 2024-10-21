@@ -1,12 +1,101 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WMS.Infrastructure.Repositories
+﻿namespace WMS.Infrastructure.Repositories
 {
-    internal class ItemLotLocationRepository
+    public class ItemLotLocationRepository : BaseRepository, IItemLotLocationRepository
     {
+        public ItemLotLocationRepository(ApplicationDbContext context) : base(context)
+        {
+        }
+
+        public async Task<IEnumerable<Location>> GetByIdAsync(string lotId)
+        {
+            var existingItemLot = await _context.itemsLot.FindAsync(lotId);
+
+            if (existingItemLot == null)
+            {
+                throw new Exception("ItemLot does not exist");
+            }
+
+            var locationlist = existingItemLot.Locations;
+
+            if (locationlist == null)
+            {
+                throw new Exception("ItemLot does not Locaiton");
+            }
+
+            return locationlist;
+
+        }
+
+        public async Task<Location> AddAsync(string lotId, Location location)
+        {
+            var existingItemLot = await _context.itemsLot.FindAsync(lotId);
+
+            if (existingItemLot == null)
+            {
+                throw new Exception("ItemLot does not exist");
+            }
+
+            if (location == null)
+            {
+                throw new Exception("Location is null");
+            }
+
+            existingItemLot.Locations.Add(location);
+            await _context.SaveChangesAsync();
+
+            return location;
+
+        }
+
+        public async Task<Location> Update(string lotId, string locationId, Location location)
+        {
+            var existingItemLot = await _context.itemsLot.FindAsync(lotId);
+
+            if (existingItemLot == null)
+            {
+                throw new Exception("ItemLot does not exist");
+            }
+
+            var existingLocation = existingItemLot.Locations.FirstOrDefault(x => x.LocationId == locationId);
+            if (existingLocation == null)
+            {
+                throw new Exception("Location does not exist");
+            }
+
+            if (location == null)
+            {
+                throw new Exception("Location is null");
+            }
+
+            existingLocation.LocationId = location.LocationId;
+            existingLocation.ItemLots = location.ItemLots;
+            existingLocation.WarehouseId = location.WarehouseId;
+
+            await _context.SaveChangesAsync();
+
+            return existingLocation;
+
+        }
+
+        public async Task Remove(string lotId, string locationId)
+        {
+            var existingItemLot = await _context.itemsLot.FindAsync(lotId);
+
+            if (existingItemLot == null)
+            {
+                throw new Exception("ItemLot does not exist");
+            }
+
+            var existingLocation = existingItemLot.Locations.FirstOrDefault(x => x.LocationId == locationId);
+            if (existingLocation == null)
+            {
+                throw new Exception("Location does not exist");
+            }
+
+            existingItemLot.Locations.Remove(existingLocation);
+            await _context.SaveChangesAsync();
+
+        }
+
     }
 }

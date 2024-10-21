@@ -44,12 +44,30 @@
                 throw new ArgumentException($"Item with ID {finishedProductReceiptId} does not exist.");
             }
 
-            throw new NotImplementedException();
+            // Update the item
+            existingItem.FinishedProductReceiptId = finishedProductReceipt.FinishedProductReceiptId;
+            existingItem.Timestamp = finishedProductReceipt.Timestamp;
+            existingItem.Employee = finishedProductReceipt.Employee;
+            existingItem.Entries = finishedProductReceipt.Entries;
+            existingItem.EmployeeId = finishedProductReceipt.EmployeeId;
+
+            await _context.SaveChangesAsync();
+            return existingItem;
         }
 
-        public Task Remove(string finishedProductReceiptId)
+        public async Task Remove(string finishedProductReceiptId)
         {
-            throw new NotImplementedException();
+            var existingItem = _context.finishedProductReceipts.Find(finishedProductReceiptId);
+            if (existingItem == null)
+            {
+                throw new KeyNotFoundException();
+            }
+
+            // Remove the item
+            _context.finishedProductReceipts.Remove(existingItem);
+            await _context.SaveChangesAsync();
+            
+
         }
     }
 }

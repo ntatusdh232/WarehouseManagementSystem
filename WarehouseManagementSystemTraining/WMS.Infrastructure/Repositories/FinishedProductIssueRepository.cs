@@ -1,6 +1,4 @@
-﻿using WMS.Domain.AggregateModels.FinishedProductAggregate;
-
-namespace WMS.Infrastructure.Repositories
+﻿namespace WMS.Infrastructure.Repositories
 {
     public class FinishedProductIssueRepository : BaseRepository, IFinishedProductIssueRepository
     {
@@ -40,17 +38,43 @@ namespace WMS.Infrastructure.Repositories
         }
 
 
-        public Task<FinishedProductIssue> Update(string finishedProductIssueId, FinishedProductIssue finishedProductIssue)
-        {
 
-           throw new NotImplementedException();
+        public async Task<FinishedProductIssue> Update(string finishedProductIssueId, FinishedProductIssue finishedProductIssue)
+        {
+            var existingItem = await _context.finishedProductIssues.FindAsync(finishedProductIssueId);
+
+            if (existingItem == null)
+            {
+                throw new ArgumentException($"Item with ID {finishedProductIssueId} does not exist.");
+            }
+
+            // Update the item
+            existingItem.FinishedProductIssueId = finishedProductIssue.FinishedProductIssueId;
+            existingItem.Receiver = finishedProductIssue.Receiver;
+            existingItem.Timestamp = finishedProductIssue.Timestamp;
+            existingItem.Employee = finishedProductIssue.Employee;
+            existingItem.Entries = finishedProductIssue.Entries;
+            existingItem.EmployeeId = finishedProductIssue.EmployeeId;
+
+
+            return existingItem;
         }
 
-        public Task<IEnumerable<FinishedProductIssueEntry>> GetProductIssueEntry()
+        public async Task<IEnumerable<FinishedProductIssueEntry>> GetProductIssueEntry()
         {
+            var finishedProductIssueEntryList = await _context.finishedProductIssues
+                .SelectMany(s => s.Entries) 
+                .ToListAsync();
 
-           throw new NotImplementedException();
+
+            if (finishedProductIssueEntryList == null || !finishedProductIssueEntryList.Any())
+            {
+                throw new ArgumentException("No entries found.");
+            }
+
+            return finishedProductIssueEntryList;
         }
+
 
 
 
