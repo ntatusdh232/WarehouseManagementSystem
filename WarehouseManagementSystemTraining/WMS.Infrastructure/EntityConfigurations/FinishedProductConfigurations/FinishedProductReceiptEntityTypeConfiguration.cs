@@ -6,16 +6,17 @@
         {
             builder.HasKey(f => f.FinishedProductReceiptId);
 
+            // Cấu hình mối quan hệ One-to-Many với Employee
             builder.HasOne(f => f.Employee)
-                   .WithOne()
-                   .IsRequired()
-                   .HasForeignKey<FinishedProductReceipt>(f => f.EmployeeId)
-                   .OnDelete(DeleteBehavior.Restrict);
+                   .WithMany()
+                   .HasForeignKey(g => g.EmployeeId)
+                   .IsRequired(false);
 
+            // Cấu hình mối quan hệ One-to-Many với FinishedProductReceiptEntry
             builder.HasMany(f => f.Entries)
                    .WithOne()
                    .IsRequired()
-                   .HasForeignKey(f => f.FinishedProductReceiptId)
+                   .HasForeignKey("FinishedProductReceiptId")
                    .OnDelete(DeleteBehavior.Restrict);
         }
     }
