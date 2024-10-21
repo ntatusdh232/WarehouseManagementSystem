@@ -6,15 +6,17 @@
         {
             builder.HasKey(t => t.LotId);
 
+            // One-to-One relationship with Item
             builder.HasOne(t => t.Item)
-                   .WithOne()
-                   .HasForeignKey<ItemLot>(t => t.ItemId)
-                   .OnDelete(DeleteBehavior.Restrict);
+                   .WithMany()
+                   .HasForeignKey(g => g.ItemId)
+                   .IsRequired(false);
 
-            builder.HasMany(t => t.Locations)
-                   .WithMany(t => t.ItemLots)
-                   .UsingEntity(t => t.ToTable("LotLocations"));
 
+            // Cấu hình mối quan hệ Many-to-Many với Location
+            builder.HasMany(f => f.Locations)
+                   .WithMany(l => l.ItemLots)
+                   .UsingEntity(j => j.ToTable("LotLocations"));
 
 
 
