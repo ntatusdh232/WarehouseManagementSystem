@@ -1,6 +1,4 @@
-﻿using WMS.Domain.AggregateModels.GoodsIssueAggregate;
-
-namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
+﻿namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
 {
     public interface IGoodsReceiptRepository : IRepository<GoodsReceipt>, IRepository<GoodsReceiptLot>
     {
@@ -9,6 +7,6 @@ namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
         Task Remove(string goodsReceiptId);
         Task<IEnumerable<GoodsReceipt>> GetGoodsReceiptById(string goodsReceiptId);
         Task<IEnumerable<GoodsReceiptLot>> GetGoodsReceiptLotById(string goodsReceiptLotId);
-        //Task<IEnumerable<GoodsIssue>> GetGoodsReceiptByGoodsReceiptId();
+        Task<IEnumerable<GoodsReceipt>> GetGoodsReceiptByGoodsReceiptId();
     }
 }

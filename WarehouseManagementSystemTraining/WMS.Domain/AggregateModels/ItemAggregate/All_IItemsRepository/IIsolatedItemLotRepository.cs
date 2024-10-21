@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WMS.Domain.AggregateModels.ItemAggregate.All_IItemsRepository
+﻿namespace WMS.Domain.AggregateModels.ItemAggregate.All_IItemsRepository
 {
-    internal interface IIsolatedItemLotRepository
+    public interface IIsolatedItemLotRepository : IRepository<ItemLot>
     {
+        Task <ItemLot> AddAsync(ItemLot itemLot);
+        Task <ItemLot> Update(string lotId, ItemLot itemLot);
+        Task Remove(string lotId);
+        Task<IEnumerable<ItemLot>> GetAsync();
     }
 }

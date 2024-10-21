@@ -6,11 +6,11 @@
         {
             builder.HasKey(t => t.ItemLotId);
 
-            // One-to-One relationship with Item
             builder.HasOne(t => t.Item)
-                   .WithMany()
-                   .HasForeignKey(g => g.ItemId)
-                   .IsRequired(false);
+                   .WithOne()
+                   .IsRequired()
+                   .HasForeignKey<InventoryLogEntry>(t => t.ItemId)
+                   .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

@@ -90,11 +90,11 @@ D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.Vi
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.pdb
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\WMS.View.genruntimeconfig.cache
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\WMS.View\obj\Debug\net8.0\ref\WMS.View.dll
-D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\appsettings.Development.json
-D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\appsettings.json
 D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Api.deps.json
 D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Api.runtimeconfig.json
 D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.Api.exe
+D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\appsettings.Development.json
+D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\appsettings.json
 D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.View.staticwebassets.runtime.json
 D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.View.exe
 D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.View\bin\Debug\net8.0\WMS.View.deps.json

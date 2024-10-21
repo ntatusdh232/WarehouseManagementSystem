@@ -1,6 +1,6 @@
 ﻿namespace WMS.Domain.AggregateModels.LotAdjustmentAggregate
 {
-    public class LotAdjustment
+    public class LotAdjustment : IAggregateRoot
     {
         public string LotId { get; set; }
         public double BeforeQuantity { get; set; }

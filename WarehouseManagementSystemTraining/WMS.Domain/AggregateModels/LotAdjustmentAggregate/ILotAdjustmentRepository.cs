@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WMS.Domain.AggregateModels.LotAdjustmentAggregate
+﻿namespace WMS.Domain.AggregateModels.LotAdjustmentAggregate
 {
-    internal interface ILotAdjustmentRepository
+    public interface ILotAdjustmentRepository : IRepository<LotAdjustment>
     {
+        Task<LotAdjustment> Add(LotAdjustment lotAdjustment);
+        Task<LotAdjustment> Update(string LotId, LotAdjustment lotAdjustment);
+        Task Remove(string LotId);
+        Task<IEnumerable<LotAdjustment>> GetAdjustmentByLotId(string LotId);
+        Task<IEnumerable<LotAdjustment>> GetUnConfirmedAdjustments();
+        
+
     }
 }
