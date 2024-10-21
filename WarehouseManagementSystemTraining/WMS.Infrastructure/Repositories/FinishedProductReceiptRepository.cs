@@ -67,6 +67,7 @@
             _context.finishedProductReceipts.Remove(existingItem);
             await _context.SaveChangesAsync();
             
+
         }
     }
 }
