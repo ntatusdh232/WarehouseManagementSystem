@@ -6,16 +6,16 @@
         {
             builder.HasKey(f => f.GoodsIssueEntryId);
 
+            // Cấu hình mối quan hệ One-to-Many với Item
             builder.HasOne(f => f.Item)
-                   .WithOne()
-                   .IsRequired()
-                   .HasForeignKey<GoodsIssueEntry>(f => f.ItemId)
-                   .OnDelete(DeleteBehavior.Restrict);
-
+                   .WithMany()
+                   .HasForeignKey(g => g.ItemId)
+                   .IsRequired(false);
+            // Cấu hình mối quan hệ One-to-Many với GoodsIssueLot
             builder.HasMany(f => f.Lots)
                    .WithOne()
                    .IsRequired()
-                   .HasForeignKey(f => f.GoodsIssueEntryId)
+                   .HasForeignKey("GoodsIssueEntryId")
                    .OnDelete(DeleteBehavior.Cascade);
 
         }
