@@ -4,11 +4,11 @@
     {
         Task<InventoryLogEntry> Add(InventoryLogEntry inventoryLogEntry);
         Task<InventoryLogEntry> Update(string ItemLotId, InventoryLogEntry inventoryLogEntry);
-        Task<InventoryLogEntry> UpdateEntries(string ItemLotId, InventoryLogEntry inventoryLogEntry);
-        Task Remove(string ItemLotId);
-        Task<IEnumerable<InventoryLogEntry>> GetLatestLogEntry();
+        Task<IEnumerable<InventoryLogEntry>> UpdateEntries(IEnumerable<InventoryLogEntry> updatedLogEntries);
+        Task Remove(string itemLotId);
+        Task<InventoryLogEntry> GetLatestLogEntry();
         Task<IEnumerable<InventoryLogEntry>> GetLatestLogEntries();
-        Task<IEnumerable<InventoryLogEntry>> GetPreviousLogEntry();
-        Task<IEnumerable<InventoryLogEntry>> GetLogEntryId();
+        Task<InventoryLogEntry> GetPreviousLogEntry();
+        Task<InventoryLogEntry> GetLogEntryId(string logEntryId);
     }
 }

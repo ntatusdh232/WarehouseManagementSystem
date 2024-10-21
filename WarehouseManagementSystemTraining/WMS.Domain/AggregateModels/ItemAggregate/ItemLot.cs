@@ -12,9 +12,18 @@
         public string ItemId { get; set; }
         public List<Location> Locations { get; set; }
 
-        public void Update(string LotId, double quantity, string? purchaseOrderNumber, Location location)
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+        public ItemLot()
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
         {
+        }
 
+        public void Update(double quantity, DateTime timestamp, DateTime? productionDate, DateTime? expirationDate)
+        {
+            Quantity = quantity;
+            Timestamp = timestamp;
+            ProductionDate = productionDate;
+            ExpirationDate = expirationDate;
         }
 
     }

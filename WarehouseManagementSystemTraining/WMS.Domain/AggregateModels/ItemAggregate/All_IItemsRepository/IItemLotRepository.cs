@@ -3,13 +3,13 @@
     public interface IItemLotRepository : IRepository<ItemLot>
     {
         Task<ItemLot> AddLot(ItemLot itemLot);
-        Task<ItemLot> AddLots(ItemLot itemLot);
-        Task<ItemLot> UpdateLot(string LotId, ItemLot itemLot);
-        Task<ItemLot> UpdateLots(string LotId, ItemLot itemLot);
-        Task DeleteLot(string LotId);
-        Task DeleteLots(string LotId);
-        Task<IEnumerable<ItemLot>> GetLotByLotId(string LotId);
-        Task<IEnumerable<ItemLot>> GetLotsByItemId(string ItemId);
+        Task<IEnumerable<ItemLot>> AddLots(IEnumerable<ItemLot> itemLots);
+        Task<ItemLot> UpdateLot(string lotId, ItemLot itemLot);
+        Task<IEnumerable<ItemLot>> UpdateLots(IEnumerable<ItemLot> updatedItemLots);
+        Task DeleteLot(string lotId);
+        Task DeleteLots(string lotId);
+        Task<ItemLot> GetLotByLotId(string lotId);
+        Task<IEnumerable<ItemLot>> GetLotsByItemId(string itemId);
         Task<IEnumerable<ItemLot>> GetIsolatedItemLots();
 
     }

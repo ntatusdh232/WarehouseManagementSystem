@@ -2,6 +2,6 @@
 {
     public interface IItemClassRepository : IRepository<ItemClass>
     {
-        Task<IEnumerable<ItemClass>> GetById(string ItemClassId);
+        Task<ItemClass?> GetById(string itemClassId);
     }
 }
