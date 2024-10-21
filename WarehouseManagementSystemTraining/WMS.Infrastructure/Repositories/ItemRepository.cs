@@ -26,10 +26,10 @@ namespace WMS.Infrastructure.Repositories
             return item;
         }
 
-        //public async Task<Item?> GetItemByEntityId(string entityId)
-        //{
-
-        //}
+        public async Task<Item?> GetItemByEntityId(string entityId)
+        {
+            throw new NotImplementedException();
+        }
 
         public async Task<IEnumerable<Item>> GetItemsByItemClass(string itemClassId)
         {
