@@ -49,11 +49,7 @@
             {
                 throw new KeyNotFoundException($"FinishedProductInventory with ID {finishedProductInventoryId} not found.");
             }
-            existingItem.PurchaseOrderNumber = finishedProductInventory.PurchaseOrderNumber;
-            existingItem.Quantity = finishedProductInventory.Quantity;
-            existingItem.Timestamp = finishedProductInventory.Timestamp;
-            existingItem.Item = finishedProductInventory.Item;
-            existingItem.ItemId = finishedProductInventory.ItemId;
+            existingItem.UpdateFinishedProductInventory(finishedProductInventory.PurchaseOrderNumber, finishedProductInventory.Quantity, finishedProductInventory.Timestamp, finishedProductInventory.Item);
 
             await _context.SaveChangesAsync();
 

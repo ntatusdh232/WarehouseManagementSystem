@@ -28,17 +28,7 @@
             {
                 throw new Exception("Lot Adjustment does not exist");
             }
-
-            existingLot.LotId = lotAdjustment.LotId;
-            existingLot.BeforeQuantity = lotAdjustment.BeforeQuantity;
-            existingLot.AfterQuantity = lotAdjustment.AfterQuantity;
-            existingLot.IsConfirmed = lotAdjustment.IsConfirmed;
-            existingLot.Note = lotAdjustment.Note;
-            existingLot.Item = lotAdjustment.Item;
-            existingLot.Employee = lotAdjustment.Employee;
-            existingLot.ItemId = lotAdjustment.ItemId;
-            existingLot.EmployeeId = lotAdjustment.EmployeeId;
-
+            existingLot.Update(lotAdjustment.AfterQuantity, lotAdjustment.Note);
             await _context.SaveChangesAsync();
             return existingLot;
 

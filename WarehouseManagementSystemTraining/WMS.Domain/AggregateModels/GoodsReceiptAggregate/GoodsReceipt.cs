@@ -30,5 +30,15 @@
 
         }
 
+        public void UpdateGoodsReceipt(String goodsReceiptId, String supplier, DateTime timestamp,
+                                       Employee employee, List<GoodsReceiptLot> lots)
+        {
+            GoodsReceiptId = goodsReceiptId;
+            Supplier = supplier;
+            Timestamp = Timestamp;
+            Employee = Employee;
+            Lots = Lots;
+        }
+
     }
 }

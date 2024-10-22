@@ -12,5 +12,14 @@
         {
 
         }
+
+        public void UpdateFinishedProductReceipt(DateTime timestamp, Employee employee,
+                                                 List<FinishedProductReceiptEntry> entries)
+        {
+            Timestamp = timestamp;
+            Employee = employee;
+            Entries = entries;
+        }
+
     }
 }

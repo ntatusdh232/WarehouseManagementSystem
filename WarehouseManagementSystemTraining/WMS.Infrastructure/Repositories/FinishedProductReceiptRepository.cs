@@ -44,12 +44,7 @@
                 throw new ArgumentException($"Item with ID {finishedProductReceiptId} does not exist.");
             }
 
-            // Update the item
-            existingItem.FinishedProductReceiptId = finishedProductReceipt.FinishedProductReceiptId;
-            existingItem.Timestamp = finishedProductReceipt.Timestamp;
-            existingItem.Employee = finishedProductReceipt.Employee;
-            existingItem.Entries = finishedProductReceipt.Entries;
-            existingItem.EmployeeId = finishedProductReceipt.EmployeeId;
+            existingItem.UpdateFinishedProductReceipt(finishedProductReceipt.Timestamp, finishedProductReceipt.Employee, finishedProductReceipt.Entries);
 
             await _context.SaveChangesAsync();
             return existingItem;

@@ -14,5 +14,15 @@
 
         }
 
+        public void UpdateFinishedProductIssue(string? receiver, DateTime timestamp, 
+                                               Employee employee, List<FinishedProductIssueEntry> entries)
+        {
+            Receiver = receiver;
+            Timestamp = timestamp;
+            Employee = employee;
+            Entries = entries;
+
+        }
+
     }
 }

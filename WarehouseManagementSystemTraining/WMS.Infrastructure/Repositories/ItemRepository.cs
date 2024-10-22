@@ -1,27 +1,19 @@
-﻿using WMS.Domain.AggregateModels.ItemAggregate.All_IItemsRepository;
-
-namespace WMS.Infrastructure.Repositories
+﻿namespace WMS.Infrastructure.Repositories
 {
     public class ItemRepository : BaseRepository, IItemRepository
     {
         public ItemRepository(ApplicationDbContext context) : base(context) { }
 
-        public async Task <ItemList> Add(ItemList item)
+        public async Task <Item> Add(Item item)
         {
-            var existingItem = new Item
+            var existingItem = await _context.items.FindAsync(item.ItemId);
+
+            if (existingItem != null)
             {
-                ItemType = item.ItemType,
-                ItemId = item.ItemId,
-                ItemName = item.ItemName,
-                Unit = item.Unit,
-                MinimumStockLevel = item.MinimumStockLevel,
-                Price = item.Price,
-                PacketSize = item.PacketSize,
-                PacketUnit = item.PacketUnit
+                throw new ArgumentException($"Item with ID {item.ItemId} already exists.");
+            }
 
-            };
-
-            await _context.Set<Item>().AddAsync(existingItem);
+            await _context.items.AddAsync(item);
             await _context.SaveChangesAsync();
             return item;
         }
@@ -42,53 +34,37 @@ namespace WMS.Infrastructure.Repositories
 
         public async Task <ItemList> Update(ItemList itemList)
         {
-            // Fetch the existing Item from the database
-            var existingItem = await _context.Set<Item>().FindAsync(itemList.ItemId);
+
+            var existingItem = await _context.items.FindAsync(itemList.ItemId);
 
             if (existingItem != null)
             {
-                // Map properties from ItemList to Item
-                existingItem.ItemType = itemList.ItemType;
-                existingItem.ItemId = itemList.ItemId;
-                existingItem.ItemName = itemList.ItemName;
-                existingItem.Unit = itemList.Unit;
-                existingItem.MinimumStockLevel = itemList.MinimumStockLevel;
-                existingItem.Price = itemList.Price;
-                existingItem.PacketSize = itemList.PacketSize;
-                existingItem.PacketUnit = itemList.PacketUnit;
+                existingItem.Update(itemList.Unit, itemList.MinimumStockLevel, itemList.Price);
 
-
-                // Save changes to the database
                 await _context.SaveChangesAsync();
 
                 return itemList;
             }
             else
             {
-                // Handle the case when the item is not found (optional)
+
                 throw new KeyNotFoundException($"Item with ID {itemList.ItemId} not found.");
             }
         }
 
 
-        public async Task<ItemList> GetItemById(string itemId)
+        public async Task<IEnumerable<Item>> GetItemById(string itemId)
         {
-            var item = await _context.Set<Item>().FindAsync(itemId);
-            return new ItemList
+            var item = await _context.items.FindAsync(itemId);
+
+            if (item == null)
             {
-                ItemType = item?.ItemType ?? string.Empty,
-                ItemId = item?.ItemId ?? string.Empty,
-                ItemName = item?.ItemName ?? string.Empty,
-                Unit = item?.Unit ?? string.Empty,
-                MinimumStockLevel = item?.MinimumStockLevel ?? 0,
-                Price = item?.Price ?? 0,
-                PacketSize = item?.PacketSize,
-                PacketUnit = item?.PacketUnit
-            };
+                throw new KeyNotFoundException($"Item with ID {itemId} not found.");
+            }
+
+            return new List<Item> { item };
+
         }
-
-
-
 
 
         public async Task<IEnumerable<ItemList>> GetItemLists()

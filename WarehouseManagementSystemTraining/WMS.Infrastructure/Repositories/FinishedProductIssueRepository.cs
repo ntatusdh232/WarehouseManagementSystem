@@ -37,8 +37,6 @@
             return finishedProductIssuelist;
         }
 
-
-
         public async Task<FinishedProductIssue> Update(string finishedProductIssueId, FinishedProductIssue finishedProductIssue)
         {
             var existingItem = await _context.finishedProductIssues.FindAsync(finishedProductIssueId);
@@ -49,13 +47,9 @@
             }
 
             // Update the item
-            existingItem.FinishedProductIssueId = finishedProductIssue.FinishedProductIssueId;
-            existingItem.Receiver = finishedProductIssue.Receiver;
-            existingItem.Timestamp = finishedProductIssue.Timestamp;
-            existingItem.Employee = finishedProductIssue.Employee;
-            existingItem.Entries = finishedProductIssue.Entries;
-            existingItem.EmployeeId = finishedProductIssue.EmployeeId;
+            existingItem.UpdateFinishedProductIssue(finishedProductIssue.Receiver, finishedProductIssue.Timestamp, finishedProductIssue.Employee, finishedProductIssue.Entries);
 
+            await _context.SaveChangesAsync();
 
             return existingItem;
         }
@@ -74,10 +68,6 @@
 
             return finishedProductIssueEntryList;
         }
-
-
-
-
 
     }
 }

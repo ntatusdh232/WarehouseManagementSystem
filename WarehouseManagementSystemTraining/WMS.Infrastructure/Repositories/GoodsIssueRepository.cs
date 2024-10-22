@@ -1,13 +1,4 @@
-﻿using DocumentFormat.OpenXml.ExtendedProperties;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WMS.Domain.AggregateModels.FinishedProductAggregate;
-using WMS.Domain.AggregateModels.GoodsIssueAggregate;
-
-namespace WMS.Infrastructure.Repositories
+﻿namespace WMS.Infrastructure.Repositories
 {
     internal class GoodsIssueRepository : BaseRepository, IGoodsIssueRepository
     {

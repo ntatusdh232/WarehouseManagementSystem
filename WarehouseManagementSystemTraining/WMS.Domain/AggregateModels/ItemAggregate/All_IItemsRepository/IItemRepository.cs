@@ -2,9 +2,9 @@
 {
     public interface IItemRepository : IRepository<ItemList>
     {
-        Task<ItemList> Add(ItemList item);
+        Task<Item> Add(Item item);
         //Task<Item?> GetItemByEntityId(string entityId);
-        Task<ItemList?> GetItemById(string itemId);
+        Task<IEnumerable<Item>> GetItemById(string itemId);
         Task<IEnumerable<Item>> GetItemsByItemClass(string itemClassId);
         Task<ItemList> Update(ItemList item);
 

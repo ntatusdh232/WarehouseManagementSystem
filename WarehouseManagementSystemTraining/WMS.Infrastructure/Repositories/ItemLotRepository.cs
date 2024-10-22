@@ -1,13 +1,4 @@
-﻿using DocumentFormat.OpenXml.Spreadsheet;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WMS.Domain.AggregateModels.InventoryLogEntryAggregate;
-using WMS.Domain.AggregateModels.ItemAggregate;
-
-namespace WMS.Infrastructure.Repositories
+﻿namespace WMS.Infrastructure.Repositories
 {
     internal class ItemLotRepository : BaseRepository, IItemLotRepository
     {
@@ -29,7 +20,6 @@ namespace WMS.Infrastructure.Repositories
 
         public async Task<IEnumerable<ItemLot>> AddLots(IEnumerable<ItemLot> itemLots)
         {
-            // Kiểm tra xem có ItemLot nào đã tồn tại không
             var existingIds = await _context.itemsLot
                                              .Where(lot => itemLots.Select(i => i.LotId).Contains(lot.LotId))
                                              .Select(lot => lot.LotId)
@@ -39,14 +29,11 @@ namespace WMS.Infrastructure.Repositories
             {
                 throw new ArgumentException($"ItemLots with IDs {string.Join(", ", existingIds)} already exist.");
             }
-
-            // Thêm các đối tượng ItemLot mới vào DbSet
             await _context.itemsLot.AddRangeAsync(itemLots);
 
-            // Lưu thay đổi vào cơ sở dữ liệu
             await _context.SaveChangesAsync();
 
-            return itemLots; // Trả về danh sách ItemLot đã được thêm
+            return itemLots;
         }
 
         public async Task DeleteLot(string lotId)
@@ -115,34 +102,30 @@ namespace WMS.Infrastructure.Repositories
 
             public async Task<IEnumerable<ItemLot>> UpdateLots(IEnumerable<ItemLot> updatedItemLots)
             {
-                // Lấy danh sách các ID của ItemLot cần cập nhật
+
                 var lotIds = updatedItemLots.Select(lot => lot.LotId).ToList();
 
-                // Tìm tất cả các bản ghi ItemLot có lotId trong cơ sở dữ liệu
                 var existingLots = await _context.itemsLot
                                                   .Where(lot => lotIds.Contains(lot.LotId))
                                                   .ToListAsync();
 
-                // Tạo danh sách các bản ghi không tìm thấy
+
                 var notFoundIds = lotIds.Except(existingLots.Select(lot => lot.LotId)).ToList();
 
-                // Nếu có bất kỳ bản ghi nào không tìm thấy, ném ra ngoại lệ
                 if (notFoundIds.Any())
                 {
                     throw new ArgumentException($"ItemLots with IDs {string.Join(", ", notFoundIds)} not found.");
                 }
 
-                // Cập nhật các thuộc tính của các bản ghi
                 foreach (var existingLot in existingLots)
                 {
                     var updatedLot = updatedItemLots.Single(lot => lot.LotId == existingLot.LotId);
                     existingLot.Update(updatedLot.Quantity, updatedLot.Timestamp, updatedLot.ProductionDate, updatedLot.ExpirationDate);
                 }
 
-                // Lưu thay đổi vào cơ sở dữ liệu
                 await _context.SaveChangesAsync();
 
-                return existingLots; // Trả về danh sách ItemLot đã được cập nhật
+                return existingLots; 
             }
         }
     }

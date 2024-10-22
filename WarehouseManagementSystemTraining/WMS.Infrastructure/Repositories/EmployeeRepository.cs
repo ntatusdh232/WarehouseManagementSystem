@@ -48,27 +48,26 @@
 
         public async Task<EmployeeList> Add(EmployeeList employee)
         {
-            // Nếu EmployeeId chưa được cung cấp, tự động tạo mới
             var employeeId = string.IsNullOrEmpty(employee.EmployeeId)
                 ? Guid.NewGuid().ToString()
                 : employee.EmployeeId;
 
-            // Tạo đối tượng Employee mới từ thông tin nhận được
+ 
             var newEmployee = new Employee
             {
                 EmployeeId = employeeId,
                 EmployeeName = employee.EmployeeName,
             };
 
-            await _context.employees.AddAsync(newEmployee); // Thêm Employee vào DbContext
-            await _context.SaveChangesAsync(); // Lưu thay đổi vào cơ sở dữ liệu
+            await _context.employees.AddAsync(newEmployee); 
+            await _context.SaveChangesAsync(); 
 
-            // Trả về EmployeeList sau khi thêm
+
             return new EmployeeList
             {
                 EmployeeId = newEmployee.EmployeeId,
                 EmployeeName = newEmployee.EmployeeName
-                // Thêm các thuộc tính khác nếu cần
+
             };
         }
 
@@ -145,18 +144,17 @@
             return worksheet;
         }
 
-        // thêm Employee vào Database
         public async Task<Employee> AddEmployee(Employee employee)
         {
             try
             {
-                _context.employees.Add(employee); // Thêm nhân viên vào DbSet
-                await _context.SaveChangesAsync(); // Lưu các thay đổi vào cơ sở dữ liệu
+                _context.employees.Add(employee); 
+                await _context.SaveChangesAsync(); 
                 return employee;
             }
             catch (Exception ex)
             {
-                // Xử lý lỗi nếu cần
+
                 throw new InvalidOperationException("Không thể thêm nhân viên vào cơ sở dữ liệu: " + ex.Message);
             }
         }

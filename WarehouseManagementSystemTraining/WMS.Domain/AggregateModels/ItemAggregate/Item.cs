@@ -17,7 +17,9 @@
 
         public void Update(string unit, double minimumStockLevel, decimal price)
         {
-
+            Unit = unit;
+            MinimumStockLevel = minimumStockLevel;
+            Price = price;
         }
     }
 

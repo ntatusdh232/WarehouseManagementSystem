@@ -38,7 +38,7 @@
         }
 
         [HttpPost("Add")]
-        public async Task<IActionResult> Add([FromBody] ItemList item)
+        public async Task<IActionResult> Add([FromBody] Item item)
         {
             if (item == null)
                 return BadRequest("Item data is required.");

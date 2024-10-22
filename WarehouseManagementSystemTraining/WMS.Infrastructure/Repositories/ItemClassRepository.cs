@@ -1,11 +1,4 @@
-﻿using DocumentFormat.OpenXml.ExtendedProperties;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WMS.Infrastructure.Repositories
+﻿namespace WMS.Infrastructure.Repositories
 {
     internal class ItemClassRepository : BaseRepository, IItemClassRepository
     {

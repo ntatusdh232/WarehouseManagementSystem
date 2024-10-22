@@ -1,4 +1,6 @@
-﻿namespace WMS.Infrastructure.Repositories
+﻿using DocumentFormat.OpenXml.InkML;
+
+namespace WMS.Infrastructure.Repositories
 {
     public class IsolatedItemLotRepository : BaseRepository, IIsolatedItemLotRepository
     {
@@ -36,15 +38,7 @@
                 throw new ArgumentException($"ItemLot with ID {lotId} is not isolated.");
             }
 
-            existingItem.LotId = itemLot.LotId;
-            existingItem.Quantity = itemLot.Quantity;
-            existingItem.Timestamp = itemLot.Timestamp;
-            existingItem.ProductionDate = itemLot.ProductionDate;
-            existingItem.ExpirationDate = itemLot.ExpirationDate;
-            existingItem.IsIsolated = itemLot.IsIsolated;
-            existingItem.Item = itemLot.Item;
-            existingItem.ItemId = itemLot.ItemId;
-            existingItem.Locations = itemLot.Locations;
+            existingItem.Update(itemLot.Quantity, itemLot.Timestamp, itemLot.ProductionDate, itemLot.ExpirationDate);
 
             await _context.SaveChangesAsync();
             return existingItem;

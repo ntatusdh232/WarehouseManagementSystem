@@ -1,4 +1,8 @@
-﻿namespace WMS.Infrastructure.Repositories
+﻿using System.Collections.Generic;
+using WMS.Domain.AggregateModels.ItemAggregate;
+using WMS.Domain.AggregateModels.WarehouseAggregate;
+
+namespace WMS.Infrastructure.Repositories
 {
     public class ItemLotLocationRepository : BaseRepository, IItemLotLocationRepository
     {
@@ -61,15 +65,12 @@
             {
                 throw new Exception("Location does not exist");
             }
-
             if (location == null)
             {
                 throw new Exception("Location is null");
             }
 
-            existingLocation.LocationId = location.LocationId;
-            existingLocation.ItemLots = location.ItemLots;
-            existingLocation.WarehouseId = location.WarehouseId;
+            existingLocation.LocationUpdate(location.LocationId, location.WarehouseId);
 
             await _context.SaveChangesAsync();
 

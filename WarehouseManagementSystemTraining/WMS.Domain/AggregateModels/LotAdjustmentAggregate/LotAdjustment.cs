@@ -13,7 +13,8 @@
         public string EmployeeId { get; set; }
         public void Update(double quantity, string purchaseOrderNumber) 
         {
-            
+            AfterQuantity = quantity;
+            Note = purchaseOrderNumber;
         }
         public void Confirm()
         {

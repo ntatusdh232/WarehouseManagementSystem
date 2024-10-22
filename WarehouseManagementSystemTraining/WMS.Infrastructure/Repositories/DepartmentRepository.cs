@@ -15,7 +15,6 @@
                 ? Guid.NewGuid().ToString()
                 : locationList.LocationId;
 
-            // Tạo đối tượng Location mới từ thông tin nhận được
             var newLocation = new Location
             {
                 LocationId = LocationId,
