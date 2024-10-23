@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WMS.Domain.AggregateModels.WarehouseAggregate;
-
-namespace WMS.Infrastructure.EntityConfigurations.WarehouseConfigurations
+﻿namespace WMS.Infrastructure.EntityConfigurations.WarehouseConfigurations
 {
     public class WarehouseEntityTypeConfiguration : IEntityTypeConfiguration<Warehouse>
     {
@@ -15,7 +8,7 @@ namespace WMS.Infrastructure.EntityConfigurations.WarehouseConfigurations
 
             builder.HasMany(w => w.Locations)
                    .WithOne()
-                   .HasForeignKey(w => w.WarehouseId)
+                   .IsRequired(false)
                    .OnDelete(DeleteBehavior.Cascade);
         }
     }

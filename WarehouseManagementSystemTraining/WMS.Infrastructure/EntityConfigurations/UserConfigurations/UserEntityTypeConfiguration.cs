@@ -22,7 +22,6 @@
                    .HasMaxLength(50)
                    .IsRequired();
 
-            // cấu hình one - one giữa User và UserAccount
             builder.HasOne(u => u.UserAccounts)
                    .WithOne(u => u.User)
                    .HasForeignKey<UserAccount>(a => a.UserUUID);

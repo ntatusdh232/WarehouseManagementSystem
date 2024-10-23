@@ -21,7 +21,7 @@
         }
 
         [HttpPost("Add")]
-        public async Task<IActionResult> Add([FromBody] LocatonList department)
+        public async Task<IActionResult> Add([FromBody] Location department)
         {
             if (department == null)
                 return BadRequest("Department data is required.");

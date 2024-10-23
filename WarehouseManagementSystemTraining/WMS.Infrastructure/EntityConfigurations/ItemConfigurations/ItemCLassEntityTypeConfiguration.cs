@@ -9,6 +9,7 @@
             builder.HasOne(t => t.Item)
                    .WithMany(t => t.ItemClasses)
                    .HasForeignKey(t => t.Itemid)
+                   .IsRequired(false)   
                    .OnDelete(DeleteBehavior.Restrict);
         }
 

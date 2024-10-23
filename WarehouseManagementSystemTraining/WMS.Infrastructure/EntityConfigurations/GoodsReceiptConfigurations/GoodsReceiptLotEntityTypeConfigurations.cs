@@ -6,23 +6,19 @@
         {
             builder.HasKey(g => g.GoodsReceiptLotId);
 
-            // Cấu hình mối quan hệ One-to-Many với Employee
             builder.HasOne(g => g.Employee)
-                   .WithMany()
-                   .HasForeignKey(g => g.EmployeeId)
+                   .WithOne()
+                   .HasForeignKey<GoodsReceiptLot>(g => g.EmployeeId)
                    .IsRequired(false);
 
-            // Cấu hình mối quan hệ One-to-Many với Item
             builder.HasOne(g => g.Item)
-                   .WithMany()
-                   .HasForeignKey(g => g.ItemId)
+                   .WithOne()
+                   .HasForeignKey<GoodsReceiptLot>(g => g.ItemId)
                    .IsRequired(false);
 
-            // Cấu hình mối quan hệ One-to-Many với GoodsReceiptSubLot
             builder.HasMany(g => g.Sublots)
                    .WithOne()
-                   .IsRequired()
-                   .HasForeignKey("GoodsReceiptLotId")
+                   .IsRequired(false)
                    .OnDelete(DeleteBehavior.Cascade);
         }
     }

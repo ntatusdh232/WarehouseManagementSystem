@@ -4,19 +4,12 @@
     {
         public string LocationId { get; set; }  
         public List<ItemLot> ItemLots { get; set; }
-        public string WarehouseId { get; set; }
 
-        public void LocationUpdate(string locationId, string warehouseId)
+        public void LocationUpdate(string locationId, List<ItemLot> itemLots)
         {
             LocationId = locationId;
-            WarehouseId = warehouseId;
+            ItemLots = itemLots;
         }
-    }
-
-    public class LocatonList 
-    {
-        public string LocationId { get; set; }
-        public string WarehouseId { get; set; }
     }
 
 }

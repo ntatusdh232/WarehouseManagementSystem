@@ -6,16 +6,14 @@
         {
             builder.HasKey(g => g.GoodsReceiptId);
 
-            // Cấu hình mối quan hệ One-to-Many với Employee
             builder.HasOne(g => g.Employee)
-                   .WithMany()
-                   .HasForeignKey(g => g.EmployeeId)
+                   .WithOne()
+                   .HasForeignKey<GoodsReceipt>(g => g.EmployeeId)
                    .IsRequired(false);
 
-            // Cấu hình mối quan hệ One-to-Many với GoodsReceiptEntry
             builder.HasMany(g => g.Lots)
                    .WithOne()
-                   .HasForeignKey("GoodsReceiptId")
+                   .IsRequired(false)
                    .OnDelete(DeleteBehavior.Cascade);
         }
     }

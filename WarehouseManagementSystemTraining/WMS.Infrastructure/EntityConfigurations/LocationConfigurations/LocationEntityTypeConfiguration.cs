@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WMS.Domain.AggregateModels.LocationAggregate;
-
-namespace WMS.Infrastructure.EntityConfigurations.LocationConfigurations
+﻿namespace WMS.Infrastructure.EntityConfigurations.LocationConfigurations
 {
     public class LocationEntityTypeConfiguration : IEntityTypeConfiguration<Location>
     {

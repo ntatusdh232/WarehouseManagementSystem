@@ -7,15 +7,14 @@
             builder.HasKey(g => g.GoodsIssueId);
 
             builder.HasOne(g => g.Employee)
-               .WithMany()
-               .HasForeignKey(g => g.EmployeeId)
-               .IsRequired(false);
+                   .WithOne()
+                   .HasForeignKey<GoodsIssue>(g => g.EmployeeId)
+                   .IsRequired(false);
 
 
             builder.HasMany(g => g.Entries)
                    .WithOne()
-                   .IsRequired()
-                   .HasForeignKey("GoodsIssueId")
+                   .IsRequired(false)
                    .OnDelete(DeleteBehavior.Cascade);
 
         }
