@@ -7,13 +7,11 @@
             builder.HasKey(l => l.LotId);
 
             builder.HasOne(l => l.Employee)
-                   .WithOne()
-                   .HasForeignKey<LotAdjustment>(g => g.EmployeeId)
+                   .WithMany()
                    .IsRequired(false);
 
             builder.HasOne(f => f.Item)
-                   .WithOne()
-                   .HasForeignKey<LotAdjustment>(g => g.ItemId)
+                   .WithMany()
                    .IsRequired(false);
         }
     }

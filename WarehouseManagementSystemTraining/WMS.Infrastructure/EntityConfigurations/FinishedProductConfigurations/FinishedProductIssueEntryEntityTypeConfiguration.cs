@@ -6,10 +6,8 @@
         {
             builder.HasKey(t => t.FinishedProductIssueEntryId);
 
-            // One-to-Many relationship with Item
             builder.HasOne(t => t.Item)
-                   .WithOne()
-                   .HasForeignKey<FinishedProductIssueEntry>(g => g.ItemId)
+                   .WithMany()
                    .IsRequired(false);
         }
     }

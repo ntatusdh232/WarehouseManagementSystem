@@ -7,8 +7,7 @@
             builder.HasKey(t => t.FinishedProductReceiptEntryId);
 
             builder.HasOne(t => t.Item)
-                   .WithOne()
-                   .HasForeignKey<FinishedProductReceiptEntry>(g => g.ItemId)
+                   .WithMany()
                    .IsRequired(false);
         }
     }

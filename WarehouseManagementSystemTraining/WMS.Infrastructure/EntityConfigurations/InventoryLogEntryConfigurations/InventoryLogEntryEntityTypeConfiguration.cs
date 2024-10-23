@@ -7,8 +7,7 @@
             builder.HasKey(t => t.ItemLotId);
 
             builder.HasOne(t => t.Item)
-                   .WithOne()
-                   .HasForeignKey<InventoryLogEntry>(g => g.ItemId)
+                   .WithMany()
                    .IsRequired(false);
         }
     }

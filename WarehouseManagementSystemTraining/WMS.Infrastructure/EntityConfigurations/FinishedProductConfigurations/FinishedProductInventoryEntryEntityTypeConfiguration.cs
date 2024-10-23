@@ -7,8 +7,7 @@
             builder.HasKey(f => f.FinishedProductInventoryId);
 
             builder.HasOne(f => f.Item)
-                   .WithOne()
-                   .HasForeignKey< FinishedProductInventory>(g => g.ItemId)
+                   .WithMany()
                    .IsRequired(false);
 
 

@@ -7,8 +7,7 @@
             builder.HasKey(f => f.FinishedProductIssueId);
 
             builder.HasOne(f => f.Employee)
-                   .WithOne()
-                   .HasForeignKey<FinishedProductIssue>(g => g.EmployeeId)
+                   .WithMany()
                    .IsRequired(false);
 
             builder.HasMany(f => f.Entries)

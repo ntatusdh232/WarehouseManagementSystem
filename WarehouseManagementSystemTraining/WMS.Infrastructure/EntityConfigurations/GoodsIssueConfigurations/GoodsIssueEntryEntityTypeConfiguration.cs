@@ -7,8 +7,7 @@
             builder.HasKey(f => f.GoodsIssueEntryId);
 
             builder.HasOne(f => f.Item)
-                   .WithOne()
-                   .HasForeignKey<GoodsIssueEntry>(g => g.ItemId)
+                   .WithMany()
                    .IsRequired(false);
 
             builder.HasMany(f => f.Lots)

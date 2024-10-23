@@ -8,7 +8,7 @@
 
             builder.HasMany(l => l.ItemLots)
                    .WithMany(l => l.Locations)
-                   .UsingEntity(l => l.ToTable("LotLocations")); // quan he nhieu nhieu giua ItemLot va Location can bảng trung gian
+                   .UsingEntity(l => l.ToTable("LotLocations")); 
 
 
         }

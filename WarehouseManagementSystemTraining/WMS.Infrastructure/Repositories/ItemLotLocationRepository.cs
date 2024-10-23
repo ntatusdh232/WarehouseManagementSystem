@@ -70,7 +70,7 @@ namespace WMS.Infrastructure.Repositories
                 throw new Exception("Location is null");
             }
 
-            existingLocation.LocationUpdate(location.LocationId, location.WarehouseId);
+            existingLocation.LocationUpdate(location.LocationId, location.ItemLots);
 
             await _context.SaveChangesAsync();
 

@@ -9,7 +9,7 @@
             return await _context.locations.ToListAsync();
         }
 
-        public async Task<LocatonList> Add(LocatonList locationList)
+        public async Task<Location> Add(Location locationList)
         {
             var LocationId = string.IsNullOrEmpty(locationList.LocationId)
                 ? Guid.NewGuid().ToString()
@@ -18,7 +18,7 @@
             var newLocation = new Location
             {
                 LocationId = LocationId,
-                WarehouseId = locationList.WarehouseId
+                ItemLots = locationList.ItemLots??new List<ItemLot>()
             };
 
             _context.locations.Add(newLocation);
