@@ -64,11 +64,11 @@
 
  
             var newEmployee = new Employee
-            {
-                EmployeeId = employeeId,
-                EmployeeName = employee.EmployeeName,
-                GoodsReceiptLot = null
-            };
+            (
+                employeeId,
+                employee.EmployeeName,
+                null
+            );
 
             await _context.employees.AddAsync(newEmployee); 
             await _context.SaveChangesAsync(); 

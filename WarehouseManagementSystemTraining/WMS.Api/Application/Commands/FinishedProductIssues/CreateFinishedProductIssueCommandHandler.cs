@@ -16,7 +16,7 @@
             {
                 FinishedProductIssueId = request.FinishedProductIssueId,
                 Receiver = request.Receiver,
-                Employee = new Employee { EmployeeId = request.EmployeeId },
+                Employee = new Employee ( request.EmployeeId ),
                 Entries = request.Entries.Select(e => new FinishedProductIssueEntry 
                 {
                     FinishedProductIssueEntryId = e.FinishedProductIssueEntryId,

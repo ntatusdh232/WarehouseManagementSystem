@@ -17,7 +17,7 @@ namespace WMS.Api.Application.Commands.GoodsIssues
             {
                 GoodsIssueId = request.GoodsIssueId,
                 Receiver = request.Receiver,
-                Employee = new Employee { EmployeeId = request.EmployeeId},
+                Employee = new Employee ( request.EmployeeId),
                 Entries = request.Entries.Select(e => new GoodsIssueEntry
                 {
                     GoodsIssueEntryId = e.GoodsIssueEntryId,

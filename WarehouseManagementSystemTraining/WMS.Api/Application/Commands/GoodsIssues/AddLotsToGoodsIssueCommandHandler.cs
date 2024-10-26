@@ -28,9 +28,9 @@ namespace WMS.Api.Application.Commands.GoodsIssues
                 EmployeeId = lot.EmployeeId,
                 Sublots = lot.Sublots,
                 Employee = new Employee
-                {
-                    EmployeeId = lot.EmployeeId,
-                },
+                (
+                    lot.EmployeeId
+                ),
             }).ToList();
 
             foreach (var entry in goodsIssue.Entries)
