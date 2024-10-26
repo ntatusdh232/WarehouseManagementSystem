@@ -8,8 +8,13 @@ D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\Import
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\ImportData.pdb
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\Azure.Core.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\Azure.Identity.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\ClosedXML.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\ClosedXML.Parser.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\ExcelDataReader.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\ExcelDataReader.DataSet.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\ExcelNumberFormat.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
@@ -35,10 +40,13 @@ D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\Import
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\RBush.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\SixLabors.Fonts.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\System.Data.SqlClient.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\System.Drawing.Common.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\System.IO.Packaging.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\System.Memory.Data.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\System.Runtime.Caching.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week11\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll

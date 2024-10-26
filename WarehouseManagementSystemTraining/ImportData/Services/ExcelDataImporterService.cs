@@ -1,8 +1,4 @@
-﻿using ImportData.Repositories;
-using ImportData.Utilities;
-using System.Data;
-using System.IO;
-using ExcelDataReader;
+﻿using WMS.Domain.AggregateModels.ItemAggregate;
 
 namespace ImportData.Services
 {
@@ -19,7 +15,7 @@ namespace ImportData.Services
 
         public void ImportData(string filePath)
         {
-            DataTable excelData = ReadExcelFile(filePath);
+            var excelData = ReadExcelFile(filePath);
             InsertDataIntoSqlServer(excelData);
         }
 
@@ -32,7 +28,7 @@ namespace ImportData.Services
             {
                 return reader.AsDataSet(new ExcelDataSetConfiguration()
                 {
-                    ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }
+                    ConfigureDataTable = (_) => new ExcelDataTableConfiguration { UseHeaderRow = true }
                 }).Tables[0];
             }
         }
@@ -45,59 +41,54 @@ namespace ImportData.Services
                 return;
             }
 
+            using var transaction = _context.Database.BeginTransaction();
+            try
+            {
+                ProcessDataRows(dataTable);
+                transaction.Commit();
+                Console.WriteLine("Dữ liệu đã được nhập thành công.");
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                Console.WriteLine($"Lỗi khi nhập dữ liệu: {ex.Message}");
+            }
+        }
+
+        private void ProcessDataRows(DataTable dataTable)
+        {
             int batchSize = 100;
             int processedRecords = 0;
 
-            using (var transaction = _context.Database.BeginTransaction())
+            foreach (DataRow row in dataTable.Rows)
             {
-                try
+                if (TryProcessRow(row))
                 {
-                    foreach (DataRow row in dataTable.Rows)
-                    {
-                        string itemId = row["ItemId"]?.ToString().Trim();
-                        if (string.IsNullOrWhiteSpace(itemId))
-                        {
-                            Console.WriteLine("Mặt hàng không có ItemId, bỏ qua hàng này.");
-                            continue;
-                        }
-
-                        var item = _itemRepository.GetItemById(itemId);
-                        if (item != null)
-                        {
-                            UpdateItem(item, row);
-                            Console.WriteLine($"Cập nhật mặt hàng: {itemId}");
-                        }
-                        else
-                        {
-                            item = CreateNewItem(row);
-                            _itemRepository.AddItem(item);
-                            Console.WriteLine($"Thêm mới mặt hàng: {itemId}");
-                        }
-
-                        processedRecords++;
-
-                        if (processedRecords % batchSize == 0)
-                        {
-                            _itemRepository.SaveChanges();
-                        }
-                    }
-
-                    if (processedRecords % batchSize != 0)
-                    {
-                        _itemRepository.SaveChanges();
-                    }
-
-                    // Commit the transaction
-                    transaction.Commit();
-                    Console.WriteLine($"Đã nhập {processedRecords} mặt hàng vào cơ sở dữ liệu.");
-                }
-                catch (Exception ex)
-                {
-                    // Rollback the transaction if any error occurs
-                    transaction.Rollback();
-                    Console.WriteLine($"Lỗi khi nhập dữ liệu: {ex.Message}");
+                    processedRecords++;
+                    if (processedRecords % batchSize == 0) _itemRepository.SaveChanges();
                 }
             }
+
+            if (processedRecords % batchSize != 0) _itemRepository.SaveChanges();
+        }
+
+        private bool TryProcessRow(DataRow row)
+        {
+            string itemId = row["ItemId"]?.ToString()?.Trim();
+            if (string.IsNullOrWhiteSpace(itemId)) return false;
+
+            var item = _itemRepository.GetItemById(itemId);
+            if (item != null)
+            {
+                UpdateItem(item, row);
+            }
+            else
+            {
+                item = CreateNewItem(row);
+                _itemRepository.AddItem(item);
+            }
+
+            return true;
         }
 
         private void UpdateItem(Item existingItem, DataRow row)
@@ -109,6 +100,7 @@ namespace ImportData.Services
             existingItem.PacketSize = DataParser.GetFloatValue(row["PacketSize"]);
             existingItem.PacketUnit = DataParser.GetPacketUnitValue(row["PacketUnit"]);
             existingItem.ItemType = row["ItemType"]?.ToString();
+            existingItem.ItemClassId = Guid.NewGuid().ToString();
 
             _itemRepository.UpdateItem(existingItem);
         }
@@ -124,7 +116,8 @@ namespace ImportData.Services
                 Price = DataParser.GetDecimalValue(row["Price"]),
                 PacketSize = DataParser.GetFloatValue(row["PacketSize"]),
                 PacketUnit = DataParser.GetPacketUnitValue(row["PacketUnit"]),
-                ItemType = row["ItemType"]?.ToString()
+                ItemType = row["ItemType"]?.ToString(),
+                ItemClassId = Guid.NewGuid().ToString()
             };
         }
     }
