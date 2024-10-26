@@ -16,10 +16,10 @@
 
             var issueEntries = request.Entries.Select(entry => 
             new FinishedProductIssueEntry
-            {
-                FinishedProductIssueEntryId = entry.FinishedProductIssueEntryId, PurchaseOrderNumber = entry.PurchaseOrderNumber, Quantity = entry.Quantity,
-                Note = entry.Note, Item = entry.Item, ItemId = entry.ItemId, FinishedProductIssueId = entry.FinishedProductIssueId
-            }
+            (
+                entry.FinishedProductIssueEntryId, entry.PurchaseOrderNumber, entry.Quantity,
+                entry.Note, entry.Item, entry.ItemId, entry.FinishedProductIssueId
+            )
             ).ToList();
 
             foreach (var entry in issueEntries)

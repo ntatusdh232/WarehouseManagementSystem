@@ -13,22 +13,23 @@
         {
 
             var finishedProductIssue = new FinishedProductIssue
-            {
-                FinishedProductIssueId = request.FinishedProductIssueId,
-                Receiver = request.Receiver,
-                Employee = new Employee ( request.EmployeeId ),
-                Entries = request.Entries.Select(e => new FinishedProductIssueEntry 
-                {
-                    FinishedProductIssueEntryId = e.FinishedProductIssueEntryId,
-                    PurchaseOrderNumber = e.PurchaseOrderNumber,
-                    Quantity = e.Quantity,
-                    Note = e.Note,
-                    Item = e.Item,
-                    ItemId = e.ItemId,
-                    FinishedProductIssueId = request.FinishedProductIssueId
-                }).ToList(),
-                EmployeeId = request.EmployeeId
-            };
+            (
+                request.FinishedProductIssueId,
+                request.Receiver,
+                DateTime.Now,
+                new Employee ( request.EmployeeId ),
+                request.Entries.Select(e => new FinishedProductIssueEntry 
+                (
+                    e.FinishedProductIssueEntryId,
+                    e.PurchaseOrderNumber,
+                    e.Quantity,
+                    e.Note,
+                    e.Item,
+                    e.ItemId,
+                    request.FinishedProductIssueId
+                )).ToList(),
+                request.EmployeeId
+            );
 
 
             await _finishedProductIssueRepository.AddAsync(finishedProductIssue, cancellationToken);
