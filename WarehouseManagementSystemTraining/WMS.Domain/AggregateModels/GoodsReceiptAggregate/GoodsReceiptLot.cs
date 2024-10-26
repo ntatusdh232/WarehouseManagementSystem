@@ -14,6 +14,29 @@
         public virtual Item Item { get; set; }
         public List<GoodsReceiptSublot> Sublots { get; set; }
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        private GoodsReceiptLot() { }
+
+        public GoodsReceiptLot(string goodsReceiptLotId, double quantity, DateTime? productionDate, DateTime? expirationDate, 
+                               string? note, string employeeId, string itemId, string goodsReceiptId, Employee employee, 
+                               Item item, List<GoodsReceiptSublot> sublots)
+        {
+            GoodsReceiptLotId = goodsReceiptLotId;
+            Quantity = quantity;
+            ProductionDate = productionDate;
+            ExpirationDate = expirationDate;
+            Note = note;
+            EmployeeId = employeeId;
+            ItemId = itemId;
+            GoodsReceiptId = goodsReceiptId;
+            Employee = employee;
+            Item = item;
+            Sublots = sublots;
+        }
+
+
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+
         public void Update(double quantity, double sublotSize, string? purchaseOrderNumber,
                            string locationId, DateTime productionDate, DateTime expirationDate)
         {

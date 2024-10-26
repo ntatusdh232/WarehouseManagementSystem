@@ -1,4 +1,6 @@
-﻿namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
+﻿using WMS.Domain.AggregateModels.GoodsIssueAggregate;
+
+namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
 {
     public class GoodsReceipt : IAggregateRoot
     {
@@ -8,7 +10,24 @@
         public Employee Employee { get; set; }
         public string EmployeeId { get; set; }
         public List<GoodsReceiptLot> Lots { get; set; }
-        
+
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        private GoodsReceipt() { }
+
+        public GoodsReceipt(string goodsReceiptId, string supplier, DateTime timestamp, 
+                            Employee employee, string employeeId, List<GoodsReceiptLot> lots)
+        {
+            GoodsReceiptId = goodsReceiptId;
+            Supplier = supplier;
+            Timestamp = timestamp;
+            Employee = employee;
+            EmployeeId = employeeId;
+            Lots = lots;
+        }
+
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+
+
 
 
         public void Update(string lotId, double quantity, double sublotSize, 
