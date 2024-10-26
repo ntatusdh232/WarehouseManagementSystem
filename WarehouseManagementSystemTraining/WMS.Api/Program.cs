@@ -10,13 +10,12 @@ namespace WMS.Api
 
             // Add services to the container.
 
-
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<ApplicationDbContext>(options => options
                             .UseSqlServer(connectionString, b => b.MigrationsAssembly("WMS.Api")));
 
             // Register the unit of work with scoped lifetime
-            builder.Services.AddScoped<IUnitOfWork>(provider => provider.GetService<ApplicationDbContext>());
+            builder.Services.AddScoped<IUnitOfWork, ApplicationDbContext>();
 
             // Register the repositories with scoped lifetime
             builder.Services.AddScoped<IItemRepository, ItemRepository>();
