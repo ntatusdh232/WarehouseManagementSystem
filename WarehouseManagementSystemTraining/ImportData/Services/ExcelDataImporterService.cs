@@ -108,17 +108,17 @@ namespace ImportData.Services
         private Item CreateNewItem(DataRow row)
         {
             return new Item
-            {
-                ItemId = row["ItemId"]?.ToString(),
-                ItemName = row["ItemName"]?.ToString(),
-                Unit = row["Unit"]?.ToString(),
-                MinimumStockLevel = DataParser.GetIntValue(row["MinimumStockLevel"]),
-                Price = DataParser.GetDecimalValue(row["Price"]),
-                PacketSize = DataParser.GetFloatValue(row["PacketSize"]),
-                PacketUnit = DataParser.GetPacketUnitValue(row["PacketUnit"]),
-                ItemType = row["ItemType"]?.ToString(),
-                ItemClassId = Guid.NewGuid().ToString()
-            };
+            (
+                row["ItemType"]?.ToString(),
+                row["ItemId"]?.ToString(),
+                row["ItemName"]?.ToString(),
+                row["Unit"]?.ToString(),
+                DataParser.GetIntValue(row["MinimumStockLevel"]),
+                DataParser.GetDecimalValue(row["Price"]),
+                DataParser.GetFloatValue(row["PacketSize"]),
+                DataParser.GetPacketUnitValue(row["PacketUnit"]),
+                Guid.NewGuid().ToString()
+            );
         }
     }
 }

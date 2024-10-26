@@ -32,16 +32,16 @@ namespace WMS.Api.Application.Commands.Items
                 }
 
                 var newItem = new Item
-                {
-                    ItemId = itemRequest.ItemId,
-                    ItemName = itemRequest.ItemName,
-                    Unit = itemRequest.Unit,
-                    MinimumStockLevel = itemRequest.MinimumStockLevel,
-                    Price = itemRequest.Price,
-                    PacketSize = itemRequest.PacketSize,
-                    PacketUnit = itemRequest.PacketUnit,
-                    ItemClassId = itemRequest.ItemClassId
-                };
+                (
+                    itemRequest.ItemId,
+                    itemRequest.ItemName,
+                    itemRequest.Unit,
+                    itemRequest.MinimumStockLevel,
+                    itemRequest.Price,
+                    itemRequest.PacketSize,
+                    itemRequest.PacketUnit,
+                    itemRequest.ItemClassId
+                );
 
                 await _itemRepository.Add(newItem, cancellationToken);
             };

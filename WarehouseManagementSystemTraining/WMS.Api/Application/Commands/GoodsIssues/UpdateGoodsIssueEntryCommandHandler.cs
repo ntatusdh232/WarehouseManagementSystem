@@ -37,17 +37,17 @@ namespace WMS.Api.Application.Commands.GoodsIssues
         private GoodsIssueEntry CreateNewGoodsIssueEntry(GoodsIssueEntry existingEntry, UpdateGoodsIssueEntryViewModel entry, Item item)
         {
             var newitem = new Item
-            {
-                ItemType = item.ItemType,
-                ItemId = item.ItemId,
-                ItemName = item.ItemName,
-                Unit = entry.Unit,
-                MinimumStockLevel = item.MinimumStockLevel,
-                Price = item.Price,
-                PacketSize = item.PacketSize,
-                PacketUnit = item.PacketUnit,
-                ItemClasses = item.ItemClasses
-            };
+            (
+                item.ItemType,
+                item.ItemId,
+                item.ItemName,
+                entry.Unit,
+                item.MinimumStockLevel,
+                item.Price,
+                item.PacketSize,
+                item.PacketUnit,
+                item.ItemClassId
+            );
 
             return new GoodsIssueEntry
             (

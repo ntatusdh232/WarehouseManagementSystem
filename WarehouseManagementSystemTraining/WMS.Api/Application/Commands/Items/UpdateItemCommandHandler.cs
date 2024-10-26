@@ -27,21 +27,21 @@ namespace WMS.Api.Application.Commands.Items
             }
 
             var itemclass = new ItemClass
-            {
-                ItemClassId = request.ItemClassId
-            };
+            (
+                request.ItemClassId
+            );
 
             var newItem = new Item
-            {
-                ItemId = request.ItemId,
-                ItemName = request.ItemName,
-                Unit = request.Unit,
-                MinimumStockLevel = request.MinimumStockLevel,
-                Price = request.Price,
-                PacketSize = request.PacketSize,
-                PacketUnit = request.PacketUnit,
-                ItemClassId = request.ItemClassId,
-            };
+            (
+                request.ItemId,
+                request.ItemName,
+                request.Unit,
+                request.MinimumStockLevel,
+                request.Price,
+                request.PacketSize,
+                request.PacketUnit,
+                request.ItemClassId
+            );
 
 
 

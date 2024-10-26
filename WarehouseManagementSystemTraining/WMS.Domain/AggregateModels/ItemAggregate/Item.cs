@@ -1,4 +1,8 @@
-﻿namespace WMS.Domain.AggregateModels.ItemAggregate
+﻿using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using DocumentFormat.OpenXml.Spreadsheet;
+using DocumentFormat.OpenXml.Wordprocessing;
+
+namespace WMS.Domain.AggregateModels.ItemAggregate
 {
     public class Item : IAggregateRoot
     {
@@ -12,9 +16,61 @@
         public string? PacketUnit { get; set; }
         public string ItemClassId { get; set; } 
         public ICollection<ItemClass> ItemClasses { get; set; }
+        public virtual GoodsReceiptLot GoodsReceiptLot { get; set; }
 
 
-        public virtual GoodsReceiptLot GoodsReceiptLot { get; set; } 
+#pragma warning disable CS8618
+        private Item() { }
+
+        public Item(string itemType, string itemId, string itemName, string unit, double minimumStockLevel, 
+                    decimal price, double? packetSize, string? packetUnit, string itemClassId, ICollection<ItemClass> itemClasses, 
+                    GoodsReceiptLot goodsReceiptLot)
+        {
+            ItemType = itemType;
+            ItemId = itemId;
+            ItemName = itemName;
+            Unit = unit;
+            MinimumStockLevel = minimumStockLevel;
+            Price = price;
+            PacketSize = packetSize;
+            PacketUnit = packetUnit;
+            ItemClassId = itemClassId;
+            ItemClasses = itemClasses;
+            GoodsReceiptLot = goodsReceiptLot;
+        }
+
+        public Item(string itemType, string itemId, string itemName, string unit, double minimumStockLevel, 
+                    decimal price, double? packetSize, string? packetUnit, string itemClassId)
+        {
+            ItemType = itemType;
+            ItemId = itemId;
+            ItemName = itemName;
+            Unit = unit;
+            MinimumStockLevel = minimumStockLevel;
+            Price = price;
+            PacketSize = packetSize;
+            PacketUnit = packetUnit;
+            ItemClassId = itemClassId;
+        }
+
+        public Item(string itemId, string itemName, string unit, double minimumStockLevel,
+            decimal price, double? packetSize, string? packetUnit, string itemClassId)
+        {
+            ItemId = itemId;
+            ItemName = itemName;
+            Unit = unit;
+            MinimumStockLevel = minimumStockLevel;
+            Price = price;
+            PacketSize = packetSize;
+            PacketUnit = packetUnit;
+            ItemClassId = itemClassId;
+        }
+
+
+
+
+
+#pragma warning restore CS8618
 
         public void Update(string unit, double minimumStockLevel, decimal price)
         {
