@@ -22,6 +22,22 @@
             MinimumStockLevel = minimumStockLevel;
             Price = price;
         }
+
+        public void Update(Item item, string itemClassId)
+        {
+            ItemType = item.ItemType;
+            ItemId = item.ItemId;
+            ItemName = item.ItemName;
+            Unit = item.Unit;
+            MinimumStockLevel = item.MinimumStockLevel;
+            Price = item.Price;
+            PacketSize = item.PacketSize;
+            PacketUnit = item.PacketUnit;
+            ItemClassId = itemClassId;
+
+        }
+
+
     }
 
     public class ItemList : IAggregateRoot

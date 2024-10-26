@@ -65,9 +65,9 @@
             await _context.SaveChangesAsync();
         }
 
-        public async Task<InventoryLogEntry> Update(string itemLotId, InventoryLogEntry inventoryLogEntry)
+        public async Task<InventoryLogEntry> Update(InventoryLogEntry inventoryLogEntry)
         {
-            var existingLogEntry = await _context.inventoryLogEntries.FindAsync(itemLotId);
+            var existingLogEntry = await _context.inventoryLogEntries.FindAsync(inventoryLogEntry.ItemLotId);
             if (existingLogEntry is null)
             {
                 throw new ArgumentException($"LogEntry does not exists.");

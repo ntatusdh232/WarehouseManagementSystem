@@ -24,18 +24,18 @@ namespace WMS.Infrastructure.Repositories
 
         }
 
-        public async Task<ItemLot> Update(string lotId, ItemLot itemLot)
+        public async Task<ItemLot> Update(ItemLot itemLot)
         {
-            var existingItem = await _context.itemsLot.FindAsync(lotId);
+            var existingItem = await _context.itemsLot.FindAsync(itemLot.LotId);
 
             if (existingItem == null)
             {
-                throw new ArgumentException($"ItemLot with ID {lotId} does not exist.");
+                throw new ArgumentException($"ItemLot with ID {itemLot.LotId} does not exist.");
             }
 
             if (existingItem.IsIsolated == false)
             {
-                throw new ArgumentException($"ItemLot with ID {lotId} is not isolated.");
+                throw new ArgumentException($"ItemLot with ID {itemLot.LotId} is not isolated.");
             }
 
             existingItem.Update(itemLot.Quantity, itemLot.Timestamp, itemLot.ProductionDate, itemLot.ExpirationDate);

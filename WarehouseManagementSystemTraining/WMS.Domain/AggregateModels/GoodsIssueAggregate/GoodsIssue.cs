@@ -20,6 +20,36 @@
             Receiver = receiver;
             Timestamp = timestamp;
         }
+
+        public void Update(GoodsIssue goodsIssue)
+        {
+            GoodsIssueId = goodsIssue.GoodsIssueId;
+            Receiver = goodsIssue.Receiver;
+            Timestamp = goodsIssue.Timestamp;
+            Employee = goodsIssue.Employee;
+            Entries = goodsIssue.Entries;
+            EmployeeId = goodsIssue.EmployeeId;
+
+        }
+
+        public void MergeEntries(List<GoodsIssueEntry> newEntries)
+        {
+            foreach (var newEntry in newEntries)
+            {
+                var existingEntry = Entries.FirstOrDefault(e => e.ItemId == newEntry.ItemId);
+
+                if (existingEntry != null)
+                {
+                    existingEntry.RequestedQuantity += newEntry.RequestedQuantity;
+                    existingEntry.Item.Unit = newEntry.Item.Unit;
+                }
+                else
+                {
+                    Entries.Add(newEntry);
+                }
+            }
+        }
+
         public void AddEntry(GoodsIssueEntry goodsIssueEntry)
         {
 

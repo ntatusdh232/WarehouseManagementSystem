@@ -2,7 +2,7 @@
 {
     public class UserAccountRepository : BaseRepository, IUserAccountRepository
     {
-        public UserAccountRepository(ApplicationDbContext context) : base(context) { } 
+        public UserAccountRepository(ApplicationDbContext context) : base(context) { }
 
         public bool CheckUser(UserAccountList model)
         {
@@ -33,7 +33,7 @@
                 Account = model.Account,
                 Password = model.Password,
                 UserUUID = newUser.UserUUID // Liên kết với User
-            }; 
+            };
 
             return userAccount;
         }

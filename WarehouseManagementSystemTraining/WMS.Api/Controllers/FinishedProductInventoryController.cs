@@ -42,7 +42,7 @@
 
             try
             {
-                var updatedInventory = await _repository.Update(inventoryId, inventory);
+                var updatedInventory = await _repository.Update(inventory);
                 return Ok(updatedInventory);
             }
             catch (ArgumentException ex) { return BadRequest(ex.Message); }

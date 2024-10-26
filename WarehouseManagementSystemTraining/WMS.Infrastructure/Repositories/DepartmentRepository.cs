@@ -1,32 +1,56 @@
-﻿namespace WMS.Infrastructure.Repositories
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
+
+namespace WMS.Infrastructure.Repositories
 {
     public class DepartmentRepository : BaseRepository, IDepartmentRepository
     {
         public DepartmentRepository(ApplicationDbContext context) : base(context) { }
 
-        public async Task<IEnumerable<Location>> GetAllAsync()
+        public async Task<IEnumerable<Warehouse>> GetAllAsync()
         {
-            return await _context.locations.ToListAsync();
+            return await _context.warehouses.ToListAsync();
         }
 
-        public async Task<Location> Add(Location locationList)
+        public async Task Add(Warehouse request, CancellationToken cancellationToken)
         {
-            var LocationId = string.IsNullOrEmpty(locationList.LocationId)
-                ? Guid.NewGuid().ToString()
-                : locationList.LocationId;
-
-            var newLocation = new Location
+            if (request == null) 
             {
-                LocationId = LocationId,
-                ItemLots = locationList.ItemLots??new List<ItemLot>()
-            };
+                throw new ArgumentNullException(nameof(request));
+            }
 
-            _context.locations.Add(newLocation);
+            await _context.warehouses.AddAsync(request);
 
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(cancellationToken);
 
-            return locationList;
         }
+
+        public async Task<Warehouse> GetWarehouseById(string warehouseId)
+        {
+            var warehouse = await _context.warehouses.FindAsync(warehouseId);
+            if (warehouse == null)
+            {
+                throw new Exception($"Warehouse with {warehouseId} is not found");
+            }
+            else
+            {
+                return warehouse;
+            }
+        }
+
+        public async Task<Warehouse> AdDepartment(Warehouse request, CancellationToken cancellationToken)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(nameof(request));
+            }
+
+            await _context.warehouses.AddAsync(request);
+
+            await _context.SaveChangesAsync(cancellationToken);
+
+            return request;
+        }
+
 
 
     }

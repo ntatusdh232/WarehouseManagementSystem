@@ -70,7 +70,7 @@
                     return BadRequest("Invalid employee data or mismatched ID.");
                 }
 
-                var employee = await _employeeRepository.Update(employeeId, updatedEmployee);
+                var employee = await _employeeRepository.Update(updatedEmployee);
 
                 if (employee == null)
                 {

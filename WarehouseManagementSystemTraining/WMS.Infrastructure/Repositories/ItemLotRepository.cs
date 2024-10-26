@@ -88,9 +88,9 @@
             return existingLot;
         }
 
-        public async Task<ItemLot> UpdateLot(string lotId, ItemLot itemLot)
+        public async Task<ItemLot> UpdateLot(ItemLot itemLot)
         {
-            var existingLot = await _context.itemsLot.FindAsync(lotId);
+            var existingLot = await _context.itemsLot.FindAsync(itemLot.LotId);
             if(existingLot is null)
             {
                 throw new ArgumentException($"ItemLot does not exists.");

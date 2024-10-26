@@ -51,7 +51,7 @@ namespace WMS.Infrastructure.Repositories
 
         }
 
-        public async Task<Location> Update(string lotId, string locationId, Location location)
+        public async Task<Location> Update(string lotId, Location location)
         {
             var existingItemLot = await _context.itemsLot.FindAsync(lotId);
 
@@ -60,7 +60,7 @@ namespace WMS.Infrastructure.Repositories
                 throw new Exception("ItemLot does not exist");
             }
 
-            var existingLocation = existingItemLot.Locations.FirstOrDefault(x => x.LocationId == locationId);
+            var existingLocation = existingItemLot.Locations.FirstOrDefault(x => x.LocationId == location.LocationId);
             if (existingLocation == null)
             {
                 throw new Exception("Location does not exist");

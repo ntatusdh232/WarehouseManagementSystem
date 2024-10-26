@@ -39,7 +39,7 @@ namespace WMS.View.Controllers
             {
                 var worksheet = workbook.Worksheets.Add("Items");
 
-                worksheet = _itemRepository.GetItemListworksheet(items, worksheet);     
+                worksheet = _itemRepository.GetItemListWorkSheet(items, worksheet);     
 
                 using (var stream = new MemoryStream())
                 {

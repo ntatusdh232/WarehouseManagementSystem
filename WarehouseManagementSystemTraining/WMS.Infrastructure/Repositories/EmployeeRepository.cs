@@ -12,7 +12,7 @@
                 .Select(e => new EmployeeList
                 {
                     EmployeeId = e.EmployeeId,
-                    EmployeeName = e.EmployeeName,
+                    EmployeeName = e.EmployeeName
                 }).ToListAsync();
 
             return employeeList;
@@ -26,8 +26,13 @@
                 .Select(e => new EmployeeList
                 {
                     EmployeeId = e.EmployeeId,
-                    EmployeeName = e.EmployeeName,
+                    EmployeeName = e.EmployeeName
                 }).FirstOrDefaultAsync();
+
+            if (employee == null)
+            {
+                throw new Exception("Employee does not exist");
+            }
 
             return employee;
         }
@@ -40,8 +45,13 @@
                 .Select(e => new EmployeeList
                 {
                     EmployeeId = e.EmployeeId,
-                    EmployeeName = e.EmployeeName,
+                    EmployeeName = e.EmployeeName
                 }).FirstOrDefaultAsync();
+
+            if (employee == null)
+            {
+                throw new Exception("Employee does not exist");
+            }
 
             return employee;
         }
@@ -57,6 +67,7 @@
             {
                 EmployeeId = employeeId,
                 EmployeeName = employee.EmployeeName,
+                GoodsReceiptLot = null
             };
 
             await _context.employees.AddAsync(newEmployee); 
@@ -72,10 +83,10 @@
         }
 
 
-        public async Task<EmployeeList?> Update(string employeeId, EmployeeList updatedEmployee)
+        public async Task<EmployeeList?> Update(EmployeeList updatedEmployee)
         {
             // Tìm employee trong cơ sở dữ liệu
-            var employee = await _context.employees.FindAsync(employeeId);
+            var employee = await _context.employees.FindAsync(updatedEmployee.EmployeeId);
 
             if (employee == null)
             {
@@ -85,11 +96,11 @@
             employee.EmployeeName = updatedEmployee.EmployeeName;
 
             await _context.SaveChangesAsync();
-
             return new EmployeeList
             {
                 EmployeeId = employee.EmployeeId,
                 EmployeeName = employee.EmployeeName
+
             };
         }
 

@@ -6,7 +6,8 @@
         Task<EmployeeList> GetEmployeeById(string employeeId);
         Task<EmployeeList> GetEmployeeByName(string employeeName);
         Task<EmployeeList> Add(EmployeeList employee);
-        Task<EmployeeList?> Update(string employeeId, EmployeeList updatedEmployee);
+        Task<EmployeeList?> Update(EmployeeList updatedEmployee);
+
 
 
 

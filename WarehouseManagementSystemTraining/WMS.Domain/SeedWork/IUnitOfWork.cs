@@ -6,6 +6,7 @@
         void BeginTransaction();
         Task CommitTransactionAsync();
         void RollbackTransaction();
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 
     }
 }

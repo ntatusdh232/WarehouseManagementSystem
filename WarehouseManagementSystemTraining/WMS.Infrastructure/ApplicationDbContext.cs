@@ -4,34 +4,6 @@
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options){}
 
-        public async Task<int> SaveChangesAsync()
-        {
-            return await base.SaveChangesAsync();
-        }
-
-        public void BeginTransaction()
-        {
-            Database.BeginTransaction();
-        }
-
-        public async Task CommitTransactionAsync()
-        {
-            if (Database.CurrentTransaction != null)
-            {
-                await Database.CurrentTransaction.CommitAsync(); // Chỉ commit nếu có transaction
-            }
-            else
-            {
-                throw new InvalidOperationException("Không có transaction nào được khởi tạo.");
-            }
-        }
-
-
-        public void RollbackTransaction()
-        {
-            Database.CurrentTransaction.Rollback();
-        }
-
         public DbSet<Employee> employees { get; set; }
 
         public DbSet<FinishedProductInventory> finishedProductInventories { get; set; }
@@ -99,6 +71,43 @@
 
             base.OnModelCreating(modelBuilder);
         }
+
+
+        public async Task<int> SaveChangesAsync()
+        {
+            return await base.SaveChangesAsync();
+        }
+
+        public async Task<int> SaveChangesAsync(CancellationToken cancellationToken)
+        {
+            return await base.SaveChangesAsync(cancellationToken);
+        }
+
+
+        public void BeginTransaction()
+        {
+            Database.BeginTransaction();
+        }
+
+        public async Task CommitTransactionAsync()
+        {
+            if (Database.CurrentTransaction != null)
+            {
+                await Database.CurrentTransaction.CommitAsync(); // Chỉ commit nếu có transaction
+            }
+            else
+            {
+                throw new InvalidOperationException("Không có transaction nào được khởi tạo.");
+            }
+        }
+
+
+        public void RollbackTransaction()
+        {
+            Database.CurrentTransaction.Rollback();
+        }
+
+
 
     }
 }

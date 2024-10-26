@@ -20,9 +20,9 @@
 
         }
 
-        public async Task<LotAdjustment> Update(string LotId, LotAdjustment lotAdjustment)
+        public async Task<LotAdjustment> Update(LotAdjustment lotAdjustment)
         {
-            var existingLot = await _context.lotAdjustments.FindAsync(LotId);
+            var existingLot = await _context.lotAdjustments.FindAsync(lotAdjustment.LotId);
 
             if (existingLot == null)
             {

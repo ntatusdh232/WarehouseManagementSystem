@@ -41,13 +41,13 @@
             await _context.SaveChangesAsync();
         }
 
-        public async Task<FinishedProductInventory> Update(string finishedProductInventoryId, FinishedProductInventory finishedProductInventory)
+        public async Task<FinishedProductInventory> Update(FinishedProductInventory finishedProductInventory)
         {
-            var existingItem = await _context.Set<FinishedProductInventory>().FindAsync(finishedProductInventoryId);
+            var existingItem = await _context.Set<FinishedProductInventory>().FindAsync(finishedProductInventory.FinishedProductInventoryId);
 
             if (existingItem == null)
             {
-                throw new KeyNotFoundException($"FinishedProductInventory with ID {finishedProductInventoryId} not found.");
+                throw new KeyNotFoundException($"FinishedProductInventory with ID {finishedProductInventory.FinishedProductInventoryId} not found.");
             }
             existingItem.UpdateFinishedProductInventory(finishedProductInventory.PurchaseOrderNumber, finishedProductInventory.Quantity, finishedProductInventory.Timestamp, finishedProductInventory.Item);
 

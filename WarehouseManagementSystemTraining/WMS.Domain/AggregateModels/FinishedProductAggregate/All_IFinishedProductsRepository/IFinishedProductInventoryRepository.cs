@@ -5,6 +5,6 @@
         Task<FinishedProductInventory> Add(FinishedProductInventory finishedProductInventory);
         Task<IEnumerable<FinishedProductInventory>> GetAllFinishedProductInventory();
         Task Remove(string finishedProductInventoryId);
-        Task<FinishedProductInventory> Update(string finishedProductInventoryId, FinishedProductInventory finishedProductInventory);
+        Task<FinishedProductInventory> Update(FinishedProductInventory finishedProductInventory);
     }
 }

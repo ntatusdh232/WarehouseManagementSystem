@@ -43,7 +43,7 @@
             if (item == null)
                 return BadRequest("Item data is required.");
 
-            var addedItem = await _itemRepository.Add(item);
+            var addedItem = await _itemRepository.AddItem(item);
             return CreatedAtAction(nameof(GetById), new { itemId = addedItem.ItemId }, addedItem);
         }
 

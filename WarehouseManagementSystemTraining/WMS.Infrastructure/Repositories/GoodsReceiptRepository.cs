@@ -21,16 +21,16 @@
 
         }
 
-        public async Task<GoodsReceipt> Update(string goodsReceiptId, GoodsReceipt goodsReceipt)
+        public async Task<GoodsReceipt> Update(GoodsReceipt goodsReceipt)
         {
-            var existingItem = await _context.goodsReceipts.FindAsync(goodsReceiptId);
+            var existingItem = await _context.goodsReceipts.FindAsync(goodsReceipt.GoodsReceiptId);
 
             if (existingItem == null)
             {
-                throw new ArgumentException($"GoodsReceipt with ID {goodsReceiptId} does not exist.");
+                throw new ArgumentException($"GoodsReceipt with ID {goodsReceipt.GoodsReceiptId} does not exist.");
             }
 
-            existingItem.UpdateGoodsReceipt(goodsReceiptId, goodsReceipt.Supplier, goodsReceipt.Timestamp,
+            existingItem.UpdateGoodsReceipt(goodsReceipt.GoodsReceiptId, goodsReceipt.Supplier, goodsReceipt.Timestamp,
                                        goodsReceipt.Employee, goodsReceipt.Lots);
 
             await _context.SaveChangesAsync();

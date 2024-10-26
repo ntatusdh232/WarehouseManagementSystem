@@ -21,14 +21,14 @@
         }
 
         [HttpPost("Add")]
-        public async Task<IActionResult> Add([FromBody] Location department)
+        public async Task<IActionResult> Add([FromBody] Warehouse department, CancellationToken cancellationToken)
         {
             if (department == null)
                 return BadRequest("Department data is required.");
 
             try
             {
-                var addedDepartment = await _departmentRepository.Add(department);
+                var addedDepartment = await _departmentRepository.AdDepartment(department, cancellationToken);
                 return CreatedAtAction(nameof(GetAll), addedDepartment);
             }
             catch (ArgumentException ex)

@@ -35,13 +35,13 @@
             return finishedProductReceiptlist;
         }
 
-        public async Task<FinishedProductReceipt> Update(string finishedProductReceiptId, FinishedProductReceipt finishedProductReceipt)
+        public async Task<FinishedProductReceipt> Update(FinishedProductReceipt finishedProductReceipt)
         {
-            var existingItem = await _context.finishedProductReceipts.FindAsync(finishedProductReceiptId);
+            var existingItem = await _context.finishedProductReceipts.FindAsync(finishedProductReceipt.FinishedProductReceiptId);
 
             if (existingItem == null)
             {
-                throw new ArgumentException($"Item with ID {finishedProductReceiptId} does not exist.");
+                throw new ArgumentException($"Item with ID {finishedProductReceipt.FinishedProductReceiptId} does not exist.");
             }
 
             existingItem.UpdateFinishedProductReceipt(finishedProductReceipt.Timestamp, finishedProductReceipt.Employee, finishedProductReceipt.Entries);

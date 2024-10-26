@@ -4,18 +4,13 @@
     {
         public ItemRepository(ApplicationDbContext context) : base(context) { }
 
-        public async Task <Item> Add(Item item)
+        public async Task Add(Item item, CancellationToken cancellationToken)
         {
-            var existingItem = await _context.items.FindAsync(item.ItemId);
-
-            if (existingItem != null)
-            {
-                throw new ArgumentException($"Item with ID {item.ItemId} already exists.");
-            }
+            
+            var existingItem = await _context.items.FindAsync(item.ItemId) ?? throw new Exception("Not Found");
 
             await _context.items.AddAsync(item);
-            await _context.SaveChangesAsync();
-            return item;
+            await _context.SaveChangesAsync(cancellationToken);
         }
 
         public async Task<Item?> GetItemByEntityId(string entityId)
@@ -23,13 +18,28 @@
             throw new NotImplementedException();
         }
 
+        // GetAllItems
+        public async Task<IEnumerable<Item>> GetAllItems()
+        {
+            var items = await _context.items.ToListAsync();
+            return items;
+        }
+
         public async Task<IEnumerable<Item>> GetItemsByItemClass(string itemClassId)
         {
-            var items = await _context.Set<Item>()
-                .Where(ic => ic.ItemClasses.Any(s => s.ItemClassId == itemClassId))
-                .ToListAsync();
 
-            return items;
+            var item = await _context.items.Where(s => s.ItemClassId == itemClassId).ToListAsync();
+
+            return item;
+        }
+
+        public async Task Update(Item item, string itemClassId, CancellationToken cancellationToken)
+        {
+            if (item == null) throw new ArgumentNullException(nameof(item));
+
+            item.Update(item, itemClassId);
+
+            await _context.SaveChangesAsync(cancellationToken);
         }
 
         public async Task <ItemList> Update(ItemList itemList)
@@ -52,8 +62,7 @@
             }
         }
 
-
-        public async Task<IEnumerable<Item>> GetItemById(string itemId)
+        public async Task<Item> GetItemById(string itemId)
         {
             var item = await _context.items.FindAsync(itemId);
 
@@ -62,9 +71,9 @@
                 throw new KeyNotFoundException($"Item with ID {itemId} not found.");
             }
 
-            return new List<Item> { item };
-
+            return item;
         }
+
 
 
         public async Task<IEnumerable<ItemList>> GetItemLists()
@@ -103,6 +112,10 @@
                 })
                 .FirstOrDefaultAsync();
 
+            if (item == null)
+            {
+                throw new KeyNotFoundException($"Item with ID {itemId} not found.");
+            } 
             return item;
         }
 
@@ -120,7 +133,7 @@
                     Price = x.Price,
                     Unit = x.Unit
                 })
-                .ToList();
+                .ToList()?? throw new KeyNotFoundException("Item not found");
         }
 
         public IEnumerable<ItemList> GetSort(string sortField, string sortDirection, IEnumerable<ItemList> items)
@@ -177,8 +190,13 @@
             return items;
         }
 
-        public IXLWorksheet? GetItemListworksheet(IEnumerable<ItemList> items, IXLWorksheet? worksheet)
+        public IXLWorksheet? GetItemListWorkSheet(IEnumerable<ItemList> items, IXLWorksheet? worksheet)
         {
+
+            if (worksheet == null)
+            {
+                throw new ArgumentNullException(nameof(worksheet), "Worksheet cannot be null.");
+            }
 
             worksheet.Cell(1, 1).Value = "ID Item";
             worksheet.Cell(1, 2).Value = "Tên Item";
@@ -209,7 +227,7 @@
         {        
             try
             {
-                _context.items.Add(item); 
+                await _context.items.AddAsync(item); 
                 await _context.SaveChangesAsync(); 
                 return item;
             }
@@ -219,7 +237,6 @@
                 throw new InvalidOperationException("Không thể thêm vật phẩm vào cơ sở dữ liệu: " + ex.Message);
             }
         }
-
         public List<ItemList> GetPageItems(IEnumerable<ItemList> items, int pageNumber, int pageSize)
         {
             var pagedItems = items
