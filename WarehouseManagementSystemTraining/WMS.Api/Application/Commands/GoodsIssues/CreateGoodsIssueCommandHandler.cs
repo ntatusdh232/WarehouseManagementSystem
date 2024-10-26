@@ -14,21 +14,22 @@ namespace WMS.Api.Application.Commands.GoodsIssues
         public async Task<bool> Handle(CreateGoodsIssueCommand request, CancellationToken cancellationToken)
         {
             var goodsIssue = new GoodsIssue
-            {
-                GoodsIssueId = request.GoodsIssueId,
-                Receiver = request.Receiver,
-                Employee = new Employee ( request.EmployeeId),
-                Entries = request.Entries.Select(e => new GoodsIssueEntry
-                {
-                    GoodsIssueEntryId = e.GoodsIssueEntryId,
-                    RequestedQuantity = e.RequestedQuantity,
-                    Item = e.Item,
-                    Lots = e.Lots,
-                    ItemId = e.ItemId,
-                    GoodsIssueId = e.GoodsIssueId
-                }).ToList(),
-                EmployeeId = request.EmployeeId
-            };
+            (
+                request.GoodsIssueId,
+                request.Receiver,
+                DateTime.Now,
+                new Employee ( request.EmployeeId),
+                request.Entries.Select(e => new GoodsIssueEntry
+                (
+                    e.GoodsIssueEntryId,
+                    e.RequestedQuantity,
+                    e.Item,
+                    e.Lots,
+                    e.ItemId,
+                    e.GoodsIssueId
+                )).ToList(),
+                request.EmployeeId
+            );
 
             await _goodsIssueRepository.Add(goodsIssue, cancellationToken);
 

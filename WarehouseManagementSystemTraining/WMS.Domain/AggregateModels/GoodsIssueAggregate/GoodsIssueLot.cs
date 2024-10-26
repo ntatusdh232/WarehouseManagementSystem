@@ -10,6 +10,22 @@
         public virtual Employee Employee { get; set; }
         public string GoodsIssueEntryId { get; set; }
 
+
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        private GoodsIssueLot() { }
+
+        public GoodsIssueLot(string goodsIssueLotId, double quantity, string? note, string employeeId, List<GoodsIssueSublot> sublots, Employee employee)
+        {
+            GoodsIssueLotId = goodsIssueLotId;
+            Quantity = quantity;
+            Note = note;
+            EmployeeId = employeeId;
+            Sublots = sublots;
+            Employee = employee;
+        }
+
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+
     }
 }
 

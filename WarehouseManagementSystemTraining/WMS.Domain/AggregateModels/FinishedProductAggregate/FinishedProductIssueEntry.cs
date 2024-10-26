@@ -10,6 +10,8 @@
         public string ItemId { get; set; } 
         public string FinishedProductIssueId { get; set; }
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        private FinishedProductIssueEntry() { }
         public FinishedProductIssueEntry(string finishedProductIssueEntryId, string purchaseOrderNumber, double quantity, string? note, Item item, string itemId, string finishedProductIssueId)
         {
             FinishedProductIssueEntryId = finishedProductIssueEntryId;
@@ -20,11 +22,6 @@
             ItemId = itemId;
             FinishedProductIssueId = finishedProductIssueId;
         }
-
-
-
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-        private FinishedProductIssueEntry() { }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
     }

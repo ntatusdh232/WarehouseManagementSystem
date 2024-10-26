@@ -10,10 +10,10 @@
             var employeeList = await _context.employees
                 .AsNoTracking()
                 .Select(e => new EmployeeList
-                {
-                    EmployeeId = e.EmployeeId,
-                    EmployeeName = e.EmployeeName
-                }).ToListAsync();
+                (
+                    e.EmployeeId,
+                    e.EmployeeName
+                )).ToListAsync();
 
             return employeeList;
         }
@@ -24,10 +24,10 @@
                 .AsNoTracking()
                 .Where(e => e.EmployeeId == employeeId)
                 .Select(e => new EmployeeList
-                {
-                    EmployeeId = e.EmployeeId,
-                    EmployeeName = e.EmployeeName
-                }).FirstOrDefaultAsync();
+                (
+                    e.EmployeeId,
+                    e.EmployeeName
+                )).FirstOrDefaultAsync();
 
             if (employee == null)
             {
@@ -43,10 +43,10 @@
                 .AsNoTracking()
                 .Where(e => e.EmployeeName == employeeName)
                 .Select(e => new EmployeeList
-                {
-                    EmployeeId = e.EmployeeId,
-                    EmployeeName = e.EmployeeName
-                }).FirstOrDefaultAsync();
+                (
+                    e.EmployeeId,
+                    e.EmployeeName
+                )).FirstOrDefaultAsync();
 
             if (employee == null)
             {
@@ -75,11 +75,11 @@
 
 
             return new EmployeeList
-            {
-                EmployeeId = newEmployee.EmployeeId,
-                EmployeeName = newEmployee.EmployeeName
+            (
+                newEmployee.EmployeeId,
+                newEmployee.EmployeeName
 
-            };
+            );
         }
 
 
@@ -97,11 +97,11 @@
 
             await _context.SaveChangesAsync();
             return new EmployeeList
-            {
-                EmployeeId = employee.EmployeeId,
-                EmployeeName = employee.EmployeeName
+            (
+                employee.EmployeeId,
+                employee.EmployeeName
 
-            };
+            );
         }
 
 

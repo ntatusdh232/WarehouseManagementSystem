@@ -50,12 +50,12 @@ namespace WMS.Api.Application.Commands.GoodsIssues
             };
 
             return new GoodsIssueEntry
-            {
-                GoodsIssueEntryId = existingEntry.GoodsIssueEntryId,
-                RequestedQuantity = entry.RequestedQuantity,
-                Item = newitem,
-                ItemId = existingEntry.Item.ItemId,
-            };
+            (
+                existingEntry.GoodsIssueEntryId,
+                entry.RequestedQuantity,
+                newitem,
+                existingEntry.Item.ItemId
+            );
         }
 
     }

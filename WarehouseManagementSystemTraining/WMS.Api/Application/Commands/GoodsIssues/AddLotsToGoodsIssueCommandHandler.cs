@@ -21,17 +21,17 @@ namespace WMS.Api.Application.Commands.GoodsIssues
             }
 
             var goodsIssueLots = request.GoodsIssueLots.Select(lot => new GoodsIssueLot
-            {
-                GoodsIssueLotId = lot.GoodsIssueLotId,
-                Quantity = lot.Quantity,
-                Note = lot.Note??"",
-                EmployeeId = lot.EmployeeId,
-                Sublots = lot.Sublots,
-                Employee = new Employee
+            (
+                lot.GoodsIssueLotId,
+                lot.Quantity,
+                lot.Note??"",
+                lot.EmployeeId,
+                lot.Sublots,
+                new Employee
                 (
                     lot.EmployeeId
-                ),
-            }).ToList();
+                )
+            )).ToList();
 
             foreach (var entry in goodsIssue.Entries)
             {

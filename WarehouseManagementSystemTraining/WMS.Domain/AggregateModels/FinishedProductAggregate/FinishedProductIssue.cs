@@ -9,6 +9,8 @@
         public List<FinishedProductIssueEntry> Entries { get; set; }
         public string EmployeeId { get; set; }
 
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        private FinishedProductIssue() { }
         public FinishedProductIssue(string finishedProductIssueId, string? receiver, DateTime timestamp, Employee employee, List<FinishedProductIssueEntry> entries, string employeeId)
         {
             FinishedProductIssueId = finishedProductIssueId;
@@ -18,10 +20,6 @@
             Entries = entries;
             EmployeeId = employeeId;
         }
-
-
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-        private FinishedProductIssue() { }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
         public void AddEntry()
