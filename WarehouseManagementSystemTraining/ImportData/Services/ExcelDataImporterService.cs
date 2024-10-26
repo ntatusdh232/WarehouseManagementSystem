@@ -74,7 +74,8 @@ namespace ImportData.Services
 
         private bool TryProcessRow(DataRow row)
         {
-            string itemId = row["ItemId"]?.ToString()?.Trim();
+            string itemId = row["ItemId"]?.ToString()?.Trim() ?? throw new Exception("Not Found");
+
             if (string.IsNullOrWhiteSpace(itemId)) return false;
 
             var item = _itemRepository.GetItemById(itemId);
@@ -93,13 +94,13 @@ namespace ImportData.Services
 
         private void UpdateItem(Item existingItem, DataRow row)
         {
-            existingItem.ItemName = row["ItemName"]?.ToString();
-            existingItem.Unit = row["Unit"]?.ToString();
+            existingItem.ItemName = row["ItemName"]?.ToString() ?? "Null";
+            existingItem.Unit = row["Unit"]?.ToString() ?? "Null";
             existingItem.MinimumStockLevel = DataParser.GetIntValue(row["MinimumStockLevel"]);
             existingItem.Price = DataParser.GetDecimalValue(row["Price"]);
             existingItem.PacketSize = DataParser.GetFloatValue(row["PacketSize"]);
             existingItem.PacketUnit = DataParser.GetPacketUnitValue(row["PacketUnit"]);
-            existingItem.ItemType = row["ItemType"]?.ToString();
+            existingItem.ItemType = row["ItemType"]?.ToString() ?? "Null";
             existingItem.ItemClassId = Guid.NewGuid().ToString();
 
             _itemRepository.UpdateItem(existingItem);
@@ -109,10 +110,10 @@ namespace ImportData.Services
         {
             return new Item
             (
-                row["ItemType"]?.ToString(),
-                row["ItemId"]?.ToString(),
-                row["ItemName"]?.ToString(),
-                row["Unit"]?.ToString(),
+                row["ItemType"]?.ToString() ?? "Null",
+                row["ItemId"]?.ToString() ?? "Null",
+                row["ItemName"]?.ToString() ?? "Null",
+                row["Unit"]?.ToString() ?? "Null",
                 DataParser.GetIntValue(row["MinimumStockLevel"]),
                 DataParser.GetDecimalValue(row["Price"]),
                 DataParser.GetFloatValue(row["PacketSize"]),

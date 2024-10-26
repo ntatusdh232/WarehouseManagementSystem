@@ -19,7 +19,7 @@
 
         public static string GetPacketUnitValue(object value)
         {
-            return string.IsNullOrWhiteSpace(value?.ToString()) ? "0" : value.ToString().Trim();
+            return string.IsNullOrWhiteSpace(value?.ToString()) ? "0" : value.ToString()??"".Trim();
         }
     }
 }

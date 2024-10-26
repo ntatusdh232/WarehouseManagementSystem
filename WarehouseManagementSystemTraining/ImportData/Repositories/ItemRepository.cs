@@ -11,7 +11,7 @@
 
         public Item GetItemById(string itemId)
         {
-            return _context.items.AsNoTracking().FirstOrDefault(i => i.ItemId == itemId);
+            return _context.items.AsNoTracking().FirstOrDefault(i => i.ItemId == itemId) ?? throw new Exception("Not Found");
         }
 
         public void AddItem(Item item)
