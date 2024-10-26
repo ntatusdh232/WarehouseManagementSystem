@@ -24,10 +24,10 @@
             }
 
             var warehouse = new Warehouse
-            {
-                WarehouseId = request.WarehouseId,
-                LocationId = request.LocationId,
-            };
+            (
+                request.WarehouseId,
+                request.LocationId
+            );
 
             await _departmentRepository.Add(warehouse, cancellationToken);
 

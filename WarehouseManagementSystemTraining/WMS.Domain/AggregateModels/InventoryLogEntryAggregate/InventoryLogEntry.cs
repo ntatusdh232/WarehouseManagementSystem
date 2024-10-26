@@ -12,11 +12,26 @@
         public Item Item { get; set; }
         public string ItemId { get; set; }
 
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
-        public InventoryLogEntry()
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+#pragma warning disable CS8618 
+        private InventoryLogEntry(){}
+
+        public InventoryLogEntry(string itemLotId, double beforeQuantity, double changedQuantity, double receivedQuantity, 
+                                 double shippedQuantity, DateTime timestamp, DateTime trackingTime, Item item, string itemId)
         {
+            ItemLotId = itemLotId;
+            BeforeQuantity = beforeQuantity;
+            ChangedQuantity = changedQuantity;
+            ReceivedQuantity = receivedQuantity;
+            ShippedQuantity = shippedQuantity;
+            Timestamp = timestamp;
+            TrackingTime = trackingTime;
+            Item = item;
+            ItemId = itemId;
         }
+
+
+#pragma warning restore CS8618 
+
 
         public void Update(double beforeQuantity, double changedQuantity, double receivedQuantity, double shippedQuantity, DateTime timestamp, DateTime trackingTime)
         {

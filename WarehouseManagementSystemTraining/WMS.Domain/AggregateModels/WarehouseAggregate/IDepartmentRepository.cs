@@ -1,6 +1,4 @@
-﻿using WMS.Domain.AggregateModels.WarehouseAggregate;
-
-namespace WMS.Domain.AggregateModels.LocationAggregate
+﻿namespace WMS.Domain.AggregateModels.WarehouseAggregate
 {
     public interface IDepartmentRepository : IRepository<Warehouse>
     {

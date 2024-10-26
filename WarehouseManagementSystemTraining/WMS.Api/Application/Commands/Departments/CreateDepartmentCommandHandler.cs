@@ -12,10 +12,10 @@
         public async Task<bool> Handle(CreateDepartmentCommand request, CancellationToken cancellationToken)
         {
             var department = new Warehouse
-            {
-                WarehouseId = request.Id,
-                WarehouseName = request.Name,
-            };
+            (
+                request.Id,
+                request.Name
+            );
 
             await _departmentRepository.Add(department, cancellationToken);
 

@@ -1,4 +1,6 @@
-﻿namespace WMS.Domain.AggregateModels.UserAggregate
+﻿using WMS.Domain.AggregateModels.WarehouseAggregate;
+
+namespace WMS.Domain.AggregateModels.UserAggregate
 {
     public class User
     {
@@ -11,5 +13,21 @@
         public string Position { get; set; }
 
         public UserAccount UserAccounts { get; set; }
+
+#pragma warning disable CS8618
+        private User() { }
+
+        public User(Guid userUUID, string name, string email, string phone, string address, string position)
+        {
+            UserUUID = userUUID;
+            Name = name;
+            Email = email;
+            Phone = phone;
+            Address = address;
+            Position = position;
+        }
+
+#pragma warning restore CS8618
+
     }
 }

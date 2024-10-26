@@ -13,14 +13,14 @@
         public User CreateNewUser(UserAccountList model)
         {
             User newUser = new User
-            {
-                UserUUID = Guid.NewGuid(),
-                Name = model.Name,
-                Email = model.Email,
-                Phone = model.Phone,
-                Address = model.Address,
-                Position = model.Position
-            };
+            (
+                Guid.NewGuid(),
+                model.Name,
+                model.Email,
+                model.Phone,
+                model.Address,
+                model.Position
+            );
 
             return newUser;
         }
@@ -28,12 +28,12 @@
         public UserAccount CreateNewAccount(UserAccountList model, User newUser)
         {
             UserAccount userAccount = new UserAccount
-            {
+            (
 
-                Account = model.Account,
-                Password = model.Password,
-                UserUUID = newUser.UserUUID // Liên kết với User
-            };
+                model.Account,
+                model.Password,
+                newUser.UserUUID
+            );
 
             return userAccount;
         }

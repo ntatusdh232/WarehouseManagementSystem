@@ -37,7 +37,7 @@ namespace ImportData.Services
         {
             if (dataTable.Rows.Count == 0)
             {
-                Console.WriteLine("Không có dữ liệu trong file Excel.");
+                Console.WriteLine("Dont Have Date In Execl.");
                 return;
             }
 
@@ -46,12 +46,12 @@ namespace ImportData.Services
             {
                 ProcessDataRows(dataTable);
                 transaction.Commit();
-                Console.WriteLine("Dữ liệu đã được nhập thành công.");
+                Console.WriteLine("Import Data Success.");
             }
             catch (Exception ex)
             {
                 transaction.Rollback();
-                Console.WriteLine($"Lỗi khi nhập dữ liệu: {ex.Message}");
+                Console.WriteLine($"Error when Import: {ex.Message}");
             }
         }
 
