@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WMS.Infrastructure;
 
@@ -11,9 +12,11 @@ using WMS.Infrastructure;
 namespace WMS.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241026024039_CreateNewDataBase")]
+    partial class CreateNewDataBase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -400,10 +403,6 @@ namespace WMS.Api.Migrations
                     b.Property<string>("ItemId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("ItemClassId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ItemName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -438,12 +437,12 @@ namespace WMS.Api.Migrations
                     b.Property<string>("ItemClassId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("ItemId")
+                    b.Property<string>("Itemid")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ItemClassId");
 
-                    b.HasIndex("ItemId");
+                    b.HasIndex("Itemid");
 
                     b.ToTable("itemsClass");
                 });
@@ -778,9 +777,12 @@ namespace WMS.Api.Migrations
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.ItemAggregate.ItemClass", b =>
                 {
-                    b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.Item", null)
+                    b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.Item", "Item")
                         .WithMany("ItemClasses")
-                        .HasForeignKey("ItemId");
+                        .HasForeignKey("Itemid")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Item");
                 });
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.ItemAggregate.ItemLot", b =>

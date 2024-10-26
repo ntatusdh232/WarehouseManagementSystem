@@ -1,4 +1,10 @@
-﻿namespace ImportData.Services
+﻿using ImportData.Repositories;
+using ImportData.Utilities;
+using System.Data;
+using System.IO;
+using ExcelDataReader;
+
+namespace ImportData.Services
 {
     public class ExcelDataImporterService
     {
@@ -13,7 +19,7 @@
 
         public void ImportData(string filePath)
         {
-            var excelData = ReadExcelFile(filePath);
+            DataTable excelData = ReadExcelFile(filePath);
             InsertDataIntoSqlServer(excelData);
         }
 
@@ -26,7 +32,7 @@
             {
                 return reader.AsDataSet(new ExcelDataSetConfiguration()
                 {
-                    ConfigureDataTable = (_) => new ExcelDataTableConfiguration { UseHeaderRow = true }
+                    ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }
                 }).Tables[0];
             }
         }
@@ -39,54 +45,59 @@
                 return;
             }
 
-            using var transaction = _context.Database.BeginTransaction();
-            try
-            {
-                ProcessDataRows(dataTable);
-                transaction.Commit();
-                Console.WriteLine("Dữ liệu đã được nhập thành công.");
-            }
-            catch (Exception ex)
-            {
-                transaction.Rollback();
-                Console.WriteLine($"Lỗi khi nhập dữ liệu: {ex.Message}");
-            }
-        }
-
-        private void ProcessDataRows(DataTable dataTable)
-        {
             int batchSize = 100;
             int processedRecords = 0;
 
-            foreach (DataRow row in dataTable.Rows)
+            using (var transaction = _context.Database.BeginTransaction())
             {
-                if (TryProcessRow(row))
+                try
                 {
-                    processedRecords++;
-                    if (processedRecords % batchSize == 0) _itemRepository.SaveChanges();
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        string itemId = row["ItemId"]?.ToString().Trim();
+                        if (string.IsNullOrWhiteSpace(itemId))
+                        {
+                            Console.WriteLine("Mặt hàng không có ItemId, bỏ qua hàng này.");
+                            continue;
+                        }
+
+                        var item = _itemRepository.GetItemById(itemId);
+                        if (item != null)
+                        {
+                            UpdateItem(item, row);
+                            Console.WriteLine($"Cập nhật mặt hàng: {itemId}");
+                        }
+                        else
+                        {
+                            item = CreateNewItem(row);
+                            _itemRepository.AddItem(item);
+                            Console.WriteLine($"Thêm mới mặt hàng: {itemId}");
+                        }
+
+                        processedRecords++;
+
+                        if (processedRecords % batchSize == 0)
+                        {
+                            _itemRepository.SaveChanges();
+                        }
+                    }
+
+                    if (processedRecords % batchSize != 0)
+                    {
+                        _itemRepository.SaveChanges();
+                    }
+
+                    // Commit the transaction
+                    transaction.Commit();
+                    Console.WriteLine($"Đã nhập {processedRecords} mặt hàng vào cơ sở dữ liệu.");
+                }
+                catch (Exception ex)
+                {
+                    // Rollback the transaction if any error occurs
+                    transaction.Rollback();
+                    Console.WriteLine($"Lỗi khi nhập dữ liệu: {ex.Message}");
                 }
             }
-
-            if (processedRecords % batchSize != 0) _itemRepository.SaveChanges();
-        }
-
-        private bool TryProcessRow(DataRow row)
-        {
-            string itemId = row["ItemId"]?.ToString()?.Trim();
-            if (string.IsNullOrWhiteSpace(itemId)) return false;
-
-            var item = _itemRepository.GetItemById(itemId);
-            if (item != null)
-            {
-                UpdateItem(item, row);
-            }
-            else
-            {
-                item = CreateNewItem(row);
-                _itemRepository.AddItem(item);
-            }
-
-            return true;
         }
 
         private void UpdateItem(Item existingItem, DataRow row)

@@ -1,14 +1,14 @@
 ﻿namespace ImportData
 {
+
+
     class Program
     {
         static void Main(string[] args)
         {
             string excelFilePath = @"D:\CODE\VisualStudio\C#\TRAINING\Week11\Data\ITEMS.xlsx";
-            string connectionString = "Data Source=PhatHuyBK\\SQLEXPRESS;Initial Catalog=WarehouseManagementSystem;Integrated Security=True;Encrypt=False";
-            
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseSqlServer("Data Source=PhatHuyBK\\SQLEXPRESS;Initial Catalog=WarehouseManagementSystem;Integrated Security=True;Encrypt=False");
 
             try
             {

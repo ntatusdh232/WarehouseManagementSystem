@@ -10,6 +10,7 @@
         public decimal Price { get; set; }
         public double? PacketSize { get; set; }
         public string? PacketUnit { get; set; }
+        public string ItemClassId { get; set; } 
         public ICollection<ItemClass> ItemClasses { get; set; }
 
 

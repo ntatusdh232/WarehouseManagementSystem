@@ -8,10 +8,12 @@
 
             builder.HasOne(g => g.Employee)
                    .WithMany()
+                   .HasForeignKey(g => g.EmployeeId)
                    .IsRequired(false);
 
             builder.HasOne(g => g.Item)
                    .WithMany()
+                   .HasForeignKey(g => g.ItemId)
                    .IsRequired(false);
 
             builder.HasMany(g => g.Sublots)

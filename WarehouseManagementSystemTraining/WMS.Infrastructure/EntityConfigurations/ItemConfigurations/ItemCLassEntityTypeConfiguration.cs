@@ -5,12 +5,6 @@
         public void Configure(EntityTypeBuilder<ItemClass> builder)
         {
             builder.HasKey(t => t.ItemClassId);
-
-            builder.HasOne(t => t.Item)
-                   .WithMany(t => t.ItemClasses)
-                   .HasForeignKey(t => t.Itemid)
-                   .IsRequired(false)   
-                   .OnDelete(DeleteBehavior.Restrict);
         }
 
     }
