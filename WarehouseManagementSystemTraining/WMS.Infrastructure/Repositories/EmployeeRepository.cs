@@ -66,8 +66,7 @@
             var newEmployee = new Employee
             (
                 employeeId,
-                employee.EmployeeName,
-                null
+                employee.EmployeeName
             );
 
             await _context.employees.AddAsync(newEmployee); 

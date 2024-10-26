@@ -15,7 +15,14 @@
 
         public async Task<Item?> GetItemByEntityId(string entityId)
         {
-            throw new NotImplementedException();
+            var item = await _context.items.FindAsync(entityId);
+
+            if (item == null)
+            {
+                throw new KeyNotFoundException($"Item with ID {entityId} not found.");
+            }
+
+            return item;
         }
 
         // GetAllItems
@@ -80,16 +87,17 @@
         {
             var itemlist = await _context.items
                 .Select(x => new ItemList
-                {
-                    ItemId = x.ItemId,
-                    ItemName = x.ItemName,
-                    ItemType = x.ItemType,
-                    MinimumStockLevel = x.MinimumStockLevel,
-                    PacketSize = x.PacketSize,
-                    PacketUnit = x.PacketUnit,
-                    Price = x.Price,
-                    Unit = x.Unit
-                }).ToListAsync();
+                (
+                    x.ItemType,
+                    x.ItemId,
+                    x.ItemName,
+                    x.Unit,
+                    x.MinimumStockLevel,
+                    x.Price,
+                    x.PacketSize,
+                    x.PacketUnit
+
+                )).ToListAsync();
             
             
             return itemlist;
@@ -100,16 +108,17 @@
             var item = await _context.items
                 .Where(x => x.ItemId == itemId)
                 .Select(x => new ItemList
-                {
-                    ItemId = x.ItemId,
-                    ItemName = x.ItemName,
-                    ItemType = x.ItemType,
-                    MinimumStockLevel = x.MinimumStockLevel,
-                    PacketSize = x.PacketSize,
-                    PacketUnit = x.PacketUnit,
-                    Price = x.Price,
-                    Unit = x.Unit
-                })
+                (
+                    x.ItemType,
+                    x.ItemId,
+                    x.ItemName,
+                    x.Unit,
+                    x.MinimumStockLevel,
+                    x.Price,
+                    x.PacketSize,
+                    x.PacketUnit
+
+                ))
                 .FirstOrDefaultAsync();
 
             if (item == null)
@@ -123,16 +132,17 @@
         {
             return _context.items
                 .Select(x => new ItemList
-                {
-                    ItemId = x.ItemId,
-                    ItemName = x.ItemName,
-                    ItemType = x.ItemType,
-                    MinimumStockLevel = x.MinimumStockLevel,
-                    PacketSize = x.PacketSize,
-                    PacketUnit = x.PacketUnit,
-                    Price = x.Price,
-                    Unit = x.Unit
-                })
+                (
+                    x.ItemType,
+                    x.ItemId,
+                    x.ItemName,
+                    x.Unit,
+                    x.MinimumStockLevel,
+                    x.Price,
+                    x.PacketSize,
+                    x.PacketUnit
+
+                ))
                 .ToList()?? throw new KeyNotFoundException("Item not found");
         }
 

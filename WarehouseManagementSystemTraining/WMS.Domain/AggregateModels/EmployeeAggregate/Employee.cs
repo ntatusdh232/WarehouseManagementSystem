@@ -22,6 +22,12 @@
             EmployeeId = employeeId;
         }
 
+        public Employee(string employeeId, string employeeName)
+        {
+            EmployeeId = employeeId;
+            EmployeeName = employeeName;
+        }
+
 
 #pragma warning restore CS8618
 

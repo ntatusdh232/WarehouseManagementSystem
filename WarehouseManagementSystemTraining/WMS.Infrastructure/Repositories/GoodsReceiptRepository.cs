@@ -1,4 +1,6 @@
-﻿namespace WMS.Infrastructure.Repositories
+﻿using WMS.Domain.AggregateModels.GoodsReceiptAggregate;
+
+namespace WMS.Infrastructure.Repositories
 {
     public class GoodsReceiptRepository : BaseRepository, IGoodsReceiptRepository
     {
@@ -87,9 +89,19 @@
 
         }
 
-        public async Task<IEnumerable<GoodsReceipt>> GetGoodsReceiptByGoodsReceiptId()
+        public async Task<IEnumerable<GoodsReceipt>> GetGoodsReceiptByGoodsReceiptId(string goodsReceiptId)
         {
-            throw new NotImplementedException();
+            var existingItem = await _context.goodsReceipts.FindAsync(goodsReceiptId);
+
+            if (existingItem == null)
+            {
+                throw new ArgumentException($"GoodsReceipt with ID {goodsReceiptId} does not exist.");
+            }
+            var goodsReceipt = await _context.goodsReceipts
+                .Where(x => x.GoodsReceiptId == goodsReceiptId)
+                .ToListAsync();
+
+            return goodsReceipt;
 
         }
 

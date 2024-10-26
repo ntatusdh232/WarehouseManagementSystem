@@ -1,6 +1,4 @@
-﻿using WMS.Domain.AggregateModels.FinishedProductAggregate.All_IFinishedProductsRepository;
-
-namespace WMS.Api
+﻿namespace WMS.Api
 {
     public class Program
     {

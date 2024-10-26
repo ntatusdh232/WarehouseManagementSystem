@@ -55,7 +55,7 @@
             var userAccount = _context.userAccounts
                 .FirstOrDefault(u => u.Account == username);
 
-            return userAccount;
+            return userAccount ?? throw new Exception("Not Found");
         }
 
         // Hash mật khẩu bằng SHA256

@@ -78,7 +78,7 @@
             return await base.SaveChangesAsync();
         }
 
-        public async Task<int> SaveChangesAsync(CancellationToken cancellationToken)
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken)
         {
             return await base.SaveChangesAsync(cancellationToken);
         }
@@ -104,7 +104,15 @@
 
         public void RollbackTransaction()
         {
-            Database.CurrentTransaction.Rollback();
+            if (Database.CurrentTransaction != null)
+            {
+                Database.CurrentTransaction.Rollback();
+            }
+            else
+            {
+                throw new InvalidOperationException("Rollback success");
+            }
+
         }
 
 

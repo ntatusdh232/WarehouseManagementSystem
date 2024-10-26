@@ -1,8 +1,4 @@
-﻿using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-using DocumentFormat.OpenXml.Spreadsheet;
-using DocumentFormat.OpenXml.Wordprocessing;
-
-namespace WMS.Domain.AggregateModels.ItemAggregate
+﻿namespace WMS.Domain.AggregateModels.ItemAggregate
 {
     public class Item : IAggregateRoot
     {
@@ -65,11 +61,6 @@ namespace WMS.Domain.AggregateModels.ItemAggregate
             PacketUnit = packetUnit;
             ItemClassId = itemClassId;
         }
-
-
-
-
-
 #pragma warning restore CS8618
 
         public void Update(string unit, double minimumStockLevel, decimal price)
@@ -98,6 +89,18 @@ namespace WMS.Domain.AggregateModels.ItemAggregate
 
     public class ItemList : IAggregateRoot
     {
+        public ItemList(string itemType, string itemId, string itemName, string unit, double minimumStockLevel, decimal price, double? packetSize, string? packetUnit)
+        {
+            ItemType = itemType;
+            ItemId = itemId;
+            ItemName = itemName;
+            Unit = unit;
+            MinimumStockLevel = minimumStockLevel;
+            Price = price;
+            PacketSize = packetSize;
+            PacketUnit = packetUnit;
+        }
+
         public string ItemType { get; set; }
         public string ItemId { get; set; }
         public string ItemName { get; set; }

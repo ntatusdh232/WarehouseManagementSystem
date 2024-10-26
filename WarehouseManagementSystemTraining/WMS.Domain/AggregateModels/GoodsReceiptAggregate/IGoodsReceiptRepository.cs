@@ -7,6 +7,6 @@
         Task Remove(string goodsReceiptId);
         Task<IEnumerable<GoodsReceipt>> GetGoodsReceiptById(string goodsReceiptId);
         Task<IEnumerable<GoodsReceiptLot>> GetGoodsReceiptLotById(string goodsReceiptLotId);
-        Task<IEnumerable<GoodsReceipt>> GetGoodsReceiptByGoodsReceiptId();
+        Task<IEnumerable<GoodsReceipt>> GetGoodsReceiptByGoodsReceiptId(string goodsReceiptId);
     }
 }
