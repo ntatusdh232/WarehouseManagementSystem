@@ -1,6 +1,11 @@
-﻿namespace WMS.Api.Application.Commands.LotAdjustments
+﻿namespace WMS.Api.Application.Commands.LotAdjustments;
+
+public class ConfirmLotAdjustmentCommand : IRequest<bool>
 {
-    public class ConfirmLotAdjustmentCommand
+   public string LotId { get; set; }
+
+    public ConfirmLotAdjustmentCommand(string lotId)
     {
+        LotId = lotId;
     }
 }

@@ -1,6 +1,11 @@
-﻿namespace WMS.Api.Application.Commands.FinishedProductReceipts
+﻿namespace WMS.Api.Application.Commands.FinishedProductReceipts;
+
+public class DeleteFinishedProductReceiptCommand : IRequest<bool>
 {
-    public class DeleteFinishedProductReceiptCommand
+    public string FinishedProductReceiptId { get; set; }
+
+    public DeleteFinishedProductReceiptCommand(string finishedProductReceiptId)
     {
+        FinishedProductReceiptId = finishedProductReceiptId;
     }
 }

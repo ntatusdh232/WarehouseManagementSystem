@@ -1,6 +1,11 @@
-﻿namespace WMS.Api.Application.Commands.GoodsReceipts
+﻿namespace WMS.Api.Application.Commands.GoodsReceipts;
+
+public class DeleteGoodsReceiptCommand : IRequest<bool>
 {
-    public class DeleteGoodsReceiptCommand
+    public string GoodsReceiptId { get; set; }
+
+    public DeleteGoodsReceiptCommand(string goodsReceiptId)
     {
+        GoodsReceiptId = goodsReceiptId;
     }
 }

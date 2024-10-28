@@ -1,6 +1,5 @@
-﻿namespace WMS.Api.Application.Commands.Employees
+﻿namespace WMS.Api.Application.Commands.Employees;
+
+public class CreateEmployeeCommandHandler
 {
-    public class CreateEmployeeCommandHandler
-    {
-    }
 }

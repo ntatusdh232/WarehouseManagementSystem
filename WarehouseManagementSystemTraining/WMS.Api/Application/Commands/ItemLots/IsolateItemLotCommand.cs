@@ -1,6 +1,5 @@
-﻿namespace WMS.Api.Application.Commands.ItemLots
+﻿namespace WMS.Api.Application.Commands.ItemLots;
+
+public class IsolateItemLotCommand : IRequest<bool>
 {
-    public class IsolateItemLotCommand
-    {
-    }
 }

@@ -1,6 +1,6 @@
-﻿namespace WMS.Api.Application.Commands.FinishedProductReceipts
+﻿namespace WMS.Api.Application.Commands.FinishedProductReceipts;
+
+public class CreateFinishedProductReceiptCommandHandler
 {
-    public class CreateFinishedProductReceiptCommandHandler
-    {
-    }
+
 }
