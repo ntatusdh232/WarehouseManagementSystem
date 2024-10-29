@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="MediatR" Version="12.4.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
       <PrivateAssets>all</PrivateAssets>
@@ -19,9 +20,7 @@
     <Folder Include="Application\Commands\" />
     <Folder Include="Application\DomainEventHandlers\" />
     <Folder Include="Application\Exceptions\" />
-    <Folder Include="Application\Mapping\" />
     <Folder Include="Application\Commands\" />
-    <Folder Include="Application\Queries\" />
   </ItemGroup>
 
   <ItemGroup>

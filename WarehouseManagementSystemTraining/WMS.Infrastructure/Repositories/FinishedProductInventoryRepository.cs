@@ -56,7 +56,18 @@
             return existingItem;
         }
 
+        public async Task<IEnumerable<FinishedProductInventory>> GetProductInventoriesByItemId(string itemId, CancellationToken cancellationToken)
+        {
+            var productInverotyList = await _context.finishedProductInventories.Where(s => s.ItemId == itemId).ToListAsync(cancellationToken);
 
+            return productInverotyList;
+        }
+
+        public async Task<IEnumerable<string>> GetPos(CancellationToken cancellationToken)
+        {
+            var POsList = await _context.finishedProductInventories.Select(s => s.PurchaseOrderNumber).ToListAsync(cancellationToken);
+            return POsList;
+        }
 
 
     }

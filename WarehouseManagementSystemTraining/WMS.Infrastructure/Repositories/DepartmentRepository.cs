@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Drawing.Charts;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.Drawing.Charts;
 
 namespace WMS.Infrastructure.Repositories
 {
@@ -51,6 +52,10 @@ namespace WMS.Infrastructure.Repositories
             return request;
         }
 
+        public async Task<IEnumerable<Warehouse>> GetAllDepartmentsAsync(CancellationToken cancellationToken)
+        {
+            return await _context.warehouses.ToListAsync(cancellationToken);
+        }
 
 
     }

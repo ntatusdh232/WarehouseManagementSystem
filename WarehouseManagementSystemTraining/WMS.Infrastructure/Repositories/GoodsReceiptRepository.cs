@@ -8,6 +8,51 @@ namespace WMS.Infrastructure.Repositories
         {
         }
 
+        public async Task<IEnumerable<GoodsReceipt>> GetCompletedGoodsReceipts()
+        {
+            var goodsReceiptLotCompleted = await _context.goodsReceiptsLot.Where(s => s.IsExported == true).ToListAsync();
+            var goodsReceipts = new List<GoodsReceipt>();
+            foreach (var i in goodsReceiptLotCompleted)
+            {
+                var receipt = await _context.goodsReceipts.FirstOrDefaultAsync(s => s.GoodsReceiptId == i.GoodsReceiptId);
+                if (receipt != null)
+                {
+                    goodsReceipts.Add(receipt);
+                }
+            }
+
+            return goodsReceipts;
+        }
+        public async Task<IEnumerable<GoodsReceipt>> GetUnCompletedGoodsReceipts()
+        {
+            var goodsReceiptLotCompleted = await _context.goodsReceiptsLot.Where(s => s.IsExported == false).ToListAsync();
+            var goodsReceipts = new List<GoodsReceipt>();
+            foreach (var i in goodsReceiptLotCompleted)
+            {
+                var receipt = await _context.goodsReceipts.FirstOrDefaultAsync(s => s.GoodsReceiptId == i.GoodsReceiptId);
+                if (receipt != null)
+                {
+                    goodsReceipts.Add(receipt);
+                }
+            }
+
+            return goodsReceipts;
+        }
+
+        public async Task<IEnumerable<GoodsReceipt>> GetAllGoodsReceipts()
+        {
+            var goodsReceipts = await _context.goodsReceipts.ToListAsync();
+
+            return goodsReceipts;
+        }
+
+        public async Task<IList<string>> GetSuppliers()
+        {
+            var suppliers = await _context.goodsReceipts.Select(s => s.Supplier).ToListAsync();
+
+            return suppliers;
+        }
+
         public async Task<GoodsReceipt> Add(GoodsReceipt goodsReceipt)
         {
             var exitingItem = await _context.goodsReceipts.FindAsync(goodsReceipt.GoodsReceiptId);

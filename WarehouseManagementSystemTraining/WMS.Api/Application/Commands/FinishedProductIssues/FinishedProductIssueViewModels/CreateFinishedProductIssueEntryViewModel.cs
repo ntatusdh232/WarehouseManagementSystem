@@ -11,7 +11,8 @@
         public string FinishedProductIssueId { get; set; }
 
         public CreateFinishedProductIssueEntryViewModel(string finishedProductIssueEntryId, string purchaseOrderNumber, double quantity, 
-                                                        string? note, Item item, string itemId, string finishedProductIssueId)
+                                                        string? note, Item item, string itemId, 
+                                                        string finishedProductIssueId)
         {
             FinishedProductIssueEntryId = finishedProductIssueEntryId;
             PurchaseOrderNumber = purchaseOrderNumber;

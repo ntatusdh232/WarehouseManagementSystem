@@ -35,6 +35,19 @@
             return finishedProductReceiptlist;
         }
 
+        public async Task<IEnumerable<string>> GetReceiptIds()
+        {
+            var ReceiptIdList = await _context.finishedProductReceipts.Select(s => s.FinishedProductReceiptId).ToListAsync();
+
+            return ReceiptIdList;
+        }
+
+        public async Task<IEnumerable<FinishedProductReceipt>> GetReceiptByTime(DateTime timeTamp)
+        {
+            var receiptList = await _context.finishedProductReceipts.Where(s => s.Timestamp == timeTamp).ToListAsync();
+            return receiptList;
+        }
+
         public async Task<FinishedProductReceipt> Update(FinishedProductReceipt finishedProductReceipt)
         {
             var existingItem = await _context.finishedProductReceipts.FindAsync(finishedProductReceipt.FinishedProductReceiptId);
