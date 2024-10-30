@@ -53,6 +53,16 @@ namespace WMS.Infrastructure.Repositories
             return suppliers;
         }
 
+        public async Task<IEnumerable<GoodsReceipt>> GetGoodsReceiptsByTime(DateTime timeTamp, bool isCompleted)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<GoodsReceipt>> Filter(IEnumerable<GoodsReceipt> goodsReceipts, IQueryable<GoodsReceiptLot> goodsReceiptLots)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<GoodsReceipt> Add(GoodsReceipt goodsReceipt)
         {
             var exitingItem = await _context.goodsReceipts.FindAsync(goodsReceipt.GoodsReceiptId);

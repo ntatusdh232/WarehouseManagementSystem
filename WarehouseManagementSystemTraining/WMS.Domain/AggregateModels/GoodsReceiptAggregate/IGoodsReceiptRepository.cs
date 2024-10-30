@@ -6,6 +6,8 @@
         Task<IEnumerable<GoodsReceipt>> GetUnCompletedGoodsReceipts();
         Task<IEnumerable<GoodsReceipt>> GetAllGoodsReceipts();
         Task<IList<string>> GetSuppliers();
+        Task<IEnumerable<GoodsReceipt>> GetGoodsReceiptsByTime(DateTime timeTamp, bool isCompleted);
+        Task<IEnumerable<GoodsReceipt>> Filter(IEnumerable<GoodsReceipt> goodsReceipts, IQueryable<GoodsReceiptLot> goodsReceiptLots);
 
 
 
