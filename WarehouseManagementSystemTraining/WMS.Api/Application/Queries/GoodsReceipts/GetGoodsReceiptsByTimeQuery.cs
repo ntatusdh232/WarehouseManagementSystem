@@ -2,12 +2,12 @@
 {
     public class GetGoodsReceiptsByTimeQuery : PaginatedQuery, IRequest<IEnumerable<GoodsReceiptViewModel>>
     {
-        public DateTime TimeTamp {  get; set; }
+        public TimeRangeQuery Query {  get; set; }
         public bool IsCompleted { get; set; }
 
-        public GetGoodsReceiptsByTimeQuery(DateTime timeTamp, bool isCompleted)
+        public GetGoodsReceiptsByTimeQuery(TimeRangeQuery query, bool isCompleted)
         {
-            TimeTamp = timeTamp;
+            Query = query;
             IsCompleted = isCompleted;
         }
     }

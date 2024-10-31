@@ -2,12 +2,12 @@
 {
     public class QueryResult<T>
     {
-        public IEnumerable<T> Items { get; set; } = new List<T>();
+        public IEnumerable<T> Result { get; set; } = new List<T>();
         public int TotalItems { get; set; } = 0;
 
-        public QueryResult(IEnumerable<T> items, int totalItems)
+        public QueryResult(IEnumerable<T> result, int totalItems)
         {
-            Items = items;
+            Result = result;
             TotalItems = totalItems;
         }
     }

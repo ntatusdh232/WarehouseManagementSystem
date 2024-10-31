@@ -13,9 +13,7 @@
 
         public async Task<IEnumerable<GoodsReceiptViewModel>> Handle(GetGoodsReceiptsByTimeQuery request, CancellationToken cancellationToken)
         {
-            var goodsReceiptList = await _goodsReceiptRepository.GetGoodsReceiptsByTime(request.TimeTamp, request.IsCompleted);
-            var goodsReceiptViewModel = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(goodsReceiptList);
-            return goodsReceiptViewModel;
+            throw new NotImplementedException();    
         }
     }
 }

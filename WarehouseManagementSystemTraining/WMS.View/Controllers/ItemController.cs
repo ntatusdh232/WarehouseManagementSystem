@@ -37,7 +37,7 @@ namespace WMS.View.Controllers
             // Create workbook and worksheet
             using (var workbook = new XLWorkbook())
             {
-                var worksheet = workbook.Worksheets.Add("Items");
+                var worksheet = workbook.Worksheets.Add("Result");
 
                 worksheet = _itemRepository.GetItemListWorkSheet(items, worksheet);     
 
@@ -45,7 +45,7 @@ namespace WMS.View.Controllers
                 {
                     workbook.SaveAs(stream);
                     var content = stream.ToArray();
-                    var fileName = "Items.xlsx";
+                    var fileName = "Result.xlsx";
                     return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
                 }
             }

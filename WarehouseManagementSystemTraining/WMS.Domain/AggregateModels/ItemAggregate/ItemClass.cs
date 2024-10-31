@@ -1,8 +1,4 @@
-﻿using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
-using DocumentFormat.OpenXml.Spreadsheet;
-using DocumentFormat.OpenXml.Wordprocessing;
-
-namespace WMS.Domain.AggregateModels.ItemAggregate
+﻿namespace WMS.Domain.AggregateModels.ItemAggregate
 {
     public class ItemClass : IAggregateRoot
     {

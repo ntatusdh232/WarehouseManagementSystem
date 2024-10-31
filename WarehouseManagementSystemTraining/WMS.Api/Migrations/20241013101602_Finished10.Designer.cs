@@ -25,7 +25,7 @@ namespace WMS.Api.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ItemLotLocation", b =>
+            modelBuilder.Entity("UnisolatedItemLotLocations", b =>
                 {
                     b.Property<string>("ItemLotsLotId")
                         .HasColumnType("nvarchar(450)");
@@ -632,7 +632,7 @@ namespace WMS.Api.Migrations
                     b.ToTable("warehouses");
                 });
 
-            modelBuilder.Entity("ItemLotLocation", b =>
+            modelBuilder.Entity("UnisolatedItemLotLocations", b =>
                 {
                     b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.ItemLot", null)
                         .WithMany()

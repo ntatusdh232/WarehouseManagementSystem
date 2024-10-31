@@ -2,11 +2,11 @@
 {
     public class GetByTimeQuery : PaginatedQuery, IRequest<IEnumerable<FinishedProductReceiptViewModel>>
     {
-        public DateTime TimeTamp {  get; set; }
+        public TimeRangeQuery Query {  get; set; }
 
-        public GetByTimeQuery(DateTime timeTamp)
+        public GetByTimeQuery(TimeRangeQuery query)
         {
-            TimeTamp = timeTamp;
+            Query = query;
         }
     }
 

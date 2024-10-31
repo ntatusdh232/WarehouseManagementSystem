@@ -42,9 +42,9 @@
             return ReceiptIdList;
         }
 
-        public async Task<IEnumerable<FinishedProductReceipt>> GetReceiptByTime(DateTime timeTamp)
+        public async Task<IEnumerable<FinishedProductReceipt>> GetReceiptByTime(DateTime query)
         {
-            var receiptList = await _context.finishedProductReceipts.Where(s => s.Timestamp == timeTamp).ToListAsync();
+            var receiptList = await _context.finishedProductReceipts.Where(s => s.Timestamp == query).ToListAsync();
             return receiptList;
         }
 

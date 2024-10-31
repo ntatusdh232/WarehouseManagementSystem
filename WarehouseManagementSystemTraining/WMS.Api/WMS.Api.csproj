@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <Folder Include="Application\Commands\" />
-    <Folder Include="Application\DomainEventHandlers\" />
     <Folder Include="Application\Exceptions\" />
     <Folder Include="Application\Commands\" />
   </ItemGroup>

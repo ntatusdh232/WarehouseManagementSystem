@@ -13,9 +13,7 @@
 
         public async Task<IEnumerable<FinishedProductReceiptViewModel>> Handle(GetByTimeQuery request, CancellationToken cancellationToken)
         {
-            var ReceiptList = await _finishedProductReceiptRepository.GetReceiptByTime(request.TimeTamp);
-            var finishedProductReceiptViewModel = _mapper.Map<IEnumerable<FinishedProductReceiptViewModel>>(ReceiptList);
-            return finishedProductReceiptViewModel;
+            throw new NotImplementedException();
 
         }
 
