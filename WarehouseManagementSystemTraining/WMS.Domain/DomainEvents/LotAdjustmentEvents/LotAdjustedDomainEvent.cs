@@ -12,7 +12,8 @@ namespace WMS.Domain.DomainEvents.LotAdjustmentEvents
         public DateTime Timestamp { get; set; }
         public List<SublotAdjustment> sublotLotAdjustments { get; set; }
 
-        public LotAdjustedDomainEvent(string lotId, string itemId, double beforeQuantity, double afterQuantity, string unit, DateTime timestamp, List<SublotAdjustment> sublotLotAdjustments)
+        public LotAdjustedDomainEvent(string lotId, string itemId, double beforeQuantity, double afterQuantity, string unit, 
+                                      DateTime timestamp, List<SublotAdjustment> sublotLotAdjustments)
         {
             LotId = lotId;
             ItemId = itemId;
