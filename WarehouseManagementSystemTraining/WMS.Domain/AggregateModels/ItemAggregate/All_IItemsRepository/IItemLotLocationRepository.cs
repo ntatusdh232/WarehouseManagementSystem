@@ -1,6 +1,6 @@
 ﻿namespace WMS.Domain.AggregateModels.ItemAggregate.All_IItemsRepository
 {
-    public interface IItemLotLocationRepository : IRepository<ItemLot>, IRepository<Location>
+    public interface IItemLotLocationRepository : IRepository<ItemLotLocation>
     {
         // Hiển thị Location
         Task <IEnumerable<Location>> GetByIdAsync(string lotId);

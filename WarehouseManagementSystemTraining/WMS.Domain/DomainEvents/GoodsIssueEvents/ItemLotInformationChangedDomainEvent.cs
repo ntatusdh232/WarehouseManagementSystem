@@ -1,6 +1,4 @@
-﻿using WMS.Domain.AggregateModels.GoodsIssueAggregate;
-
-namespace WMS.Domain.DomainEvents.GoodsIssueEvents
+﻿namespace WMS.Domain.DomainEvents.GoodsIssueEvents
 {
     public class ItemLotInformationChangedDomainEvent : INotification
     {

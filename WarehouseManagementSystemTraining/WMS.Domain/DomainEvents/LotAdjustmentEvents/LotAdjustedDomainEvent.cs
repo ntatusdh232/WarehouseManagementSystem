@@ -1,8 +1,6 @@
-﻿using WMS.Domain.AggregateModels.LotAdjustmentAggregate;
-
-namespace WMS.Domain.DomainEvents.LotAdjustmentEvents
+﻿namespace WMS.Domain.DomainEvents.LotAdjustmentEvents
 {
-    public class LotAdjustedDomainEvent
+    public class LotAdjustedDomainEvent : INotification
     {
         public string LotId { get; set; }
         public string ItemId { get; set; }

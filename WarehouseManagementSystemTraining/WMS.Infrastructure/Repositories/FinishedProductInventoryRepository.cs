@@ -69,6 +69,16 @@
             return POsList;
         }
 
+        public async Task<FinishedProductInventory> GetInventory(string itemId, string unit, string purchaseOrderNumber)
+        {
+            var Inventory = await _context.finishedProductInventories
+                .FirstOrDefaultAsync(s => s.ItemId == itemId && s.PurchaseOrderNumber == purchaseOrderNumber && s.Item.Unit == unit);
+
+            return Inventory ?? throw new Exception("Not Found");
+
+
+        }
+
 
     }
 }

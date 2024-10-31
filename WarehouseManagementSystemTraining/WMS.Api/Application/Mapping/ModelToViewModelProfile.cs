@@ -45,8 +45,8 @@ namespace WMS.Api.Application.Mapping
 
         public void MapLocationViewModel()
         {
-            CreateMap<QueryResult<Location>, QueryResult<LocationViewModel>>();
-            CreateMap<Location, LocationViewModel>();
+            CreateMap<QueryResult<WMS.Domain.AggregateModels.LocationAggregate.Location>, QueryResult<LocationViewModel>>();
+            CreateMap<WMS.Domain.AggregateModels.LocationAggregate.Location, LocationViewModel>();
         }
 
         public void MapWarehouseViewModel()
