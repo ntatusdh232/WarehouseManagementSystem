@@ -1,6 +1,8 @@
-﻿namespace WMS.Domain.AggregateModels.FinishedProductAggregate
+﻿using WMS.Domain.DomainEvents.FinishedProductIssueEvents;
+
+namespace WMS.Domain.AggregateModels.FinishedProductAggregate
 {
-    public class FinishedProductIssue : IAggregateRoot
+    public class FinishedProductIssue : Entity, IAggregateRoot
     { 
         public string FinishedProductIssueId { get; set; }
         public string? Receiver { get; set; }
@@ -34,7 +36,7 @@
 
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
-        public void AddEntry(FinishedProductIssueEntry inputEntry)
+        public void AddIssueEntry(FinishedProductIssueEntry inputEntry)
         {
             bool isEntryExist = false;
             foreach (var entry in Entries)
@@ -50,6 +52,12 @@
                 Entries.Add(inputEntry);
             }
         }
+
+        public void UpdateFinishedProductInventory(Item item, string purchaseOrderNumber, double quantity)
+        {
+            AddDomainEvent(new UpdateInventoryOnCreateProductIssueDomainEvent(item, purchaseOrderNumber, quantity));
+        }
+
 
         public void UpdateEntry(List<FinishedProductIssueEntry> entries)
         {

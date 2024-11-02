@@ -50,18 +50,11 @@ namespace WMS.Infrastructure.Repositories
             return existingItem;
         }
 
-        public async Task UpdateEntries(FinishedProductIssue finishedProductIssue, CancellationToken cancellationToken)
+        public async Task UpdateEntries(FinishedProductIssue finishedProductIssue)
         {
             var existingItem = await _context.finishedProductIssues.FindAsync(finishedProductIssue.FinishedProductIssueId);
 
-            if (existingItem == null)
-            {
-                throw new Exception("Not Found");
-            }
-
             existingItem.UpdateEntry(finishedProductIssue.Entries);
-
-            await _context.SaveChangesAsync(cancellationToken);
 
         }
 

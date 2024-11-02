@@ -6,7 +6,7 @@
         Task<FinishedProductIssue> GetIssueById(string finishedProductIssueId);
         Task<FinishedProductIssue> Update(FinishedProductIssue finishedProductIssue);
         Task<IEnumerable<FinishedProductIssueEntry>> GetProductIssueEntry();
-        Task UpdateEntries(FinishedProductIssue finishedProductIssue, CancellationToken cancellationToken);
+        Task UpdateEntries(FinishedProductIssue finishedProductIssue);
 
 
 
