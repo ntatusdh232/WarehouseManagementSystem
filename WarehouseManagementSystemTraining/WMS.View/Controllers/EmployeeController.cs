@@ -126,7 +126,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> UpdateEmployee(EmployeeList employee)
+        public async Task<IActionResult> UpdateEmployee(Employee employee)
         {
             ModelState.Remove("GoodsReceiptLot");
             if (ModelState.IsValid)

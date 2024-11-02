@@ -14,26 +14,26 @@
         private IActionResult HandleInternalError(Exception ex) => StatusCode(500, $"Internal server error: {ex.Message}");
 
         [HttpGet("Employee/GetployeeAll")]
-        public async Task<IEnumerable<EmployeeList>> GetEmployeeALl()
+        public async Task<IEnumerable<Employee>> GetEmployeeALl()
         {
             return await _employeeRepository.GettAllAsync();
         }
 
         [HttpGet("Employee/GetEmployByid/{employeeId}")]
-        public async Task<EmployeeList> GetEmployeeId(string employeeId)
+        public async Task<Employee> GetEmployeeId(string employeeId)
         {
             return await _employeeRepository.GetEmployeeById(employeeId);
         }
 
         [HttpGet("Employee/GetEmployeeByName/{employeeName}")]
-        public async Task<EmployeeList> GetEmployeeName(string employeeName)
+        public async Task<Employee> GetEmployeeName(string employeeName)
         {
             return await _employeeRepository.GetEmployeeByName(employeeName);
         }
 
         // POST: api/Employee
         [HttpPost("Employee/AddEmployee")]
-        public async Task<IActionResult> AddEmployee([FromBody] EmployeeList employeeList)
+        public async Task<IActionResult> AddEmployee([FromBody] Employee employeeList)
         {
             try
             {
@@ -60,7 +60,7 @@
 
         // PUT: api/Employee/{employeeId}
         [HttpPut("Employee/UpdateEmployee/{employeeId}")]
-        public async Task<IActionResult> UpdateEmployee(string employeeId, [FromBody] EmployeeList updatedEmployee)
+        public async Task<IActionResult> UpdateEmployee(string employeeId, [FromBody] Employee updatedEmployee)
         {
             try
             {

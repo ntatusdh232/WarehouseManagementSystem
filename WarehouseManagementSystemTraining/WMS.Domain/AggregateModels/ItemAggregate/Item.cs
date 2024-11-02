@@ -61,6 +61,7 @@
             PacketUnit = packetUnit;
             ItemClassId = itemClassId;
         }
+
 #pragma warning restore CS8618
 
         public void Update(string unit, double minimumStockLevel, decimal price)

@@ -5,11 +5,11 @@
 
         public EmployeeRepository(ApplicationDbContext context) : base(context){}
 
-        public async Task<IEnumerable<EmployeeList>> GettAllAsync()
+        public async Task<IEnumerable<Employee>> GettAllAsync()
         {
             var employeeList = await _context.employees
                 .AsNoTracking()
-                .Select(e => new EmployeeList
+                .Select(e => new Employee
                 (
                     e.EmployeeId,
                     e.EmployeeName
@@ -18,12 +18,12 @@
             return employeeList;
         }
 
-        public async Task<EmployeeList> GetEmployeeById(string employeeId)
+        public async Task<Employee> GetEmployeeById(string employeeId)
         {
             var employee = await _context.employees
                 .AsNoTracking()
                 .Where(e => e.EmployeeId == employeeId)
-                .Select(e => new EmployeeList
+                .Select(e => new Employee
                 (
                     e.EmployeeId,
                     e.EmployeeName
@@ -37,12 +37,12 @@
             return employee;
         }
 
-        public async Task<EmployeeList> GetEmployeeByName(string employeeName)
+        public async Task<Employee> GetEmployeeByName(string employeeName)
         {
             var employee = await _context.employees
                 .AsNoTracking()
                 .Where(e => e.EmployeeName == employeeName)
-                .Select(e => new EmployeeList
+                .Select(e => new Employee
                 (
                     e.EmployeeId,
                     e.EmployeeName
@@ -56,7 +56,7 @@
             return employee;
         }
 
-        public async Task<EmployeeList> Add(EmployeeList employee)
+        public async Task<Employee> Add(Employee employee)
         {
             var employeeId = string.IsNullOrEmpty(employee.EmployeeId)
                 ? Guid.NewGuid().ToString()
@@ -73,7 +73,7 @@
             await _context.SaveChangesAsync(); 
 
 
-            return new EmployeeList
+            return new Employee
             (
                 newEmployee.EmployeeId,
                 newEmployee.EmployeeName
@@ -82,7 +82,7 @@
         }
 
 
-        public async Task<EmployeeList?> Update(EmployeeList updatedEmployee)
+        public async Task<Employee?> Update(Employee updatedEmployee)
         {
             // Tìm employee trong cơ sở dữ liệu
             var employee = await _context.employees.FindAsync(updatedEmployee.EmployeeId);
@@ -95,7 +95,7 @@
             employee.EmployeeName = updatedEmployee.EmployeeName;
 
             await _context.SaveChangesAsync();
-            return new EmployeeList
+            return new Employee
             (
                 employee.EmployeeId,
                 employee.EmployeeName
@@ -179,7 +179,7 @@
             return pagedEmployees;
         }
 
-        public async Task UpdateEmployee(EmployeeList employee)
+        public async Task UpdateEmployee(Employee employee)
         {
             var existingEmployee = await _context.employees.FindAsync(employee.EmployeeId);
             if (existingEmployee != null)

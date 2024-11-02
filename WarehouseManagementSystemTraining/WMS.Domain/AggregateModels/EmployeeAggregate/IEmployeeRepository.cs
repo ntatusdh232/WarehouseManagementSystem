@@ -2,16 +2,16 @@
 {
     public interface IEmployeeRepository : IRepository<Employee>
     {
-        Task<IEnumerable<EmployeeList>> GettAllAsync();
-        Task<EmployeeList> GetEmployeeById(string employeeId);
-        Task<EmployeeList> GetEmployeeByName(string employeeName);
-        Task<EmployeeList> Add(EmployeeList employee);
-        Task<EmployeeList?> Update(EmployeeList updatedEmployee);
+        Task<IEnumerable<Employee>> GettAllAsync();
+        Task<Employee> GetEmployeeById(string employeeId);
+        Task<Employee> GetEmployeeByName(string employeeName);
+        Task<Employee> Add(Employee employee);
+        Task<Employee?> Update(Employee updatedEmployee);
 
 
 
 
-        Task UpdateEmployee(EmployeeList employee);
+        Task UpdateEmployee(Employee employee);
         Task<Employee> AddEmployee(Employee employee);
         IEnumerable<Employee> GetEmployees();
         IEnumerable<Employee> GetSort(string sortField, string sortDirection, IEnumerable<Employee> employees);
