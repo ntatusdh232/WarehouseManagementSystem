@@ -20,10 +20,13 @@
             EmployeeId = employeeId;
         }
 
-    
+        public void Update(string employeeName)
+        {
+            EmployeeName = employeeName;
+        }
 
 
-#pragma warning restore CS8618
+
 
     }
 
