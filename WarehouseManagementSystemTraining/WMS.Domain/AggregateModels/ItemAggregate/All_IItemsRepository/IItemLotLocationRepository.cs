@@ -1,4 +1,6 @@
-﻿namespace WMS.Domain.AggregateModels.ItemAggregate.All_IItemsRepository
+﻿using WMS.Domain.AggregateModels.ItemLotLocationAggregate;
+
+namespace WMS.Domain.AggregateModels.ItemAggregate.All_IItemsRepository
 {
     public interface IItemLotLocationRepository : IRepository<ItemLotLocation>
     {

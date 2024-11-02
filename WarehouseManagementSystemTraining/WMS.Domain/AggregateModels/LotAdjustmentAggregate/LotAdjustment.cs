@@ -43,18 +43,4 @@
         }
     }
 
-    public class SublotAdjustment : IAggregateRoot
-    {
-        public string LotId { get; set; }
-
-        public SublotAdjustment(string lotId)
-        {
-            LotId = lotId;
-        }
-    }
-
-
-
-
-
 }

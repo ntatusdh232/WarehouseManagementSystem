@@ -1,4 +1,6 @@
-﻿namespace WMS.Domain.DomainEvents.IsolatedItemLotEvents
+﻿using WMS.Domain.AggregateModels.ItemLotLocationAggregate;
+
+namespace WMS.Domain.DomainEvents.IsolatedItemLotEvents
 {
     public class BackToItemLotDomainEvent : INotification
     {

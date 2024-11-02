@@ -1,4 +1,6 @@
-﻿namespace WMS.Domain.DomainEvents.GoodsReceiptEvents;
+﻿using WMS.Domain.AggregateModels.ItemLotLocationAggregate;
+
+namespace WMS.Domain.DomainEvents.GoodsReceiptEvents;
 
 public class UpdateItemLotDomainEvent : INotification
 {
