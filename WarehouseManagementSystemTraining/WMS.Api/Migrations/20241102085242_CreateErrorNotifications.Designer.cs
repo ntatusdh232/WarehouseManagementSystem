@@ -525,7 +525,7 @@ namespace WMS.Api.Migrations
                     b.ToTable("lotAdjustments");
                 });
 
-            modelBuilder.Entity("WMS.Domain.AggregateModels.StorageAggregate.Department", b =>
+            modelBuilder.Entity("WMS.Domain.AggregateModels.StorageAggregate.Warehouse", b =>
                 {
                     b.Property<string>("WarehouseId")
                         .HasColumnType("nvarchar(450)");
@@ -789,7 +789,7 @@ namespace WMS.Api.Migrations
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.LocationAggregate.Location", b =>
                 {
-                    b.HasOne("WMS.Domain.AggregateModels.StorageAggregate.Department", null)
+                    b.HasOne("WMS.Domain.AggregateModels.StorageAggregate.Warehouse", null)
                         .WithMany("Locations")
                         .HasForeignKey("DepartmentWarehouseId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -864,7 +864,7 @@ namespace WMS.Api.Migrations
                     b.Navigation("ItemClasses");
                 });
 
-            modelBuilder.Entity("WMS.Domain.AggregateModels.StorageAggregate.Department", b =>
+            modelBuilder.Entity("WMS.Domain.AggregateModels.StorageAggregate.Warehouse", b =>
                 {
                     b.Navigation("Locations");
                 });

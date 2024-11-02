@@ -7,6 +7,7 @@
         Task CommitTransactionAsync();
         void RollbackTransaction();
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+        Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken);
 
     }
 }

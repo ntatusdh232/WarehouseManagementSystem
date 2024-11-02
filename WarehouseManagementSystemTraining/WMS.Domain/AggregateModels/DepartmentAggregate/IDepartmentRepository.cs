@@ -2,13 +2,13 @@
 
 namespace WMS.Domain.AggregateModels.WarehouseAggregate
 {
-    public interface IDepartmentRepository : IRepository<Department>
+    public interface IDepartmentRepository : IRepository<Warehouse>
     {
-        Task<IEnumerable<Department>> GetAllDepartmentsAsync(CancellationToken cancellationToken);
+        Task<IEnumerable<Warehouse>> GetAllDepartmentsAsync(CancellationToken cancellationToken);
 
-        Task<IEnumerable<Department>> GetAllAsync();
-        Task Add(Department request, CancellationToken cancellationToken);
-        Task<Department> GetWarehouseById(string departmentId);
-        Task<Department> AdDepartment(Department request, CancellationToken cancellationToken);
+        Task<IEnumerable<Warehouse>> GetAllAsync();
+        Task Add(Warehouse request, CancellationToken cancellationToken);
+        Task<Warehouse> GetWarehouseById(string departmentId);
+        Task<Warehouse> AdDepartment(Warehouse request, CancellationToken cancellationToken);
     }
 }

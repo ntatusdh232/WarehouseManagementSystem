@@ -11,29 +11,12 @@
 
         public async Task<bool> Handle(CreateFinishedProductIssueCommand request, CancellationToken cancellationToken)
         {
+            var finishedProductIssue = await _finishedProductIssueRepository.GetIssueById(request.FinishedProductIssueId);
+            if (finishedProductIssue != null) return false;
+            
             var employee = _employeeRepository.GetEmployeeById(request.EmployeeId);
+                
 
-            var finishedProductIssue = new FinishedProductIssue
-            (
-                request.FinishedProductIssueId,
-                request.Receiver,
-                DateTime.Now,
-                new Employee ( request.EmployeeId ),
-                request.Entries.Select(e => new FinishedProductIssueEntry 
-                (
-                    e.FinishedProductIssueEntryId,
-                    e.PurchaseOrderNumber,
-                    e.Quantity,
-                    e.Note,
-                    e.Item,
-                    e.ItemId,
-                    request.FinishedProductIssueId
-                )).ToList(),
-                request.EmployeeId
-            );
-
-
-            await _finishedProductIssueRepository.AddAsync(finishedProductIssue, cancellationToken);
 
             return true;
         }

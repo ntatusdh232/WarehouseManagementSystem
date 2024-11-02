@@ -1,10 +1,18 @@
-﻿using WMS.Domain.AggregateModels.StorageAggregate;
+﻿using MediatR;
+using WMS.Domain.AggregateModels.StorageAggregate;
 
 namespace WMS.Infrastructure
 {
     public class ApplicationDbContext : DbContext, IUnitOfWork
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options){}
+
+        public ApplicationDbContext(DbContextOptions options, IMediator mediator) : base(options)
+        {
+            _mediator = mediator;
+        }
+
+        private readonly IMediator _mediator;
 
         public DbSet<Employee> employees { get; set; }
 
@@ -36,7 +44,7 @@ namespace WMS.Infrastructure
         public DbSet<User> users { get; set; }
         public DbSet<UserAccount> userAccounts { get; set; }
 
-        public DbSet<Department> warehouses { get; set; }
+        public DbSet<Warehouse> warehouses { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -83,6 +91,14 @@ namespace WMS.Infrastructure
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken)
         {
             return await base.SaveChangesAsync(cancellationToken);
+        }
+
+        public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
+        {
+            await _mediator.DispatchDomainEventsAsync(this);
+            await base.SaveChangesAsync(cancellationToken);
+
+            return true;
         }
 
 

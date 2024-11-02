@@ -2,9 +2,9 @@
 
 namespace WMS.Infrastructure.EntityConfigurations.WarehouseConfigurations
 {
-    public class WarehouseEntityTypeConfiguration : IEntityTypeConfiguration<Department>
+    public class WarehouseEntityTypeConfiguration : IEntityTypeConfiguration<Warehouse>
     {
-        public void Configure(EntityTypeBuilder<Department> builder)
+        public void Configure(EntityTypeBuilder<Warehouse> builder)
         {
             builder.HasKey(w => w.WarehouseId);
 

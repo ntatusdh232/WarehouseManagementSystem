@@ -23,10 +23,10 @@ namespace WMS.Api.Controllers
         }
 
         [HttpPost("Add")]
-        public async Task<IActionResult> Add([FromBody] Department department, CancellationToken cancellationToken)
+        public async Task<IActionResult> Add([FromBody] Warehouse department, CancellationToken cancellationToken)
         {
             if (department == null)
-                return BadRequest("Department data is required.");
+                return BadRequest("Warehouse data is required.");
 
             try
             {

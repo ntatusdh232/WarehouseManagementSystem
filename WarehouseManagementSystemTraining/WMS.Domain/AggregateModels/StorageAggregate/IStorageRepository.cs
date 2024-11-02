@@ -2,11 +2,11 @@
 
 namespace WMS.Domain.AggregateModels.LocationAggregate
 {
-    public interface IStorageRepository : IRepository<Department>, IRepository<Location>
+    public interface IStorageRepository : IRepository<Warehouse>, IRepository<Location>
     {
-        Task<Department> Add(Department warehouse);
-        Task <IEnumerable<Department>> GetALL();
+        Task<Warehouse> Add(Warehouse warehouse);
+        Task <IEnumerable<Warehouse>> GetALL();
         Task<IEnumerable<Location>> GetLocationsById(string locationId);
-        Task<IEnumerable<Department>> GetWarehousesById(string warehouseId); 
+        Task<IEnumerable<Warehouse>> GetWarehousesById(string warehouseId); 
     }
 }

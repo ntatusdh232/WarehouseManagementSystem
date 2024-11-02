@@ -8,19 +8,19 @@ namespace WMS.Infrastructure.Repositories
         {
         }
 
-        public async Task<Department> Add(Department warehouse)
+        public async Task<Warehouse> Add(Warehouse warehouse)
         {
             var existingWarehouse = await _context.warehouses.FindAsync(warehouse.WarehouseId);
             if (existingWarehouse == warehouse)
             {
-                throw new ArgumentException($"Department already exists.");
+                throw new ArgumentException($"Warehouse already exists.");
             }
             await _context.warehouses.AddAsync(warehouse);
             await _context.SaveChangesAsync();
             return warehouse;
         }
 
-        public async Task<IEnumerable<Department>> GetALL()
+        public async Task<IEnumerable<Warehouse>> GetALL()
         {
             var warehouseList = await _context.warehouses.ToListAsync();
             return warehouseList;
@@ -32,7 +32,7 @@ namespace WMS.Infrastructure.Repositories
             return locationList;
         }
 
-        public async Task<IEnumerable<Department>> GetWarehousesById(string warehouseId)
+        public async Task<IEnumerable<Warehouse>> GetWarehousesById(string warehouseId)
         {
             var warehouseList = await _context.warehouses.Where(x => x.WarehouseId == warehouseId).ToListAsync();
             return warehouseList;
