@@ -486,12 +486,12 @@ namespace WMS.Api.Migrations
                     b.Property<string>("LocationId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("WarehouseId")
+                    b.Property<string>("DepartmentWarehouseId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("LocationId");
 
-                    b.HasIndex("WarehouseId");
+                    b.HasIndex("DepartmentWarehouseId");
 
                     b.ToTable("locations");
                 });
@@ -527,6 +527,24 @@ namespace WMS.Api.Migrations
                     b.HasIndex("ItemId");
 
                     b.ToTable("lotAdjustments");
+                });
+
+            modelBuilder.Entity("WMS.Domain.AggregateModels.StorageAggregate.Department", b =>
+                {
+                    b.Property<string>("WarehouseId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LocationId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WarehouseName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("WarehouseId");
+
+                    b.ToTable("warehouses");
                 });
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.UserAggregate.User", b =>
@@ -590,24 +608,6 @@ namespace WMS.Api.Migrations
                         .IsUnique();
 
                     b.ToTable("userAccounts");
-                });
-
-            modelBuilder.Entity("WMS.Domain.AggregateModels.WarehouseAggregate.Warehouse", b =>
-                {
-                    b.Property<string>("WarehouseId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("LocationId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("WarehouseName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("WarehouseId");
-
-                    b.ToTable("warehouses");
                 });
 
             modelBuilder.Entity("ItemLotLocation", b =>
@@ -797,9 +797,9 @@ namespace WMS.Api.Migrations
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.LocationAggregate.Location", b =>
                 {
-                    b.HasOne("WMS.Domain.AggregateModels.WarehouseAggregate.Warehouse", null)
+                    b.HasOne("WMS.Domain.AggregateModels.StorageAggregate.Department", null)
                         .WithMany("Locations")
-                        .HasForeignKey("WarehouseId")
+                        .HasForeignKey("DepartmentWarehouseId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -878,15 +878,15 @@ namespace WMS.Api.Migrations
                     b.Navigation("ItemClasses");
                 });
 
+            modelBuilder.Entity("WMS.Domain.AggregateModels.StorageAggregate.Department", b =>
+                {
+                    b.Navigation("Locations");
+                });
+
             modelBuilder.Entity("WMS.Domain.AggregateModels.UserAggregate.User", b =>
                 {
                     b.Navigation("UserAccounts")
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("WMS.Domain.AggregateModels.WarehouseAggregate.Warehouse", b =>
-                {
-                    b.Navigation("Locations");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,4 +1,8 @@
-﻿namespace WMS.Infrastructure.Repositories
+﻿using MediatR;
+using WMS.Domain.AggregateModels.GoodsReceiptAggregate;
+using WMS.Domain.AggregateModels.ItemAggregate;
+
+namespace WMS.Infrastructure.Repositories
 {
     public class ItemRepository : BaseRepository, IItemRepository
     {
@@ -49,7 +53,7 @@
             await _context.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task <ItemList> Update(ItemList itemList)
+        public async Task <Item> Update(Item itemList)
         {
 
             var existingItem = await _context.items.FindAsync(itemList.ItemId);
@@ -83,10 +87,10 @@
 
 
 
-        public async Task<IEnumerable<ItemList>> GetItemLists()
+        public async Task<IEnumerable<Item>> GetItemLists()
         {
             var itemlist = await _context.items
-                .Select(x => new ItemList
+                .Select(x => new Item
                 (
                     x.ItemType,
                     x.ItemId,
@@ -95,19 +99,20 @@
                     x.MinimumStockLevel,
                     x.Price,
                     x.PacketSize,
-                    x.PacketUnit
+                    x.PacketUnit,
+                    x.ItemClassId
+
 
                 )).ToListAsync();
-            
-            
+
             return itemlist;
         }
 
-        public async Task<ItemList> GetItemId(string itemId)
+        public async Task<Item> GetItemId(string itemId)
         {
             var item = await _context.items
                 .Where(x => x.ItemId == itemId)
-                .Select(x => new ItemList
+                .Select(x => new Item
                 (
                     x.ItemType,
                     x.ItemId,
@@ -116,7 +121,8 @@
                     x.MinimumStockLevel,
                     x.Price,
                     x.PacketSize,
-                    x.PacketUnit
+                    x.PacketUnit,
+                    x.ItemClassId
 
                 ))
                 .FirstOrDefaultAsync();
@@ -128,10 +134,10 @@
             return item;
         }
 
-        public IEnumerable<ItemList> GetItems()
+        public IEnumerable<Item> GetItems()
         {
             return _context.items
-                .Select(x => new ItemList
+                .Select(x => new Item
                 (
                     x.ItemType,
                     x.ItemId,
@@ -140,13 +146,14 @@
                     x.MinimumStockLevel,
                     x.Price,
                     x.PacketSize,
-                    x.PacketUnit
+                    x.PacketUnit,
+                    x.ItemClassId
 
                 ))
                 .ToList()?? throw new KeyNotFoundException("Item not found");
         }
 
-        public IEnumerable<ItemList> GetSort(string sortField, string sortDirection, IEnumerable<ItemList> items)
+        public IEnumerable<Item> GetSort(string sortField, string sortDirection, IEnumerable<Item> items)
         {
             switch (sortField)
             {
@@ -200,7 +207,7 @@
             return items;
         }
 
-        public IXLWorksheet? GetItemListWorkSheet(IEnumerable<ItemList> items, IXLWorksheet? worksheet)
+        public IXLWorksheet? GetItemListWorkSheet(IEnumerable<Item> items, IXLWorksheet? worksheet)
         {
 
             if (worksheet == null)
@@ -247,7 +254,7 @@
                 throw new InvalidOperationException("Không thể thêm vật phẩm vào cơ sở dữ liệu: " + ex.Message);
             }
         }
-        public List<ItemList> GetPageItems(IEnumerable<ItemList> items, int pageNumber, int pageSize)
+        public List<Item> GetPageItems(IEnumerable<Item> items, int pageNumber, int pageSize)
         {
             var pagedItems = items
                 .Skip((pageNumber - 1) * pageSize)
@@ -257,7 +264,7 @@
             return pagedItems;
         }
 
-        public async Task UpdateItem(ItemList item)
+        public async Task UpdateItem(Item item)
         {
             var existingItem = await _context.items.FindAsync(item.ItemId);
             if (existingItem != null)

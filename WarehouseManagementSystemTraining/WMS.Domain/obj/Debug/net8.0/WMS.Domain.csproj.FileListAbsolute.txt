@@ -22,3 +22,16 @@ D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.Do
 D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\refint\WMS.Domain.dll
 D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.pdb
 D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\ref\WMS.Domain.dll
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.deps.json
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.dll
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Domain\bin\Debug\net8.0\WMS.Domain.pdb
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.csproj.AssemblyReference.cache
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.AssemblyInfoInputs.cache
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.AssemblyInfo.cs
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.csproj.CoreCompileInputs.cache
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.sourcelink.json
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.dll
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\refint\WMS.Domain.dll
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\WMS.Domain.pdb
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Domain\obj\Debug\net8.0\ref\WMS.Domain.dll

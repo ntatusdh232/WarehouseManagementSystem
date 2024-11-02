@@ -1,9 +1,9 @@
 ﻿using DocumentFormat.OpenXml.InkML;
 using WMS.Domain.AggregateModels.ItemAggregate;
 
-namespace WMS.Domain.AggregateModels.WarehouseAggregate
+namespace WMS.Domain.AggregateModels.StorageAggregate
 {
-    public class Warehouse : IAggregateRoot
+    public class Department : IAggregateRoot
     {
         public string WarehouseId { get; set; }
         public string WarehouseName { get; set; }
@@ -12,9 +12,9 @@ namespace WMS.Domain.AggregateModels.WarehouseAggregate
 
 
 #pragma warning disable CS8618
-        private Warehouse() { }
+        private Department() { }
 
-        public Warehouse(string warehouseId, string warehouseName, List<Location> locations, string locationId)
+        public Department(string warehouseId, string warehouseName, List<Location> locations, string locationId)
         {
             WarehouseId = warehouseId;
             WarehouseName = warehouseName;
@@ -22,7 +22,7 @@ namespace WMS.Domain.AggregateModels.WarehouseAggregate
             LocationId = locationId;
         }
 
-        public Warehouse(string warehouseId, string warehouseName)
+        public Department(string warehouseId, string warehouseName)
         {
             WarehouseId = warehouseId;
             WarehouseName = warehouseName;

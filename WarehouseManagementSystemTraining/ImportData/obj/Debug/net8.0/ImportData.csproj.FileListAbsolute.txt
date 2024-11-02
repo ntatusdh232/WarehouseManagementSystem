@@ -103,6 +103,8 @@ D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\ImportData\
 D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\ExcelDataReader.dll
 D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\ExcelDataReader.DataSet.dll
 D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\ExcelNumberFormat.dll
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\MediatR.dll
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\MediatR.Contracts.dll
 D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
 D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\ImportData\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aFG+LYWrqcQ=",
+  "dgSpecHash": "wAwpvxQikiE=",
   "success": true,
   "projectFilePath": "D:\\ViamLab's Project\\C#\\WMS_Github\\WarehouseManagementSystemTraining\\WMS.Infrastructure\\WMS.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,8 @@
     "C:\\Users\\Phat Huy\\.nuget\\packages\\documentformat.openxml.framework\\3.0.1\\documentformat.openxml.framework.3.0.1.nupkg.sha512",
     "C:\\Users\\Phat Huy\\.nuget\\packages\\excelnumberformat\\1.1.0\\excelnumberformat.1.1.0.nupkg.sha512",
     "C:\\Users\\Phat Huy\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Phat Huy\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\Phat Huy\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Phat Huy\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Phat Huy\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
     "C:\\Users\\Phat Huy\\.nuget\\packages\\microsoft.codeanalysis.common\\4.5.0\\microsoft.codeanalysis.common.4.5.0.nupkg.sha512",

@@ -1,4 +1,6 @@
-﻿namespace WMS.Api.Controllers
+﻿using WMS.Domain.AggregateModels.StorageAggregate;
+
+namespace WMS.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -21,7 +23,7 @@
         }
 
         [HttpPost("Add")]
-        public async Task<IActionResult> Add([FromBody] Warehouse department, CancellationToken cancellationToken)
+        public async Task<IActionResult> Add([FromBody] Department department, CancellationToken cancellationToken)
         {
             if (department == null)
                 return BadRequest("Department data is required.");

@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Spreadsheet;
+using WMS.Domain.AggregateModels.StorageAggregate;
 
 namespace WMS.Api.Application.Mapping
 {
@@ -21,8 +22,8 @@ namespace WMS.Api.Application.Mapping
 
         public void MapDepartmentViewModel()
         {
-            CreateMap<QueryResult<Warehouse>, QueryResult<DepartmentViewModel>>();
-            CreateMap<Warehouse, DepartmentViewModel>();
+            CreateMap<QueryResult<Department>, QueryResult<DepartmentViewModel>>();
+            CreateMap<Department, DepartmentViewModel>();
         }
 
         public void MapFinishedProductInventoryViewModel()
@@ -51,8 +52,8 @@ namespace WMS.Api.Application.Mapping
 
         public void MapWarehouseViewModel()
         {
-            CreateMap<QueryResult<Warehouse>, QueryResult<WarehouseViewModel>>();
-            CreateMap<Warehouse, WarehouseViewModel>();
+            CreateMap<QueryResult<Department>, QueryResult<WarehouseViewModel>>();
+            CreateMap<Department, WarehouseViewModel>();
         }
 
         public void MapItemViewModel()

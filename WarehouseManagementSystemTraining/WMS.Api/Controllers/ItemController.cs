@@ -12,14 +12,14 @@
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ItemList>>> GetAll()
+        public async Task<ActionResult<IEnumerable<Item>>> GetAll()
         {
             var items = await _itemRepository.GetItemLists();
             return Ok(items);
         }
 
         [HttpGet("{itemId}")]
-        public async Task<ActionResult<ItemList>> GetById(string itemId)
+        public async Task<ActionResult<Item>> GetById(string itemId)
         {
             var item = await _itemRepository.GetItemById(itemId);
             if (item == null)
@@ -48,7 +48,7 @@
         }
 
         [HttpPut("Update/{itemId}")]
-        public async Task<IActionResult> Update(string itemId, [FromBody] ItemList updatedItem)
+        public async Task<IActionResult> Update(string itemId, [FromBody] Item updatedItem)
         {
             if (updatedItem == null)
                 return BadRequest("Item data is required.");

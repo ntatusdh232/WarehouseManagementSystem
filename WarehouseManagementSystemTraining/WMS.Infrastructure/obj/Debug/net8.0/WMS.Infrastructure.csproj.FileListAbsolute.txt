@@ -32,3 +32,21 @@ D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.In
 D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.pdb
 D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.genruntimeconfig.cache
 D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\ref\WMS.Infrastructure.dll
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Infrastructure.deps.json
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Infrastructure.runtimeconfig.json
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Infrastructure.dll
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Infrastructure.pdb
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Domain.dll
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\bin\Debug\net8.0\WMS.Domain.pdb
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.csproj.AssemblyReference.cache
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.AssemblyInfoInputs.cache
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.AssemblyInfo.cs
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.csproj.CoreCompileInputs.cache
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.sourcelink.json
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infr.677E6FEF.Up2Date
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.dll
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\refint\WMS.Infrastructure.dll
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.pdb
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\WMS.Infrastructure.genruntimeconfig.cache
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Infrastructure\obj\Debug\net8.0\ref\WMS.Infrastructure.dll

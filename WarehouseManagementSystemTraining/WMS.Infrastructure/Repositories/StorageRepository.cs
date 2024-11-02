@@ -1,4 +1,6 @@
-﻿namespace WMS.Infrastructure.Repositories
+﻿using WMS.Domain.AggregateModels.StorageAggregate;
+
+namespace WMS.Infrastructure.Repositories
 {
     internal class StorageRepository : BaseRepository, IStorageRepository
     {
@@ -6,19 +8,19 @@
         {
         }
 
-        public async Task<Warehouse> Add(Warehouse warehouse)
+        public async Task<Department> Add(Department warehouse)
         {
             var existingWarehouse = await _context.warehouses.FindAsync(warehouse.WarehouseId);
             if (existingWarehouse == warehouse)
             {
-                throw new ArgumentException($"Warehouse already exists.");
+                throw new ArgumentException($"Department already exists.");
             }
             await _context.warehouses.AddAsync(warehouse);
             await _context.SaveChangesAsync();
             return warehouse;
         }
 
-        public async Task<IEnumerable<Warehouse>> GetALL()
+        public async Task<IEnumerable<Department>> GetALL()
         {
             var warehouseList = await _context.warehouses.ToListAsync();
             return warehouseList;
@@ -30,7 +32,7 @@
             return locationList;
         }
 
-        public async Task<IEnumerable<Warehouse>> GetWarehousesById(string warehouseId)
+        public async Task<IEnumerable<Department>> GetWarehousesById(string warehouseId)
         {
             var warehouseList = await _context.warehouses.Where(x => x.WarehouseId == warehouseId).ToListAsync();
             return warehouseList;

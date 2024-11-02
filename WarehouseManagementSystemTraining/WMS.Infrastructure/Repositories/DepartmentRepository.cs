@@ -1,5 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Drawing.Charts;
+using WMS.Domain.AggregateModels.StorageAggregate;
 
 namespace WMS.Infrastructure.Repositories
 {
@@ -7,12 +8,12 @@ namespace WMS.Infrastructure.Repositories
     {
         public DepartmentRepository(ApplicationDbContext context) : base(context) { }
 
-        public async Task<IEnumerable<Warehouse>> GetAllAsync()
+        public async Task<IEnumerable<Domain.AggregateModels.StorageAggregate.Department>> GetAllAsync()
         {
             return await _context.warehouses.ToListAsync();
         }
 
-        public async Task Add(Warehouse request, CancellationToken cancellationToken)
+        public async Task Add(Domain.AggregateModels.StorageAggregate.Department request, CancellationToken cancellationToken)
         {
             if (request == null) 
             {
@@ -25,12 +26,12 @@ namespace WMS.Infrastructure.Repositories
 
         }
 
-        public async Task<Warehouse> GetWarehouseById(string warehouseId)
+        public async Task<Domain.AggregateModels.StorageAggregate.Department> GetWarehouseById(string warehouseId)
         {
             var warehouse = await _context.warehouses.FindAsync(warehouseId);
             if (warehouse == null)
             {
-                throw new Exception($"Warehouse with {warehouseId} is not found");
+                throw new Exception($"Department with {warehouseId} is not found");
             }
             else
             {
@@ -38,7 +39,7 @@ namespace WMS.Infrastructure.Repositories
             }
         }
 
-        public async Task<Warehouse> AdDepartment(Warehouse request, CancellationToken cancellationToken)
+        public async Task<Domain.AggregateModels.StorageAggregate.Department> AdDepartment(Domain.AggregateModels.StorageAggregate.Department request, CancellationToken cancellationToken)
         {
             if (request == null)
             {
@@ -52,7 +53,7 @@ namespace WMS.Infrastructure.Repositories
             return request;
         }
 
-        public async Task<IEnumerable<Warehouse>> GetAllDepartmentsAsync(CancellationToken cancellationToken)
+        public async Task<IEnumerable<Domain.AggregateModels.StorageAggregate.Department>> GetAllDepartmentsAsync(CancellationToken cancellationToken)
         {
             return await _context.warehouses.ToListAsync(cancellationToken);
         }

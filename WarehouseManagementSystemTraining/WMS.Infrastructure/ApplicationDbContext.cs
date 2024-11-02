@@ -1,4 +1,6 @@
-﻿namespace WMS.Infrastructure
+﻿using WMS.Domain.AggregateModels.StorageAggregate;
+
+namespace WMS.Infrastructure
 {
     public class ApplicationDbContext : DbContext, IUnitOfWork
     {
@@ -34,7 +36,7 @@
         public DbSet<User> users { get; set; }
         public DbSet<UserAccount> userAccounts { get; set; }
 
-        public DbSet<Warehouse> warehouses { get; set; }
+        public DbSet<Department> warehouses { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

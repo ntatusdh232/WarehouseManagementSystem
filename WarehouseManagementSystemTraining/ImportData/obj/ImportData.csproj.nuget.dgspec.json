@@ -204,6 +204,10 @@
             "ClosedXML": {
               "target": "Package",
               "version": "[0.104.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
             }
           },
           "imports": [
@@ -279,6 +283,10 @@
             "ClosedXML": {
               "target": "Package",
               "version": "[0.104.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

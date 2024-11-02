@@ -123,7 +123,7 @@ namespace WMS.View.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> UpdateItem(ItemList item)
+        public async Task<IActionResult> UpdateItem(Item item)
         {
             if (!ModelState.IsValid)
             {

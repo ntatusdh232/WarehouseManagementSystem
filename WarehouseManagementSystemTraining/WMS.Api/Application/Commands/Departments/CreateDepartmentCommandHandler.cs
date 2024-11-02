@@ -11,15 +11,7 @@
 
         public async Task<bool> Handle(CreateDepartmentCommand request, CancellationToken cancellationToken)
         {
-            var department = new Warehouse
-            (
-                request.Id,
-                request.Name
-            );
-
-            await _departmentRepository.Add(department, cancellationToken);
-
-            return true;
+            throw new NotImplementedException();
         }
 
     }

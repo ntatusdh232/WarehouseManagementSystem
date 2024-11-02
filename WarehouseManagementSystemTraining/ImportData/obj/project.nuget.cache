@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3Vf7pCJe/mw=",
+  "dgSpecHash": "aTSb9q3oORM=",
   "success": true,
   "projectFilePath": "D:\\ViamLab's Project\\C#\\WMS_Github\\WarehouseManagementSystemTraining\\ImportData\\ImportData.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,8 @@
     "C:\\Users\\Phat Huy\\.nuget\\packages\\exceldatareader\\3.7.0\\exceldatareader.3.7.0.nupkg.sha512",
     "C:\\Users\\Phat Huy\\.nuget\\packages\\exceldatareader.dataset\\3.7.0\\exceldatareader.dataset.3.7.0.nupkg.sha512",
     "C:\\Users\\Phat Huy\\.nuget\\packages\\excelnumberformat\\1.1.0\\excelnumberformat.1.1.0.nupkg.sha512",
+    "C:\\Users\\Phat Huy\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\Phat Huy\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Phat Huy\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Phat Huy\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Phat Huy\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.5\\microsoft.data.sqlclient.5.1.5.nupkg.sha512",
