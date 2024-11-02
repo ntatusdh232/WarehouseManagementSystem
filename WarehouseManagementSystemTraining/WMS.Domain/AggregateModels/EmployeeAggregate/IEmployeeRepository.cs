@@ -11,12 +11,12 @@
 
 
 
-        Task UpdateEmployee(Employee employee);
-        Task<Employee> AddEmployee(Employee employee);
-        IEnumerable<Employee> GetEmployees();
-        IEnumerable<Employee> GetSort(string sortField, string sortDirection, IEnumerable<Employee> employees);
-        IXLWorksheet? GetEmployeeworksheet(IEnumerable<Employee> employees, IXLWorksheet? worksheet);
-        List<Employee> GetPageEmployees(IEnumerable<Employee> employees, int pageNumber, int pageSize);
+        //Task UpdateEmployee(Employee employee);
+        //Task<Employee> AddEmployee(Employee employee);
+        //IEnumerable<Employee> GetEmployees();
+        //IEnumerable<Employee> GetSort(string sortField, string sortDirection, IEnumerable<Employee> employees);
+        //IXLWorksheet? GetEmployeeworksheet(IEnumerable<Employee> employees, IXLWorksheet? worksheet);
+        //List<Employee> GetPageEmployees(IEnumerable<Employee> employees, int pageNumber, int pageSize);
         
     }
 }
