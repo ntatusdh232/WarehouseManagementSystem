@@ -22,9 +22,16 @@
         }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
-        public void AddEntry()
+        public void AddEntry(FinishedProductIssueEntry inputEntry)
         {
+            foreach (var entry in Entries)
+            {
 
+                if (inputEntry.PurchaseOrderNumber != entry.PurchaseOrderNumber && entry.Item == null)
+                {
+                    Entries.Add(inputEntry);
+                }
+            }
         }
 
         public void UpdateEntry(List<FinishedProductIssueEntry> entries)
