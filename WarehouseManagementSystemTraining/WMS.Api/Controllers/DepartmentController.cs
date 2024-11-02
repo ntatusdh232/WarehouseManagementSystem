@@ -1,4 +1,5 @@
-﻿using WMS.Domain.AggregateModels.StorageAggregate;
+﻿using WMS.Domain.AggregateModels.DepartmentAggregate;
+using WMS.Domain.AggregateModels.StorageAggregate;
 
 namespace WMS.Api.Controllers
 {
@@ -23,14 +24,14 @@ namespace WMS.Api.Controllers
         }
 
         [HttpPost("Add")]
-        public async Task<IActionResult> Add([FromBody] Warehouse department, CancellationToken cancellationToken)
+        public async Task<IActionResult> Add([FromBody] Department department, CancellationToken cancellationToken)
         {
             if (department == null)
                 return BadRequest("Warehouse data is required.");
 
             try
             {
-                var addedDepartment = await _departmentRepository.AdDepartment(department, cancellationToken);
+                var addedDepartment = _departmentRepository.Add(department);
                 return CreatedAtAction(nameof(GetAll), addedDepartment);
             }
             catch (ArgumentException ex)

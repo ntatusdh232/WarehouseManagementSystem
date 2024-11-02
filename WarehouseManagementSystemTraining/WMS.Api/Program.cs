@@ -1,4 +1,6 @@
-﻿namespace WMS.Api
+﻿using WMS.Domain.AggregateModels.DepartmentAggregate;
+
+namespace WMS.Api
 {
     public class Program
     {

@@ -2,11 +2,11 @@
 {
     public class CreateLocationCommandHandler : IRequestHandler<CreateLocationCommand,bool>
     {
-        private readonly IDepartmentRepository _departmentRepository;
+        private readonly IStorageRepository _storageRepository;
 
-        public CreateLocationCommandHandler(IDepartmentRepository departmentRepository)
+        public CreateLocationCommandHandler(IStorageRepository departmentRepository)
         {
-            _departmentRepository = departmentRepository;
+            _storageRepository = departmentRepository;
         }
 
         public async Task<bool> Handle (CreateLocationCommand request, CancellationToken cancellationToken)

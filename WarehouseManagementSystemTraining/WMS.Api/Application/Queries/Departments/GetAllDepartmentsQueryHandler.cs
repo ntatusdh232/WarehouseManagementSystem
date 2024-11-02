@@ -1,4 +1,6 @@
-﻿namespace WMS.Api.Application.Queries.Departments
+﻿using WMS.Domain.AggregateModels.DepartmentAggregate;
+
+namespace WMS.Api.Application.Queries.Departments
 {
     public class GetAllDepartmentsQueryHandler : IRequestHandler<GetAllDepartmentsQuery, IEnumerable<DepartmentViewModel>>
     {
@@ -13,7 +15,7 @@
 
         public async Task<IEnumerable<DepartmentViewModel>> Handle(GetAllDepartmentsQuery request, CancellationToken cancellationToken)
         {
-            var departments = await _departmentRepository.GetAllDepartmentsAsync(cancellationToken);
+            var departments = await _departmentRepository.GetAllAsync();
             var departmentViewModels = _mapper.Map<IEnumerable<DepartmentViewModel>>(departments);
             return departmentViewModels;
         }

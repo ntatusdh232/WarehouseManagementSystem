@@ -1,5 +1,9 @@
-﻿using MediatR;
+﻿
+using DocumentFormat.OpenXml.Wordprocessing;
+using MediatR;
+using WMS.Domain.AggregateModels.DepartmentAggregate;
 using WMS.Domain.AggregateModels.StorageAggregate;
+using WMS.Infrastructure.EntityConfigurations.DepartmentConfigurations;
 
 namespace WMS.Infrastructure
 {
@@ -46,7 +50,7 @@ namespace WMS.Infrastructure
 
         public DbSet<Warehouse> warehouses { get; set; }
 
-
+        public DbSet<Department> departments {  get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Item>().ToTable("items");
@@ -78,7 +82,7 @@ namespace WMS.Infrastructure
             modelBuilder.ApplyConfiguration(new UserAccountEntityTypeConfiguration());
 
             modelBuilder.ApplyConfiguration(new WarehouseEntityTypeConfiguration());
-
+            modelBuilder.ApplyConfiguration(new DepartmentEntityTypeConfiguration());
             base.OnModelCreating(modelBuilder);
         }
 

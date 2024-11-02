@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using WMS.Domain.AggregateModels.ItemAggregate;
-using WMS.Domain.AggregateModels.WarehouseAggregate;
-
-namespace WMS.Infrastructure.Repositories
+﻿namespace WMS.Infrastructure.Repositories
 {
     public class ItemLotLocationRepository : BaseRepository, IItemLotLocationRepository
     {

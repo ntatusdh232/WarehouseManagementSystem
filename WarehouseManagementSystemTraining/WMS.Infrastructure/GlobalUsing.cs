@@ -14,7 +14,6 @@ global using WMS.Domain.AggregateModels.ItemAggregate.All_IItemsRepository;
 global using WMS.Domain.AggregateModels.LocationAggregate;
 global using WMS.Domain.AggregateModels.LotAdjustmentAggregate;
 global using WMS.Domain.AggregateModels.UserAggregate;
-global using WMS.Domain.AggregateModels.WarehouseAggregate;
 global using WMS.Domain.SeedWork;
 global using WMS.Infrastructure.EntityConfigurations.EmployeeConfigurations;
 global using WMS.Infrastructure.EntityConfigurations.FinishedProductConfigurations;

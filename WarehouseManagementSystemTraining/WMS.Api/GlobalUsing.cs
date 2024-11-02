@@ -26,7 +26,6 @@ global using WMS.Domain.AggregateModels.ItemAggregate;
 global using WMS.Domain.AggregateModels.ItemAggregate.All_IItemsRepository;
 global using WMS.Domain.AggregateModels.LocationAggregate;
 global using WMS.Domain.AggregateModels.UserAggregate;
-global using WMS.Domain.AggregateModels.WarehouseAggregate;
 global using WMS.Domain.DomainEvents.FinishedProductIssueEvents;
 global using WMS.Domain.DomainEvents.FinishedProductReceiptEvents;
 global using WMS.Domain.DomainEvents.GoodsIssueEvents;
