@@ -15,7 +15,7 @@ public class UpdateEmployeeCommandHandler : IRequestHandler<UpdateEmployeeComman
         var employee = await _employeeRepository.GetEmployeeById(request.EmployeeId);
         if(employee is null)
         {
-            throw new EntityNotFoundException(nameof(Employee), employee.EmployeeId);
+            throw new EntityNotFoundException(nameof(Employee), request.EmployeeId);
         }
         employee.Update(request.EmployeeName);
         return await _employeeRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
