@@ -294,3 +294,11 @@ D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.Ap
 D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.Api\obj\Debug\net8.0\WMS.Api.pdb
 D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.Api\obj\Debug\net8.0\WMS.Api.genruntimeconfig.cache
 D:\CODE\VisualStudio\C#\TRAINING\Week12\WarehouseManagementSystemTraining\WMS.Api\obj\Debug\net8.0\ref\WMS.Api.dll
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Api\obj\Debug\net8.0\WMS.Api.csproj.AssemblyReference.cache
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Api\obj\Debug\net8.0\WMS.Api.GeneratedMSBuildEditorConfig.editorconfig
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Api\obj\Debug\net8.0\WMS.Api.AssemblyInfoInputs.cache
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Api\obj\Debug\net8.0\WMS.Api.AssemblyInfo.cs
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Api\obj\Debug\net8.0\WMS.Api.csproj.CoreCompileInputs.cache
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Api\obj\Debug\net8.0\WMS.Api.MvcApplicationPartsAssemblyInfo.cs
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Api\obj\Debug\net8.0\WMS.Api.MvcApplicationPartsAssemblyInfo.cache
+D:\ViamLab's Project\C#\WMS_Github\WarehouseManagementSystemTraining\WMS.Api\obj\Debug\net8.0\WMS.Api.sourcelink.json

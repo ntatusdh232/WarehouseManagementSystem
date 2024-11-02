@@ -1,6 +1,4 @@
-﻿using WMS.Domain.AggregateModels.WarehouseAggregate;
-
-namespace WMS.Domain.AggregateModels.FinishedProductAggregate.All_IFinishedProductsRepository
+﻿namespace WMS.Domain.AggregateModels.FinishedProductAggregate.All_IFinishedProductsRepository
 {
     public interface IFinishedProductInventoryRepository : IRepository<FinishedProductInventory>
     {

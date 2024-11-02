@@ -1,6 +1,4 @@
-﻿using WMS.Domain.AggregateModels.WarehouseAggregate;
-
-namespace WMS.Domain.AggregateModels.UserAggregate
+﻿namespace WMS.Domain.AggregateModels.UserAggregate
 {
     public class UserAccount : IAggregateRoot
     {

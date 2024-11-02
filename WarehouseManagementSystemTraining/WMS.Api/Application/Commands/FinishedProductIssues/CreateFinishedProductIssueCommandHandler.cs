@@ -15,7 +15,16 @@
             if (finishedProductIssue != null) return false;
             
             var employee = _employeeRepository.GetEmployeeById(request.EmployeeId);
-                
+
+            var entries = request.Entries.Select(entry =>
+                new CreateFinishedProductIssueEntryViewModel(
+                    entry.PurchaseOrderNumber,
+                    entry.Quantity,
+                    entry.ItemId,
+                    entry.Note,
+                    entry.Unit
+                )
+            ).ToList();
 
 
             return true;
