@@ -12,16 +12,17 @@
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private FinishedProductIssueEntry() { }
-        public FinishedProductIssueEntry(string finishedProductIssueEntryId, string purchaseOrderNumber, double quantity, string? note, Item item, string itemId, string finishedProductIssueId)
+        public FinishedProductIssueEntry(string purchaseOrderNumber, double quantity, string? note, Item item, string itemId)
         {
-            FinishedProductIssueEntryId = finishedProductIssueEntryId;
+            FinishedProductIssueEntryId = Guid.NewGuid().ToString();
             PurchaseOrderNumber = purchaseOrderNumber;
             Quantity = quantity;
             Note = note;
             Item = item;
             ItemId = itemId;
-            FinishedProductIssueId = finishedProductIssueId;
         }
+
+
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
     }

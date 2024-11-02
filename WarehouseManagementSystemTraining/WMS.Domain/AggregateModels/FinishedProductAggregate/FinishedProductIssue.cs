@@ -20,17 +20,34 @@
             Entries = entries;
             EmployeeId = employeeId;
         }
+
+        public FinishedProductIssue(string finishedProductIssueId, string? receiver, string employeeId)
+        {
+            FinishedProductIssueId = finishedProductIssueId;
+            Receiver = receiver;
+            EmployeeId = employeeId;
+        }
+
+
+
+
+
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
         public void AddEntry(FinishedProductIssueEntry inputEntry)
         {
+            bool isEntryExist = false;
             foreach (var entry in Entries)
             {
-
-                if (inputEntry.PurchaseOrderNumber != entry.PurchaseOrderNumber && entry.Item == null)
+                if (inputEntry.PurchaseOrderNumber == entry.PurchaseOrderNumber && entry.Item == inputEntry.Item)
                 {
-                    Entries.Add(inputEntry);
+                    isEntryExist = true;
                 }
+            }
+
+            if (!isEntryExist)
+            {
+                Entries.Add(inputEntry);
             }
         }
 

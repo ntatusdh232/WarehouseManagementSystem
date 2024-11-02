@@ -10,49 +10,49 @@
         }
 
         // Phương thức Employee
-        public async Task<IActionResult> Employee(string sortField = "EmployeeId", string sortDirection = "asc", 
-                                                  int pageNumber = 1, int pageSize = 10)
-        {
-            var employees = _employeeRepository.GetEmployees();
+        //public async Task<IActionResult> Employee(string sortField = "EmployeeId", string sortDirection = "asc", 
+        //                                          int pageNumber = 1, int pageSize = 10)
+        //{
+        //    var employees = _employeeRepository.GetEmployees();
 
-            var totalEmployees = employees.Count();
+        //    var totalEmployees = employees.Count();
 
-            employees = _employeeRepository.GetSort(sortField, sortDirection, employees);
+        //    employees = _employeeRepository.GetSort(sortField, sortDirection, employees);
 
-            // Phân trang
-            var pagedEmployees = _employeeRepository.GetPageEmployees(employees, pageNumber, pageSize);
+        //    // Phân trang
+        //    var pagedEmployees = _employeeRepository.GetPageEmployees(employees, pageNumber, pageSize);
 
-            // Tính tổng số trang
-            ViewBag.CurrentPage = pageNumber;
-            ViewBag.TotalPages = (int)Math.Ceiling(totalEmployees / (double)pageSize);
-            ViewBag.SortField = sortField;
-            ViewBag.SortDirection = sortDirection;
+        //    // Tính tổng số trang
+        //    ViewBag.CurrentPage = pageNumber;
+        //    ViewBag.TotalPages = (int)Math.Ceiling(totalEmployees / (double)pageSize);
+        //    ViewBag.SortField = sortField;
+        //    ViewBag.SortDirection = sortDirection;
 
-            return View(pagedEmployees); // Trả về danh sách nhân viên
-        }
+        //    return View(pagedEmployees); // Trả về danh sách nhân viên
+        //}
 
-        public IActionResult ExportToExcel(string sortField = "EmployeeId", string sortDirection = "asc")
-        {
-            var employees = _employeeRepository.GetEmployees().ToList();
+        //public IActionResult ExportToExcel(string sortField = "EmployeeId", string sortDirection = "asc")
+        //{
+        //    var employees = _employeeRepository.GetEmployees().ToList();
 
-            employees = _employeeRepository.GetSort(sortField, sortDirection, employees).ToList();
+        //    employees = _employeeRepository.GetSort(sortField, sortDirection, employees).ToList();
 
-            // Create workbook and worksheet
-            using (var workbook = new XLWorkbook())
-            {
-                var worksheet = workbook.Worksheets.Add("Employees");
+        //    // Create workbook and worksheet
+        //    using (var workbook = new XLWorkbook())
+        //    {
+        //        var worksheet = workbook.Worksheets.Add("Employees");
 
-                worksheet = _employeeRepository.GetEmployeeworksheet(employees, worksheet);
+        //        worksheet = _employeeRepository.GetEmployeeworksheet(employees, worksheet);
 
-                using (var stream = new MemoryStream())
-                {
-                    workbook.SaveAs(stream);
-                    var content = stream.ToArray();
-                    var fileName = "Employees.xlsx";
-                    return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
-                }
-            }
-        }
+        //        using (var stream = new MemoryStream())
+        //        {
+        //            workbook.SaveAs(stream);
+        //            var content = stream.ToArray();
+        //            var fileName = "Employees.xlsx";
+        //            return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+        //        }
+        //    }
+        //}
 
         public IActionResult Create()
         {
@@ -97,7 +97,7 @@
                 try
                 {
                     _employeeRepository.UnitOfWork.BeginTransaction();
-                    await _employeeRepository.AddEmployee(employee);
+                    await _employeeRepository.Add(employee);
                     await _employeeRepository.UnitOfWork.CommitTransactionAsync();
 
                     TempData["SuccessMessage"] = "Nhân viên đã được lưu thành công!";
@@ -135,7 +135,7 @@
                 {
                     _employeeRepository.UnitOfWork.BeginTransaction();
                     // Gọi repository để cập nhật thông tin nhân viên
-                    await _employeeRepository.UpdateEmployee(employee);
+                    await _employeeRepository.Update(employee);
                     // Lưu thay đổi
                     await _employeeRepository.UnitOfWork.CommitTransactionAsync();
 

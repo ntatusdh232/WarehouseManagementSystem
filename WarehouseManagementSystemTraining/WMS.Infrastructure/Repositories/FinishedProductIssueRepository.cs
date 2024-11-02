@@ -2,13 +2,13 @@
 
 namespace WMS.Infrastructure.Repositories
 {
-    public class FinishedProductIssueRepository : BaseRepository, IFinishedProductIssueRepository, IFinsihedProductIssueEntryRepository
+    public class FinishedProductIssueRepository : BaseRepository, IFinishedProductIssueRepository
     {
         public FinishedProductIssueRepository(ApplicationDbContext context) : base(context)
         {
         }
 
-        public async Task AddAsync(FinishedProductIssue finishedProductIssue, CancellationToken cancellationToken)
+        public async Task AddAsync(FinishedProductIssue finishedProductIssue)
         {
             var existingItem = await _context.finishedProductIssues.FindAsync(finishedProductIssue.FinishedProductIssueId);
             if (existingItem != null)
@@ -17,7 +17,6 @@ namespace WMS.Infrastructure.Repositories
             }
 
             await _context.finishedProductIssues.AddAsync(finishedProductIssue);
-            await _context.SaveChangesAsync(cancellationToken);
 
         }
 
