@@ -1,14 +1,15 @@
-﻿using WMS.Domain.AggregateModels.StorageAggregate;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using WMS.Domain.AggregateModels.StorageAggregate;
 
-namespace WMS.Domain.AggregateModels.WarehouseAggregate
+namespace WMS.Domain.AggregateModels.DepartmentAggregate
 {
-    public interface IDepartmentRepository : IRepository<Warehouse>
+    public interface IDepartmentRepository : IRepository<Department>
     {
-        Task<IEnumerable<Warehouse>> GetAllDepartmentsAsync(CancellationToken cancellationToken);
+        Task<IEnumerable<Department>> GetAllDepartmentsAsync(CancellationToken cancellationToken);
 
-        Task<IEnumerable<Warehouse>> GetAllAsync();
-        Task Add(Warehouse request, CancellationToken cancellationToken);
-        Task<Warehouse> GetWarehouseById(string departmentId);
-        Task<Warehouse> AdDepartment(Warehouse request, CancellationToken cancellationToken);
+        Task<IEnumerable<Department>> GetAllAsync();
+        Task Add(Department request, CancellationToken cancellationToken);
+        Task<Department> GetDepartmentById(string departmentId);
+        Task<Department> AdDepartment(Department request, CancellationToken cancellationToken);
     }
 }
