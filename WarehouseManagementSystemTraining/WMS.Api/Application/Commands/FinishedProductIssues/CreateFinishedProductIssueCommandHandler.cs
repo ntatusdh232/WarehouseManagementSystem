@@ -26,6 +26,11 @@ namespace WMS.Api.Application.Commands.FinishedProductIssues
                 
             var employee = _employeeRepository.GetEmployeeById(request.EmployeeId);
 
+            if (employee == null)
+            {
+                throw new EntityNotFoundException(nameof(Employee), request.EmployeeId);
+            }
+
             finishedProductIssue = new FinishedProductIssue(finishedProductIssueId: request.FinishedProductIssueId,
                                                             receiver: request.Receiver,
                                                             employeeId: request.EmployeeId);
@@ -43,7 +48,7 @@ namespace WMS.Api.Application.Commands.FinishedProductIssues
                                                                               note: entry.Note,
                                                                               item: item,
                                                                               itemId: entry.ItemId);
-                finishedProductIssue.AddEntry(FinishedProductIssueEntry);
+                finishedProductIssue.AddIssueEntry(FinishedProductIssueEntry);
             }
             await _finishedProductIssueRepository.AddAsync(finishedProductIssue);
 
