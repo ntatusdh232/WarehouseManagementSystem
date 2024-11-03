@@ -1,4 +1,6 @@
-﻿namespace WMS.Domain.AggregateModels.FinishedProductAggregate
+﻿using DocumentFormat.OpenXml.Packaging;
+
+namespace WMS.Domain.AggregateModels.FinishedProductAggregate
 {
     public class FinishedProductReceipt : IAggregateRoot
     {
@@ -19,11 +21,30 @@
             EmployeeId = employeeId;
         }
 
+        public FinishedProductReceipt(string finishedProductReceiptId, string employeeId)
+        {
+            FinishedProductReceiptId = finishedProductReceiptId;
+            EmployeeId = employeeId;
+        }
+
+
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
-        public void AddEntry()
+        public void AddReceiptEntry(FinishedProductReceiptEntry inputEntry)
         {
+            bool isEntryExist = false;
+            foreach (var entry in Entries)
+            {
+                if (inputEntry.PurchaseOrderNumber == entry.PurchaseOrderNumber && entry.Item == inputEntry.Item)
+                {
+                    isEntryExist = true;
+                }
+            }
 
+            if (!isEntryExist)
+            {
+                Entries.Add(inputEntry);
+            }
         }
 
         public void UpdateFinishedProductReceipt(DateTime timestamp, Employee employee,
@@ -33,6 +54,7 @@
             Employee = employee;
             Entries = entries;
         }
+        
 
     }
 }

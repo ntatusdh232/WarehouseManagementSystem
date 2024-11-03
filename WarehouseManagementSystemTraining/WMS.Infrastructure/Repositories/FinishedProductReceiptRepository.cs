@@ -19,7 +19,7 @@
             return finishedProductReceipt;
         }
 
-        public async Task<IEnumerable<FinishedProductReceipt>> GetReceiptById(string finishedProductReceiptId)
+        public async Task<FinishedProductReceipt> GetReceiptById(string finishedProductReceiptId)
         {
             var existingItem = await _context.finishedProductReceipts.FindAsync(finishedProductReceiptId);
 
@@ -28,11 +28,7 @@
                 throw new ArgumentException($"Item with ID {finishedProductReceiptId} does not exist.");
             }
 
-            var finishedProductReceiptlist = await _context.finishedProductReceipts
-                .Where(x => x.FinishedProductReceiptId == finishedProductReceiptId)
-                .ToListAsync();
-
-            return finishedProductReceiptlist;
+            return existingItem;
         }
 
         public async Task<IEnumerable<string>> GetReceiptIds()
