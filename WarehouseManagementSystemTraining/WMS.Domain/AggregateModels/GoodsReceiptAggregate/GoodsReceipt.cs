@@ -83,6 +83,12 @@ namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
             Employee = Employee;
             Lots = Lots;
         }
+        public void RemoveItemLotEntities()
+        {
+            AddDomainEvent(new RemoveItemLotsDomainEvent(this.Lots));
+        }
+
+
 
     }
 }
