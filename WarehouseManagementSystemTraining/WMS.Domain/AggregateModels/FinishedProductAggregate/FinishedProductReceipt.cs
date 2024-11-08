@@ -91,6 +91,20 @@ namespace WMS.Domain.AggregateModels.FinishedProductAggregate
             AddDomainEvent(new UpdateInventoryOnModifyProductReceiptEntryDomainEvent(oldPurchaseOrderNumber, newPurchaseOrderNumber, oldQuantity, newQuantity, timestamp, item));
         }
 
+
+        public void UpdateFinishedProductInventory(string purchaseOrderNumber, double quantity, DateTime timestamp, Item item )
+        {
+            var entry = Entries.Find(e => e.Item == item && e.PurchaseOrderNumber == purchaseOrderNumber);
+            if (entry == null)
+            {
+                throw new WarehouseDomainException($"Entry with item {item.ItemName} & {purchaseOrderNumber} not found.");
+            }
+            double oldQuantity = entry.Quantity;
+
+            // Sửa số PO và số lượng của 1 entry --> Cập nhật tồn kho TP    
+            AddDomainEvent(new UpdateInventoryOnCreateProductReceiptDomainEvent(purchaseOrderNumber, quantity, timestamp , item));
+        }
+
         public List<FinishedProductReceiptEntry> GroupAndSumEntries()
         {
             var groupedEntries = Entries
