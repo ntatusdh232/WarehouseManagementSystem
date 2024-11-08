@@ -109,7 +109,7 @@ namespace WMS.Infrastructure.Repositories
 
         }
 
-        public async Task<IEnumerable<GoodsReceipt>> GetGoodsReceiptById(string goodsReceiptId)
+        public async Task<GoodsReceipt> GetGoodsReceiptById(string goodsReceiptId)
         {
             var existingItem = await _context.goodsReceipts.FindAsync(goodsReceiptId);
 
@@ -118,30 +118,19 @@ namespace WMS.Infrastructure.Repositories
                 throw new ArgumentException($"GoodsReceipt with ID {goodsReceiptId} does not exist.");
             }
 
-            var goodsReceipt = await _context.goodsReceipts
-                .Where(x => x.GoodsReceiptId == goodsReceiptId)
-                .ToListAsync();
-
-            return goodsReceipt;
+            return existingItem;
 
         }
 
-        public async Task<IEnumerable<GoodsReceiptLot>> GetGoodsReceiptLotById(string goodsReceiptLotId)
+        public async Task<GoodsReceiptLot> GetGoodsReceiptLotById(string goodsReceiptId, string goodsReceiptLotId)
         {
-            var goodsReceipt = await _context.goodsReceipts
-                .Include(s => s.Lots)
-                .FirstOrDefaultAsync(s => s.Lots.Any(s => s.GoodsReceiptLotId == goodsReceiptLotId));
+            var existingGoodsReceipt = await _context.goodsReceipts.FindAsync(goodsReceiptId)
+                ?? throw new ArgumentException($"GoodsReceipt with ID {goodsReceiptId} does not exist.");
 
-            if (goodsReceipt == null)
-            {
-                throw new ArgumentException($"No GoodsReceipt found with GoodsReceiptLotId = {goodsReceiptLotId}.");
-            }
+            var lot = existingGoodsReceipt.Lots.FirstOrDefault(x => x.GoodsReceiptLotId == goodsReceiptLotId)
+                ?? throw new ArgumentException($"GoodsReceiptLot with ID {goodsReceiptLotId} does not exist.");
 
-            var Lotslist = goodsReceipt.Lots
-                .Where(lot => lot.GoodsReceiptLotId == goodsReceiptLotId);
-
-            return Lotslist;
-
+            return lot;
         }
 
         public async Task<IEnumerable<GoodsReceipt>> GetGoodsReceiptByGoodsReceiptId(string goodsReceiptId)

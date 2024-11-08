@@ -447,7 +447,7 @@ namespace WMS.Api.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18, 2)");
 
-                    b.Property<string>("Unit")
+                    b.Property<string>("Quatity")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

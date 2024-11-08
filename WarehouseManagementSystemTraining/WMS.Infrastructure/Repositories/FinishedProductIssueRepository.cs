@@ -11,19 +11,12 @@ namespace WMS.Infrastructure.Repositories
         public async Task AddAsync(FinishedProductIssue finishedProductIssue)
         {
             var existingItem = await _context.finishedProductIssues.FindAsync(finishedProductIssue.FinishedProductIssueId);
-            if (existingItem != null)
-            {
-                throw new ArgumentException($"Item with ID {finishedProductIssue.FinishedProductIssueId} already exists.");
-            }
-
             await _context.finishedProductIssues.AddAsync(finishedProductIssue);
-
         }
 
         public async Task<FinishedProductIssue> GetIssueById(string finishedProductIssueId)
         {
-            var existingItem = await _context.finishedProductIssues
-                .FirstOrDefaultAsync(x => x.FinishedProductIssueId == finishedProductIssueId);
+            var existingItem = await _context.finishedProductIssues.FindAsync(finishedProductIssueId);
 
             if (existingItem == null)
             {

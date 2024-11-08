@@ -29,6 +29,15 @@
             Locations = locations;
         }
 
+        public ItemLot(string lotId, double quantity, string itemId)
+        {
+            LotId = lotId;
+            Quantity = quantity;
+            ItemId = itemId;
+        }
+
+
+
 #pragma warning restore CS8618
 
         public void Update(double quantity, DateTime timestamp, DateTime? productionDate, DateTime? expirationDate)
@@ -37,6 +46,12 @@
             Timestamp = timestamp;
             ProductionDate = productionDate;
             ExpirationDate = expirationDate;
+        }
+
+        // Hàm Confirm() cho dispatchedItemLots
+        public void Confirm()
+        {
+
         }
 
     }

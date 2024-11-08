@@ -79,6 +79,23 @@
 
         }
 
+        public async Task Update(FinishedProductReceiptEntry Entry)
+        {
+            if (Entry == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            var existingItem = await _context.finishedProductInventories.FindAsync(Entry.ItemId);
+
+            if (existingItem == null)
+            {
+                throw new KeyNotFoundException($"FinishedProductInventory with ID {Entry.ItemId} not found.");
+            }
+
+            existingItem.UpdateFinishedProductInventory(Entry.PurchaseOrderNumber, Entry.Quantity, DateTime.Now, Entry.Item);
+
+        }
 
     }
 }

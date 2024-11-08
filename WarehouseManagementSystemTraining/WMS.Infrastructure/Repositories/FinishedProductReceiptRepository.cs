@@ -66,10 +66,8 @@
             {
                 throw new KeyNotFoundException();
             }
-
-            // Remove the item
             _context.finishedProductReceipts.Remove(existingItem);
-            await _context.SaveChangesAsync();
+
             
 
         }

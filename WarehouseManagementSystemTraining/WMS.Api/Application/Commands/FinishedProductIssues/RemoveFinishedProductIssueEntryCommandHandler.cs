@@ -3,25 +3,36 @@
     public class RemoveFinishedProductIssueEntryCommandHandler : IRequestHandler<RemoveFinishedProductIssueEntryCommand, bool>
     {
         private readonly IFinsihedProductIssueEntryRepository _finishedProductIssueEntryRepository;
+        private readonly IItemRepository _itemRepository;
+        private readonly IFinishedProductIssueRepository _finishedProductIssueRepository;
 
-        public RemoveFinishedProductIssueEntryCommandHandler(IFinsihedProductIssueEntryRepository finishedProductIssueEntryRepository)
+        public RemoveFinishedProductIssueEntryCommandHandler(IFinsihedProductIssueEntryRepository finishedProductIssueEntryRepository, IItemRepository itemRepository, IFinishedProductIssueRepository finishedProductIssueRepository)
         {
             _finishedProductIssueEntryRepository = finishedProductIssueEntryRepository;
+            _itemRepository = itemRepository;
+            _finishedProductIssueRepository = finishedProductIssueRepository;
         }
 
         public async Task<bool> Handle(RemoveFinishedProductIssueEntryCommand request, CancellationToken cancellationToken)
         {
-            var finishedProductIssueEntries = await _finishedProductIssueEntryRepository
-                .GetAllByFinishedProductIssueIdAsync(request.FinishedProductIssueId, cancellationToken);
-
-            if (finishedProductIssueEntries == null || !finishedProductIssueEntries.Any())
+            var finishedProductIssue = await _finishedProductIssueRepository.GetIssueById(request.FinishedProductIssueId);
+            if (finishedProductIssue == null)
             {
-                return false; 
+                throw new EntityNotFoundException(nameof(FinishedProductIssue), request.FinishedProductIssueId);
             }
 
-            await _finishedProductIssueEntryRepository.RemoveRangeAsync(finishedProductIssueEntries, cancellationToken);
+            var item = await _itemRepository.GetItemById(request.ItemId);
+            if (item == null)
+            {
+                throw new EntityNotFoundException(nameof(Item), request.ItemId);
+            }
 
-            return true;
+            finishedProductIssue.RemoveIssueEntry(inputItemId: request.ItemId,
+                                                  inputPurchaseOrderNumber: request.PurchaseOrderNumber);
+
+            return await _finishedProductIssueRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
+
+            
         }
 
     }

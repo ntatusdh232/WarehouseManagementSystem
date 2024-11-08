@@ -12,4 +12,10 @@ public class UpdateInventoryOnRemoveProductReceiptEntryDomainEvent : INotificati
         PurchaseOrderNumber = purchaseOrderNumber;
         Quantity = quantity;
     }
+
+    public UpdateInventoryOnRemoveProductReceiptEntryDomainEvent(Item item, string purchaseOrderNumber)
+    {
+        Item = item;
+        PurchaseOrderNumber = purchaseOrderNumber;
+    }
 }

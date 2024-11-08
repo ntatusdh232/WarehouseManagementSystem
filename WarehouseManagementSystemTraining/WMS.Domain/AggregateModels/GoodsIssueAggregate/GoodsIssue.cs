@@ -60,21 +60,30 @@
             }
         }
 
-        public void AddEntry(GoodsIssueEntry goodsIssueEntry)
+        public void AddLot(string itemId, string unit, GoodsIssueLot lot)
         {
-
+            var entry = Entries.Find(e => e.Item.ItemId == itemId && e.Item.Unit == unit);
+            if (entry == null)
+            {
+                throw new WarehouseDomainException($"Entry with Item {itemId} doesn't exist");
+            }
+            entry.AddLot(lot);
         }
-        public void SetQuantity(string itemId, double quantity)
+
+        public void UpdateEntry(string itemId, string unit, double quantity)
         {
-
+            var entry = Entries.SingleOrDefault(entry => entry.Item.ItemId == itemId && entry.Item.Unit == unit);
+            if (entry == null)
+            {
+                throw new WarehouseDomainException($"Entry having item {itemId} with unit {unit} doesn't exist in the current GoodsIssue.");
+            }
+            entry.UpdateEntry(quantity);
         }
-        public void AddLot(string itemId, GoodsIssueLot goodsIssueLot)
-        {
 
-        }
-        
+
         public void Confirm()
         {
+
 
         }
 

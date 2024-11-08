@@ -11,9 +11,11 @@ public class DepartmentEntityTypeConfiguration : IEntityTypeConfiguration<Depart
 {
     public void Configure(EntityTypeBuilder<Department> builder)
     {
+        builder.HasNoKey();
         builder
             .Property(b => b.Name)
             .IsRequired()
             .HasMaxLength(60);
+
     }
 }

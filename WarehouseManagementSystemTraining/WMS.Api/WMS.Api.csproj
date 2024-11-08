@@ -24,11 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Commands\" />
-    <Folder Include="Application\Commands\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\WMS.Domain\WMS.Domain.csproj" />
     <ProjectReference Include="..\WMS.Infrastructure\WMS.Infrastructure.csproj" />
   </ItemGroup>

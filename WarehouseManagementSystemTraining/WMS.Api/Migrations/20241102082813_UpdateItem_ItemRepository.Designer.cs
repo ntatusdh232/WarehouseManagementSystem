@@ -25,7 +25,7 @@ namespace WMS.Api.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ItemLotLocation", b =>
+            modelBuilder.Entity("ItemLotLocations", b =>
                 {
                     b.Property<string>("ItemLotsLotId")
                         .HasColumnType("nvarchar(450)");
@@ -430,7 +430,7 @@ namespace WMS.Api.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18, 2)");
 
-                    b.Property<string>("Unit")
+                    b.Property<string>("Quatity")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -613,7 +613,7 @@ namespace WMS.Api.Migrations
                     b.ToTable("userAccounts");
                 });
 
-            modelBuilder.Entity("ItemLotLocation", b =>
+            modelBuilder.Entity("ItemLotLocations", b =>
                 {
                     b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.ItemLot", null)
                         .WithMany()

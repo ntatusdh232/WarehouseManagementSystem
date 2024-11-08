@@ -1,8 +1,8 @@
-﻿using WMS.Domain.AggregateModels.GoodsIssueAggregate;
+﻿using WMS.Domain.DomainEvents.GoodsReceiptEvents;
 
 namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
 {
-    public class GoodsReceipt : IAggregateRoot
+    public class GoodsReceipt : Entity ,IAggregateRoot
     {
         public String GoodsReceiptId { get; set; }
         public String Supplier { get; set; }
@@ -38,12 +38,32 @@ namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
         }
         public void AddLot(GoodsReceiptLot goodsReceiptLot)
         {
+            if (Lots == null)
+            {
+                new Exception("Not Found");
+            }
+            else
+            {
+                Lots.Add(goodsReceiptLot);
+            }
+
 
         }
-        public void RemoveLot(string goodsReceiptLotId)
+        public void RemoveLot(GoodsReceiptLot goodsReceiptLot)
         {
-
+            if (goodsReceiptLot == null)
+            {
+                throw new WarehouseDomainException($"GoodsReceiptLot does not exist.");
+            }
+            Lots.Remove(goodsReceiptLot);
         }
+
+        public void RemoveItemLotEntities(List<GoodsReceiptLot> lots)
+        {
+            AddDomainEvent(new RemoveItemLotsDomainEvent(lots));
+        }
+
+
         public void Confirm()
         {
 

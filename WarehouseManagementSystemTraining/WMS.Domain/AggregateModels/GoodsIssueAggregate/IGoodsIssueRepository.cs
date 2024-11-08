@@ -1,13 +1,13 @@
 ﻿namespace WMS.Domain.AggregateModels.GoodsIssueAggregate
 {
-    public interface IGoodsIssueRepository : IRepository<GoodsIssue>, IRepository<GoodsIssueLot>
+    public interface IGoodsIssueRepository : IRepository<GoodsIssue>
     {
         Task Add(GoodsIssue goodsIssue, CancellationToken cancellationToken);
         Task<GoodsIssue?> GetGoodsIssueById(string goodsIssueId);
         Task<GoodsIssueLot?> GetGoodsIssueLotById(string goodsIssueLotId);
         Task<IEnumerable<GoodsIssue>> GetListAsync();
         Task Remove(string goodsIssueId, CancellationToken cancellationToken);
-        Task Update(GoodsIssue goodsIssue, CancellationToken cancellationToken);
+        Task Update(GoodsIssue goodsIssue);
 
 
 

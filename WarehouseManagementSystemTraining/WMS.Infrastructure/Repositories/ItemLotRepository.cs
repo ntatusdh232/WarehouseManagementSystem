@@ -68,7 +68,7 @@
             return isolatedItemLots;
         }
 
-        public async Task<ItemLot> GetLotByLotId(string lotId)
+        public async Task<ItemLot> GetItemLotById(string lotId)
         {
             var existingLot = await _context.itemsLot.FindAsync(lotId); 
             if (existingLot is null)

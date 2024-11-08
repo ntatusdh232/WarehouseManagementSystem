@@ -5,6 +5,7 @@
         Task<IEnumerable<FinishedProductInventory>> GetProductInventoriesByItemId(string itemId ,CancellationToken cancellationToken);
         Task<IEnumerable<string>> GetPos(CancellationToken cancellationToken);
         Task<FinishedProductInventory> GetInventory(string itemId, string unit, string purchaseOrderNumber);
+        Task Update(FinishedProductReceiptEntry Entry);
 
 
         Task<FinishedProductInventory> Add(FinishedProductInventory finishedProductInventory);

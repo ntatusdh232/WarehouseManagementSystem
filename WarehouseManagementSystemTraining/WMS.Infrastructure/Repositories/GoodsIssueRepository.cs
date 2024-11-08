@@ -56,15 +56,15 @@ namespace WMS.Infrastructure.Repositories
             await _context.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task Update(GoodsIssue goodsIssue, CancellationToken cancellationToken)
+        public async Task Update(GoodsIssue goodsIssue)
         {
-            if (goodsIssue == null)
+            var existingGoodsIssue = await _context.goodsIssues.FindAsync(goodsIssue.GoodsIssueId);
+            if (existingGoodsIssue is null)
             {
-                throw new ArgumentException($"GoodsIssue is null.");
+                throw new ArgumentException($"GoodsIssue with ID {goodsIssue.GoodsIssueId} does not exist.");
             }
 
-            goodsIssue.Update(goodsIssue);
-            await _context.SaveChangesAsync(cancellationToken);
+            existingGoodsIssue.Update(goodsIssue);
         }
 
 

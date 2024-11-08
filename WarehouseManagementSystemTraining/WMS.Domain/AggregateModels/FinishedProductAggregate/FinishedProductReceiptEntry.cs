@@ -20,7 +20,18 @@
             Note = note;
             Item = item;
             ItemId = itemId;
-        } 
+        }
+
+        public FinishedProductReceiptEntry(string purchaseOrderNumber, double quantity, string note, string finishedProductReceiptId, Item item)
+        {
+            PurchaseOrderNumber = purchaseOrderNumber;
+            Quantity = quantity;
+            Note = note;
+            Item = item;
+            FinishedProductReceiptId = finishedProductReceiptId;
+        }
+
+
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     }
 }

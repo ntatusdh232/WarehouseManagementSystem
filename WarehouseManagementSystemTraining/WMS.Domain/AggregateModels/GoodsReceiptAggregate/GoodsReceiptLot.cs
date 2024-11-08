@@ -36,6 +36,16 @@
             Sublots = sublots;
         }
 
+        public GoodsReceiptLot(string goodsReceiptLotId, string employeeId, double quantity, string? note, string itemId)
+        {
+            GoodsReceiptLotId = goodsReceiptLotId;
+            Quantity = quantity;
+            Note = note;
+            EmployeeId = employeeId;
+            ItemId = itemId;
+        }
+
+
 
 
 

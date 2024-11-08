@@ -1,6 +1,6 @@
 ﻿namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
 {
-    public interface IGoodsReceiptRepository : IRepository<GoodsReceipt>, IRepository<GoodsReceiptLot>
+    public interface IGoodsReceiptRepository : IRepository<GoodsReceipt>
     {
         Task<IEnumerable<GoodsReceipt>> GetCompletedGoodsReceipts();
         Task<IEnumerable<GoodsReceipt>> GetUnCompletedGoodsReceipts();
@@ -14,9 +14,8 @@
         Task<GoodsReceipt> Add(GoodsReceipt goodsReceipt);
         Task<GoodsReceipt> Update(GoodsReceipt goodsReceipt);
         Task Remove(string goodsReceiptId);
-
-        Task<IEnumerable<GoodsReceipt>> GetGoodsReceiptById(string goodsReceiptId);
-        Task<IEnumerable<GoodsReceiptLot>> GetGoodsReceiptLotById(string goodsReceiptLotId);
+        Task<GoodsReceipt> GetGoodsReceiptById(string goodsReceiptId);
+        Task<GoodsReceiptLot> GetGoodsReceiptLotById(string goodsReceiptId, string goodsReceiptLotId);
         Task<IEnumerable<GoodsReceipt>> GetGoodsReceiptByGoodsReceiptId(string goodsReceiptId);
     }
 }

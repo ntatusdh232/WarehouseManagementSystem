@@ -37,6 +37,16 @@ namespace WMS.Api.Migrations
                     b.ToTable("LotLocations", (string)null);
                 });
 
+            modelBuilder.Entity("WMS.Domain.AggregateModels.DepartmentAggregate.Department", b =>
+                {
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
+
+                    b.ToTable("departments");
+                });
+
             modelBuilder.Entity("WMS.Domain.AggregateModels.EmployeeAggregate.Employee", b =>
                 {
                     b.Property<string>("EmployeeId")
@@ -83,6 +93,9 @@ namespace WMS.Api.Migrations
 
                     b.Property<string>("EmployeeId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
 
                     b.Property<string>("Receiver")
                         .HasColumnType("nvarchar(max)");
@@ -135,6 +148,9 @@ namespace WMS.Api.Migrations
                     b.Property<string>("EmployeeId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("Timestamp")
                         .HasColumnType("datetime2");
 
@@ -157,6 +173,7 @@ namespace WMS.Api.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Note")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PurchaseOrderNumber")
@@ -274,6 +291,9 @@ namespace WMS.Api.Migrations
 
                     b.Property<string>("EmployeeId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
 
                     b.Property<string>("Supplier")
                         .IsRequired()

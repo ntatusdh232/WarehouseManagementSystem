@@ -20,14 +20,7 @@
 
         public async Task<Employee> GetEmployeeById(string employeeId)
         {
-            var employee = await _context.employees
-                .AsNoTracking()
-                .Where(e => e.EmployeeId == employeeId)
-                .Select(e => new Employee
-                (
-                    e.EmployeeId,
-                    e.EmployeeName
-                )).FirstOrDefaultAsync();
+            var employee = await _context.employees.FirstOrDefaultAsync(s => s.EmployeeId == employeeId);
 
             if (employee == null)
             {

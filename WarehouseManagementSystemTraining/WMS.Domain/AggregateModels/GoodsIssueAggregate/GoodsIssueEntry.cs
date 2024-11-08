@@ -29,6 +29,24 @@
             Item = item;
             ItemId = itemId;
         }
+
+        public void AddLot(GoodsIssueLot lot)
+        {
+            var existedLot = Lots.Find(l => l.GoodsIssueLotId == lot.GoodsIssueLotId);
+            if (existedLot is not null)
+            {
+                throw new WarehouseDomainException($"GoodsIssueLot with Id {lot.GoodsIssueLotId} already existed in this goodsIssue.");
+            }
+            Lots.Add(lot);
+        }
+
+
+        public void UpdateEntry(double requestedQuantity)
+        {
+            RequestedQuantity = requestedQuantity;
+        }
+
+
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
 

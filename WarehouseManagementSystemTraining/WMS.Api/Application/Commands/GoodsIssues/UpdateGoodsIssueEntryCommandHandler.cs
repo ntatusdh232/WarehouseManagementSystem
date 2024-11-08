@@ -1,7 +1,4 @@
-﻿using DocumentFormat.OpenXml.Vml.Office;
-using WMS.Domain.AggregateModels.GoodsIssueAggregate;
-
-namespace WMS.Api.Application.Commands.GoodsIssues
+﻿namespace WMS.Api.Application.Commands.GoodsIssues
 {
     public class UpdateGoodsIssueEntryCommandHandler : IRequestHandler<UpdateGoodsIssueEntryCommand,bool>
     {
@@ -17,45 +14,20 @@ namespace WMS.Api.Application.Commands.GoodsIssues
         public async Task<bool> Handle(UpdateGoodsIssueEntryCommand  request, CancellationToken cancellationToken)
         {
             var goodsIssue = await _goodsIssueRepository.GetGoodsIssueById(request.GoodsIssueId)
-                                   ?? throw new ArgumentException("GoodsIssue not found.");
+                                   ?? throw new EntityNotFoundException(nameof(GoodsIssue), request.GoodsIssueId);
 
-            var Entries = request.Entries;
-
-            foreach (var entry in Entries)
+            foreach (var entry in request.Entries)
             {
-                var item = await _itemRepository.GetItemById(entry.ItemId)
-                           ?? throw new ArgumentException("Item not found.");
-                var newEntries = goodsIssue.Entries.Select(s => CreateNewGoodsIssueEntry(s, entry, item) ).ToList();
-                goodsIssue.MergeEntries(newEntries);
+                goodsIssue.UpdateEntry(itemId: entry.ItemId,
+                                       unit: entry.Unit,
+                                       quantity: entry.RequestedQuantity);
+
             }
 
-            await _goodsIssueRepository.Update(goodsIssue, cancellationToken);
+            await _goodsIssueRepository.Update(goodsIssue);
 
-            return true;
-        }
+            return await _goodsIssueRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
 
-        private GoodsIssueEntry CreateNewGoodsIssueEntry(GoodsIssueEntry existingEntry, UpdateGoodsIssueEntryViewModel entry, Item item)
-        {
-            var newitem = new Item
-            (
-                item.ItemType,
-                item.ItemId,
-                item.ItemName,
-                entry.Unit,
-                item.MinimumStockLevel,
-                item.Price,
-                item.PacketSize,
-                item.PacketUnit,
-                item.ItemClassId
-            );
-
-            return new GoodsIssueEntry
-            (
-                existingEntry.GoodsIssueEntryId,
-                entry.RequestedQuantity,
-                newitem,
-                existingEntry.Item.ItemId
-            );
         }
 
     }

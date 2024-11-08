@@ -16,6 +16,7 @@ global using WMS.Api.Application.Queries.FinishedProductReceipts;
 global using WMS.Api.Application.Queries.GoodsReceipts;
 global using WMS.Api.Application.Queries.Items;
 global using WMS.Api.Application.Queries.Warehouses;
+global using WMS.Api.Exceptions;
 global using WMS.Domain.AggregateModels.EmployeeAggregate;
 global using WMS.Domain.AggregateModels.FinishedProductAggregate;
 global using WMS.Domain.AggregateModels.FinishedProductAggregate.All_IFinishedProductsRepository;
@@ -36,6 +37,7 @@ global using WMS.Domain.DomainEvents.LotAdjustmentEvents;
 global using WMS.Domain.SeedWork;
 global using WMS.Infrastructure;
 global using WMS.Infrastructure.Repositories;
+global using WMS.Domain.AggregateModels.ItemLotLocationAggregate; 
 
 
 
