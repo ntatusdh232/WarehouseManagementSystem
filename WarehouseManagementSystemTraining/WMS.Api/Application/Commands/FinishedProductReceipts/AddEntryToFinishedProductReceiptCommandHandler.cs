@@ -38,6 +38,6 @@ public class AddEntryToFinishedProductReceiptCommandHandler : IRequestHandler<Ad
 
         }
         await _finishedProductReceiptRepository.Update(finishedProductReceipt);
-        return await _itemRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
+        return await _finishedProductReceiptRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
     }
 }

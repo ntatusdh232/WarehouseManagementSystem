@@ -41,7 +41,7 @@ public class CreateGoodsIssueCommandHandler : IRequestHandler<CreateGoodsIssueCo
         }
         await _goodsIssueRepository.Add(newGoodsIssue, cancellationToken);
 
-        return await _itemRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
+        return await _goodsIssueRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
 
     }
 }
