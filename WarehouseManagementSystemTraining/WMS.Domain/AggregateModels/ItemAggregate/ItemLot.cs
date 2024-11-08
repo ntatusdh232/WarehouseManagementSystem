@@ -36,7 +36,12 @@
             ItemId = itemId;
         }
 
-
+        public ItemLot(double quantity, Item item, string itemId)
+        {
+            Quantity = quantity;
+            Item = item;
+            ItemId = itemId;
+        }
 
 #pragma warning restore CS8618
 

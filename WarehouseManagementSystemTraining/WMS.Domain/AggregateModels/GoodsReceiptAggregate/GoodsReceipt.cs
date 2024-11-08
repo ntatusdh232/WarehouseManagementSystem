@@ -13,7 +13,12 @@ namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private GoodsReceipt() { }
-
+        public GoodsReceipt(string goodsReceiptId, string supplier, string employeeId)
+        {
+            GoodsReceiptId = goodsReceiptId;
+            Supplier = supplier;
+            EmployeeId = employeeId;
+        }
         public GoodsReceipt(string goodsReceiptId, string supplier, DateTime timestamp, 
                             Employee employee, string employeeId, List<GoodsReceiptLot> lots)
         {
