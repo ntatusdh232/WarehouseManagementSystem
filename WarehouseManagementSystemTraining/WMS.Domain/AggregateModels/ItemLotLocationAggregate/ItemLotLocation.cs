@@ -5,7 +5,7 @@ namespace WMS.Domain.AggregateModels.ItemLotLocationAggregate
     public class ItemLotLocation : IAggregateRoot
     {
         public int ItemLotId { get; private set; }
-        public int LocationId { get; private set; }
+        public string LocationId { get; private set; }
         public double QuantityPerLocation { get; private set; }
         public ItemLot ItemLot { get; private set; }
         public Location Location { get; private set; }
@@ -13,9 +13,15 @@ namespace WMS.Domain.AggregateModels.ItemLotLocationAggregate
 #pragma warning disable CS8618
         private ItemLotLocation() { }
 
-        public ItemLotLocation(int itemLotId, int locationId, double quantityPerLocation)
+        public ItemLotLocation(int itemLotId, string locationId, double quantityPerLocation)
         {
             ItemLotId = itemLotId;
+            LocationId = locationId;
+            QuantityPerLocation = quantityPerLocation;
+        }
+
+        public ItemLotLocation(string locationId, double quantityPerLocation)
+        {
             LocationId = locationId;
             QuantityPerLocation = quantityPerLocation;
         }

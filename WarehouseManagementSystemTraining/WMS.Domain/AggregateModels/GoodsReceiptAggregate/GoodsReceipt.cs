@@ -1,4 +1,5 @@
-﻿using WMS.Domain.DomainEvents.GoodsReceiptEvents;
+﻿using WMS.Domain.AggregateModels.ItemLotLocationAggregate;
+using WMS.Domain.DomainEvents.GoodsReceiptEvents;
 
 namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
 {
@@ -88,6 +89,20 @@ namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
             AddDomainEvent(new RemoveItemLotsDomainEvent(this.Lots));
         }
 
+        public void UpdateLot(string oldLotId, string? newLotId, double quantity, List<GoodsReceiptSublot> sublots, DateTime? productionDate, DateTime? expirationDate, string? note)
+        {
+            string lotId = newLotId ?? oldLotId;
+            var lot = Lots.Find(gr => gr.GoodsReceiptLotId == oldLotId);
+            if (lot == null)
+                throw new WarehouseDomainException($"GoodsReceiptLot with Id {lotId} does not exist.");
+
+            lot.Update(lotId, quantity, productionDate, expirationDate, note, sublots);
+        }
+
+        public void UpdateItemLotEntity(string oldLotId, string? newLotId, List<ItemLotLocation>? itemLotLocations, double quantity, DateTime? productionDate, DateTime? expirationDate)
+        {
+            AddDomainEvent(new UpdateItemLotDomainEvent(oldLotId, newLotId, itemLotLocations, quantity, productionDate, expirationDate));
+        }
 
 
     }
