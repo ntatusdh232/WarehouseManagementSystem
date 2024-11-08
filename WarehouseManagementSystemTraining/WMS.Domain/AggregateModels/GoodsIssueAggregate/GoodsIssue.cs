@@ -3,7 +3,7 @@
     public class GoodsIssue : IAggregateRoot
     {
         public string GoodsIssueId { get; set; }
-        public string? Receiver { get; set; }
+        public string Receiver { get; set; }
         public DateTime Timestamp { get; set; }
         public Employee Employee { get; set; }
         public List<GoodsIssueEntry> Entries { get; set; }
@@ -13,7 +13,13 @@
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private GoodsIssue() { }
-        public GoodsIssue(string goodsIssueId, string? receiver, DateTime timestamp, Employee employee, List<GoodsIssueEntry> entries, string employeeId)
+        public GoodsIssue(string goodsIssueId, string receiver, string employeeId)
+        {
+            GoodsIssueId = goodsIssueId;
+            Receiver = receiver;
+            EmployeeId = employeeId;
+        }
+        public GoodsIssue(string goodsIssueId, string receiver, DateTime timestamp, Employee employee, List<GoodsIssueEntry> entries, string employeeId)
         {
             GoodsIssueId = goodsIssueId;
             Receiver = receiver;
@@ -58,6 +64,19 @@
                     Entries.Add(newEntry);
                 }
             }
+        }
+
+        public void AddEntry(Item item, double requestedQuantity)
+        {
+            var newEntry = new GoodsIssueEntry(item, requestedQuantity);
+            foreach (var existedEntry in Entries)
+            {
+                if (newEntry.Item == existedEntry.Item)
+                {
+                    throw new WarehouseDomainException($"Entry with Item {newEntry.Item.ItemId} has already existed in the GoodsIssue");
+                }
+            }
+            Entries.Add(newEntry);
         }
 
         public void AddLot(string itemId, string unit, GoodsIssueLot lot)

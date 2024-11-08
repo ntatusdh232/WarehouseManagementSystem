@@ -12,6 +12,11 @@
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private GoodsIssueEntry() { }
+        public GoodsIssueEntry(Item item, double requestedQuantity)
+        {
+            RequestedQuantity = requestedQuantity;
+            Item = item;
+        }
         public GoodsIssueEntry(string goodsIssueEntryId, double requestedQuantity, Item item, List<GoodsIssueLot> lots, string itemId, string goodsIssueId)
         {
             GoodsIssueEntryId = goodsIssueEntryId;
