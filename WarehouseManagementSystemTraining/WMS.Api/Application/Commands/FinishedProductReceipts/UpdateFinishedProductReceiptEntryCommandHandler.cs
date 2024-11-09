@@ -47,9 +47,9 @@
                                                                       newQuantity: entry.Quantity,
                                                                       timestamp: DateTime.Now);
 
-                oldEntry.Quantity = entry.Quantity;
-                oldEntry.PurchaseOrderNumber = entry.NewPurchaseOrderNumber;
-                oldEntry.Item = entry.Item;
+                oldEntry.UpdateEntry(purchaseOrderNumber: entry.NewPurchaseOrderNumber,
+                                     quantity: entry.Quantity,
+                                     item: item);
  
             }
 
