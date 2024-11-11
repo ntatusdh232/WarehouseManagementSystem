@@ -201,7 +201,6 @@ namespace WMS.Api.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Receiver")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Timestamp")
