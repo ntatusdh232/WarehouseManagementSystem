@@ -26,6 +26,10 @@ namespace WMS.Domain.AggregateModels.ItemLotLocationAggregate
             QuantityPerLocation = quantityPerLocation;
             Location = location;
         }
+        public void UpdateQuantity(double quantity)
+        {
+            QuantityPerLocation += quantity;
+        }
 
 
 #pragma warning restore CS8618

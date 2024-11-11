@@ -7,9 +7,9 @@ public class IsolateItemLotsDomainEvent : INotification
     public double Quantity {  get; set; }
     public DateTime ProductionDate {  get; set; }
     public DateTime ExpirationDate { get; set; }
-    public int ItemId { get; set; }
+    public string ItemId { get; set; }
 
-    public IsolateItemLotsDomainEvent(string itemLotId, double quantity, DateTime productionDate, DateTime expirationDate, int itemId)
+    public IsolateItemLotsDomainEvent(string itemLotId, double quantity, DateTime productionDate, DateTime expirationDate, string itemId)
     {
         ItemLotId = itemLotId;
         Quantity = quantity;

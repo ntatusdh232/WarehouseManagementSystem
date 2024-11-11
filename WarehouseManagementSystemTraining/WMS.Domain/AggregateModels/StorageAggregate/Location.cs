@@ -1,6 +1,6 @@
 ﻿namespace WMS.Domain.AggregateModels.LocationAggregate
 {
-    public class Location : IAggregateRoot
+    public class Location : Entity , IAggregateRoot
     {
         public string LocationId { get; set; }  
         public List<ItemLot> ItemLots { get; set; }
