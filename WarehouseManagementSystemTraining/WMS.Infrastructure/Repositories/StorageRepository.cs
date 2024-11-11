@@ -26,6 +26,16 @@ namespace WMS.Infrastructure.Repositories
             return warehouseList;
         }
 
+        public async Task<Location> GetLocationById(string locationId)
+        {
+            var location = await _context.locations.FindAsync(locationId);
+            if(location is null)
+            {
+                throw new ArgumentException($"Location does not exist.");
+            }
+            return location;
+        }
+
         public async Task<IEnumerable<Location>> GetLocationsById(string locationId)
         {
             var locationList = await _context.locations.Where(x => x.LocationId == locationId).ToListAsync();

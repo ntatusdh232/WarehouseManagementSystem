@@ -20,10 +20,11 @@ namespace WMS.Domain.AggregateModels.ItemLotLocationAggregate
             QuantityPerLocation = quantityPerLocation;
         }
 
-        public ItemLotLocation(string locationId, double quantityPerLocation)
+        public ItemLotLocation(string locationId, double quantityPerLocation, Location location)
         {
             LocationId = locationId;
             QuantityPerLocation = quantityPerLocation;
+            Location = location;
         }
 
 

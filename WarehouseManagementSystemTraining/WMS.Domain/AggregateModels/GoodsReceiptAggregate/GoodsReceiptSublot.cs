@@ -18,10 +18,11 @@
             GoodsReceiptLotId = goodsReceiptLotId;
         }
 
-        public GoodsReceiptSublot(string locationId, double quantityPerLocation)
+        public GoodsReceiptSublot(string locationId, double quantityPerLocation, string goodsReceiptLotId)
         {
             LocationId = locationId;
             QuantityPerLocation = quantityPerLocation;
+            GoodsReceiptLotId = goodsReceiptLotId;
         }
 
 

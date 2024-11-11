@@ -42,17 +42,17 @@ public class UpdateGoodsReceiptCommandHandler : IRequestHandler<UpdateGoodsRecei
 
                 foreach (var itemLotLocationVM  in updatedGoodsReceiptLot.ItemLotLocations)
                 {
-                    var location = await _storageRepository.GetLocationsById(itemLotLocationVM.LocationId);
+                    var location = await _storageRepository.GetLocationById(itemLotLocationVM.LocationId);
 
                     if(location is null)
                     {
                         throw new EntityNotFoundException(nameof(Location), itemLotLocationVM.LocationId);
                     }
-                    var sublot = new GoodsReceiptSublot(itemLotLocationVM.LocationId,itemLotLocationVM.QuantityPerLocation);
+                    var sublot = new GoodsReceiptSublot(itemLotLocationVM.LocationId,itemLotLocationVM.QuantityPerLocation, updatedGoodsReceiptLot.NewGoodsReceiptLotId);
 
                     sublots.Add(sublot);
 
-                    var itemLotLocation = new ItemLotLocation(itemLotLocationVM.LocationId, itemLotLocationVM.QuantityPerLocation);
+                    var itemLotLocation = new ItemLotLocation(itemLotLocationVM.LocationId, itemLotLocationVM.QuantityPerLocation, location);
 
                     itemLotLocations.Add(itemLotLocation);
 

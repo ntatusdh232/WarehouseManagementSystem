@@ -7,6 +7,7 @@ namespace WMS.Domain.AggregateModels.LocationAggregate
         Task<Warehouse> Add(Warehouse warehouse);
         Task <IEnumerable<Warehouse>> GetALL();
         Task<IEnumerable<Location>> GetLocationsById(string locationId);
+        Task<Location> GetLocationById(string locationId);
         Task<IEnumerable<Warehouse>> GetWarehousesById(string warehouseId); 
     }
 }
