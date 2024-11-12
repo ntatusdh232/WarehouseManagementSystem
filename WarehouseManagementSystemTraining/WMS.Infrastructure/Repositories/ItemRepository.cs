@@ -108,31 +108,7 @@ namespace WMS.Infrastructure.Repositories
             return itemlist;
         }
 
-        public async Task<Item> GetItemId(string itemId)
-        {
-            var item = await _context.items
-                .Where(x => x.ItemId == itemId)
-                .Select(x => new Item
-                (
-                    x.ItemType,
-                    x.ItemId,
-                    x.ItemName,
-                    x.Unit,
-                    x.MinimumStockLevel,
-                    x.Price,
-                    x.PacketSize,
-                    x.PacketUnit,
-                    x.ItemClassId
 
-                ))
-                .FirstOrDefaultAsync();
-
-            if (item == null)
-            {
-                throw new KeyNotFoundException($"Item with ID {itemId} not found.");
-            } 
-            return item;
-        }
 
         public IEnumerable<Item> GetItems()
         {
@@ -282,8 +258,16 @@ namespace WMS.Infrastructure.Repositories
             }
         }
 
+        public async Task<Item> GetItemByIdAndUnitAsync(string itemId, string unit)
+        {
+            var item = await _context.items.Where(s => s.ItemId == itemId && s.Unit == unit).FirstOrDefaultAsync();
 
+            if (item == null)
+            {
+                throw new KeyNotFoundException($"Item with ID {itemId} not found.");
+            }
 
-
+            return item;
+        }
     }
 }

@@ -13,7 +13,7 @@
 
 
         Task<IEnumerable<Item>> GetItemLists();
-        Task<Item> GetItemId(string itemId);
+        Task<Item> GetItemByIdAndUnitAsync(string itemId, string unit);
         IEnumerable<Item> GetItems();
         IEnumerable<Item> GetSort(string sortField, string sortDirection, IEnumerable<Item> items);
         IXLWorksheet? GetItemListWorkSheet(IEnumerable<Item> items, IXLWorksheet? worksheet);
