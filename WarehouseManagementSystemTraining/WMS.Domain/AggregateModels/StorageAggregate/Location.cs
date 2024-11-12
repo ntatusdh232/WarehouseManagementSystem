@@ -8,6 +8,11 @@
 #pragma warning disable CS8618
         private Location() { }
 
+        public Location(string locationId)
+        {
+            LocationId = locationId;
+        }
+
         public Location(string locationId, List<ItemLot> itemLots)
         {
             LocationId = locationId;
