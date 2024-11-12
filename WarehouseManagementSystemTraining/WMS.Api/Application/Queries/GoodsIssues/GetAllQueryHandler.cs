@@ -1,10 +1,29 @@
-﻿
-namespace WMS.Api.Application.Queries.GoodsIssues;
-
-public class GetAllQueryHandler : IRequestHandler<GetAllQuery, IEnumerable<GoodsIssueViewModel>>
+﻿namespace WMS.Api.Application.Queries.GoodsIssues
 {
-    public Task<IEnumerable<GoodsIssueViewModel>> Handle(GetAllQuery request, CancellationToken cancellationToken)
+    public class GetAllQueryHandler : IRequestHandler<GetAllQuery, IEnumerable<GoodsIssueViewModel>>
     {
-        throw new NotImplementedException();
+        private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
+        private readonly GoodsReceiptQuery goodsIssuesQuery;
+
+        public GetAllQueryHandler(ApplicationDbContext context, IMapper mapper, GoodsReceiptQuery goodsIssuesQuery)
+        {
+            _context = context;
+            _mapper = mapper;
+            this.goodsIssuesQuery = goodsIssuesQuery;
+        }
+
+        public async Task<IEnumerable<GoodsIssueViewModel>> Handle(GetAllQuery request, CancellationToken cancellationToken)
+        {
+            var goodsIssues = await goodsIssuesQuery._goodsIssues.ToListAsync();
+
+            var goodsIssueViewModels = _mapper.Map<IEnumerable<GoodsIssueViewModel>>(goodsIssues);
+
+            return goodsIssueViewModels;
+
+
+        }
     }
 }
+
+

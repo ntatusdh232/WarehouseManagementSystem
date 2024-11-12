@@ -13,9 +13,9 @@
 
         public async Task<IEnumerable<string>> Handle(GetPOsQuery request, CancellationToken cancellationToken)
         {
-            var productInvetoryList = await _finishedProductInventoryRepository.GetPos(cancellationToken);
-            var departmentViewModels = _mapper.Map<IEnumerable<string>>(productInvetoryList);
-            return departmentViewModels;
+            var POs = await _finishedProductInventoryRepository.GetPos();
+
+            return POs;
 
         }
     }

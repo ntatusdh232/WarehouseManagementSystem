@@ -63,9 +63,9 @@
             return productInverotyList;
         }
 
-        public async Task<IEnumerable<string>> GetPos(CancellationToken cancellationToken)
+        public async Task<IEnumerable<string>> GetPos()
         {
-            var POsList = await _context.finishedProductInventories.Select(s => s.PurchaseOrderNumber).ToListAsync(cancellationToken);
+            var POsList = await _context.finishedProductInventories.Select(s => s.PurchaseOrderNumber).ToListAsync();
             return POsList;
         }
 

@@ -43,6 +43,16 @@ namespace WMS.Infrastructure.Repositories
             return existingItem;
         }
 
+        public async Task<IEnumerable<string>> GetReceivers()
+        {
+            var receivers = await _context.finishedProductIssues
+                .AsNoTracking()
+                .Select(s => s.Receiver)
+                .ToArrayAsync()
+                ?? throw new ArgumentException("No receivers found.");
+
+            return receivers;
+        }
         public async Task UpdateEntries(FinishedProductIssue finishedProductIssue)
         {
             var existingItem = await _context.finishedProductIssues.FindAsync(finishedProductIssue.FinishedProductIssueId);

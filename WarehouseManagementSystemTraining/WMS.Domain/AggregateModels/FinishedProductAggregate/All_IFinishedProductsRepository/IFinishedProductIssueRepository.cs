@@ -7,6 +7,7 @@
         Task<FinishedProductIssue> Update(FinishedProductIssue finishedProductIssue);
         Task<IEnumerable<FinishedProductIssueEntry>> GetProductIssueEntry();
         Task UpdateEntries(FinishedProductIssue finishedProductIssue);
+        Task<IEnumerable<string>> GetReceivers();
 
 
 
