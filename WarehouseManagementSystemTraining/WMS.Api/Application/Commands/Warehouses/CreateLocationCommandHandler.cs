@@ -1,30 +1,17 @@
-﻿
-using WMS.Domain.AggregateModels.StorageAggregate;
-
-namespace WMS.Api.Application.Commands.Warehouses;
-
-public class CreateLocationCommandHandler : IRequestHandler<CreateLocationCommand, bool>
+﻿namespace WMS.Api.Application.Commands.Warehouses
 {
-    private readonly IStorageRepository _storageRepository;
-
-    public CreateLocationCommandHandler(IStorageRepository storageRepository)
+    public class CreateLocationCommandHandler : IRequestHandler<CreateLocationCommand,bool>
     {
-        _storageRepository = storageRepository;
-    }
+        private readonly IStorageRepository _storageRepository;
 
-    public async Task<bool> Handle(CreateLocationCommand request, CancellationToken cancellationToken)
-    {
-        var warehouse = await _storageRepository.GetWarehouseById(request.WarehouseId);
-        if(warehouse is null)
+        public CreateLocationCommandHandler(IStorageRepository departmentRepository)
         {
-            throw new EntityNotFoundException(nameof(Warehouse), request.WarehouseId);
+            _storageRepository = departmentRepository;
         }
-        var location = new Location(request.LocationId);
 
-        warehouse.Locations.Add(location);
-
-        await _storageRepository.AddLocation(location);
-
-        return await _storageRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
+        public async Task<bool> Handle (CreateLocationCommand request, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

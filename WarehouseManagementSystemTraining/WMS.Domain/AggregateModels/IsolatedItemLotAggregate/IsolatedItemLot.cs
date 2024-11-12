@@ -1,8 +1,10 @@
 ﻿using WMS.Domain.AggregateModels.EmployeeAggregate;
+using WMS.Domain.AggregateModels.ItemLotLocationAggregate;
+using WMS.Domain.DomainEvents.IsolatedItemLotEvents;
 
 namespace WMS.Domain.AggregateModels.IsolatedItemLotAggregate
 {
-    public class IsolatedItemLot : IAggregateRoot
+    public class IsolatedItemLot : Entity, IAggregateRoot
     {
         public string ItemLotId { get; private set; }
         public double Quantity { get; private set; }
@@ -23,6 +25,15 @@ namespace WMS.Domain.AggregateModels.IsolatedItemLotAggregate
             ItemId = itemId;
         }
 
+        public void UpdateQuantity(double unisolatedQuantity)
+        {
+            Quantity += unisolatedQuantity;
+        }
+
+        public void BackToItemLot(ItemLot itemLot, List<ItemLotLocation> unisolatedItemLotLocations, double unisolatedQuantity)
+        {
+            AddDomainEvent(new BackToItemLotDomainEvent(itemLot, unisolatedItemLotLocations, unisolatedQuantity));
+        }
 
 
 #pragma warning restore CS8618

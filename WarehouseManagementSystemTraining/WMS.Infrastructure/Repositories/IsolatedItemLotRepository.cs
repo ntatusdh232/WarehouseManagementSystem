@@ -1,4 +1,4 @@
-﻿using DocumentFormat.OpenXml.InkML;
+﻿using WMS.Domain.AggregateModels.IsolatedItemLotAggregate;
 
 namespace WMS.Infrastructure.Repositories
 {
@@ -8,71 +8,51 @@ namespace WMS.Infrastructure.Repositories
         {
         }
 
-        public async Task<ItemLot> AddAsync(ItemLot itemLot)
+        public async Task<IsolatedItemLot> GetItemLotById(string lotId)
         {
-            var exitingItem = await _context.itemsLot.FindAsync(itemLot.LotId);
+            var existingItemLot = await _context.isolatedItemLots.FindAsync(lotId);
 
-            if (exitingItem != null)
+            if (existingItemLot == null)
             {
-                throw new ArgumentException($"ItemLot with ID {itemLot.LotId} already exists.");
+                throw new Exception("Not Found");
             }
 
-            await _context.itemsLot.AddAsync(itemLot);
-            await _context.SaveChangesAsync();
+            return existingItemLot;
+           
 
-            return itemLot;
+        }   
+        public async Task<IsolatedItemLot> AddAsync(IsolatedItemLot itemLot)
+        {
+            throw new NotSupportedException();
 
         }
 
-        public async Task<ItemLot> Update(ItemLot itemLot)
+        public async Task Update(IsolatedItemLot itemLot)
         {
-            var existingItem = await _context.itemsLot.FindAsync(itemLot.LotId);
-
-            if (existingItem == null)
+            var updateItem = await _context.isolatedItemLots.FindAsync(itemLot.ItemLotId);
+            if (updateItem is null)
             {
-                throw new ArgumentException($"ItemLot with ID {itemLot.LotId} does not exist.");
+                throw new Exception("Not found");
             }
 
-            if (existingItem.IsIsolated == false)
-            {
-                throw new ArgumentException($"ItemLot with ID {itemLot.LotId} is not isolated.");
-            }
-
-            existingItem.Update(itemLot.Quantity, itemLot.Timestamp, itemLot.ProductionDate, itemLot.ExpirationDate);
-
-            await _context.SaveChangesAsync();
-            return existingItem;
+            _context.isolatedItemLots.Update(updateItem);
 
         }
 
         public async Task Remove(string lotId)
         {
-            var existingItem = await _context.itemsLot.FindAsync(lotId);
-            if (existingItem == null)
+            var removeItem = await _context.isolatedItemLots.FindAsync(lotId);
+            if (removeItem is null)
             {
-                throw new ArgumentException($"ItemLot with ID {lotId} does not exist.");
+                throw new Exception("Not Found");
             }
-
-            if (existingItem.IsIsolated == false)
-            {
-                throw new ArgumentException($"ItemLot with ID {lotId} is not isolated.");
-            }
-
-            _context.itemsLot.Remove(existingItem);
-            await _context.SaveChangesAsync();
+            _context.isolatedItemLots.Remove(removeItem);
 
         }
 
-        public async Task<IEnumerable<ItemLot>> GetAsync()
+        public async Task<IEnumerable<IsolatedItemLot>> GetAsync()
         {
-            var ItemLotList = await _context.itemsLot.Where(s => s.IsIsolated == true).ToListAsync();
-
-            if (ItemLotList == null)
-            {
-                throw new ArgumentException("No isolated ItemLot found.");
-            }
-
-            return ItemLotList;
+            throw new NotImplementedException();
 
         }
 

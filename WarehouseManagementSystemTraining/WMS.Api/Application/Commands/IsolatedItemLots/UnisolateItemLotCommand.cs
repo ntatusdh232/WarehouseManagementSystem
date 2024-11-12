@@ -1,6 +1,6 @@
 ﻿namespace WMS.Api.Application.Commands.IsolatedItemLots
 {
-    public class UnisolateItemLotCommand
+    public class UnisolateItemLotCommand : IRequest<bool>
     {
         public string ItemLotId { get; set; }
         public List<UnisolatedItemSublotViewModel> UnisolatedItemSublots { get; set; }

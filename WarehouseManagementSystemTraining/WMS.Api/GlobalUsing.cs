@@ -37,7 +37,8 @@ global using WMS.Domain.DomainEvents.LotAdjustmentEvents;
 global using WMS.Domain.SeedWork;
 global using WMS.Infrastructure;
 global using WMS.Infrastructure.Repositories;
-global using WMS.Domain.AggregateModels.ItemLotLocationAggregate; 
+global using WMS.Domain.AggregateModels.ItemLotLocationAggregate;
+global using WMS.Domain.AggregateModels.IsolatedItemLotAggregate;
 
 
 

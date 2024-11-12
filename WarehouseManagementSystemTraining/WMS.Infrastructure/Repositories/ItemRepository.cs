@@ -8,13 +8,12 @@ namespace WMS.Infrastructure.Repositories
     {
         public ItemRepository(ApplicationDbContext context) : base(context) { }
 
-        public async Task Add(Item item, CancellationToken cancellationToken)
+        public async Task Add(Item item)
         {
             
             var existingItem = await _context.items.FindAsync(item.ItemId) ?? throw new Exception("Not Found");
 
             await _context.items.AddAsync(item);
-            await _context.SaveChangesAsync(cancellationToken);
         }
 
         public async Task<Item?> GetItemByEntityId(string entityId)
@@ -27,6 +26,19 @@ namespace WMS.Infrastructure.Repositories
             }
 
             return item;
+        }
+
+        public async Task<Item> GetItemByIdAndUnit(string itemId, string Unit)
+        {
+            var existingItem = await _context.items.Where(s => s.ItemId == itemId && s.Unit == Unit).FirstOrDefaultAsync();
+
+            if (existingItem is null)
+            {
+                throw new Exception("Not Found");
+            }
+
+            return existingItem;
+
         }
 
         // GetAllItems
@@ -108,7 +120,31 @@ namespace WMS.Infrastructure.Repositories
             return itemlist;
         }
 
+        public async Task<Item> GetItemId(string itemId)
+        {
+            var item = await _context.items
+                .Where(x => x.ItemId == itemId)
+                .Select(x => new Item
+                (
+                    x.ItemType,
+                    x.ItemId,
+                    x.ItemName,
+                    x.Unit,
+                    x.MinimumStockLevel,
+                    x.Price,
+                    x.PacketSize,
+                    x.PacketUnit,
+                    x.ItemClassId
 
+                ))
+                .FirstOrDefaultAsync();
+
+            if (item == null)
+            {
+                throw new KeyNotFoundException($"Item with ID {itemId} not found.");
+            } 
+            return item;
+        }
 
         public IEnumerable<Item> GetItems()
         {
@@ -258,16 +294,8 @@ namespace WMS.Infrastructure.Repositories
             }
         }
 
-        public async Task<Item> GetItemByIdAndUnitAsync(string itemId, string unit)
-        {
-            var item = await _context.items.Where(s => s.ItemId == itemId && s.Unit == unit).FirstOrDefaultAsync();
 
-            if (item == null)
-            {
-                throw new KeyNotFoundException($"Item with ID {itemId} not found.");
-            }
 
-            return item;
-        }
+
     }
 }

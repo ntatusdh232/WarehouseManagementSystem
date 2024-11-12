@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WMS.Infrastructure;
 
@@ -11,9 +12,11 @@ using WMS.Infrastructure;
 namespace WMS.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241109124853_CheckError16")]
+    partial class CheckError16
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -412,36 +415,6 @@ namespace WMS.Api.Migrations
                     b.ToTable("inventoryLogEntries");
                 });
 
-            modelBuilder.Entity("WMS.Domain.AggregateModels.IsolatedItemLotAggregate.IsolatedItemLot", b =>
-                {
-                    b.Property<string>("ItemLotId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime?>("ExpirationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ItemId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ItemId1")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime?>("ProductionDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double>("Quantity")
-                        .HasColumnType("float");
-
-                    b.HasKey("ItemLotId");
-
-                    b.HasIndex("ItemId1");
-
-                    b.ToTable("isolatedItemLots");
-                });
-
             modelBuilder.Entity("WMS.Domain.AggregateModels.ItemAggregate.Item", b =>
                 {
                     b.Property<string>("ItemId")
@@ -554,9 +527,6 @@ namespace WMS.Api.Migrations
                     b.Property<string>("EmployeeId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsConfirmed")
                         .HasColumnType("bit");
 
@@ -567,10 +537,6 @@ namespace WMS.Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Unit")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("LotId");
 
                     b.HasIndex("EmployeeId");
@@ -578,21 +544,6 @@ namespace WMS.Api.Migrations
                     b.HasIndex("ItemId");
 
                     b.ToTable("lotAdjustments");
-                });
-
-            modelBuilder.Entity("WMS.Domain.AggregateModels.LotAdjustmentAggregate.SublotAdjustment", b =>
-                {
-                    b.Property<double>("AfterQuantityPerLocation")
-                        .HasColumnType("float");
-
-                    b.Property<double>("BeforeQuantityPerLocation")
-                        .HasColumnType("float");
-
-                    b.Property<string>("LocationId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.ToTable("sublotAdjustments");
                 });
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.StorageAggregate.Warehouse", b =>
@@ -837,15 +788,6 @@ namespace WMS.Api.Migrations
                     b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.Item", "Item")
                         .WithMany()
                         .HasForeignKey("ItemId");
-
-                    b.Navigation("Item");
-                });
-
-            modelBuilder.Entity("WMS.Domain.AggregateModels.IsolatedItemLotAggregate.IsolatedItemLot", b =>
-                {
-                    b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.Item", "Item")
-                        .WithMany()
-                        .HasForeignKey("ItemId1");
 
                     b.Navigation("Item");
                 });

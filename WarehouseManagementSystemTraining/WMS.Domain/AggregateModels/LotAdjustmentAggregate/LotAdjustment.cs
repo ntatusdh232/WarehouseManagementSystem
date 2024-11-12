@@ -1,17 +1,24 @@
-﻿namespace WMS.Domain.AggregateModels.LotAdjustmentAggregate
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using WMS.Domain.DomainEvents.LotAdjustmentEvents;
+
+namespace WMS.Domain.AggregateModels.LotAdjustmentAggregate
 {
-    public class LotAdjustment : IAggregateRoot
+    public class LotAdjustment : Entity, IAggregateRoot
     {
         public string LotId { get; set; }
         public double BeforeQuantity { get; set; }
         public double AfterQuantity { get; set; }
         public bool IsConfirmed { get; set; }
         public string Note { get; set; }
+        public string Unit { get; set; }
         public Item Item { get; set; }
         public Employee Employee { get; set; }
         public string ItemId { get; set; }
         public string EmployeeId { get; set; }
-        public List<SublotAdjustment> SublotAdjustments { get; set; }
+        [NotMapped]
+        public virtual List<SublotAdjustment> SublotAdjustments { get; set; }
+
+
 #pragma warning disable CS8618
         private LotAdjustment() { }
 
@@ -28,37 +35,27 @@
             ItemId = itemId;
             EmployeeId = employeeId;
         }
-        public LotAdjustment(string lotId, string itemId, double afterQuantity, string note, Item item, Employee employee, string employeeId)
-        {
-            LotId = lotId;
-            ItemId = itemId;
-            AfterQuantity = afterQuantity;
-            Note = note;
-            Item = item;
-            Employee = employee;
-            EmployeeId = employeeId;
-        }
+
 #pragma warning restore CS8618
 
-        public void Update(double quantity, string purchaseOrderNumber) 
+        public void Update(LotAdjustment lotAdjustment) 
         {
-            AfterQuantity = quantity;
-            Note = purchaseOrderNumber;
+            BeforeQuantity = lotAdjustment.BeforeQuantity;
+            AfterQuantity = lotAdjustment.AfterQuantity;
+            IsConfirmed = lotAdjustment.IsConfirmed;
+            Note = lotAdjustment.Note;
+            Item = lotAdjustment.Item;
+            Employee = lotAdjustment.Employee;
+            ItemId = lotAdjustment.ItemId;
+            EmployeeId = lotAdjustment.EmployeeId;
+            SublotAdjustments = lotAdjustment.SublotAdjustments;
         }
-        public void Confirm()
+        public void Confirm(string lotId, string itemId, double beforeQuantity, double afterQuanity, string unit, List<SublotAdjustment> sublotAdjustments)
         {
-            
+            IsConfirmed = true;
+            var Timestamp = DateTime.UtcNow.AddHours(7);
+            AddDomainEvent(new LotAdjustedDomainEvent(lotId, itemId, beforeQuantity, afterQuanity, unit, Timestamp, sublotAdjustments));
         }
-
-        public void Update(double quantity)
-        {
-            AfterQuantity = quantity;
-        }
-         public void AddSublot(string locationId, double beforeQuantity, double afterQuantity)
-    {
-        var sublot = new SublotAdjustment(locationId, beforeQuantity, afterQuantity);
-        SublotAdjustments.Add(sublot);
-    }
 
     }
 

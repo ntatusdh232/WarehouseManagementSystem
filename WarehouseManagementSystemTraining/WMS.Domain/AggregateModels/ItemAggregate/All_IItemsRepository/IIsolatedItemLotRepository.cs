@@ -1,10 +1,13 @@
-﻿namespace WMS.Domain.AggregateModels.ItemAggregate.All_IItemsRepository
+﻿using WMS.Domain.AggregateModels.IsolatedItemLotAggregate;
+
+namespace WMS.Domain.AggregateModels.ItemAggregate.All_IItemsRepository
 {
-    public interface IIsolatedItemLotRepository : IRepository<ItemLot>
+    public interface IIsolatedItemLotRepository : IRepository<IsolatedItemLot>
     {
-        Task <ItemLot> AddAsync(ItemLot itemLot);
-        Task <ItemLot> Update(ItemLot itemLot);
+        Task<IsolatedItemLot> GetItemLotById(string lotId);
+        Task <IsolatedItemLot> AddAsync(IsolatedItemLot itemLot);
+        Task Update(IsolatedItemLot itemLot);
         Task Remove(string lotId);
-        Task<IEnumerable<ItemLot>> GetAsync();
+        Task<IEnumerable<IsolatedItemLot>> GetAsync();
     }
 }

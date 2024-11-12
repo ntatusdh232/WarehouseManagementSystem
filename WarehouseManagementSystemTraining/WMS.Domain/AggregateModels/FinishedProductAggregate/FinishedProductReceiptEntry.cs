@@ -31,6 +31,12 @@
             FinishedProductReceiptId = finishedProductReceiptId;
         }
 
+        public void UpdateEntry(string purchaseOrderNumber, double quantity, Item item)
+        {
+            PurchaseOrderNumber = purchaseOrderNumber;
+            Quantity = quantity;
+            Item = item;
+        }
 
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     }

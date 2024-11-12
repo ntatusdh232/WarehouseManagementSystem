@@ -36,15 +36,14 @@
             return itemLots;
         }
 
-        public async Task DeleteLot(string lotId)
+        public async Task Remove(string lotId)
         {
-            var existingLot = await _context.itemsLot.Where(x => x.LotId == lotId).FirstOrDefaultAsync();
+            var existingLot = await _context.itemsLot.FindAsync(lotId);
             if (existingLot is null)
             {
                 throw new ArgumentException($"ItemLot does not exists.");
             }
             _context.itemsLot.Remove(existingLot);
-            await _context.SaveChangesAsync();
         }
 
         public async Task DeleteLots(string lotId)

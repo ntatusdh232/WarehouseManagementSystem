@@ -1,34 +1,50 @@
 ﻿using WMS.Domain.AggregateModels.ItemAggregate;
 
-namespace WMS.Api.Application.Commands.Items;
-
-public class CreateItemCommandHandler : IRequestHandler<CreateItemCommand, bool>
+namespace WMS.Api.Application.Commands.Items
 {
-    private readonly IItemRepository _itemRepository;
-
-    public CreateItemCommandHandler(IItemRepository itemRepository)
+    public class CreateItemCommandHandler : IRequestHandler<CreateItemCommand,bool>
     {
-        _itemRepository = itemRepository;
-    }
+        private readonly IItemRepository _itemRepository;
+        private readonly IItemClassRepository _itemClassRepository;
 
-    public async Task<bool> Handle(CreateItemCommand request, CancellationToken cancellationToken)
-    {
-        var existedItem = await _itemRepository.GetItemById(request.ItemId);
-        if(existedItem != null)
+
+        public CreateItemCommandHandler(IItemRepository itemRepository, IItemClassRepository itemClassRepository)
         {
-            throw new DuplicatedRecordException(nameof(Item), request.ItemId);
+            _itemRepository = itemRepository;
+            _itemClassRepository = itemClassRepository;
         }
-        var newItem = new Item(itemId: request.ItemId,
-                               itemName: request.ItemName,
-                               unit: request.Unit,
-                               minimumStockLevel: request.MinimumStockLevel,
-                               price: request.Price,
-                               packetSize: request.PacketSize,
-                               packetUnit: request.PacketUnit,
-                               itemClassId: request.ItemClassId);
 
-        await _itemRepository.Add(newItem, cancellationToken);
+        public async Task<bool> Handle(CreateItemCommand request, CancellationToken cancellationToken)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(nameof(request));
+            }
+            
+            var Itemcheck = await _itemRepository.GetItemById(request.ItemId);
+            if (Itemcheck != null)
+            {
+                throw new ArgumentException($"Item with ID {Itemcheck.ItemId} already exists.");
+            }
 
-        return await _itemRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
+            var item = new Item
+            (
+                request.ItemId,
+                request.ItemName,
+                request.Unit,
+                request.MinimumStockLevel,
+                request.Price,
+                request.PacketSize,
+                request.PacketUnit,
+                request.ItemClassId
+
+            );
+
+            await _itemRepository.Add(item);
+
+            return true;
+
+        }
+
     }
 }

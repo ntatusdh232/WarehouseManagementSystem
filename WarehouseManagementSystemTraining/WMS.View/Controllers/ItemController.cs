@@ -65,7 +65,7 @@ namespace WMS.View.Controllers
             }
 
             // Lấy thông tin nhân viên từ repository
-            var item = await _itemRepository.GetItemById(itemId);
+            var item = await _itemRepository.GetItemId(itemId);
 
             // Kiểm tra xem item có tồn tại hay không
             if (item == null)

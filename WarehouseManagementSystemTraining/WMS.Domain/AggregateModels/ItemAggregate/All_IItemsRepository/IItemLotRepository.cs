@@ -6,7 +6,7 @@
         Task<IEnumerable<ItemLot>> AddLots(IEnumerable<ItemLot> itemLots);
         Task<ItemLot> UpdateLot(ItemLot itemLot);
         Task<IEnumerable<ItemLot>> UpdateLots(IEnumerable<ItemLot> updatedItemLots);
-        Task DeleteLot(string lotId);
+        Task Remove(string lotId);
         Task DeleteLots(string lotId);
         Task<ItemLot> GetItemLotById(string lotId);
         Task<IEnumerable<ItemLot>> GetLotsByItemId(string itemId);

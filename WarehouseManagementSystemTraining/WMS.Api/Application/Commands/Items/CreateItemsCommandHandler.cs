@@ -1,5 +1,6 @@
 ﻿using WMS.Domain.AggregateModels.ItemAggregate.All_IItemsRepository;
 using WMS.Domain.AggregateModels.ItemAggregate;
+using MediatR;
 
 namespace WMS.Api.Application.Commands.Items
 {
@@ -14,39 +15,31 @@ namespace WMS.Api.Application.Commands.Items
             _itemClassRepository = itemClassRepository;
         }
 
+        
+
         public async Task<bool> Handle(CreateItemsCommand request, CancellationToken cancellationToken)
         {
-            if (request == null)
+            foreach (var item in request.Items)
             {
-                throw new ArgumentNullException(nameof(request));
+                var existedItem = await _itemRepository.GetItemByIdAndUnit(item.ItemId, item.Unit);
+
+                if (existedItem != null) continue;
+
+                var newItem = new Item(itemId: item.ItemId,
+                                       itemName: item.ItemName,
+                                       unit: item.Unit,
+                                       minimumStockLevel: item.MinimumStockLevel,
+                                       price: item.Price,
+                                       packetSize: item.PacketSize,
+                                       packetUnit: item.PacketUnit,
+                                       itemClassId: item.ItemClassId
+                                       );
+
+
+                await _itemRepository.Add(newItem);
             }
 
-            var existingItems = await _itemRepository.GetAllItems();
-            var existingItemIds = new HashSet<string>(existingItems.Select(item => item.ItemId));
-
-            foreach (var itemRequest in request.Items)
-            {
-                if (existingItemIds.Contains(itemRequest.ItemId))
-                {
-                    throw new ArgumentException($"Item with ID {itemRequest.ItemId} already exists.");
-                }
-
-                var newItem = new Item
-                (
-                    itemRequest.ItemId,
-                    itemRequest.ItemName,
-                    itemRequest.Unit,
-                    itemRequest.MinimumStockLevel,
-                    itemRequest.Price,
-                    itemRequest.PacketSize,
-                    itemRequest.PacketUnit,
-                    itemRequest.ItemClassId
-                );
-
-                await _itemRepository.Add(newItem, cancellationToken);
-            };
-
-            return true;
+            return await _itemClassRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
 
 
         }

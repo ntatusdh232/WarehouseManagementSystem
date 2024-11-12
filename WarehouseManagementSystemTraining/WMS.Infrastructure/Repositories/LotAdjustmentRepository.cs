@@ -20,36 +20,28 @@
 
         }
 
-        public async Task<LotAdjustment> Update(LotAdjustment lotAdjustment)
+        public async Task Update(LotAdjustment lotAdjustment)
         {
-            var existingLot = await _context.lotAdjustments.FindAsync(lotAdjustment.LotId);
+            var existingLot = await _context.lotAdjustments.FindAsync(lotAdjustment.LotId)
+                ?? throw new Exception("Lot Adjustment does not exist");
 
-            if (existingLot == null)
-            {
-                throw new Exception("Lot Adjustment does not exist");
-            }
-            existingLot.Update(lotAdjustment.AfterQuantity, lotAdjustment.Note);
-            await _context.SaveChangesAsync();
-            return existingLot;
+            existingLot.Update(lotAdjustment);
+
 
         }
 
         public async Task Remove(string LotId)
         {
-            var existingLot = await _context.lotAdjustments.FindAsync(LotId);
-            if (existingLot == null)
-            {
-                throw new Exception("Lot Adjustment does not exist");
-            }
-            
+            var existingLot = await _context.lotAdjustments.FindAsync(LotId)
+                ?? throw new Exception("Lot Adjustment does not exist");
+
             _context.lotAdjustments.Remove(existingLot);
-            await _context.SaveChangesAsync();
 
         }
 
-        public async Task<IEnumerable<LotAdjustment>> GetAdjustmentByLotId(string LotId)
+        public async Task<LotAdjustment> GetAdjustmentByLotId(string LotId)
         {
-            var lotAdjustments = await _context.lotAdjustments.Where(l => l.LotId == LotId).ToListAsync();
+            var lotAdjustments = await _context.lotAdjustments.FindAsync(LotId);
 
             if (lotAdjustments == null)
             {

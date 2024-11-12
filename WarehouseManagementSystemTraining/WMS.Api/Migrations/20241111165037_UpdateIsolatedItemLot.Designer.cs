@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WMS.Infrastructure;
 
@@ -11,9 +12,11 @@ using WMS.Infrastructure;
 namespace WMS.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241111165037_UpdateIsolatedItemLot")]
+    partial class UpdateIsolatedItemLot
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -420,9 +423,6 @@ namespace WMS.Api.Migrations
                     b.Property<DateTime?>("ExpirationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
                     b.Property<int>("ItemId")
                         .HasColumnType("int");
 
@@ -554,9 +554,6 @@ namespace WMS.Api.Migrations
                     b.Property<string>("EmployeeId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsConfirmed")
                         .HasColumnType("bit");
 
@@ -567,10 +564,6 @@ namespace WMS.Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Unit")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("LotId");
 
                     b.HasIndex("EmployeeId");
@@ -578,21 +571,6 @@ namespace WMS.Api.Migrations
                     b.HasIndex("ItemId");
 
                     b.ToTable("lotAdjustments");
-                });
-
-            modelBuilder.Entity("WMS.Domain.AggregateModels.LotAdjustmentAggregate.SublotAdjustment", b =>
-                {
-                    b.Property<double>("AfterQuantityPerLocation")
-                        .HasColumnType("float");
-
-                    b.Property<double>("BeforeQuantityPerLocation")
-                        .HasColumnType("float");
-
-                    b.Property<string>("LocationId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.ToTable("sublotAdjustments");
                 });
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.StorageAggregate.Warehouse", b =>

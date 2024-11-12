@@ -1,9 +1,9 @@
-﻿
-using DocumentFormat.OpenXml.Wordprocessing;
-using MediatR;
+﻿using MediatR;
 using WMS.Domain.AggregateModels.DepartmentAggregate;
+using WMS.Domain.AggregateModels.IsolatedItemLotAggregate;
 using WMS.Domain.AggregateModels.StorageAggregate;
 using WMS.Infrastructure.EntityConfigurations.DepartmentConfigurations;
+using WMS.Infrastructure.EntityConfigurations.IsolatedItemLotConfigurations;
 
 namespace WMS.Infrastructure
 {
@@ -40,10 +40,12 @@ namespace WMS.Infrastructure
         public DbSet<Item> items { get; set; }  
         public DbSet<ItemClass> itemsClass { get; set; }    
         public DbSet<ItemLot> itemsLot { get; set; }
+        public DbSet<IsolatedItemLot> isolatedItemLots { get; set; }
 
         public DbSet<Location> locations { get; set; }
 
         public DbSet<LotAdjustment> lotAdjustments { get; set; }
+        public DbSet<SublotAdjustment> sublotAdjustments { get; set; }
 
         public DbSet<User> users { get; set; }
         public DbSet<UserAccount> userAccounts { get; set; }
@@ -75,8 +77,10 @@ namespace WMS.Infrastructure
             modelBuilder.ApplyConfiguration(new ItemCLassEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new ItemEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new ItemLotEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new IsolatedItemLotEntityTypeConfiguration());
 
             modelBuilder.ApplyConfiguration(new LotAdjustmentEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new SubLotAdjustmentEntityTypeConfiguration());
 
             modelBuilder.ApplyConfiguration(new UserEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new UserAccountEntityTypeConfiguration());
