@@ -1,7 +1,4 @@
-﻿using WMS.Api.Application.Queries.GoodsIssues;
-using WMS.Domain.AggregateModels.GoodsReceiptAggregate;
-
-namespace WMS.Api.Application.Queries.GoodsReceipts
+﻿namespace WMS.Api.Application.Queries.GoodsReceipts
 {
     public class GetCompletedGoodsReceiptsQueryHandler : IRequestHandler<GetCompletedGoodsReceiptsQuery, IEnumerable<GoodsReceiptViewModel>>
     {
@@ -30,7 +27,7 @@ namespace WMS.Api.Application.Queries.GoodsReceipts
             var goodsReceiptViewModel = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(completedGoodsReceipts);
 
             var newGoodsReceiptViewModel = await goodsReceiptQuery.Filter(goodsReceipts: goodsReceiptViewModel,
-                                                                    goodsIssueLots: goodsIssueQueries._goodsIssueLots);
+                                                                          goodsIssueLots: goodsIssueQueries._goodsIssueLots);
 
             return newGoodsReceiptViewModel;
 

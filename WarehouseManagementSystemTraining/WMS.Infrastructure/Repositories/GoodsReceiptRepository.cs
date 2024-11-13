@@ -48,7 +48,7 @@ namespace WMS.Infrastructure.Repositories
 
         public async Task<IList<string>> GetSuppliers()
         {
-            var suppliers = await _context.goodsReceipts.Select(s => s.Supplier).ToListAsync();
+            var suppliers = await _context.goodsReceipts.AsNoTracking().Select(g => g.Supplier).Distinct().ToListAsync();
 
             return suppliers;
         }

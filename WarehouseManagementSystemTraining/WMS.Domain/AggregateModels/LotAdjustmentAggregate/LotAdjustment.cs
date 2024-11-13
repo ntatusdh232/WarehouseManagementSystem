@@ -8,6 +8,7 @@ namespace WMS.Domain.AggregateModels.LotAdjustmentAggregate
         public string LotId { get; set; }
         public double BeforeQuantity { get; set; }
         public double AfterQuantity { get; set; }
+        public DateTime Timestamp { get; set; }
         public bool IsConfirmed { get; set; }
         public string Note { get; set; }
         public string Unit { get; set; }
@@ -70,7 +71,7 @@ namespace WMS.Domain.AggregateModels.LotAdjustmentAggregate
         public void Confirm(string lotId, string itemId, double beforeQuantity, double afterQuanity, string unit, List<SublotAdjustment> sublotAdjustments)
         {
             IsConfirmed = true;
-            var Timestamp = DateTime.UtcNow.AddHours(7);
+            Timestamp = DateTime.UtcNow.AddHours(7);
             AddDomainEvent(new LotAdjustedDomainEvent(lotId, itemId, beforeQuantity, afterQuanity, unit, Timestamp, sublotAdjustments));
         }
         public void AddSublot(string locationId, double beforeQuantity, double afterQuantity)

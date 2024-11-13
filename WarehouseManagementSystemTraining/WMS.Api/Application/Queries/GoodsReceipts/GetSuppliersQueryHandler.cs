@@ -14,8 +14,8 @@
         public async Task<IList<string>> Handle(GetSuppliersQuery request, CancellationToken cancellationToken)
         {
             var suppliers = await _goodsReceiptRepository.GetSuppliers();
-            var goodsReceiptViewModel = _mapper.Map<IList<string>>(suppliers);
-            return goodsReceiptViewModel;
+
+            return suppliers;
 
         }
 

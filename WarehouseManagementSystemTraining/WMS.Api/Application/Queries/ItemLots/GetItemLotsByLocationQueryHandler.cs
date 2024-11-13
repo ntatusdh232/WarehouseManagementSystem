@@ -1,10 +1,13 @@
-﻿
-namespace WMS.Api.Application.Queries.ItemLots;
-
-public class GetItemLotsByLocationQueryHandler : IRequestHandler<GetItemLotsByLocationQuery, IEnumerable<ItemLotViewModel>>
+﻿namespace WMS.Api.Application.Queries.ItemLots
 {
-    public Task<IEnumerable<ItemLotViewModel>> Handle(GetItemLotsByLocationQuery request, CancellationToken cancellationToken)
+    public class GetItemLotsByLocationQueryHandler : IRequestHandler<GetItemLotsByLocationQuery, IEnumerable<ItemLotViewModel>>
     {
-        throw new NotImplementedException();
+
+        public Task<IEnumerable<ItemLotViewModel>> Handle(GetItemLotsByLocationQuery request, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
+
+

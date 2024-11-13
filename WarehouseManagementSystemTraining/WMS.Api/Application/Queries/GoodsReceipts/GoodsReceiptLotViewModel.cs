@@ -1,6 +1,4 @@
-﻿using WMS.Api.Application.Queries.Employees;
-
-namespace WMS.Api.Application.Queries.GoodsReceipts
+﻿namespace WMS.Api.Application.Queries.GoodsReceipts
 {
     public class GoodsReceiptLotViewModel
     {
@@ -28,5 +26,11 @@ namespace WMS.Api.Application.Queries.GoodsReceipts
             Item = item;
             GoodsReceiptSublots = goodsReceiptSublots;
         }
+
+        public void UpdateIsExported()
+        {
+           IsExported = true;
+        }
+
     }
 }

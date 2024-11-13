@@ -13,6 +13,7 @@ global using WMS.Api.Application.Queries.Departments;
 global using WMS.Api.Application.Queries.Employees;
 global using WMS.Api.Application.Queries.FinishedProductInventories;
 global using WMS.Api.Application.Queries.FinishedProductReceipts;
+global using WMS.Api.Application.Queries.GoodsIssues;
 global using WMS.Api.Application.Queries.GoodsReceipts;
 global using WMS.Api.Application.Queries.Items;
 global using WMS.Api.Application.Queries.Warehouses;
@@ -23,8 +24,10 @@ global using WMS.Domain.AggregateModels.FinishedProductAggregate.All_IFinishedPr
 global using WMS.Domain.AggregateModels.GoodsIssueAggregate;
 global using WMS.Domain.AggregateModels.GoodsReceiptAggregate;
 global using WMS.Domain.AggregateModels.InventoryLogEntryAggregate;
+global using WMS.Domain.AggregateModels.IsolatedItemLotAggregate;
 global using WMS.Domain.AggregateModels.ItemAggregate;
 global using WMS.Domain.AggregateModels.ItemAggregate.All_IItemsRepository;
+global using WMS.Domain.AggregateModels.ItemLotLocationAggregate;
 global using WMS.Domain.AggregateModels.LocationAggregate;
 global using WMS.Domain.AggregateModels.UserAggregate;
 global using WMS.Domain.DomainEvents.FinishedProductIssueEvents;
@@ -37,8 +40,6 @@ global using WMS.Domain.DomainEvents.LotAdjustmentEvents;
 global using WMS.Domain.SeedWork;
 global using WMS.Infrastructure;
 global using WMS.Infrastructure.Repositories;
-global using WMS.Domain.AggregateModels.ItemLotLocationAggregate;
-global using WMS.Domain.AggregateModels.IsolatedItemLotAggregate;
 
 
 

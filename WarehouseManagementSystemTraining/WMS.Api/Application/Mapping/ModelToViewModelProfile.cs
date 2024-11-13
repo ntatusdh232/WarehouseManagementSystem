@@ -1,4 +1,4 @@
-﻿using DocumentFormat.OpenXml.Spreadsheet;
+﻿using WMS.Api.Application.Queries.ItemLots;
 using WMS.Domain.AggregateModels.StorageAggregate;
 
 namespace WMS.Api.Application.Mapping
@@ -17,6 +17,7 @@ namespace WMS.Api.Application.Mapping
             MapGoodsReceiptLotViewModel();
             MapGoodsReceiptSublotViewModel();
             MapGoodsReceiptViewModel();
+            MapItemLotViewModel();
 
         }
 
@@ -80,5 +81,10 @@ namespace WMS.Api.Application.Mapping
             CreateMap<GoodsReceiptSublot, GoodsReceiptSublotViewModel>();
         }
 
+        public void MapItemLotViewModel()
+        {
+            CreateMap<QueryResult<ItemLot>, QueryResult<ItemLotViewModel>>();
+            CreateMap<ItemLot, ItemLotViewModel>();
+        }
     }
 }
