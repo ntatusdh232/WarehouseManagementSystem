@@ -294,8 +294,16 @@ namespace WMS.Infrastructure.Repositories
             }
         }
 
+        public async Task<Item> GetItemByIdAndUnitAsync(string itemId, string unit)
+        {
+            var item = await _context.items.Where(s => s.ItemId == itemId && s.Unit == unit).FirstOrDefaultAsync();
 
+            if (item == null)
+            {
+                throw new KeyNotFoundException($"Item with ID {itemId} not found.");
+            }
 
-
+            return item;
+        }
     }
 }
