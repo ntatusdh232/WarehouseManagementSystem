@@ -36,6 +36,17 @@ namespace WMS.Domain.AggregateModels.LotAdjustmentAggregate
             EmployeeId = employeeId;
         }
 
+        public LotAdjustment(string lotId, string itemId, double afterQuantity, string note, Item item, Employee employee, string employeeId)
+        {
+            LotId = lotId;
+            ItemId = itemId;
+            AfterQuantity = afterQuantity;
+            Note = note;
+            Item = item;
+            Employee = employee;
+            EmployeeId = employeeId;
+        }
+
 #pragma warning restore CS8618
 
         public void Update(LotAdjustment lotAdjustment) 
@@ -50,13 +61,23 @@ namespace WMS.Domain.AggregateModels.LotAdjustmentAggregate
             EmployeeId = lotAdjustment.EmployeeId;
             SublotAdjustments = lotAdjustment.SublotAdjustments;
         }
+
+        public void Update(double quantity)
+        {
+            AfterQuantity = quantity;
+        }
+
         public void Confirm(string lotId, string itemId, double beforeQuantity, double afterQuanity, string unit, List<SublotAdjustment> sublotAdjustments)
         {
             IsConfirmed = true;
             var Timestamp = DateTime.UtcNow.AddHours(7);
             AddDomainEvent(new LotAdjustedDomainEvent(lotId, itemId, beforeQuantity, afterQuanity, unit, Timestamp, sublotAdjustments));
         }
-
+        public void AddSublot(string locationId, double beforeQuantity, double afterQuantity)
+        {
+            var sublot = new SublotAdjustment(locationId, beforeQuantity, afterQuantity);
+            SublotAdjustments.Add(sublot);
+        }
     }
 
 }

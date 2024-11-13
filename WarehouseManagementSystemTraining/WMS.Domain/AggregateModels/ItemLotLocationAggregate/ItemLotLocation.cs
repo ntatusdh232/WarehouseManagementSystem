@@ -2,7 +2,7 @@
 
 namespace WMS.Domain.AggregateModels.ItemLotLocationAggregate
 {
-    public class ItemLotLocation : IAggregateRoot
+    public class ItemLotLocation : Entity, IAggregateRoot
     {
         public string ItemLotId { get; private set; }
         public string LocationId { get; private set; }
@@ -26,7 +26,10 @@ namespace WMS.Domain.AggregateModels.ItemLotLocationAggregate
             QuantityPerLocation = quantityPerLocation;
         }
 
-
+        public void UpdateQuantity(double quantity)
+        {
+            QuantityPerLocation += quantity;
+        }
 #pragma warning restore CS8618
     }
 }

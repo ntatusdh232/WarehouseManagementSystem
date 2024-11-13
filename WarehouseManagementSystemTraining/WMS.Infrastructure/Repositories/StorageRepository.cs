@@ -8,7 +8,19 @@ namespace WMS.Infrastructure.Repositories
         {
         }
 
-        public async Task<Warehouse> Add(Warehouse warehouse)
+        public async Task<Location> AddLocation(Location location)
+        {
+            var existingLocation = await _context.locations.FirstOrDefaultAsync(s => s.LocationId == location.LocationId);
+            if (existingLocation == location)
+            {
+                throw new ArgumentException($"Location already exists.");
+            }
+            await _context.locations.AddAsync(location);
+            await _context.SaveChangesAsync();
+            return location;
+        }
+
+        public async Task<Warehouse> AddWarehouse(Warehouse warehouse)
         {
             var existingWarehouse = await _context.warehouses.FindAsync(warehouse.WarehouseId);
             if (existingWarehouse == warehouse)
@@ -26,7 +38,7 @@ namespace WMS.Infrastructure.Repositories
             return warehouseList;
         }
 
-        public async Task<Location> GetLocationsById(string locationId)
+        public async Task<Location> GetLocationById(string locationId)
         {
             var location = await _context.locations.FindAsync(locationId);
             if (location is null)
@@ -35,6 +47,21 @@ namespace WMS.Infrastructure.Repositories
             }
 
             return location;
+        }
+        public async Task<IEnumerable<Location>> GetLocationsById(string locationId)
+        {
+            var locationList = await _context.locations.Where(x => x.LocationId == locationId).ToListAsync();
+            return locationList;
+        }
+
+        public async Task<Warehouse> GetWarehouseById(string warehouseId)
+        {
+            var warehouse = await _context.warehouses.FindAsync(warehouseId);
+            if (warehouse is null)
+            {
+                throw new ArgumentException($"Warehouse does not exist.");
+            }
+            return warehouse;
         }
 
         public async Task<IEnumerable<Warehouse>> GetWarehousesById(string warehouseId)

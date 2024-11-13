@@ -29,7 +29,7 @@
 
             foreach (var unisolatedSublot in request.UnisolatedItemSublots)
             {
-                var location = await _storageRepository.GetLocationsById(unisolatedSublot.LocationId)
+                var location = await _storageRepository.GetLocationById(unisolatedSublot.LocationId)
                     ?? throw new EntityNotFoundException(nameof(Location), unisolatedSublot.LocationId);
 
 
