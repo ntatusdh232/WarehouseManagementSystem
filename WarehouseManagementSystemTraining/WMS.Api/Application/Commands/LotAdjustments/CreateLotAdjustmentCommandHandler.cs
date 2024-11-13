@@ -25,7 +25,7 @@ public class CreateLotAdjustmentCommandHandler : IRequestHandler<CreateLotAdjust
         {
             throw new DuplicatedRecordException(nameof(LotAdjustment), request.LotId);
         }
-        var item = await _itemRepository.GetItemByIdAndUnitAsync(request.ItemId, request.Unit);
+        var item = await _itemRepository.GetItemByIdAndUnit(request.ItemId, request.Unit);
         if (item is null)
         {
             throw new EntityNotFoundException(nameof(Item), request.ItemId);

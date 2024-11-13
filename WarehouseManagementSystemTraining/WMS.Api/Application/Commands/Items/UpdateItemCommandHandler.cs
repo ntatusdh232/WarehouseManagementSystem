@@ -15,7 +15,7 @@ public class UpdateItemCommandHandler : IRequestHandler<UpdateItemCommand, bool>
 
     public async Task<bool> Handle(UpdateItemCommand request, CancellationToken cancellationToken)
     {
-        var item = await _itemRepository.GetItemByIdAndUnitAsync(request.ItemClassId, request.Unit);
+        var item = await _itemRepository.GetItemByIdAndUnit(request.ItemClassId, request.Unit);
         if (item is null)
         {
             throw new EntityNotFoundException(nameof(Item), request.ItemId);

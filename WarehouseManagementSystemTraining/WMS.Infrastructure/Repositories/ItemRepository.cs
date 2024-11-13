@@ -1,8 +1,4 @@
-﻿using MediatR;
-using WMS.Domain.AggregateModels.GoodsReceiptAggregate;
-using WMS.Domain.AggregateModels.ItemAggregate;
-
-namespace WMS.Infrastructure.Repositories
+﻿namespace WMS.Infrastructure.Repositories
 {
     public class ItemRepository : BaseRepository, IItemRepository
     {

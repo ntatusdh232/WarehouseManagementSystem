@@ -1,6 +1,4 @@
-﻿using WMS.Domain.AggregateModels.ItemAggregate;
-
-namespace ImportData.Services
+﻿namespace ImportData.Services
 {
     public class ExcelDataImporterService
     {

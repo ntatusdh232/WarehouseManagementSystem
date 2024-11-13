@@ -1,5 +1,4 @@
-﻿using DocumentFormat.OpenXml.Vml.Office;
-using MediatR;
+﻿using MediatR;
 
 namespace WMS.Infrastructure
 {

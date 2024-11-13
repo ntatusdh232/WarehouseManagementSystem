@@ -14,7 +14,6 @@
 
 
         Task<IEnumerable<Item>> GetItemLists();
-        Task<Item> GetItemByIdAndUnitAsync(string itemId, string unit);
         Task<Item> GetItemId(string itemId);
         IEnumerable<Item> GetItems();
         IEnumerable<Item> GetSort(string sortField, string sortDirection, IEnumerable<Item> items);
