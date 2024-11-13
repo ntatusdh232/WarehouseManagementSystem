@@ -3,9 +3,9 @@
     public class GetAllGoodsIssueIdsQueryHandler : IRequestHandler<GetAllGoodsIssueIdsQuery, IEnumerable<string>>
     {
         private readonly IMapper _mapper;
-        private readonly GoodsReceiptQuery goodsIssuesQuery;
+        private readonly GoodsIssueQueries goodsIssuesQuery;
 
-        public GetAllGoodsIssueIdsQueryHandler(IMapper mapper, GoodsReceiptQuery goodsIssuesQuery)
+        public GetAllGoodsIssueIdsQueryHandler(IMapper mapper, GoodsIssueQueries goodsIssuesQuery)
         {
             _mapper = mapper;
             this.goodsIssuesQuery = goodsIssuesQuery;

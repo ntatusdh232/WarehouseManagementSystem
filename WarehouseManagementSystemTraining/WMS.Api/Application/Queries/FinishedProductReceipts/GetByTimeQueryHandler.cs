@@ -1,21 +1,24 @@
-﻿namespace WMS.Api.Application.Queries.FinishedProductReceipts
+﻿
+using DocumentFormat.OpenXml.Drawing;
+
+namespace WMS.Api.Application.Queries.FinishedProductReceipts;
+
+public class GetByTimeQueryHandler : IRequestHandler<GetByTimeQuery, IEnumerable<FinishedProductReceiptViewModel>>
 {
-    public class GetByTimeQueryHandler : IRequestHandler<GetByTimeQuery, IEnumerable<FinishedProductReceiptViewModel>>
+    private readonly ApplicationDbContext _context;
+    private readonly IMapper _mapper;
+
+    public GetByTimeQueryHandler(ApplicationDbContext context, IMapper mapper)
     {
-        private readonly IMapper _mapper;
-        private readonly IFinishedProductReceiptRepository _finishedProductReceiptRepository;
+        _context = context;
+        _mapper = mapper;
+    }
+    public async Task<IEnumerable<FinishedProductReceiptViewModel>> Handle(GetByTimeQuery request, CancellationToken cancellationToken)
+    {
+        var productReceipts = _context.finishedProductReceipts.AsNoTracking();
 
-        public GetByTimeQueryHandler(IMapper mapper, IFinishedProductReceiptRepository finishedProductReceiptRepository)
-        {
-            _mapper = mapper;
-            _finishedProductReceiptRepository = finishedProductReceiptRepository;
-        }
+        await productReceipts.Where(p => p.Timestamp >= request.Query.StartTime && p.Timestamp <= request.Query.EndTime).ToArrayAsync();
 
-        public async Task<IEnumerable<FinishedProductReceiptViewModel>> Handle(GetByTimeQuery request, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-
-        }
-
+        return _mapper.Map<IEnumerable<FinishedProductReceipt>, IEnumerable<FinishedProductReceiptViewModel>>(productReceipts);
     }
 }

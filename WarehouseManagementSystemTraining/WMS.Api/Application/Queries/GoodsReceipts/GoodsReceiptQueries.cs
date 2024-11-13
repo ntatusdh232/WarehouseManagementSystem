@@ -1,11 +1,11 @@
 ﻿namespace WMS.Api.Application.Queries.GoodsReceipts
 {
-    public class GoodsReceiptQuery
+    public class GoodsReceiptQueries
 
     {
         private readonly ApplicationDbContext _context;
 
-        public GoodsReceiptQuery(ApplicationDbContext context)
+        public GoodsReceiptQueries(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -19,12 +19,7 @@
             .Include(gr => gr.Lots)
             .ThenInclude(gr => gr.Sublots);
 
-        public IQueryable<GoodsIssueLot> _goodsIssueLots => _context.goodsIssues
-            .AsNoTracking()
-            .SelectMany(gi => gi.Entries)
-            .SelectMany(e => e.Lots);
-
-        public async Task<IEnumerable<GoodsReceiptViewModel>> Filter(IEnumerable<GoodsReceiptViewModel>? goodsReceipts,
+        public async Task<IEnumerable<GoodsReceiptViewModel>> Filter(IEnumerable<GoodsReceiptViewModel> goodsReceipts,
                                                                      IQueryable<GoodsIssueLot> goodsIssueLots)
         {
             var goodsReceiptLotIds = goodsReceipts.SelectMany(gr => gr.GoodsReceiptLots.Select(lot => lot.GoodsReceiptLotId))

@@ -1,23 +1,31 @@
-﻿namespace WMS.Api.Application.Queries.GoodsReceipts
+﻿
+using WMS.Api.Application.Queries.GoodsIssues;
+
+namespace WMS.Api.Application.Queries.GoodsReceipts;
+
+public class GetUnCompletedGoodsReceiptsQueryHandler : IRequestHandler<GetUnCompletedGoodsReceiptsQuery, IEnumerable<GoodsReceiptViewModel>>
 {
-    public class GetUnCompletedGoodsReceiptsQueryHandler : IRequestHandler<GetUnCompletedGoodsReceiptsQuery, IEnumerable<GoodsReceiptViewModel>>
+    private readonly GoodsReceiptQueries goodsReceiptQueries;
+    private readonly GoodsIssueQueries goodsIssueQueries;
+    private readonly IMapper _mapper;
+
+    public GetUnCompletedGoodsReceiptsQueryHandler(GoodsReceiptQueries goodsReceiptQueries, GoodsIssueQueries goodsIssueQueries, IMapper mapper)
     {
-        private readonly IMapper _mapper;
-        private readonly IGoodsReceiptRepository _goodsReceiptRepository;
-
-        public GetUnCompletedGoodsReceiptsQueryHandler(IMapper mapper, IGoodsReceiptRepository goodsReceiptRepository)
-        {
-            _mapper = mapper;
-            _goodsReceiptRepository = goodsReceiptRepository;
-        }
-
-        public async Task<IEnumerable<GoodsReceiptViewModel>> Handle(GetUnCompletedGoodsReceiptsQuery request, CancellationToken cancellationToken)
-        {
-            var goodsReceiptList = await _goodsReceiptRepository.GetUnCompletedGoodsReceipts();
-            var goodsReceiptViewModel = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(goodsReceiptList);
-            return goodsReceiptViewModel;
-
-        }
+        this.goodsReceiptQueries = goodsReceiptQueries;
+        this.goodsIssueQueries = goodsIssueQueries;
+        _mapper = mapper;
     }
-    
+
+    public async Task<IEnumerable<GoodsReceiptViewModel>> Handle(GetUnCompletedGoodsReceiptsQuery request, CancellationToken cancellationToken)
+    {
+        var completedGoodsReceipts = await goodsReceiptQueries._goodsReceipts
+                                    .Where(g => g.Lots
+                                    .All(lot => lot.ProductionDate == null && lot.ExpirationDate == null && lot.Sublots.Count == 0) && g.Supplier == null)
+                                    .ToListAsync();
+
+        var goodsReceiptViewModels = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(completedGoodsReceipts);
+
+        return await goodsReceiptQueries.Filter(goodsReceiptViewModels, goodsIssueQueries._goodsIssueLots);
+    }
 }
+

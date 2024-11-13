@@ -1,21 +1,28 @@
-﻿namespace WMS.Api.Application.Queries.GoodsReceipts
+﻿using WMS.Api.Application.Queries.GoodsIssues;
+using WMS.Domain.AggregateModels.GoodsReceiptAggregate;
+
+namespace WMS.Api.Application.Queries.GoodsReceipts
 {
     public class GetAllQueryHandler : IRequestHandler<GetAllQuery, IEnumerable<GoodsReceiptViewModel>>
     {
         private readonly IMapper _mapper;
-        private readonly IGoodsReceiptRepository _goodsReceiptRepository;
+        private readonly GoodsReceiptQueries goodsReceiptQueries;
+        private readonly GoodsIssueQueries goodsIssueQueries;
 
-        public GetAllQueryHandler(IMapper mapper, IGoodsReceiptRepository goodsReceiptRepository)
+        public GetAllQueryHandler(IMapper mapper, GoodsReceiptQueries goodsReceiptQueries, GoodsIssueQueries goodsIssueQueries)
         {
             _mapper = mapper;
-            _goodsReceiptRepository = goodsReceiptRepository;
+            this.goodsReceiptQueries = goodsReceiptQueries;
+            this.goodsIssueQueries = goodsIssueQueries;
         }
 
         public async Task<IEnumerable<GoodsReceiptViewModel>> Handle(GetAllQuery request, CancellationToken cancellationToken)
         {
-            var goodsReceiptList = await _goodsReceiptRepository.GetAllGoodsReceipts();
-            var goodsReceiptViewModel = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(goodsReceiptList);
-            return goodsReceiptViewModel;
+            var goodsReceipts = await goodsReceiptQueries._goodsReceipts.ToListAsync();
+
+            var goodsReceiptViewModels = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(goodsReceipts);
+
+            return await goodsReceiptQueries.Filter(goodsReceiptViewModels, goodsIssueQueries._goodsIssueLots);
 
         }
     }

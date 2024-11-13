@@ -7,13 +7,15 @@ namespace WMS.Api.Application.Queries.GoodsReceipts
     {
         private readonly IMapper _mapper;
         private readonly IGoodsReceiptRepository _goodsReceiptRepository;
-        private readonly GoodsReceiptQuery goodsReceiptQuery;
+        private readonly GoodsReceiptQueries goodsReceiptQuery;
+        private readonly GoodsIssueQueries goodsIssueQueries;
 
-        public GetCompletedGoodsReceiptsQueryHandler(IMapper mapper, IGoodsReceiptRepository goodsReceiptRepository, GoodsReceiptQuery goodsReceiptQuery)
+        public GetCompletedGoodsReceiptsQueryHandler(IMapper mapper, IGoodsReceiptRepository goodsReceiptRepository, GoodsReceiptQueries goodsReceiptQuery, GoodsIssueQueries goodsIssueQueries)
         {
             _mapper = mapper;
             _goodsReceiptRepository = goodsReceiptRepository;
             this.goodsReceiptQuery = goodsReceiptQuery;
+            this.goodsIssueQueries = goodsIssueQueries;
         }
 
         public async Task<IEnumerable<GoodsReceiptViewModel>> Handle(GetCompletedGoodsReceiptsQuery request, CancellationToken cancellationToken)
@@ -28,7 +30,7 @@ namespace WMS.Api.Application.Queries.GoodsReceipts
             var goodsReceiptViewModel = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(completedGoodsReceipts);
 
             var newGoodsReceiptViewModel = await goodsReceiptQuery.Filter(goodsReceipts: goodsReceiptViewModel,
-                                                                    goodsIssueLots: goodsReceiptQuery._goodsIssueLots);
+                                                                    goodsIssueLots: goodsIssueQueries._goodsIssueLots);
 
             return newGoodsReceiptViewModel;
 

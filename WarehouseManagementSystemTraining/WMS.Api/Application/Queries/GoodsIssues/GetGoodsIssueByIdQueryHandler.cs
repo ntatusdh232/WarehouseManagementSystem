@@ -4,9 +4,9 @@
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
-        private readonly GoodsReceiptQuery goodsIssuesQuery;
+        private readonly GoodsIssueQueries goodsIssuesQuery;
 
-        public GetGoodsIssueByIdQueryHandler(ApplicationDbContext context, IMapper mapper, GoodsReceiptQuery Query)
+        public GetGoodsIssueByIdQueryHandler(ApplicationDbContext context, IMapper mapper, GoodsIssueQueries Query)
         {
             _context = context;
             _mapper = mapper;

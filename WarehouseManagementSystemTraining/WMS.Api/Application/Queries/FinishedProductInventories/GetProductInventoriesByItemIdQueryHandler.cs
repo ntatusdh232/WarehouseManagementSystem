@@ -1,26 +1,24 @@
-﻿namespace WMS.Api.Application.Queries.FinishedProductInventories
+﻿
+namespace WMS.Api.Application.Queries.FinishedProductInventories;
+
+public class GetProductInventoriesByItemIdQueryHandler : IRequestHandler<GetProductInventoriesByItemIdQuery, IEnumerable<FinishedProductInventoryViewModel>>
 {
-    public class GetProductInventoriesByItemIdQueryHandler : IRequestHandler<GetProductInventoriesByItemIdQuery, IEnumerable<FinishedProductInventoryViewModel>>
+    private readonly ApplicationDbContext _context; 
+    private readonly IMapper _mapper;
+
+    public GetProductInventoriesByItemIdQueryHandler(ApplicationDbContext context, IMapper mapper)
     {
-        private readonly IMapper _mapper;
-        private readonly IFinishedProductInventoryRepository _finishedProductInventoryRepository;
+        _context = context;
+        _mapper = mapper;
+    }
 
-        public GetProductInventoriesByItemIdQueryHandler(IMapper mapper, IFinishedProductInventoryRepository finishedProductInventoryRepository)
-        {
-            _mapper = mapper;
-            _finishedProductInventoryRepository = finishedProductInventoryRepository;
-        }
+    public async Task<IEnumerable<FinishedProductInventoryViewModel>> Handle(GetProductInventoriesByItemIdQuery request, CancellationToken cancellationToken)
+    {
+        var _productInventories = _context.finishedProductInventories.AsNoTracking();
 
-        public async Task<IEnumerable<FinishedProductInventoryViewModel>> Handle (GetProductInventoriesByItemIdQuery request, CancellationToken cancellationToken)
-        {
-            var productInvetoryList = await _finishedProductInventoryRepository.GetProductInventoriesByItemId(request.ItemId, cancellationToken);
-            var departmentViewModels = _mapper.Map<IEnumerable<FinishedProductInventoryViewModel>>(productInvetoryList);
-            return departmentViewModels;
-
-        }
-
-
-
-
+        await _productInventories.Where(p => p.Item.ItemId == request.ItemId).ToListAsync();
+  
+        return _mapper.Map<IEnumerable<FinishedProductInventory>, IEnumerable<FinishedProductInventoryViewModel>>(_productInventories);
+        
     }
 }

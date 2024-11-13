@@ -1,18 +1,15 @@
-﻿namespace WMS.Api.Application.Queries.FinishedProductInventories
+﻿namespace WMS.Api.Application.Queries.FinishedProductInventories;
+
+public class GetProductInventoriesByItemIdQuery : PaginatedQuery, IRequest<IEnumerable<FinishedProductInventoryViewModel>>
 {
-    public class GetProductInventoriesByItemIdQuery : PaginatedQuery, IRequest<IEnumerable<FinishedProductInventoryViewModel>>
-    {
-        public string ItemId { get; set; }
+    public string ItemId { get; set; }
 
 #pragma warning disable CS8618
-        private GetProductInventoriesByItemIdQuery() { }
+    private GetProductInventoriesByItemIdQuery() { }
 
-        public GetProductInventoriesByItemIdQuery(string itemId)
-        {
-            ItemId = itemId;
-        }
-
-
-#pragma warning restore CS8618
+    public GetProductInventoriesByItemIdQuery(string itemId)
+    {
+        ItemId = itemId;
     }
+
 }

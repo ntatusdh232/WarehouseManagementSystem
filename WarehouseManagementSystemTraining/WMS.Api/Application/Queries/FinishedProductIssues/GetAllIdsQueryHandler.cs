@@ -4,8 +4,21 @@ namespace WMS.Api.Application.Queries.FinishedProductIssues;
 
 public class GetAllIdsQueryHandler : IRequestHandler<GetAllIdsQuery, IEnumerable<string>>
 {
-    public Task<IEnumerable<string>> Handle(GetAllIdsQuery request, CancellationToken cancellationToken)
+    private readonly ApplicationDbContext _context;
+    private readonly IMapper _mapper;
+
+    public GetAllIdsQueryHandler(ApplicationDbContext context, IMapper mapper)
     {
-        throw new NotImplementedException();
+        _context = context;
+        _mapper = mapper;
+    }
+
+    public async Task<IEnumerable<string>> Handle(GetAllIdsQuery request, CancellationToken cancellationToken)
+    {
+        var productIssueIds = _context.finishedProductIssues.AsNoTracking();
+
+        await productIssueIds.Select(p => p.FinishedProductIssueId).ToArrayAsync();
+
+        return _mapper.Map<IEnumerable<string>>(productIssueIds);
     }
 }
