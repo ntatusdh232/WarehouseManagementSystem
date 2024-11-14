@@ -12,8 +12,8 @@ using WMS.Infrastructure;
 namespace WMS.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241113071943_CreateGetAllItemsAsync")]
-    partial class CreateGetAllItemsAsync
+    [Migration("20241114112643_CreateDatabase")]
+    partial class CreateDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -533,13 +533,13 @@ namespace WMS.Api.Migrations
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.ItemLotLocationAggregate.ItemLotLocation", b =>
                 {
+                    b.Property<string>("ItemLotId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ItemLotId")
+                    b.Property<string>("ItemLotLotId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
@@ -553,13 +553,13 @@ namespace WMS.Api.Migrations
                     b.Property<double>("QuantityPerLocation")
                         .HasColumnType("float");
 
-                    b.HasKey("Id");
+                    b.HasKey("ItemLotId");
 
-                    b.HasIndex("ItemLotId");
+                    b.HasIndex("ItemLotLotId");
 
                     b.HasIndex("LocationId1");
 
-                    b.ToTable("ItemLotLocation");
+                    b.ToTable("itemLotLocations");
                 });
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.LocationAggregate.Location", b =>
@@ -610,6 +610,9 @@ namespace WMS.Api.Migrations
                     b.Property<string>("Note")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Unit")
                         .IsRequired()
@@ -914,7 +917,7 @@ namespace WMS.Api.Migrations
                 {
                     b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.ItemLot", "ItemLot")
                         .WithMany("ItemLotLocations")
-                        .HasForeignKey("ItemLotId")
+                        .HasForeignKey("ItemLotLotId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

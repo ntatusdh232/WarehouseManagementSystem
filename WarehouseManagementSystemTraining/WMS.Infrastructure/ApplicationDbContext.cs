@@ -1,9 +1,11 @@
 ﻿using MediatR;
 using WMS.Domain.AggregateModels.DepartmentAggregate;
 using WMS.Domain.AggregateModels.IsolatedItemLotAggregate;
+using WMS.Domain.AggregateModels.ItemLotLocationAggregate;
 using WMS.Domain.AggregateModels.StorageAggregate;
 using WMS.Infrastructure.EntityConfigurations.DepartmentConfigurations;
 using WMS.Infrastructure.EntityConfigurations.IsolatedItemLotConfigurations;
+using WMS.Infrastructure.EntityConfigurations.ItemLotLocationConfigurations;
 
 namespace WMS.Infrastructure
 {
@@ -40,6 +42,7 @@ namespace WMS.Infrastructure
         public DbSet<Item> items { get; set; }  
         public DbSet<ItemClass> itemsClass { get; set; }    
         public DbSet<ItemLot> itemsLot { get; set; }
+        public DbSet<ItemLotLocation> itemLotLocations { get; set; }
         public DbSet<IsolatedItemLot> isolatedItemLots { get; set; }
 
         public DbSet<Location> locations { get; set; }
@@ -77,6 +80,7 @@ namespace WMS.Infrastructure
             modelBuilder.ApplyConfiguration(new ItemCLassEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new ItemEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new ItemLotEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ItemLotLocationEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new IsolatedItemLotEntityTypeConfiguration());
 
             modelBuilder.ApplyConfiguration(new LotAdjustmentEntityTypeConfiguration());
