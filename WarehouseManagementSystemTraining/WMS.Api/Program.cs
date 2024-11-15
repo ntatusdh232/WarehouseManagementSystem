@@ -18,7 +18,7 @@ namespace WMS.Api
             builder.Services.AddDbContext<ApplicationDbContext>(options => options
                             .UseSqlServer(connectionString, b => b.MigrationsAssembly("WMS.Api")));
 
-            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            builder.Services.AddAutoMapper(typeof(ModelToViewModelProfile));
             builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
 
@@ -40,8 +40,6 @@ namespace WMS.Api
             builder.Services.AddScoped<IInventoryLogEntryRepository, InventoryLogEntryRepository>();
             builder.Services.AddScoped<IIsolatedItemLotRepository, IsolatedItemLotRepository>();
             builder.Services.AddScoped<ILotAdjustmentRepository, LotAdjustmentRepository>();
-
-
 
             builder.Services.AddScoped<LotAdjustmentQueries>();
             builder.Services.AddScoped<ItemQueries>();

@@ -28,12 +28,12 @@
         //        return NotFound($"Item with ID {itemId} not found.");
         //    return Ok(item);
         //}
+
         [HttpGet("{ItemId}")]
         public async Task<QueryResult<ItemViewModel>> GetItemById(string ItemId, [FromQuery] string? Unit = null)
         {
             var query = new GetItemByIdAsyncQuery(ItemId, Unit);
-            var result = await _mediator.Send(query);
-            return result;
+            return await _mediator.Send(query);
         }
 
 
