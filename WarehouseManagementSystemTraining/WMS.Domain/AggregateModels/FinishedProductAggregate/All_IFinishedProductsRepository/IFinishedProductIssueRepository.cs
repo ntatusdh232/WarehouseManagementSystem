@@ -14,11 +14,4 @@
 
 
     }
-
-    public interface IFinsihedProductIssueEntryRepository : IRepository<FinishedProductIssueEntry>
-    {
-        Task<IEnumerable<FinishedProductIssueEntry>> GetProductIssueEntry();
-        Task<List<FinishedProductIssueEntry>> GetAllByFinishedProductIssueIdAsync(string finishedProductIssueId, CancellationToken cancellationToken);
-        Task RemoveRangeAsync(IEnumerable<FinishedProductIssueEntry> finishedProductIssueEntries, CancellationToken cancellationToken);
-    }
 }

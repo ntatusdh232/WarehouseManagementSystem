@@ -5,10 +5,12 @@
     public class ItemController : ControllerBase
     {
         private readonly IItemRepository _itemRepository;
+        private readonly IMediator _mediator;
 
-        public ItemController(IItemRepository itemRepository)
+        public ItemController(IItemRepository itemRepository, IMediator mediator)
         {
             _itemRepository = itemRepository;
+            _mediator = mediator;
         }
 
         [HttpGet]
@@ -18,14 +20,23 @@
             return Ok(items);
         }
 
-        [HttpGet("{itemId}")]
-        public async Task<ActionResult<Item>> GetById(string itemId)
+        //[HttpGet("{itemId}")]
+        //public async Task<ActionResult<Item>> GetById(string itemId)
+        //{
+        //    var item = await _itemRepository.GetItemById(itemId);
+        //    if (item == null)
+        //        return NotFound($"Item with ID {itemId} not found.");
+        //    return Ok(item);
+        //}
+        [HttpGet("{ItemId}")]
+        public async Task<QueryResult<ItemViewModel>> GetItemById(string ItemId, [FromQuery] string? Unit = null)
         {
-            var item = await _itemRepository.GetItemById(itemId);
-            if (item == null)
-                return NotFound($"Item with ID {itemId} not found.");
-            return Ok(item);
+            var query = new GetItemByIdAsyncQuery(ItemId, Unit);
+            var result = await _mediator.Send(query);
+            return result;
         }
+
+
 
         [HttpGet("GetByClassId/{itemClassId}")]
         public async Task<IActionResult> GetByClassId(string itemClassId)
@@ -44,7 +55,7 @@
                 return BadRequest("Item data is required.");
 
             var addedItem = await _itemRepository.AddItem(item);
-            return CreatedAtAction(nameof(GetById), new { itemId = addedItem.ItemId }, addedItem);
+            return CreatedAtAction(nameof(GetItemById), new { itemId = addedItem.ItemId }, addedItem);
         }
 
         [HttpPut("Update/{itemId}")]

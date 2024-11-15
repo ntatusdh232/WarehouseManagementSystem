@@ -47,8 +47,8 @@ namespace WMS.Api.Application.Mapping
 
         public void MapLocationViewModel()
         {
-            CreateMap<QueryResult<WMS.Domain.AggregateModels.LocationAggregate.Location>, QueryResult<LocationViewModel>>();
-            CreateMap<WMS.Domain.AggregateModels.LocationAggregate.Location, LocationViewModel>();
+            CreateMap<QueryResult<Location>, QueryResult<LocationViewModel>>();
+            CreateMap<Location, LocationViewModel>();
         }
 
         public void MapWarehouseViewModel()
@@ -59,8 +59,8 @@ namespace WMS.Api.Application.Mapping
 
         public void MapItemViewModel()
         {
-            CreateMap<QueryResult<WMS.Domain.AggregateModels.ItemAggregate.Item>, QueryResult<ItemViewModel>>();
-            CreateMap<WMS.Domain.AggregateModels.ItemAggregate.Item, ItemViewModel>();
+            CreateMap<QueryResult<Item>, QueryResult<ItemViewModel>>();
+            CreateMap<Item, ItemViewModel>();
         }
 
         public void MapGoodsReceiptViewModel()

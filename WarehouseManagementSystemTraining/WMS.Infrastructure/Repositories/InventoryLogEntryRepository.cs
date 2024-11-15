@@ -1,6 +1,6 @@
 ﻿namespace WMS.Infrastructure.Repositories
 {
-    internal class InventoryLogEntryRepository : BaseRepository, IInventoryLogEntryRepository
+    public class InventoryLogEntryRepository : BaseRepository, IInventoryLogEntryRepository
     {
         public InventoryLogEntryRepository(ApplicationDbContext context) : base(context)
         {

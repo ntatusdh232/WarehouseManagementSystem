@@ -2,13 +2,11 @@
 {
     public class RemoveFinishedProductIssueEntryCommandHandler : IRequestHandler<RemoveFinishedProductIssueEntryCommand, bool>
     {
-        private readonly IFinsihedProductIssueEntryRepository _finishedProductIssueEntryRepository;
         private readonly IItemRepository _itemRepository;
         private readonly IFinishedProductIssueRepository _finishedProductIssueRepository;
 
-        public RemoveFinishedProductIssueEntryCommandHandler(IFinsihedProductIssueEntryRepository finishedProductIssueEntryRepository, IItemRepository itemRepository, IFinishedProductIssueRepository finishedProductIssueRepository)
+        public RemoveFinishedProductIssueEntryCommandHandler(IItemRepository itemRepository, IFinishedProductIssueRepository finishedProductIssueRepository)
         {
-            _finishedProductIssueEntryRepository = finishedProductIssueEntryRepository;
             _itemRepository = itemRepository;
             _finishedProductIssueRepository = finishedProductIssueRepository;
         }

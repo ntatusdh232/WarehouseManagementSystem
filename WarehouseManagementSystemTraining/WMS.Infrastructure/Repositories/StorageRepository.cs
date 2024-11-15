@@ -2,7 +2,7 @@
 
 namespace WMS.Infrastructure.Repositories
 {
-    internal class StorageRepository : BaseRepository, IStorageRepository
+    public class StorageRepository : BaseRepository, IStorageRepository
     {
         public StorageRepository(ApplicationDbContext context) : base(context)
         {

@@ -11,7 +11,11 @@ namespace WMS.Infrastructure
 {
     public class ApplicationDbContext : DbContext, IUnitOfWork
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options){}
+
+
+#pragma warning disable CS8618
+        public ApplicationDbContext(DbContextOptions options) : base(options) { }
+#pragma warning restore CS8618 
 
         public ApplicationDbContext(DbContextOptions options, IMediator mediator) : base(options)
         {

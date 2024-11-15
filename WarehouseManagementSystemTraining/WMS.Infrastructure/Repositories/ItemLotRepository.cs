@@ -1,6 +1,6 @@
 ﻿namespace WMS.Infrastructure.Repositories
 {
-    internal class ItemLotRepository : BaseRepository, IItemLotRepository
+    public class ItemLotRepository : BaseRepository, IItemLotRepository
     {
         public ItemLotRepository(ApplicationDbContext context) : base(context)
         {

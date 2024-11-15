@@ -6,7 +6,7 @@ namespace WMS.Api.Application.Commands.LotAdjustments
     {
         private readonly ILotAdjustmentRepository _lotAdjustmentRepository;
 
-        public ConfirmLotAdjustmentCommandHandler(LotAdjustmentRepository lotAdjustmentRepository)
+        public ConfirmLotAdjustmentCommandHandler(ILotAdjustmentRepository lotAdjustmentRepository)
         {
             _lotAdjustmentRepository = lotAdjustmentRepository;
         }
