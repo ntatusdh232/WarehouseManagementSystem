@@ -13,8 +13,12 @@
 
         public async Task<QueryResult<ItemViewModel>> Handle(GetItemByIdAsyncQuery request, CancellationToken cancellationToken)
         {
-            var ItemList = await _itemRepository.GetItemById(request.ItemId);
-            var ItemViewModel = _mapper.Map<QueryResult<ItemViewModel>>(ItemList);
+            var item = await _itemRepository.GetItemByIdAndUnit(request.ItemId, request.Unit);
+            if (item == null)
+            {
+                throw new EntityNotFoundException(nameof(Item), request.ItemId);
+            }
+            var ItemViewModel = _mapper.Map<QueryResult<ItemViewModel>>(item);
             return ItemViewModel;
 
         }
