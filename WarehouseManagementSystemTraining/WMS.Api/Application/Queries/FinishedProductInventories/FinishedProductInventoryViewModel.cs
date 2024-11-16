@@ -7,6 +7,10 @@
         public ItemViewModel itemViewModel { get; set; }
         public double NumOfPackets { get; set; }
 
+        public FinishedProductInventoryViewModel()
+        {
+        }
+
         public FinishedProductInventoryViewModel(string purchaseOrderNumber, double quality, ItemViewModel itemViewModel, double numOfPackets)
         {
             PurchaseOrderNumber = purchaseOrderNumber;
@@ -14,5 +18,11 @@
             this.itemViewModel = itemViewModel;
             NumOfPackets = numOfPackets;
         }
+
+        public void UpdateItems(ItemViewModel ItemViewModel)
+        {
+            itemViewModel = ItemViewModel;
+        }
+
     }
 }

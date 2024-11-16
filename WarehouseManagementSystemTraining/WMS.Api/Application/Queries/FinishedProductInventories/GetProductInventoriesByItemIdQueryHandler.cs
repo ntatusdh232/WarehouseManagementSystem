@@ -14,11 +14,31 @@ public class GetProductInventoriesByItemIdQueryHandler : IRequestHandler<GetProd
 
     public async Task<IEnumerable<FinishedProductInventoryViewModel>> Handle(GetProductInventoriesByItemIdQuery request, CancellationToken cancellationToken)
     {
-        var _productInventories = _context.finishedProductInventories.AsNoTracking();
 
-        await _productInventories.Where(p => p.Item.ItemId == request.ItemId).ToListAsync();
-  
-        return _mapper.Map<IEnumerable<FinishedProductInventory>, IEnumerable<FinishedProductInventoryViewModel>>(_productInventories);
-        
+        var productInventories = await _context.finishedProductInventories
+            .AsNoTracking()
+            .Include(p => p.Item)
+            .Where(p => p.Item.ItemId == request.ItemId) 
+            .ToListAsync(cancellationToken);
+
+        var item = await _context.items.FindAsync(request.ItemId);
+
+        if (productInventories == null)
+        {
+            throw new EntityNotFoundException(nameof(FinishedProductInventory), request.ItemId);
+        }
+
+        var productInventoriesViewModel = _mapper.Map<IEnumerable<FinishedProductInventoryViewModel>>(productInventories);
+        var itemsViewModel = _mapper.Map<ItemViewModel>(item);
+
+        foreach (var productInventory in productInventoriesViewModel)
+        {
+            productInventory.UpdateItems(itemsViewModel);
+        }
+
+        return productInventoriesViewModel;
+
+
     }
+
 }

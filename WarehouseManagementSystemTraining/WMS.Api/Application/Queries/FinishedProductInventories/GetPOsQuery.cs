@@ -2,6 +2,8 @@
 {
     public class GetPOsQuery : PaginatedQuery, IRequest<IEnumerable<string>>
     {
-
+        public GetPOsQuery()
+        {
+        }
     }
 }
