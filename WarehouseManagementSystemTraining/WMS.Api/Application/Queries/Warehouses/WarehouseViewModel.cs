@@ -5,6 +5,7 @@
         public string WarehouseId { get; set; }
         public string WarehouseName { get; set; }
         public List<LocationViewModel> Locations { get; set; }
+        public WarehouseViewModel() { }
 
         public WarehouseViewModel(string warehouseId, string warehouseName, List<LocationViewModel> location)
         {

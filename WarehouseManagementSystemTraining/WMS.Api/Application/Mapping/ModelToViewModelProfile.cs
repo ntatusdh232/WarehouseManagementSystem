@@ -52,11 +52,13 @@ namespace WMS.Api.Application.Mapping
             CreateMap<Location, LocationViewModel>();
         }
 
+
         public void MapWarehouseViewModel()
         {
             CreateMap<QueryResult<Warehouse>, QueryResult<WarehouseViewModel>>();
             CreateMap<Warehouse, WarehouseViewModel>();
         }
+
 
         public void MapItemViewModel()
         {

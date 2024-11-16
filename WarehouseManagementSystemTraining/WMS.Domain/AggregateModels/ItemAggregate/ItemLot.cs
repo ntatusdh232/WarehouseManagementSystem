@@ -64,12 +64,6 @@ namespace WMS.Domain.AggregateModels.ItemAggregate
         public void Confirm(List<ItemLot> itemLots)
         {
             AddDomainEvent(new ItemLotsImportedDomainEvent(itemLots));
-            foreach (var lot in itemLots)
-            {
-                double receivedQuantity = lot.Quantity;
-                AddDomainEvent(new InventoryLogEntryAddedDomainEvent(lot.LotId, lot.Quantity, receivedQuantity, 0,
-                    lot.ItemId, Timestamp));
-            }
         }
 
 

@@ -2,5 +2,9 @@
 {
     public class GetAllWarehousesQuery : PaginatedQuery, IRequest<IEnumerable<WarehouseViewModel>>
     {
+        public GetAllWarehousesQuery()
+        {
+        }
+
     }
 }
