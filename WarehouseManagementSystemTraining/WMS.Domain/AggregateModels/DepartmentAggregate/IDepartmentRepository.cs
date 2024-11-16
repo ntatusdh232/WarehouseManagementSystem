@@ -1,7 +1,4 @@
-﻿using DocumentFormat.OpenXml.Bibliography;
-using WMS.Domain.AggregateModels.StorageAggregate;
-
-namespace WMS.Domain.AggregateModels.DepartmentAggregate
+﻿namespace WMS.Domain.AggregateModels.DepartmentAggregate
 {
     public interface IDepartmentRepository : IRepository<Department>
     {

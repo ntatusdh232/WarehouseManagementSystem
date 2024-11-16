@@ -6,6 +6,7 @@ namespace WMS.Domain.AggregateModels.FinishedProductAggregate
     {
         [Key]
         public string FinishedProductIssueEntryId { get; set; }
+
         public string PurchaseOrderNumber { get; set; }
         public double Quantity { get; set; }
         public string? Note { get; set; }

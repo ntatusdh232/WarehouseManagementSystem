@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WMS.Infrastructure;
 
@@ -11,9 +12,11 @@ using WMS.Infrastructure;
 namespace WMS.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241116042442_UpdateFinishedProductReceiptEntryTable")]
+    partial class UpdateFinishedProductReceiptEntryTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -145,6 +148,9 @@ namespace WMS.Api.Migrations
                     b.Property<string>("EmployeeId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("Timestamp")
                         .HasColumnType("datetime2");
 
@@ -263,7 +269,6 @@ namespace WMS.Api.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("GoodsIssueLotId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LocationId")
@@ -798,15 +803,14 @@ namespace WMS.Api.Migrations
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.GoodsIssueAggregate.GoodsIssueEntry", b =>
                 {
-                    b.HasOne("WMS.Domain.AggregateModels.GoodsIssueAggregate.GoodsIssue", "GoodsIssue")
+                    b.HasOne("WMS.Domain.AggregateModels.GoodsIssueAggregate.GoodsIssue", null)
                         .WithMany("Entries")
-                        .HasForeignKey("GoodsIssueId");
+                        .HasForeignKey("GoodsIssueId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.Item", "Item")
                         .WithMany()
                         .HasForeignKey("ItemId");
-
-                    b.Navigation("GoodsIssue");
 
                     b.Navigation("Item");
                 });
@@ -817,24 +821,20 @@ namespace WMS.Api.Migrations
                         .WithMany()
                         .HasForeignKey("EmployeeId");
 
-                    b.HasOne("WMS.Domain.AggregateModels.GoodsIssueAggregate.GoodsIssueEntry", "GoodsIssueEntry")
+                    b.HasOne("WMS.Domain.AggregateModels.GoodsIssueAggregate.GoodsIssueEntry", null)
                         .WithMany("Lots")
-                        .HasForeignKey("GoodsIssueEntryId");
+                        .HasForeignKey("GoodsIssueEntryId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Employee");
-
-                    b.Navigation("GoodsIssueEntry");
                 });
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.GoodsIssueAggregate.GoodsIssueSublot", b =>
                 {
-                    b.HasOne("WMS.Domain.AggregateModels.GoodsIssueAggregate.GoodsIssueLot", "GoodsIssueLot")
+                    b.HasOne("WMS.Domain.AggregateModels.GoodsIssueAggregate.GoodsIssueLot", null)
                         .WithMany("Sublots")
                         .HasForeignKey("GoodsIssueLotId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("GoodsIssueLot");
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.GoodsReceiptAggregate.GoodsReceipt", b =>

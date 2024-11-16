@@ -8,12 +8,14 @@
 
             builder.HasOne(g => g.Employee)
                    .WithMany()
+                   .HasForeignKey(g => g.EmployeeId)
                    .IsRequired(false);
 
-            builder.HasMany(g => g.Sublots)
-                   .WithOne()
-                   .IsRequired(false)
-                   .OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(g => g.GoodsIssueEntry)
+                   .WithMany(s => s.Lots)
+                   .HasForeignKey(g => g.GoodsIssueEntryId)
+                   .IsRequired(false);
+
         }
     }
 }

@@ -2,12 +2,17 @@
 {
     public class GoodsIssue : IAggregateRoot
     {
+        [Key]
         public string GoodsIssueId { get; set; }
+
         public string Receiver { get; set; }
         public DateTime Timestamp { get; set; }
-        public Employee Employee { get; set; }
+
         public List<GoodsIssueEntry> Entries { get; set; }
+
+        [ForeignKey("Employee")]
         public string EmployeeId { get; set; }
+        public Employee Employee { get; set; }
 
 
 

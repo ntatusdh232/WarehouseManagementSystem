@@ -2,10 +2,15 @@
 {
     public class GoodsIssueSublot
     {
+        [Key]
         public string GoodsIssueSublotId { get; set; }
+
         public string LocationId { get; set; }
         public double QuantityPerLocation { get; set; }
+
+        [ForeignKey("GoodsIssueLot")]
         public string GoodsIssueLotId { get; set; }
+        public GoodsIssueLot GoodsIssueLot { get; set; }
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private GoodsIssueSublot() { }

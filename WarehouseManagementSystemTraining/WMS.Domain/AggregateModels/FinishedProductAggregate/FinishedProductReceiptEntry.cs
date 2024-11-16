@@ -2,13 +2,20 @@
 {
     public class FinishedProductReceiptEntry
     {
+        [Key]
         public string FinishedProductReceiptEntryId { get; set; }
+
         public string PurchaseOrderNumber { get; set; }
         public double Quantity { get; set; }
         public string Note { get; set; }
-        public Item Item { get; set; }
+
+        [ForeignKey("Item")]
         public string ItemId { get; set; }
+        public Item Item { get; set; }
+
+        [ForeignKey("FinishedProductReceipt")]
         public string FinishedProductReceiptId { get; set; }
+        public FinishedProductReceipt FinishedProductReceipt { get; set; }
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private FinishedProductReceiptEntry() { }

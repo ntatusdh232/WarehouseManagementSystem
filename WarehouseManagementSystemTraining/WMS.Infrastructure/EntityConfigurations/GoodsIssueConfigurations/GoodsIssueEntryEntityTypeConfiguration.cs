@@ -8,12 +8,13 @@
 
             builder.HasOne(f => f.Item)
                    .WithMany()
+                   .HasForeignKey(f => f.ItemId)
                    .IsRequired(false);
 
-            builder.HasMany(f => f.Lots)
-                   .WithOne()
-                   .IsRequired(false)
-                   .OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(f => f.GoodsIssue)
+                   .WithMany(s => s.Entries)
+                   .HasForeignKey(f => f.GoodsIssueId)
+                   .IsRequired(false);
 
         }
     }

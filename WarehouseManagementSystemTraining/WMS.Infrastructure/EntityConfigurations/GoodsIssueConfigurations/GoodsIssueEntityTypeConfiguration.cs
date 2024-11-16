@@ -8,13 +8,8 @@
 
             builder.HasOne(g => g.Employee)
                    .WithMany()
+                   .HasForeignKey(g => g.EmployeeId)
                    .IsRequired(false);
-
-
-            builder.HasMany(g => g.Entries)
-                   .WithOne()
-                   .IsRequired(false)
-                   .OnDelete(DeleteBehavior.Cascade);
 
         }
     }

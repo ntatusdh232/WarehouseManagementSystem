@@ -2,7 +2,10 @@
 {
     public class Employee : IAggregateRoot
     {
+        [Key]
         public string EmployeeId { get; set; }
+
+        [Required]
         public string EmployeeName { get; set; }
 
 
