@@ -18,10 +18,12 @@
             GoodsReceiptLotId = goodsReceiptLotId;
         }
 
-        public GoodsReceiptSublot(string locationId, double quantityPerLocation)
-        {
+        public GoodsReceiptSublot(string locationId, double quantityPerLocation, string goodsReceiptLotId)
+        { 
+            GoodsReceiptSublotId = Guid.NewGuid().ToString();
             LocationId = locationId;
             QuantityPerLocation = quantityPerLocation;
+            GoodsReceiptLotId = goodsReceiptLotId;
         }
 
 

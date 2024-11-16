@@ -6,7 +6,8 @@
         private readonly IItemRepository _itemRepository;
         private readonly IEmployeeRepository _employeeRepository;
 
-        public AddLotsToGoodsReceiptCommandHandler(IGoodsReceiptRepository goodsReceiptRepository, IItemRepository itemRepository, IEmployeeRepository employeeRepository)
+        public AddLotsToGoodsReceiptCommandHandler(IGoodsReceiptRepository goodsReceiptRepository, IItemRepository itemRepository, 
+                                                   IEmployeeRepository employeeRepository)
         {
             _goodsReceiptRepository = goodsReceiptRepository;
             _itemRepository = itemRepository;
@@ -29,13 +30,16 @@
                     ?? throw new EntityNotFoundException(nameof(Item), lot.ItemId);
 
                 var goodsReceiptLot = new GoodsReceiptLot(goodsReceiptLotId: lot.GoodsReceiptLotId,
-                                                          employeeId: lot.EmployeeId,
-                                                          quantity: lot.Quantity,
-                                                          note: lot.Note,
-                                                          itemId: lot.ItemId);
+                                                         quantity: lot.Quantity,
+                                                         employee: employee,
+                                                         item: item,
+                                                         note: lot.Note,
+                                                         goodsReceiptId: request.GoodsReceiptId
+                                                         );
 
                 var itemLot = new ItemLot(lotId: lot.GoodsReceiptLotId,
                                           quantity: lot.Quantity,
+                                          timestamp: DateTime.Now,
                                           itemId: lot.ItemId);
 
                 itemLots.Add(itemLot);
@@ -43,10 +47,9 @@
                 goodsReceipt.AddLot(goodsReceiptLot);
             }
 
-            foreach (var itemLot in itemLots)
-            {
-                itemLot.Confirm();
-            }
+            var itemlot = new ItemLot();
+
+            itemlot.Confirm(itemLots);
 
             await _goodsReceiptRepository.Update(goodsReceipt);
 

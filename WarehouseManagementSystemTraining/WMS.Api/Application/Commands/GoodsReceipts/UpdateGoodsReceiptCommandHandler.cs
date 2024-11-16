@@ -48,7 +48,7 @@ public class UpdateGoodsReceiptCommandHandler : IRequestHandler<UpdateGoodsRecei
                     {
                         throw new EntityNotFoundException(nameof(Location), itemLotLocationVM.LocationId);
                     }
-                    var sublot = new GoodsReceiptSublot(itemLotLocationVM.LocationId,itemLotLocationVM.QuantityPerLocation);
+                    var sublot = new GoodsReceiptSublot(itemLotLocationVM.LocationId,itemLotLocationVM.QuantityPerLocation, updatedGoodsReceiptLot.NewGoodsReceiptLotId);
 
                     sublots.Add(sublot);
 
@@ -71,6 +71,7 @@ public class UpdateGoodsReceiptCommandHandler : IRequestHandler<UpdateGoodsRecei
                                 productionDate: updatedGoodsReceiptLot.ProductionDate,
                                 expirationDate: updatedGoodsReceiptLot.ExpirationDate,
                                 note: updatedGoodsReceiptLot.Note);
+
             goodsReceipt.UpdateItemLotEntity(oldLotId: updatedGoodsReceiptLot.OldGoodsReceiptLotId,
                                              newLotId: updatedGoodsReceiptLot.NewGoodsReceiptLotId,
                                              itemLotLocations: itemLotLocations,

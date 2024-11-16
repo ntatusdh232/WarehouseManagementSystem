@@ -44,19 +44,24 @@ public class CreateGoodsReceiptCommandHandler : IRequestHandler<CreateGoodsRecei
             }
             var newGoodsReceiptLot = new GoodsReceiptLot(goodsReceiptLotId: receiptLotViewModel.GoodsReceiptLotId,
                                                          quantity: receiptLotViewModel.Quantity,
-                                                         itemId: receiptLotViewModel.ItemId,
-                                                         employeeId: receiptLotViewModel.EmployeeId,
-                                                         note: receiptLotViewModel.Note);
-            var newitemLot = new ItemLot(quantity: receiptLotViewModel.Quantity,
-                                         item: item,
-                                         itemId: receiptLotViewModel.ItemId);
-            itemLots.Add(newitemLot);
+                                                         employee: employee,
+                                                         item: item,
+                                                         note: receiptLotViewModel.Note,
+                                                         goodsReceiptId: request.GoodsReceiptId
+                                                         );
+
+            var newItemLot = new ItemLot(lotId: receiptLotViewModel.GoodsReceiptLotId,
+                                          quantity: receiptLotViewModel.Quantity,
+                                          timestamp: DateTime.Now,
+                                          itemId: receiptLotViewModel.ItemId);
+            itemLots.Add(newItemLot);
             newGoodsReceipt.AddLot(newGoodsReceiptLot);
         }
-        foreach (var itemLot in itemLots)
-        {
-            itemLot.Confirm();
-        }
+
+        var itemlot = new ItemLot();
+
+        itemlot.Confirm(itemLots);
+
         await _goodsReceiptRepository.Add(newGoodsReceipt);
 
         return await _goodsReceiptRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);

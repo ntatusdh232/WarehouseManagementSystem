@@ -1,4 +1,4 @@
-﻿namespace WMS.Api.Application.DomainEventHandlers.LotAdjustmentDomainEventHandler
+﻿namespace WMS.Api.Application.DomainEventHandlers.LotAdjustmentEventHandlers
 {
     public class LotAdjustedDomainEventHandler : INotificationHandler<LotAdjustedDomainEvent>
     {

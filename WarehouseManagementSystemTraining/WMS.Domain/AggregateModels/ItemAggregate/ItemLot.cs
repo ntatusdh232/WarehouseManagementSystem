@@ -1,4 +1,6 @@
 ﻿using WMS.Domain.AggregateModels.ItemLotLocationAggregate;
+using WMS.Domain.DomainEvents.GoodsReceiptEvents;
+using WMS.Domain.DomainEvents.InventoryLogEntryEvents;
 using WMS.Domain.DomainEvents.ItemLotEvents;
 
 namespace WMS.Domain.AggregateModels.ItemAggregate
@@ -17,7 +19,7 @@ namespace WMS.Domain.AggregateModels.ItemAggregate
         public List<ItemLotLocation> ItemLotLocations { get; set; }
 
 #pragma warning disable CS8618
-        private ItemLot() { }
+        public ItemLot() { }
 
         public ItemLot(string lotId, double quantity, DateTime timestamp, DateTime productionDate, DateTime expirationDate, bool isIsolated, Item item, string itemId, List<Location> locations, List<ItemLotLocation> itemLotLocations)
         {
@@ -33,19 +35,15 @@ namespace WMS.Domain.AggregateModels.ItemAggregate
             ItemLotLocations = itemLotLocations;
         }
 
-        public ItemLot(string lotId, double quantity, string itemId)
+        public ItemLot(string lotId, double quantity, DateTime timestamp, string itemId)
         {
             LotId = lotId;
             Quantity = quantity;
+            Timestamp = timestamp;
             ItemId = itemId;
         }
 
-        public ItemLot(double quantity, Item item, string itemId)
-        {
-            Quantity = quantity;
-            Item = item;
-            ItemId = itemId;
-        }
+
 
 #pragma warning restore CS8618
 
@@ -58,10 +56,17 @@ namespace WMS.Domain.AggregateModels.ItemAggregate
         }
 
         // Hàm Confirm() cho dispatchedItemLots
-        public void Confirm()
+        public void Confirm(List<ItemLot> itemLots)
         {
-
+            AddDomainEvent(new ItemLotsImportedDomainEvent(itemLots));
+            foreach (var lot in itemLots)
+            {
+                double receivedQuantity = lot.Quantity;
+                AddDomainEvent(new InventoryLogEntryAddedDomainEvent(lot.LotId, lot.Quantity, receivedQuantity, 0,
+                    lot.ItemId, Timestamp));
+            }
         }
+
 
         public void Unisolated()
         {

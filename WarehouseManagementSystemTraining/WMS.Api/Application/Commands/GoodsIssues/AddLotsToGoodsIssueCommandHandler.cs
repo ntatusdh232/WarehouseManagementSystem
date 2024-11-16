@@ -71,10 +71,9 @@
 
             }
 
-            foreach (var itemLot in dispatchedItemLots)
-            {
-                itemLot.Confirm(); // Hàm Confirm rỗng
-            }
+            var itemlot = new ItemLot();
+
+            itemlot.Confirm(dispatchedItemLots);
 
             // Cập nhật goodsIssue
             await _goodsIssueRepository.Update(goodsIssue);

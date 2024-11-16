@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using WMS.Domain.DomainEvents.FinishedProductReceiptEvents;
 
@@ -9,8 +10,9 @@ namespace WMS.Domain.AggregateModels.FinishedProductAggregate
         public string FinishedProductReceiptId { get; set; }
         public DateTime Timestamp { get; set; }
         public Employee Employee { get; set; }
-        public List<FinishedProductReceiptEntry> Entries { get; set; }
         public string EmployeeId { get; set; }
+        public List<FinishedProductReceiptEntry> Entries { get; set; }
+        public string FinishedProductReceiptEntryId { get; set; }
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private FinishedProductReceipt() { }

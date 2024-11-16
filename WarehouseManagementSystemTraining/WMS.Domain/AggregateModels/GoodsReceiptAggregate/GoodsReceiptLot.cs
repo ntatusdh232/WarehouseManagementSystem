@@ -18,32 +18,19 @@
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private GoodsReceiptLot() { }
 
-        public GoodsReceiptLot(string goodsReceiptLotId, double quantity, DateTime? productionDate, DateTime? expirationDate, 
-                               bool isExported, string? note, string employeeId, string itemId, string goodsReceiptId, 
-                               Employee employee, Item item, List<GoodsReceiptSublot> sublots)
+
+        public GoodsReceiptLot(string goodsReceiptLotId, double quantity, string? note, string goodsReceiptId, Employee employee, Item item)
         {
             GoodsReceiptLotId = goodsReceiptLotId;
             Quantity = quantity;
-            ProductionDate = productionDate;
-            ExpirationDate = expirationDate;
-            IsExported = isExported;
-            Note = note;
-            EmployeeId = employeeId;
-            ItemId = itemId;
-            GoodsReceiptId = goodsReceiptId;
             Employee = employee;
             Item = item;
-            Sublots = sublots;
+            Note = note;
+            GoodsReceiptId = goodsReceiptId;
+
         }
 
-        public GoodsReceiptLot(string goodsReceiptLotId, string employeeId, double quantity, string? note, string itemId)
-        {
-            GoodsReceiptLotId = goodsReceiptLotId;
-            Quantity = quantity;
-            Note = note;
-            EmployeeId = employeeId;
-            ItemId = itemId;
-        }
+
 
 
 
