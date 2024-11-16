@@ -1,13 +1,16 @@
-﻿namespace WMS.Api.Application.Queries.GoodsIssues;
-
-public class GoodsIssueSublotViewModel
+﻿namespace WMS.Api.Application.Queries.GoodsIssues
 {
-    public string LocationId {  get; set; }
-    public double QuantityPerLocation { get; set; }
-
-    public GoodsIssueSublotViewModel(string locationId, double quantityPerLocation)
+    public class GoodsIssueSublotViewModel
     {
-        LocationId = locationId;
-        QuantityPerLocation = quantityPerLocation;
+        public string LocationId { get; set; }
+        public double QuantityPerLocation { get; set; }
+
+        public GoodsIssueSublotViewModel(string locationId, double quantityPerLocation)
+        {
+            LocationId = locationId;
+            QuantityPerLocation = quantityPerLocation;
+        }
     }
 }
+
+

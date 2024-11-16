@@ -1,4 +1,7 @@
-﻿using WMS.Api.Application.Queries.ItemLots;
+﻿using WMS.Api.Application.Queries.FinishedProductIssues;
+using WMS.Api.Application.Queries.ItemLots;
+using WMS.Api.Application.Queries.LotAdjustments;
+using WMS.Domain.AggregateModels.LotAdjustmentAggregate;
 using WMS.Domain.AggregateModels.StorageAggregate;
 
 namespace WMS.Api.Application.Mapping
@@ -12,8 +15,10 @@ namespace WMS.Api.Application.Mapping
             MapFinishedProductInventoryViewModel();
 
             MapFinishedProductReceiptViewModel();
+            MapFinishedProductReceiptEntryViewModel();
 
             MapFinishedProductIssueEntryViewModel();
+            MapFinishedProductIssueViewModel();
 
             MapLocationViewModel();
 
@@ -23,12 +28,18 @@ namespace WMS.Api.Application.Mapping
             MapItemLotViewModel();
 
             MapGoodsIssueViewModel();
+            MapGoodsIssueEntryViewModel();
+            MapGoodsIssueLotViewModel();
+            MapGoodsIssueSubLotViewModel();
 
             MapGoodsReceiptLotViewModel();
             MapGoodsReceiptSublotViewModel();
             MapGoodsReceiptViewModel();
 
             MapEmployeeViewModel();
+
+            MapLotAdjustmentViewModel();
+            MapSublotAdjustmentViewModelViewModel();
 
 
         }
@@ -50,11 +61,23 @@ namespace WMS.Api.Application.Mapping
             CreateMap<QueryResult<FinishedProductReceipt>, QueryResult<FinishedProductReceiptViewModel>>();
             CreateMap<FinishedProductReceipt, FinishedProductReceiptViewModel>();
         }
+        public void MapFinishedProductReceiptEntryViewModel()
+        {
+            CreateMap<QueryResult<FinishedProductReceiptEntry>, QueryResult<FinishedProductReceiptEntryViewModel>>();
+            CreateMap<FinishedProductReceiptEntry, FinishedProductReceiptEntryViewModel>();
+        }
+
 
         public void MapFinishedProductIssueEntryViewModel()
         {
-            CreateMap<QueryResult<FinishedProductReceipt>, QueryResult<FinishedProductReceiptEntryViewModel>>();
-            CreateMap<FinishedProductReceipt, FinishedProductReceiptEntryViewModel>();
+            CreateMap<QueryResult<FinishedProductIssueEntry>, QueryResult<FinishedProductIssueEntryViewModel>>();
+            CreateMap<FinishedProductIssueEntry, FinishedProductIssueEntryViewModel>();
+        }
+
+        public void MapFinishedProductIssueViewModel()
+        {
+            CreateMap<QueryResult<FinishedProductIssue>, QueryResult<FinishedProductIssueViewModel>>();
+            CreateMap<FinishedProductIssue, FinishedProductIssueViewModel>();
         }
 
         public void MapLocationViewModel()
@@ -111,6 +134,33 @@ namespace WMS.Api.Application.Mapping
         {
             CreateMap<QueryResult<GoodsIssue>, QueryResult<GoodsIssueViewModel>>();
             CreateMap<GoodsIssue, GoodsIssueViewModel>();
+        }
+        public void MapGoodsIssueEntryViewModel()
+        {
+            CreateMap<QueryResult<GoodsIssueEntry>, QueryResult<GoodsIssueEntryViewModel>>();
+            CreateMap<GoodsIssueEntry, GoodsIssueEntryViewModel>();
+        }
+        public void MapGoodsIssueLotViewModel()
+        {
+            CreateMap<QueryResult<GoodsIssueLot>, QueryResult<GoodsIssueLotViewModel>>();
+            CreateMap<GoodsIssueLot, GoodsIssueLotViewModel>();
+        }
+        public void MapGoodsIssueSubLotViewModel()
+        {
+            CreateMap<QueryResult<GoodsIssueSublot>, QueryResult<GoodsIssueSublotViewModel>>();
+            CreateMap<GoodsIssueSublot, GoodsIssueSublotViewModel>();
+        }
+
+        public void MapLotAdjustmentViewModel()
+        {
+            CreateMap<QueryResult<LotAdjustment>, QueryResult<LotAdjustmentViewModel>>();
+            CreateMap<LotAdjustment, LotAdjustmentViewModel>();
+        }
+
+        public void MapSublotAdjustmentViewModelViewModel()
+        {
+            CreateMap<QueryResult<SublotAdjustment>, QueryResult<SublotAdjustmentViewModel>>();
+            CreateMap<SublotAdjustment, SublotAdjustmentViewModel>();
         }
 
     }
