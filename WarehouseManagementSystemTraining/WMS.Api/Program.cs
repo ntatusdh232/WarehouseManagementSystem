@@ -42,7 +42,6 @@ namespace WMS.Api
             builder.Services.AddScoped<ILotAdjustmentRepository, LotAdjustmentRepository>();
 
             builder.Services.AddScoped<LotAdjustmentQueries>();
-            builder.Services.AddScoped<ItemQueries>();
             builder.Services.AddScoped<ItemLotsQueries>();
             builder.Services.AddScoped<GoodsReceiptQueries>();
             builder.Services.AddScoped<GoodsIssueQueries>();

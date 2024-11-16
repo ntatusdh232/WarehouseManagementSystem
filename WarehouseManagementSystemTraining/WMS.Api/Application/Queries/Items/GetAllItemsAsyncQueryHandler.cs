@@ -4,14 +4,16 @@
     {
         private readonly IMapper _mapper;
         private readonly IItemRepository _itemRepository;
-        private readonly ItemQueries itemQueries;
+        private readonly ApplicationDbContext _context;
 
-        public GetAllItemsAsyncQueryHandler(IMapper mapper, IItemRepository itemRepository, ItemQueries itemQueries)
+        public GetAllItemsAsyncQueryHandler(IMapper mapper, IItemRepository itemRepository, ApplicationDbContext context)
         {
             _mapper = mapper;
             _itemRepository = itemRepository;
-            this.itemQueries = itemQueries;
+            _context = context;
         }
+
+        private IQueryable<Item> _items => _context.items.AsNoTracking();
 
         public async Task<IEnumerable<ItemViewModel>> Handle(GetAllItemsAsyncQuery request, CancellationToken cancellationToken)
         {
@@ -19,11 +21,11 @@
 
             if (request.ItemClassId != null)
             {
-                items = await itemQueries._items.Where(s => s.ItemClassId == request.ItemClassId).ToListAsync();
+                items = await _items.Where(s => s.ItemClassId == request.ItemClassId).ToListAsync();
             }
             else
             {
-                items = await itemQueries._items.ToListAsync();
+                items = await _items.ToListAsync();
             }
 
             var itemViewModels = _mapper.Map<IEnumerable<ItemViewModel>>(items);
