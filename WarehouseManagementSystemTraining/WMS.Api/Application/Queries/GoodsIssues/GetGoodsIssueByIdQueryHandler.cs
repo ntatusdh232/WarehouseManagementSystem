@@ -1,6 +1,6 @@
 ﻿namespace WMS.Api.Application.Queries.GoodsIssues
 {
-    public class GetGoodsIssueByIdQueryHandler : IRequestHandler<GetGoodsIssueByIdQuery, QueryResult<GoodsIssueViewModel>>
+    public class GetGoodsIssueByIdQueryHandler : IRequestHandler<GetGoodsIssueByIdQuery, GoodsIssueViewModel>
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
@@ -13,14 +13,15 @@
             goodsIssuesQuery = Query;
         }
 
-        public async Task<QueryResult<GoodsIssueViewModel>> Handle(GetGoodsIssueByIdQuery request, CancellationToken cancellationToken)
+        public async Task<GoodsIssueViewModel> Handle(GetGoodsIssueByIdQuery request, CancellationToken cancellationToken)
         {
             var goodsIssue = await goodsIssuesQuery._goodsIssues.FirstOrDefaultAsync(s => s.GoodsIssueId == request.GoodsIssueId);
+            
             if (goodsIssue == null)
             {
                 throw new EntityNotFoundException(nameof(GoodsIssue), request.GoodsIssueId);
             }
-            var goodsIssueViewModel = _mapper.Map<QueryResult<GoodsIssueViewModel>>(goodsIssue);
+            var goodsIssueViewModel = _mapper.Map<GoodsIssueViewModel>(goodsIssue);
 
             return goodsIssueViewModel;
 

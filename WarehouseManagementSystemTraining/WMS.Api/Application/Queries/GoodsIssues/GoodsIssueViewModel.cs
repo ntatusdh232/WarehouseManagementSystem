@@ -8,6 +8,10 @@ public class GoodsIssueViewModel
     public EmployeeViewModel Employee {  get; set; }
     public List<GoodsIssueEntryViewModel> Entries {  get; set; }
 
+    public GoodsIssueViewModel()
+    {
+    }
+
     public GoodsIssueViewModel(string goodsIssueId, string receiver, DateTime timestamp, EmployeeViewModel employee, List<GoodsIssueEntryViewModel> entries)
     {
         GoodsIssueId = goodsIssueId;

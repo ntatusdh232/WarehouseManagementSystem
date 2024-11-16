@@ -4,18 +4,28 @@
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
-        private readonly GoodsIssueQueries goodsIssuesQuery;
 
-        public GetAllQueryHandler(ApplicationDbContext context, IMapper mapper, GoodsIssueQueries goodsIssuesQuery)
+        public GetAllQueryHandler(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
-            this.goodsIssuesQuery = goodsIssuesQuery;
         }
+
+        private IQueryable<GoodsIssue> _goodsIssues => _context.goodsIssues
+            .Include(s => s.Employee)
+            .Include(s => s.Entries)
+                .ThenInclude(x => x.Item)
+            .Include(s => s.Entries)
+                .ThenInclude(x => x.Lots)
+                    .ThenInclude(gil => gil.Sublots)
+            .Include(s => s.Entries)
+                .ThenInclude(x => x.Lots)
+                    .ThenInclude(z => z.Employee)
+            .AsNoTracking();
 
         public async Task<IEnumerable<GoodsIssueViewModel>> Handle(GetAllQuery request, CancellationToken cancellationToken)
         {
-            var goodsIssues = await goodsIssuesQuery._goodsIssues.ToListAsync();
+            var goodsIssues = await _goodsIssues.ToListAsync();
 
             var goodsIssueViewModels = _mapper.Map<IEnumerable<GoodsIssueViewModel>>(goodsIssues);
 
