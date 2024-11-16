@@ -27,12 +27,12 @@ namespace WMS.Api.Migrations
                     b.Property<string>("ItemLotsLotId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("LocationsId")
-                        .HasColumnType("int");
+                    b.Property<string>("LocationsLocationId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("ItemLotsLotId", "LocationsId");
+                    b.HasKey("ItemLotsLotId", "LocationsLocationId");
 
-                    b.HasIndex("LocationsId");
+                    b.HasIndex("LocationsLocationId");
 
                     b.ToTable("LotLocations", (string)null);
                 });
@@ -405,13 +405,7 @@ namespace WMS.Api.Migrations
                     b.Property<DateTime?>("ExpirationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ItemId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ItemId1")
+                    b.Property<string>("ItemId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime?>("ProductionDate")
@@ -422,7 +416,7 @@ namespace WMS.Api.Migrations
 
                     b.HasKey("ItemLotId");
 
-                    b.HasIndex("ItemId1");
+                    b.HasIndex("ItemId");
 
                     b.ToTable("isolatedItemLots");
                 });
@@ -471,17 +465,13 @@ namespace WMS.Api.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ItemId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ItemId2")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ItemClassId");
 
-                    b.HasIndex("ItemId");
-
-                    b.HasIndex("ItemId2");
+                    b.HasIndex("ItemId")
+                        .IsUnique()
+                        .HasFilter("[ItemId] IS NOT NULL");
 
                     b.ToTable("itemsClass");
                 });
@@ -493,9 +483,6 @@ namespace WMS.Api.Migrations
 
                     b.Property<DateTime>("ExpirationDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
 
                     b.Property<bool>("IsIsolated")
                         .HasColumnType("bit");
@@ -521,51 +508,36 @@ namespace WMS.Api.Migrations
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.ItemLotLocationAggregate.ItemLotLocation", b =>
                 {
-                    b.Property<string>("ItemLotId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ItemLotLotId")
-                        .IsRequired()
+                    b.Property<string>("ItemLotLocationId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LocationId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("LocationId1")
-                        .HasColumnType("int");
+                    b.Property<string>("LotId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<double>("QuantityPerLocation")
                         .HasColumnType("float");
 
-                    b.HasKey("ItemLotId");
+                    b.HasKey("ItemLotLocationId");
 
-                    b.HasIndex("ItemLotLotId");
+                    b.HasIndex("LocationId");
 
-                    b.HasIndex("LocationId1");
+                    b.HasIndex("LotId");
 
                     b.ToTable("itemLotLocations");
                 });
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.LocationAggregate.Location", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
                     b.Property<string>("LocationId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("WarehouseId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("Id");
+                    b.HasKey("LocationId");
 
                     b.HasIndex("WarehouseId");
 
@@ -585,9 +557,6 @@ namespace WMS.Api.Migrations
 
                     b.Property<string>("EmployeeId")
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
 
                     b.Property<bool>("IsConfirmed")
                         .HasColumnType("bit");
@@ -617,6 +586,9 @@ namespace WMS.Api.Migrations
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.LotAdjustmentAggregate.SublotAdjustment", b =>
                 {
+                    b.Property<string>("SublotAdjustmentId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<double>("AfterQuantityPerLocation")
                         .HasColumnType("float");
 
@@ -627,6 +599,13 @@ namespace WMS.Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("LotAdjustmentId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("SublotAdjustmentId");
+
+                    b.HasIndex("LotAdjustmentId");
+
                     b.ToTable("sublotAdjustments");
                 });
 
@@ -634,10 +613,6 @@ namespace WMS.Api.Migrations
                 {
                     b.Property<string>("WarehouseId")
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("LocationId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("WarehouseName")
                         .IsRequired()
@@ -721,7 +696,7 @@ namespace WMS.Api.Migrations
 
                     b.HasOne("WMS.Domain.AggregateModels.LocationAggregate.Location", null)
                         .WithMany()
-                        .HasForeignKey("LocationsId")
+                        .HasForeignKey("LocationsLocationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -885,7 +860,7 @@ namespace WMS.Api.Migrations
                 {
                     b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.Item", "Item")
                         .WithMany()
-                        .HasForeignKey("ItemId1");
+                        .HasForeignKey("ItemId");
 
                     b.Navigation("Item");
                 });
@@ -893,14 +868,8 @@ namespace WMS.Api.Migrations
             modelBuilder.Entity("WMS.Domain.AggregateModels.ItemAggregate.ItemClass", b =>
                 {
                     b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.Item", "Item")
-                        .WithMany()
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.Item", null)
-                        .WithMany("ItemClasses")
-                        .HasForeignKey("ItemId2");
+                        .WithOne("ItemClasses")
+                        .HasForeignKey("WMS.Domain.AggregateModels.ItemAggregate.ItemClass", "ItemId");
 
                     b.Navigation("Item");
                 });
@@ -916,17 +885,13 @@ namespace WMS.Api.Migrations
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.ItemLotLocationAggregate.ItemLotLocation", b =>
                 {
+                    b.HasOne("WMS.Domain.AggregateModels.LocationAggregate.Location", "Location")
+                        .WithMany("ItemLotLocations")
+                        .HasForeignKey("LocationId");
+
                     b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.ItemLot", "ItemLot")
                         .WithMany("ItemLotLocations")
-                        .HasForeignKey("ItemLotLotId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WMS.Domain.AggregateModels.LocationAggregate.Location", "Location")
-                        .WithMany()
-                        .HasForeignKey("LocationId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("LotId");
 
                     b.Navigation("ItemLot");
 
@@ -935,10 +900,11 @@ namespace WMS.Api.Migrations
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.LocationAggregate.Location", b =>
                 {
-                    b.HasOne("WMS.Domain.AggregateModels.StorageAggregate.Warehouse", null)
+                    b.HasOne("WMS.Domain.AggregateModels.StorageAggregate.Warehouse", "Warehouse")
                         .WithMany("Locations")
-                        .HasForeignKey("WarehouseId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("WarehouseId");
+
+                    b.Navigation("Warehouse");
                 });
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.LotAdjustmentAggregate.LotAdjustment", b =>
@@ -954,6 +920,15 @@ namespace WMS.Api.Migrations
                     b.Navigation("Employee");
 
                     b.Navigation("Item");
+                });
+
+            modelBuilder.Entity("WMS.Domain.AggregateModels.LotAdjustmentAggregate.SublotAdjustment", b =>
+                {
+                    b.HasOne("WMS.Domain.AggregateModels.LotAdjustmentAggregate.LotAdjustment", "LotAdjustment")
+                        .WithMany("SublotAdjustments")
+                        .HasForeignKey("LotAdjustmentId");
+
+                    b.Navigation("LotAdjustment");
                 });
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.UserAggregate.UserAccount", b =>
@@ -1004,12 +979,23 @@ namespace WMS.Api.Migrations
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.ItemAggregate.Item", b =>
                 {
-                    b.Navigation("ItemClasses");
+                    b.Navigation("ItemClasses")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.ItemAggregate.ItemLot", b =>
                 {
                     b.Navigation("ItemLotLocations");
+                });
+
+            modelBuilder.Entity("WMS.Domain.AggregateModels.LocationAggregate.Location", b =>
+                {
+                    b.Navigation("ItemLotLocations");
+                });
+
+            modelBuilder.Entity("WMS.Domain.AggregateModels.LotAdjustmentAggregate.LotAdjustment", b =>
+                {
+                    b.Navigation("SublotAdjustments");
                 });
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.StorageAggregate.Warehouse", b =>

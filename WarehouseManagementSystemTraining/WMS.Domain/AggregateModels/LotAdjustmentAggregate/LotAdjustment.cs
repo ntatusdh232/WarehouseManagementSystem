@@ -5,19 +5,25 @@ namespace WMS.Domain.AggregateModels.LotAdjustmentAggregate
 {
     public class LotAdjustment : Entity, IAggregateRoot
     {
+        [Key]
         public string LotId { get; set; }
+
         public double BeforeQuantity { get; set; }
         public double AfterQuantity { get; set; }
         public DateTime Timestamp { get; set; }
         public bool IsConfirmed { get; set; }
         public string Note { get; set; }
         public string Unit { get; set; }
-        public Item Item { get; set; }
-        public Employee Employee { get; set; }
+
+        [ForeignKey("Item")]
         public string ItemId { get; set; }
+        public Item Item { get; set; }
+
+        [ForeignKey("Employee")]
         public string EmployeeId { get; set; }
-        [NotMapped]
-        public virtual List<SublotAdjustment> SublotAdjustments { get; set; }
+        public Employee Employee { get; set; }
+
+        public List<SublotAdjustment> SublotAdjustments { get; set; }
 
 
 #pragma warning disable CS8618

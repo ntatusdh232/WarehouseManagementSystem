@@ -11,7 +11,7 @@
         public double? PacketSize { get; set; }
         public string? PacketUnit { get; set; }
         public string ItemClassId { get; set; } 
-        public ICollection<ItemClass> ItemClasses { get; set; }
+        public ItemClass ItemClasses { get; set; }
 
 
 
@@ -19,7 +19,7 @@
         private Item() { }
 
         public Item(string itemType, string itemId, string itemName, string unit, double minimumStockLevel, 
-                    decimal price, double? packetSize, string? packetUnit, string itemClassId, ICollection<ItemClass> itemClasses)
+                    decimal price, double? packetSize, string? packetUnit, string itemClassId, ItemClass itemClasses)
         {
             ItemType = itemType;
             ItemId = itemId;

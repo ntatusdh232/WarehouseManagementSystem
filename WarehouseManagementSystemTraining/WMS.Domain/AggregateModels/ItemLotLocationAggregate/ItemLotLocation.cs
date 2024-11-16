@@ -1,13 +1,17 @@
-﻿using DocumentFormat.OpenXml.InkML;
-
-namespace WMS.Domain.AggregateModels.ItemLotLocationAggregate
+﻿namespace WMS.Domain.AggregateModels.ItemLotLocationAggregate
 {
     public class ItemLotLocation : Entity, IAggregateRoot
     {
-        public string ItemLotId { get; private set; }
-        public string LocationId { get; private set; }
+        [Key]
+        public string ItemLotLocationId { get; set; }
         public double QuantityPerLocation { get; private set; }
+
+        [ForeignKey("ItemLot")]
+        public string LotId { get; private set; }
         public ItemLot ItemLot { get; private set; }
+
+        [ForeignKey("Location")]
+        public string LocationId { get; private set; }
         public Location Location { get; private set; }
 
 #pragma warning disable CS8618
@@ -15,7 +19,7 @@ namespace WMS.Domain.AggregateModels.ItemLotLocationAggregate
 
         public ItemLotLocation(string itemLotId, string locationId, double quantityPerLocation)
         {
-            ItemLotId = itemLotId;
+            LotId = itemLotId;
             LocationId = locationId;
             QuantityPerLocation = quantityPerLocation;
         }

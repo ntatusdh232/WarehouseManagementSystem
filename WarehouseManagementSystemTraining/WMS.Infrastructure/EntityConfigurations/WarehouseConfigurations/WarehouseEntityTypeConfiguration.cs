@@ -8,10 +8,6 @@ namespace WMS.Infrastructure.EntityConfigurations.WarehouseConfigurations
         {
             builder.HasKey(w => w.WarehouseId);
 
-            builder.HasMany(w => w.Locations)
-                   .WithOne()
-                   .IsRequired(false)
-                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

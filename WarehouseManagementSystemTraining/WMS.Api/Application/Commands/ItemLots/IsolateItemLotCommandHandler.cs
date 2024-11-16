@@ -27,7 +27,7 @@ public class IsolateItemLotCommandHandler : IRequestHandler<IsolateItemLotComman
             {
                 throw new EntityNotFoundException(nameof(Location), sublot.LocationId);
             }
-            var isolatedSublot = itemLot.ItemLotLocations.Find(ill => ill.ItemLotId == itemLot.LotId && ill.LocationId == location.LocationId);
+            var isolatedSublot = itemLot.ItemLotLocations.Find(ill => ill.LotId == itemLot.LotId && ill.LocationId == location.LocationId);
             if (isolatedSublot is null)
             {
                 throw new EntityNotFoundException(nameof(ItemLotLocation), location.LocationId);

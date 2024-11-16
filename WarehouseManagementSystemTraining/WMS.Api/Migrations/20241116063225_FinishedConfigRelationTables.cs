@@ -5,7 +5,7 @@
 namespace WMS.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdateSomeEntityRelationShips : Migration
+    public partial class FinishedConfigRelationTables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

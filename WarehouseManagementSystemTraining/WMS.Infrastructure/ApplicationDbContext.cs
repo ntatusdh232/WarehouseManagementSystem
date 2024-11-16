@@ -6,6 +6,7 @@ using WMS.Domain.AggregateModels.StorageAggregate;
 using WMS.Infrastructure.EntityConfigurations.DepartmentConfigurations;
 using WMS.Infrastructure.EntityConfigurations.IsolatedItemLotConfigurations;
 using WMS.Infrastructure.EntityConfigurations.ItemLotLocationConfigurations;
+using WMS.Infrastructure.EntityConfigurations.LocationConfigurations;
 
 namespace WMS.Infrastructure
 {
@@ -85,11 +86,15 @@ namespace WMS.Infrastructure
 
             modelBuilder.ApplyConfiguration(new InventoryLogEntryEntityTypeConfiguration());
 
+            modelBuilder.ApplyConfiguration(new IsolatedItemLotEntityTypeConfiguration());
+
             modelBuilder.ApplyConfiguration(new ItemCLassEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new ItemEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new ItemLotEntityTypeConfiguration());
+
             modelBuilder.ApplyConfiguration(new ItemLotLocationEntityTypeConfiguration());
-            modelBuilder.ApplyConfiguration(new IsolatedItemLotEntityTypeConfiguration());
+
+            modelBuilder.ApplyConfiguration(new LocationEntityTypeConfiguration());
 
             modelBuilder.ApplyConfiguration(new LotAdjustmentEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new SubLotAdjustmentEntityTypeConfiguration());

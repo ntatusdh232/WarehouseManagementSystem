@@ -10,13 +10,15 @@ namespace WMS.Domain.AggregateModels.IsolatedItemLotAggregate
         public double Quantity { get; private set; }
         public DateTime? ProductionDate { get; private set; }
         public DateTime? ExpirationDate { get; private set; }
-        public int ItemId { get; private set; }
+
+        [ForeignKey("Item")]
+        public string ItemId { get; private set; }
         public Item Item { get; private set; }
 
 #pragma warning disable CS8618
         private IsolatedItemLot() { }
 
-        public IsolatedItemLot(string itemLotId, double quantity, DateTime? productionDate, DateTime? expirationDate, int itemId)
+        public IsolatedItemLot(string itemLotId, double quantity, DateTime? productionDate, DateTime? expirationDate, string itemId)
         {
             ItemLotId = itemLotId;
             Quantity = quantity;

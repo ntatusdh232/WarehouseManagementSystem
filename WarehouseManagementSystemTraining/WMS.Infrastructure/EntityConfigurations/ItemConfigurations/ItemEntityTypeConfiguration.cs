@@ -8,8 +8,9 @@
             builder.Property(t => t.Price)
                    .HasColumnType("decimal(18, 2)");
 
-            builder.HasMany(s => s.ItemClasses)
-                   .WithOne()
+            builder.HasOne(s => s.ItemClasses)
+                   .WithOne(s => s.Item)
+                   .HasForeignKey<ItemClass>(s => s.ItemId)
                    .IsRequired(false);
 
         }

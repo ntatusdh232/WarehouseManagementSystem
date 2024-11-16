@@ -6,10 +6,12 @@
         {
             builder.HasKey(l => l.LocationId);
 
-            builder.HasMany(l => l.ItemLots)
-                   .WithMany(l => l.Locations)
-                   .UsingEntity(l => l.ToTable("LotLocations")); 
+            builder.Ignore(l => l.Id);
 
+            builder.HasOne(l => l.Warehouse)
+                   .WithMany(s => s.Locations)
+                   .HasForeignKey(l => l.WarehouseId)
+                   .IsRequired(false);
 
         }
 

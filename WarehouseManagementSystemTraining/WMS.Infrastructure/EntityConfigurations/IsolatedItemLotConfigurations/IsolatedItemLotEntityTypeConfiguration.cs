@@ -7,6 +7,13 @@ namespace WMS.Infrastructure.EntityConfigurations.IsolatedItemLotConfigurations
         public void Configure(EntityTypeBuilder<IsolatedItemLot> builder)
         {
             builder.HasKey(t => t.ItemLotId);
+
+            builder.Ignore(t => t.Id);
+
+            builder.HasOne(t => t.Item)
+                   .WithMany()
+                   .HasForeignKey(t => t.ItemId)
+                   .IsRequired(false);
         }
     }
 }
