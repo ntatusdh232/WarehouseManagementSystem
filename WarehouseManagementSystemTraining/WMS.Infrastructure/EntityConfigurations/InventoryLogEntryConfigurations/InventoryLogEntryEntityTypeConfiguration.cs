@@ -8,6 +8,7 @@
 
             builder.HasOne(t => t.Item)
                    .WithMany()
+                   .HasForeignKey(t => t.ItemId)
                    .IsRequired(false);
         }
     }

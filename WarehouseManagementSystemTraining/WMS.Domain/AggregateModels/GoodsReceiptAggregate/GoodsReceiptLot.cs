@@ -42,12 +42,6 @@
 
         }
 
-
-
-
-
-
-
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
         public void Update(string lotId, double quantity, DateTime? productionDate, DateTime? expirationDate,  string? note, List<GoodsReceiptSublot> sublots)

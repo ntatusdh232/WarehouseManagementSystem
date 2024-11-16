@@ -2,15 +2,20 @@
 {
     public class InventoryLogEntry : IAggregateRoot
     {
+        [Key]
         public string ItemLotId { get; set; }
+
         public double BeforeQuantity { get; set; } 
         public double ChangedQuantity { get; set; }
         public double ReceivedQuantity { get; set; }
         public double ShippedQuantity { get; set; }
         public DateTime Timestamp { get; set; }
         public DateTime TrackingTime { get; set; }
-        public Item Item { get; set; }
+
+        [ForeignKey("Item")]
         public string ItemId { get; set; }
+        public Item Item { get; set; }
+
 
 #pragma warning disable CS8618 
         private InventoryLogEntry(){}

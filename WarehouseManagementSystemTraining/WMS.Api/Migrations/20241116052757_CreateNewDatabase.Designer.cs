@@ -12,8 +12,8 @@ using WMS.Infrastructure;
 namespace WMS.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241116045221_UpdateGoodsReceiptAggregateRelationship")]
-    partial class UpdateGoodsReceiptAggregateRelationship
+    [Migration("20241116052757_CreateNewDatabase")]
+    partial class CreateNewDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -324,9 +324,6 @@ namespace WMS.Api.Migrations
                     b.Property<string>("ItemId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("ItemId1")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
@@ -343,10 +340,6 @@ namespace WMS.Api.Migrations
                     b.HasIndex("GoodsReceiptId");
 
                     b.HasIndex("ItemId");
-
-                    b.HasIndex("ItemId1")
-                        .IsUnique()
-                        .HasFilter("[ItemId1] IS NOT NULL");
 
                     b.ToTable("goodsReceiptsLot");
                 });
@@ -481,11 +474,17 @@ namespace WMS.Api.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ItemId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ItemId2")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ItemClassId");
 
                     b.HasIndex("ItemId");
+
+                    b.HasIndex("ItemId2");
 
                     b.ToTable("itemsClass");
                 });
@@ -858,10 +857,6 @@ namespace WMS.Api.Migrations
                         .WithMany()
                         .HasForeignKey("ItemId");
 
-                    b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.Item", null)
-                        .WithOne("GoodsReceiptLot")
-                        .HasForeignKey("WMS.Domain.AggregateModels.GoodsReceiptAggregate.GoodsReceiptLot", "ItemId1");
-
                     b.Navigation("Employee");
 
                     b.Navigation("GoodsReceipt");
@@ -900,9 +895,17 @@ namespace WMS.Api.Migrations
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.ItemAggregate.ItemClass", b =>
                 {
+                    b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.Item", "Item")
+                        .WithMany()
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.Item", null)
                         .WithMany("ItemClasses")
-                        .HasForeignKey("ItemId");
+                        .HasForeignKey("ItemId2");
+
+                    b.Navigation("Item");
                 });
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.ItemAggregate.ItemLot", b =>
@@ -1004,9 +1007,6 @@ namespace WMS.Api.Migrations
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.ItemAggregate.Item", b =>
                 {
-                    b.Navigation("GoodsReceiptLot")
-                        .IsRequired();
-
                     b.Navigation("ItemClasses");
                 });
 

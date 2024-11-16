@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WMS.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateNewDataBase : Migration
+    public partial class CreateNewDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -100,8 +100,7 @@ namespace WMS.Api.Migrations
                     FinishedProductIssueId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Receiver = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Timestamp = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EmployeeId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    EmployeeId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -119,9 +118,7 @@ namespace WMS.Api.Migrations
                 {
                     FinishedProductReceiptId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Timestamp = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EmployeeId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    FinishedProductReceiptEntryId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    EmployeeId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -159,8 +156,7 @@ namespace WMS.Api.Migrations
                     GoodsReceiptId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Supplier = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Timestamp = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EmployeeId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    EmployeeId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -242,7 +238,8 @@ namespace WMS.Api.Migrations
                 columns: table => new
                 {
                     ItemClassId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ItemId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    ItemId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ItemId2 = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -250,6 +247,12 @@ namespace WMS.Api.Migrations
                     table.ForeignKey(
                         name: "FK_itemsClass_items_ItemId",
                         column: x => x.ItemId,
+                        principalTable: "items",
+                        principalColumn: "ItemId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_itemsClass_items_ItemId2",
+                        column: x => x.ItemId2,
                         principalTable: "items",
                         principalColumn: "ItemId");
                 });
@@ -356,7 +359,7 @@ namespace WMS.Api.Migrations
                     PurchaseOrderNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Quantity = table.Column<double>(type: "float", nullable: false),
                     Note = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FinishedProductIssueId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    FinishedProductIssueId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     ItemId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
@@ -366,8 +369,7 @@ namespace WMS.Api.Migrations
                         name: "FK_finishedProductIssuesEntry_finishedProductIssues_FinishedProductIssueId",
                         column: x => x.FinishedProductIssueId,
                         principalTable: "finishedProductIssues",
-                        principalColumn: "FinishedProductIssueId",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "FinishedProductIssueId");
                     table.ForeignKey(
                         name: "FK_finishedProductIssuesEntry_items_ItemId",
                         column: x => x.ItemId,
@@ -393,8 +395,7 @@ namespace WMS.Api.Migrations
                         name: "FK_finishedProductReceiptsEntry_finishedProductReceipts_FinishedProductReceiptId",
                         column: x => x.FinishedProductReceiptId,
                         principalTable: "finishedProductReceipts",
-                        principalColumn: "FinishedProductReceiptId",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "FinishedProductReceiptId");
                     table.ForeignKey(
                         name: "FK_finishedProductReceiptsEntry_items_ItemId",
                         column: x => x.ItemId,
@@ -418,8 +419,7 @@ namespace WMS.Api.Migrations
                         name: "FK_goodsIssuesEntry_goodsIssues_GoodsIssueId",
                         column: x => x.GoodsIssueId,
                         principalTable: "goodsIssues",
-                        principalColumn: "GoodsIssueId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "GoodsIssueId");
                     table.ForeignKey(
                         name: "FK_goodsIssuesEntry_items_ItemId",
                         column: x => x.ItemId,
@@ -437,10 +437,9 @@ namespace WMS.Api.Migrations
                     ExpirationDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsExported = table.Column<bool>(type: "bit", nullable: false),
                     Note = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EmployeeId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    ItemId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     GoodsReceiptId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    ItemId1 = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    EmployeeId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    ItemId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -454,16 +453,10 @@ namespace WMS.Api.Migrations
                         name: "FK_goodsReceiptsLot_goodsReceipts_GoodsReceiptId",
                         column: x => x.GoodsReceiptId,
                         principalTable: "goodsReceipts",
-                        principalColumn: "GoodsReceiptId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "GoodsReceiptId");
                     table.ForeignKey(
                         name: "FK_goodsReceiptsLot_items_ItemId",
                         column: x => x.ItemId,
-                        principalTable: "items",
-                        principalColumn: "ItemId");
-                    table.ForeignKey(
-                        name: "FK_goodsReceiptsLot_items_ItemId1",
-                        column: x => x.ItemId1,
                         principalTable: "items",
                         principalColumn: "ItemId");
                 });
@@ -542,8 +535,7 @@ namespace WMS.Api.Migrations
                         name: "FK_goodsIssuesLot_goodsIssuesEntry_GoodsIssueEntryId",
                         column: x => x.GoodsIssueEntryId,
                         principalTable: "goodsIssuesEntry",
-                        principalColumn: "GoodsIssueEntryId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "GoodsIssueEntryId");
                 });
 
             migrationBuilder.CreateTable(
@@ -553,7 +545,7 @@ namespace WMS.Api.Migrations
                     GoodsReceiptSublotId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     LocationId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     QuantityPerLocation = table.Column<double>(type: "float", nullable: false),
-                    GoodsReceiptLotId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    GoodsReceiptLotId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -582,8 +574,7 @@ namespace WMS.Api.Migrations
                         name: "FK_goodsIssuesSublot_goodsIssuesLot_GoodsIssueLotId",
                         column: x => x.GoodsIssueLotId,
                         principalTable: "goodsIssuesLot",
-                        principalColumn: "GoodsIssueLotId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "GoodsIssueLotId");
                 });
 
             migrationBuilder.CreateIndex(
@@ -672,13 +663,6 @@ namespace WMS.Api.Migrations
                 column: "ItemId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_goodsReceiptsLot_ItemId1",
-                table: "goodsReceiptsLot",
-                column: "ItemId1",
-                unique: true,
-                filter: "[ItemId1] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_goodsReceiptsSublot_GoodsReceiptLotId",
                 table: "goodsReceiptsSublot",
                 column: "GoodsReceiptLotId");
@@ -707,6 +691,11 @@ namespace WMS.Api.Migrations
                 name: "IX_itemsClass_ItemId",
                 table: "itemsClass",
                 column: "ItemId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_itemsClass_ItemId2",
+                table: "itemsClass",
+                column: "ItemId2");
 
             migrationBuilder.CreateIndex(
                 name: "IX_itemsLot_ItemId",

@@ -12,15 +12,14 @@
         public string? PacketUnit { get; set; }
         public string ItemClassId { get; set; } 
         public ICollection<ItemClass> ItemClasses { get; set; }
-        public virtual GoodsReceiptLot GoodsReceiptLot { get; set; }
+
 
 
 #pragma warning disable CS8618
         private Item() { }
 
         public Item(string itemType, string itemId, string itemName, string unit, double minimumStockLevel, 
-                    decimal price, double? packetSize, string? packetUnit, string itemClassId, ICollection<ItemClass> itemClasses, 
-                    GoodsReceiptLot goodsReceiptLot)
+                    decimal price, double? packetSize, string? packetUnit, string itemClassId, ICollection<ItemClass> itemClasses)
         {
             ItemType = itemType;
             ItemId = itemId;
@@ -32,7 +31,6 @@
             PacketUnit = packetUnit;
             ItemClassId = itemClassId;
             ItemClasses = itemClasses;
-            GoodsReceiptLot = goodsReceiptLot;
         }
 
         public Item(string itemType, string itemId, string itemName, string unit, double minimumStockLevel, 
