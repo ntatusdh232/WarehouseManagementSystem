@@ -1,6 +1,6 @@
 ﻿namespace WMS.Api.Application.Queries.GoodsReceipts
 {
-    public class GetGoodsReceiptByIdQuery : PaginatedQuery, IRequest<QueryResult<GoodsReceiptViewModel>>
+    public class GetGoodsReceiptByIdQuery : PaginatedQuery, IRequest<GoodsReceiptViewModel>
     {
         public string goodsReceiptId { get; set; }
 

@@ -43,7 +43,6 @@ namespace WMS.Api
 
             builder.Services.AddScoped<LotAdjustmentQueries>();
             builder.Services.AddScoped<ItemLotsQueries>();
-            builder.Services.AddScoped<GoodsReceiptQueries>();
 
 
 

@@ -12,6 +12,10 @@
         public ItemViewModel Item { get; set; }
         public List<GoodsReceiptSublotViewModel> GoodsReceiptSublots { get; set; }
 
+        public GoodsReceiptLotViewModel()
+        {
+        }
+
         public GoodsReceiptLotViewModel(string goodsReceiptLotId, double quantity, DateTime productionDate, DateTime expirationDate, 
                                         string note, bool isExported, EmployeeViewModel employee, ItemViewModel item, 
                                         List<GoodsReceiptSublotViewModel> goodsReceiptSublots)

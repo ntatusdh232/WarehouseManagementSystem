@@ -10,5 +10,9 @@
             LocationId = locationId;
             QuantityPerLocation = quantityPerLocation;
         }
+
+        public GoodsReceiptSublotViewModel()
+        {
+        }
     }
 }

@@ -2,5 +2,8 @@
 {
     public class GetUnCompletedGoodsReceiptsQuery : PaginatedQuery, IRequest<IEnumerable<GoodsReceiptViewModel>>
     {
+        public GetUnCompletedGoodsReceiptsQuery()
+        {
+        }
     }
 }

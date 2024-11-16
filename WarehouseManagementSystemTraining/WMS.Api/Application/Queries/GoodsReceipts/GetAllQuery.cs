@@ -2,5 +2,8 @@
 {
     public class GetAllQuery : PaginatedQuery, IRequest<IEnumerable<GoodsReceiptViewModel>>
     {
+        public GetAllQuery()
+        {
+        }
     }
 }

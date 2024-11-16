@@ -8,18 +8,28 @@ namespace WMS.Api.Application.Mapping
         public ModelToViewModelProfile()
         {
             MapDepartmentViewModel();
+
             MapFinishedProductInventoryViewModel();
+
             MapFinishedProductReceiptViewModel();
+
             MapFinishedProductIssueEntryViewModel();
+
             MapLocationViewModel();
+
             MapWarehouseViewModel();
+
             MapItemViewModel();
+            MapItemLotViewModel();
+
+            MapGoodsIssueViewModel();
+
             MapGoodsReceiptLotViewModel();
             MapGoodsReceiptSublotViewModel();
             MapGoodsReceiptViewModel();
-            MapItemLotViewModel();
+
             MapEmployeeViewModel();
-            MapGoodsIssueViewModel();
+
 
         }
 

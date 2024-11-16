@@ -2,5 +2,8 @@
 {
     public class GetSuppliersQuery : PaginatedQuery, IRequest<IList<string>>
     {
+        public GetSuppliersQuery()
+        {
+        }
     }
 }
