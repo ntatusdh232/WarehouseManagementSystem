@@ -6,16 +6,20 @@ namespace WMS.Api.Application.Queries.GoodsReceipts;
 public class GetUnCompletedGoodsReceiptsQueryHandler : IRequestHandler<GetUnCompletedGoodsReceiptsQuery, IEnumerable<GoodsReceiptViewModel>>
 {
     private readonly GoodsReceiptQueries goodsReceiptQueries;
-    private readonly GoodsIssueQueries goodsIssueQueries;
+    private readonly ApplicationDbContext _context;
     private readonly IMapper _mapper;
 
-    public GetUnCompletedGoodsReceiptsQueryHandler(GoodsReceiptQueries goodsReceiptQueries, GoodsIssueQueries goodsIssueQueries, IMapper mapper)
+    public GetUnCompletedGoodsReceiptsQueryHandler(GoodsReceiptQueries goodsReceiptQueries, ApplicationDbContext context, IMapper mapper)
     {
         this.goodsReceiptQueries = goodsReceiptQueries;
-        this.goodsIssueQueries = goodsIssueQueries;
+        _context = context;
         _mapper = mapper;
     }
 
+    private IQueryable<GoodsIssueLot> _goodsIssueLots => _context.goodsIssues
+        .AsNoTracking()
+        .SelectMany(gi => gi.Entries)
+        .SelectMany(e => e.Lots);
     public async Task<IEnumerable<GoodsReceiptViewModel>> Handle(GetUnCompletedGoodsReceiptsQuery request, CancellationToken cancellationToken)
     {
         var completedGoodsReceipts = await goodsReceiptQueries._goodsReceipts
@@ -25,7 +29,7 @@ public class GetUnCompletedGoodsReceiptsQueryHandler : IRequestHandler<GetUnComp
 
         var goodsReceiptViewModels = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(completedGoodsReceipts);
 
-        return await goodsReceiptQueries.Filter(goodsReceiptViewModels, goodsIssueQueries._goodsIssueLots);
+        return await goodsReceiptQueries.Filter(goodsReceiptViewModels, _goodsIssueLots);
     }
 }
 

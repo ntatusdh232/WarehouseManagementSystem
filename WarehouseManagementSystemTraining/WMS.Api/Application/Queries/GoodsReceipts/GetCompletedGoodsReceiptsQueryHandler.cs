@@ -5,16 +5,20 @@
         private readonly IMapper _mapper;
         private readonly IGoodsReceiptRepository _goodsReceiptRepository;
         private readonly GoodsReceiptQueries goodsReceiptQuery;
-        private readonly GoodsIssueQueries goodsIssueQueries;
+        private readonly ApplicationDbContext _context;
 
-        public GetCompletedGoodsReceiptsQueryHandler(IMapper mapper, IGoodsReceiptRepository goodsReceiptRepository, GoodsReceiptQueries goodsReceiptQuery, GoodsIssueQueries goodsIssueQueries)
+        public GetCompletedGoodsReceiptsQueryHandler(IMapper mapper, IGoodsReceiptRepository goodsReceiptRepository, GoodsReceiptQueries goodsReceiptQuery, ApplicationDbContext context)
         {
             _mapper = mapper;
             _goodsReceiptRepository = goodsReceiptRepository;
             this.goodsReceiptQuery = goodsReceiptQuery;
-            this.goodsIssueQueries = goodsIssueQueries;
+            _context = context;
         }
 
+        private IQueryable<GoodsIssueLot> _goodsIssueLots => _context.goodsIssues
+            .AsNoTracking()
+            .SelectMany(gi => gi.Entries)
+            .SelectMany(e => e.Lots);
         public async Task<IEnumerable<GoodsReceiptViewModel>> Handle(GetCompletedGoodsReceiptsQuery request, CancellationToken cancellationToken)
         {
             var completedGoodsReceipts = await goodsReceiptQuery._goodsReceipts
@@ -27,7 +31,7 @@
             var goodsReceiptViewModel = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(completedGoodsReceipts);
 
             var newGoodsReceiptViewModel = await goodsReceiptQuery.Filter(goodsReceipts: goodsReceiptViewModel,
-                                                                          goodsIssueLots: goodsIssueQueries._goodsIssueLots);
+                                                                          goodsIssueLots: _goodsIssueLots);
 
             return newGoodsReceiptViewModel;
 

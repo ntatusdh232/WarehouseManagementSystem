@@ -7,14 +7,19 @@ namespace WMS.Api.Application.Queries.GoodsReceipts
     {
         private readonly IMapper _mapper;
         private readonly GoodsReceiptQueries goodsReceiptQueries;
-        private readonly GoodsIssueQueries goodsIssueQueries;
+        private readonly ApplicationDbContext _context;
 
-        public GetAllQueryHandler(IMapper mapper, GoodsReceiptQueries goodsReceiptQueries, GoodsIssueQueries goodsIssueQueries)
+        public GetAllQueryHandler(IMapper mapper, GoodsReceiptQueries goodsReceiptQueries, ApplicationDbContext context)
         {
             _mapper = mapper;
             this.goodsReceiptQueries = goodsReceiptQueries;
-            this.goodsIssueQueries = goodsIssueQueries;
+            _context = context;
         }
+
+        public IQueryable<GoodsIssueLot> _goodsIssueLots => _context.goodsIssues
+            .AsNoTracking()
+            .SelectMany(gi => gi.Entries)
+            .SelectMany(e => e.Lots);
 
         public async Task<IEnumerable<GoodsReceiptViewModel>> Handle(GetAllQuery request, CancellationToken cancellationToken)
         {
@@ -22,7 +27,7 @@ namespace WMS.Api.Application.Queries.GoodsReceipts
 
             var goodsReceiptViewModels = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(goodsReceipts);
 
-            return await goodsReceiptQueries.Filter(goodsReceiptViewModels, goodsIssueQueries._goodsIssueLots);
+            return await goodsReceiptQueries.Filter(goodsReceiptViewModels, _goodsIssueLots);
 
         }
     }

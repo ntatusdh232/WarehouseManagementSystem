@@ -4,18 +4,28 @@
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
-        private readonly GoodsIssueQueries goodsIssuesQuery;
 
-        public GetGoodsIssueByIdQueryHandler(ApplicationDbContext context, IMapper mapper, GoodsIssueQueries Query)
+        public GetGoodsIssueByIdQueryHandler(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
-            goodsIssuesQuery = Query;
         }
+
+        private IQueryable<GoodsIssue> _goodsIssues => _context.goodsIssues
+        .Include(s => s.Employee)
+        .Include(s => s.Entries)
+            .ThenInclude(x => x.Item)
+        .Include(s => s.Entries)
+            .ThenInclude(x => x.Lots)
+                .ThenInclude(gil => gil.Sublots)
+        .Include(s => s.Entries)
+            .ThenInclude(x => x.Lots)
+                .ThenInclude(z => z.Employee)
+        .AsNoTracking();
 
         public async Task<GoodsIssueViewModel> Handle(GetGoodsIssueByIdQuery request, CancellationToken cancellationToken)
         {
-            var goodsIssue = await goodsIssuesQuery._goodsIssues.FirstOrDefaultAsync(s => s.GoodsIssueId == request.GoodsIssueId);
+            var goodsIssue = await _goodsIssues.FirstOrDefaultAsync(s => s.GoodsIssueId == request.GoodsIssueId);
             
             if (goodsIssue == null)
             {

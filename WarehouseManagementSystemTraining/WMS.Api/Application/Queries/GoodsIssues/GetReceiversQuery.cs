@@ -1,5 +1,11 @@
-﻿namespace WMS.Api.Application.Queries.GoodsIssues;
-
-public class GetReceiversQuery : PaginatedQuery, IRequest<List<string>>
+﻿namespace WMS.Api.Application.Queries.GoodsIssues
 {
+    public class GetReceiversQuery : PaginatedQuery, IRequest<List<string>>
+    {
+        public GetReceiversQuery()
+        {
+        }
+    }
 }
+
+

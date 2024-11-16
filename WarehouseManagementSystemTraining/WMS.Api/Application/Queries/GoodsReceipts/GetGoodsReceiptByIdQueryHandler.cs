@@ -5,15 +5,20 @@
         private readonly IMapper _mapper;
         private readonly IGoodsReceiptRepository _goodsReceiptRepository;
         private readonly GoodsReceiptQueries goodsReceiptQuery;
-        private readonly GoodsIssueQueries goodsIssueQueries;
+        private readonly ApplicationDbContext _context;
 
-        public GetGoodsReceiptByIdQueryHandler(IMapper mapper, IGoodsReceiptRepository goodsReceiptRepository, GoodsReceiptQueries goodsReceiptQuery, GoodsIssueQueries goodsIssueQueries)
+        public GetGoodsReceiptByIdQueryHandler(IMapper mapper, IGoodsReceiptRepository goodsReceiptRepository, GoodsReceiptQueries goodsReceiptQuery, ApplicationDbContext context)
         {
             _mapper = mapper;
             _goodsReceiptRepository = goodsReceiptRepository;
             this.goodsReceiptQuery = goodsReceiptQuery;
-            this.goodsIssueQueries = goodsIssueQueries;
+            _context = context;
         }
+
+        private IQueryable<GoodsIssueLot> _goodsIssueLots => _context.goodsIssues
+            .AsNoTracking()
+            .SelectMany(gi => gi.Entries)
+            .SelectMany(e => e.Lots);
 
         public async Task<QueryResult<GoodsReceiptViewModel>> Handle(GetGoodsReceiptByIdQuery request, CancellationToken cancellationToken)
         {
@@ -27,7 +32,7 @@
 
             foreach(var receiptLot in goodsReceiptViewModel.GoodsReceiptLots)
             {
-                var itemLot = await goodsIssueQueries._goodsIssueLots
+                var itemLot = await _goodsIssueLots
                     .FirstOrDefaultAsync(l => l.GoodsIssueLotId == receiptLot.GoodsReceiptLotId);
                 if (itemLot != null)
                 {

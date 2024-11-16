@@ -39,14 +39,20 @@
         }
 
         [HttpGet("GoodsIssue/GetGoodsIssueByTime")]
-        public async Task<IEnumerable<GoodsIssueViewModel>> GetGoodsIssueByTime([FromBody] GetGoodsIssuesByTimeQuery getGoodsIssuesByTimeQuery)
+        public async Task<IEnumerable<GoodsIssueViewModel>> GetGoodsIssueByTime([FromQuery] bool isExported)
         {
-            var query = new GetGoodsIssuesByTimeQuery(getGoodsIssuesByTimeQuery.Query, getGoodsIssuesByTimeQuery.isExported);
-
+            var timeRangeQuery = new TimeRangeQuery(DateTime.MinValue, DateTime.Now);
+            var query = new GetGoodsIssuesByTimeQuery(timeRangeQuery, isExported);
             return await _mediator.Send(query);
         }
 
+        [HttpGet("GoodsIssue/GetReceivers")]
+        public async Task<IEnumerable<string>> GetReceivers()
+        {
+            var query = new GetReceiversQuery();
 
+            return await _mediator.Send(query);
+        }
 
 
 
