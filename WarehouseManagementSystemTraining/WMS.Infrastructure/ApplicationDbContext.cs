@@ -64,6 +64,8 @@ namespace WMS.Infrastructure
         {
             modelBuilder.Entity<Item>().ToTable("items");
 
+            modelBuilder.ApplyConfiguration(new DepartmentEntityTypeConfiguration());
+
             modelBuilder.ApplyConfiguration(new EmployeeEntityTypeConfiguration());
 
             modelBuilder.ApplyConfiguration(new FinishedProductInventoryEntryEntityTypeConfiguration());
@@ -75,9 +77,11 @@ namespace WMS.Infrastructure
             modelBuilder.ApplyConfiguration(new GoodsIssueEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new GoodsIssueEntryEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new GoodsIssueLotEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new GoodsIssueSubLotEntityTypeConfiguration());
 
             modelBuilder.ApplyConfiguration(new GoodsReceiptEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new GoodsReceiptLotEntityTypeConfigurations());
+            modelBuilder.ApplyConfiguration(new GoodsReceiptSubLotEntityTypeConfigurations());
 
             modelBuilder.ApplyConfiguration(new InventoryLogEntryEntityTypeConfiguration());
 
@@ -94,7 +98,7 @@ namespace WMS.Infrastructure
             modelBuilder.ApplyConfiguration(new UserAccountEntityTypeConfiguration());
 
             modelBuilder.ApplyConfiguration(new WarehouseEntityTypeConfiguration());
-            modelBuilder.ApplyConfiguration(new DepartmentEntityTypeConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
 

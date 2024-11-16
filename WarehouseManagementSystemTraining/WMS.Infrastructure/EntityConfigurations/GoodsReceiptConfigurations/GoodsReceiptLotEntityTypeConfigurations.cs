@@ -6,6 +6,11 @@
         {
             builder.HasKey(g => g.GoodsReceiptLotId);
 
+            builder.HasOne(g => g.GoodsReceipt)
+                   .WithMany(s => s.Lots)
+                   .HasForeignKey(g => g.GoodsReceiptId)
+                   .IsRequired(false);
+
             builder.HasOne(g => g.Employee)
                    .WithMany()
                    .HasForeignKey(g => g.EmployeeId)
@@ -16,10 +21,6 @@
                    .HasForeignKey(g => g.ItemId)
                    .IsRequired(false);
 
-            builder.HasMany(g => g.Sublots)
-                   .WithOne()
-                   .IsRequired(false)
-                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

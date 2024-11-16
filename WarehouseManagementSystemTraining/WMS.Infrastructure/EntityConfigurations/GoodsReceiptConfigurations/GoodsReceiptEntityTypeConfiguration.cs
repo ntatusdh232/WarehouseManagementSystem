@@ -6,14 +6,11 @@
         {
             builder.HasKey(g => g.GoodsReceiptId);
 
+            builder.Ignore(g => g.Id);
+
             builder.HasOne(g => g.Employee)
                    .WithMany()
                    .IsRequired(false);
-
-            builder.HasMany(g => g.Lots)
-                   .WithOne()
-                   .IsRequired(false)
-                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

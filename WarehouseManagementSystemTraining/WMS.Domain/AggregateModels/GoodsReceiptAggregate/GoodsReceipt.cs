@@ -5,11 +5,16 @@ namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
 {
     public class GoodsReceipt : Entity ,IAggregateRoot
     {
+        [Key]
         public String GoodsReceiptId { get; set; }
+
         public String Supplier { get; set; }
         public DateTime Timestamp { get; set; }
-        public Employee Employee { get; set; }
+
+        [ForeignKey("Employee")]    
         public string EmployeeId { get; set; }
+        public Employee Employee { get; set; }
+
         public List<GoodsReceiptLot> Lots { get; set; }
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
