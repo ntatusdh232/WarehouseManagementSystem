@@ -2,5 +2,8 @@
 {
     public class GetAllDepartmentsQuery : PaginatedQuery, IRequest<IEnumerable<DepartmentViewModel>>
     {
+        public GetAllDepartmentsQuery()
+        {
+        }
     }
 }

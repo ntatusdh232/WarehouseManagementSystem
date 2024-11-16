@@ -13,7 +13,7 @@ namespace WMS.Infrastructure.Repositories
      
         }
 
-        public async Task<IEnumerable<Department>> GetAllAsync()
+        public async Task<List<Department>> GetAllAsync()
         {
             return await _context.departments.ToListAsync();
         }

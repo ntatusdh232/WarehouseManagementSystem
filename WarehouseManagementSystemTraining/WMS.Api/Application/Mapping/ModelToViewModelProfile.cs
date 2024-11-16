@@ -24,8 +24,8 @@ namespace WMS.Api.Application.Mapping
 
         public void MapDepartmentViewModel()
         {
-            CreateMap<QueryResult<Warehouse>, QueryResult<DepartmentViewModel>>();
-            CreateMap<Warehouse, DepartmentViewModel>();
+            CreateMap<QueryResult<Department>, QueryResult<DepartmentViewModel>>();
+            CreateMap<Department, DepartmentViewModel>();
         }
 
         public void MapFinishedProductInventoryViewModel()

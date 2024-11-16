@@ -2,7 +2,7 @@
 {
     public interface IDepartmentRepository : IRepository<Department>
     {
-        Task<IEnumerable<Department>> GetAllAsync();
+        Task<List<Department>> GetAllAsync();
         Department Add(Department department);
     }
 }

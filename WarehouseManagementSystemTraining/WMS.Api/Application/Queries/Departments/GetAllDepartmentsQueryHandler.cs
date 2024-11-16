@@ -16,7 +16,9 @@ namespace WMS.Api.Application.Queries.Departments
         public async Task<IEnumerable<DepartmentViewModel>> Handle(GetAllDepartmentsQuery request, CancellationToken cancellationToken)
         {
             var departments = await _departmentRepository.GetAllAsync();
+
             var departmentViewModels = _mapper.Map<IEnumerable<DepartmentViewModel>>(departments);
+
             return departmentViewModels;
         }
     }
