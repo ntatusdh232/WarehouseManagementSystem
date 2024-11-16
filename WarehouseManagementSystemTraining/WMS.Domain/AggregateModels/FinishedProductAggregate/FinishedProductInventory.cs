@@ -2,12 +2,17 @@
 {
     public  class FinishedProductInventory : IAggregateRoot
     {
+        [Key]
         public string FinishedProductInventoryId { get; set; }
+
         public string PurchaseOrderNumber { get; set; }
         public double Quantity { get; set; }
         public DateTime Timestamp { get; set; }
-        public Item Item { get; set; }
+
+        [ForeignKey("Item")]
         public string ItemId { get; set; }
+        public Item Item { get; set; }
+
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private FinishedProductInventory() { }

@@ -94,9 +94,6 @@ namespace WMS.Api.Migrations
                     b.Property<string>("EmployeeId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
                     b.Property<string>("Receiver")
                         .HasColumnType("nvarchar(max)");
 
@@ -759,14 +756,15 @@ namespace WMS.Api.Migrations
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.FinishedProductAggregate.FinishedProductIssueEntry", b =>
                 {
-                    b.HasOne("WMS.Domain.AggregateModels.FinishedProductAggregate.FinishedProductIssue", null)
+                    b.HasOne("WMS.Domain.AggregateModels.FinishedProductAggregate.FinishedProductIssue", "FinishedProductIssue")
                         .WithMany("Entries")
-                        .HasForeignKey("FinishedProductIssueId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("FinishedProductIssueId");
 
                     b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.Item", "Item")
                         .WithMany()
                         .HasForeignKey("ItemId");
+
+                    b.Navigation("FinishedProductIssue");
 
                     b.Navigation("Item");
                 });

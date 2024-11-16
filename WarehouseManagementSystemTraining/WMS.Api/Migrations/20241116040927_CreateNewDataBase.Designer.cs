@@ -12,8 +12,8 @@ using WMS.Infrastructure;
 namespace WMS.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241115092607_UpdateGetItemByIdAndUnit")]
-    partial class UpdateGetItemByIdAndUnit
+    [Migration("20241116040927_CreateNewDataBase")]
+    partial class CreateNewDataBase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -119,6 +119,7 @@ namespace WMS.Api.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FinishedProductIssueId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ItemId")
@@ -150,6 +151,10 @@ namespace WMS.Api.Migrations
 
                     b.Property<string>("EmployeeId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FinishedProductReceiptEntryId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Id")
                         .HasColumnType("int");
@@ -758,7 +763,7 @@ namespace WMS.Api.Migrations
 
             modelBuilder.Entity("WMS.Domain.AggregateModels.FinishedProductAggregate.FinishedProductIssueEntry", b =>
                 {
-                    b.HasOne("WMS.Domain.AggregateModels.FinishedProductAggregate.FinishedProductIssue", null)
+                    b.HasOne("WMS.Domain.AggregateModels.FinishedProductAggregate.FinishedProductIssue", "FinishedProductIssue")
                         .WithMany("Entries")
                         .HasForeignKey("FinishedProductIssueId")
                         .OnDelete(DeleteBehavior.Restrict);
@@ -766,6 +771,8 @@ namespace WMS.Api.Migrations
                     b.HasOne("WMS.Domain.AggregateModels.ItemAggregate.Item", "Item")
                         .WithMany()
                         .HasForeignKey("ItemId");
+
+                    b.Navigation("FinishedProductIssue");
 
                     b.Navigation("Item");
                 });

@@ -6,14 +6,11 @@
         {
             builder.HasKey(f => f.FinishedProductIssueId);
 
+            builder.Ignore(s => s.Id);
+
             builder.HasOne(f => f.Employee)
                    .WithMany()
                    .IsRequired(false);
-
-            builder.HasMany(f => f.Entries)
-                   .WithOne()
-                   .IsRequired(false)
-                   .OnDelete(DeleteBehavior.Restrict);
 
         }
     }

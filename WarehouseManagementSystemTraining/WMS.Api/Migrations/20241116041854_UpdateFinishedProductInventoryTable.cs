@@ -5,7 +5,7 @@
 namespace WMS.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class FixSomeErrorAPI : Migration
+    public partial class UpdateFinishedProductInventoryTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

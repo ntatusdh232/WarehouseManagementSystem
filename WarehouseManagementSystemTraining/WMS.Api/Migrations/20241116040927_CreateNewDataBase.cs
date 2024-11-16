@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WMS.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateDatabase : Migration
+    public partial class CreateNewDataBase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -120,6 +120,7 @@ namespace WMS.Api.Migrations
                     FinishedProductReceiptId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Timestamp = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EmployeeId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    FinishedProductReceiptEntryId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -355,8 +356,8 @@ namespace WMS.Api.Migrations
                     PurchaseOrderNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Quantity = table.Column<double>(type: "float", nullable: false),
                     Note = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ItemId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    FinishedProductIssueId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    FinishedProductIssueId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ItemId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {

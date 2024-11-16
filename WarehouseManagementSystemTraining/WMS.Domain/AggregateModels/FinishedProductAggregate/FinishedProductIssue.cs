@@ -1,15 +1,17 @@
-﻿using WMS.Domain.DomainEvents.FinishedProductIssueEvents;
-
+﻿
 namespace WMS.Domain.AggregateModels.FinishedProductAggregate
 {
     public class FinishedProductIssue : Entity, IAggregateRoot
-    { 
+    {
+        [Key]
         public string FinishedProductIssueId { get; set; }
         public string? Receiver { get; set; }
         public DateTime Timestamp { get; set; }
-        public Employee Employee { get; set; }
         public List<FinishedProductIssueEntry> Entries { get; set; }
+
+        [ForeignKey("Employee")]
         public string EmployeeId { get; set; }
+        public Employee Employee { get; set; }
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private FinishedProductIssue() { }

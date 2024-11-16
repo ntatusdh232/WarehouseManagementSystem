@@ -1,14 +1,22 @@
-﻿namespace WMS.Domain.AggregateModels.FinishedProductAggregate
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WMS.Domain.AggregateModels.FinishedProductAggregate
 {
     public class FinishedProductIssueEntry : IAggregateRoot
     {
+        [Key]
         public string FinishedProductIssueEntryId { get; set; }
         public string PurchaseOrderNumber { get; set; }
         public double Quantity { get; set; }
         public string? Note { get; set; }
-        public Item Item { get; set; }
-        public string ItemId { get; set; } 
+
+        [ForeignKey("FinishedProductIssue")]
         public string FinishedProductIssueId { get; set; }
+        public FinishedProductIssue FinishedProductIssue { get; set; }
+
+        [ForeignKey("Item")]
+        public string ItemId { get; set; }
+        public Item Item { get; set; }
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private FinishedProductIssueEntry() { }
