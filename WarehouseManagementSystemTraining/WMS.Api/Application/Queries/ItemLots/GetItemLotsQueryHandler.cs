@@ -3,17 +3,23 @@
     public class GetItemLotsQueryHandler : IRequestHandler<GetItemLotsQuery, IEnumerable<ItemLotViewModel>>
     {
         private readonly IMapper _mapper;
-        private readonly ItemLotsQueries itemLotsQueries;
+        private readonly ApplicationDbContext _context;
 
-        public GetItemLotsQueryHandler(IMapper mapper, ItemLotsQueries itemLotsQueries)
+        public GetItemLotsQueryHandler(IMapper mapper, ApplicationDbContext context)
         {
             _mapper = mapper;
-            this.itemLotsQueries = itemLotsQueries;
+            _context = context;
         }
+
+        private IQueryable<ItemLot> _itemLots => _context.itemsLot
+            .AsNoTracking()
+            .Include(il => il.ItemLotLocations)
+            .ThenInclude(ill => ill.Location)
+            .Include(il => il.Item);
 
         public async Task<IEnumerable<ItemLotViewModel>> Handle(GetItemLotsQuery request, CancellationToken cancellationToken)
         {
-            var itemLots = await itemLotsQueries._itemLots
+            var itemLots = await _itemLots
                             .Where(i => i.Item.ItemId == request.itemId)
                             .ToListAsync();
 

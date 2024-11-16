@@ -1,7 +1,4 @@
 ﻿using WMS.Api.Application.Mapping;
-using WMS.Api.Application.Queries.ItemLots;
-using WMS.Api.Application.Queries.LotAdjustments;
-using WMS.Domain.AggregateModels.DepartmentAggregate;
 using WMS.Domain.AggregateModels.LotAdjustmentAggregate;
 
 namespace WMS.Api
@@ -40,11 +37,6 @@ namespace WMS.Api
             builder.Services.AddScoped<IInventoryLogEntryRepository, InventoryLogEntryRepository>();
             builder.Services.AddScoped<IIsolatedItemLotRepository, IsolatedItemLotRepository>();
             builder.Services.AddScoped<ILotAdjustmentRepository, LotAdjustmentRepository>();
-
-            builder.Services.AddScoped<LotAdjustmentQueries>();
-            builder.Services.AddScoped<ItemLotsQueries>();
-
-
 
             // Add MVC services to the container
             builder.Services.AddControllers();
