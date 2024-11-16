@@ -2,7 +2,7 @@
 {
     public interface IEmployeeRepository : IRepository<Employee>
     {
-        Task<IEnumerable<Employee>> GettAllAsync();
+        Task<List<Employee>> GettAllAsync();
         Task<Employee> GetEmployeeById(string employeeId);
         Task<Employee> GetEmployeeByName(string employeeName);
         Task<Employee> Add(Employee employee);

@@ -18,6 +18,7 @@ namespace WMS.Api.Application.Mapping
             MapGoodsReceiptSublotViewModel();
             MapGoodsReceiptViewModel();
             MapItemLotViewModel();
+            MapEmployeeViewModel();
 
         }
 
@@ -86,5 +87,12 @@ namespace WMS.Api.Application.Mapping
             CreateMap<QueryResult<ItemLot>, QueryResult<ItemLotViewModel>>();
             CreateMap<ItemLot, ItemLotViewModel>();
         }
+
+        public void MapEmployeeViewModel()
+        {
+            CreateMap<Employee, EmployeeViewModel>();
+            CreateMap<QueryResult<Employee>, QueryResult<EmployeeViewModel>>();
+        }
+
     }
 }

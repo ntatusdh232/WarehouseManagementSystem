@@ -1,7 +1,7 @@
 ﻿
 namespace WMS.Api.Application.Queries.Employees
 {
-    public class GetEmployeeByIdQueryHandler : IRequestHandler<GetEmployeeByIdQuery, QueryResult<EmployeeViewModel>>
+    public class GetEmployeeByIdQueryHandler : IRequestHandler<GetEmployeeByIdQuery, EmployeeViewModel>
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IMapper _mapper;
@@ -12,7 +12,7 @@ namespace WMS.Api.Application.Queries.Employees
             _mapper = mapper;
         }
 
-        public async Task<QueryResult<EmployeeViewModel>> Handle(GetEmployeeByIdQuery request, CancellationToken cancellationToken)
+        public async Task<EmployeeViewModel> Handle(GetEmployeeByIdQuery request, CancellationToken cancellationToken)
         {
             var employee = await _employeeRepository.GetEmployeeById(request.EmployeeId);
             if (employee == null)
@@ -20,7 +20,7 @@ namespace WMS.Api.Application.Queries.Employees
                 throw new EntityNotFoundException(nameof(Employee), request.EmployeeId);
             }
 
-            var employeeViewModel = _mapper.Map<QueryResult<EmployeeViewModel>>(employee);
+            var employeeViewModel = _mapper.Map<EmployeeViewModel>(employee);
 
             return employeeViewModel;
 

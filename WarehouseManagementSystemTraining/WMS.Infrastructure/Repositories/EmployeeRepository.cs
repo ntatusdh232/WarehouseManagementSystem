@@ -5,17 +5,11 @@
 
         public EmployeeRepository(ApplicationDbContext context) : base(context){}
 
-        public async Task<IEnumerable<Employee>> GettAllAsync()
+        public async Task<List<Employee>> GettAllAsync()
         {
-            var employeeList = await _context.employees
-                .AsNoTracking()
-                .Select(e => new Employee
-                (
-                    e.EmployeeId,
-                    e.EmployeeName
-                )).ToListAsync();
+            var employees = await _context.employees.ToListAsync();
 
-            return employeeList;
+            return employees;
         }
 
         public async Task<Employee> GetEmployeeById(string employeeId)
