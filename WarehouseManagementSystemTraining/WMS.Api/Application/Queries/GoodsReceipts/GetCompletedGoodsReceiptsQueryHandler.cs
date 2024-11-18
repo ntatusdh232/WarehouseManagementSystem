@@ -44,6 +44,22 @@
             return newGoodsReceiptViewModel;
 
         }
+        public async Task<IEnumerable<GoodsReceiptViewModel>> GetCompleteGoodsReceipt()
+        {
+            var completedGoodsReceipts = await _goodsReceipts
+                .Where(g => g.Lots.All(lot => lot.ProductionDate != null
+                                           && lot.ExpirationDate != null
+                                           && lot.Sublots.Count > 0)
+                         && g.Supplier != null)
+                .ToListAsync();
+
+            var goodsReceiptViewModel = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(completedGoodsReceipts);
+
+            var newGoodsReceiptViewModel = await Filter(goodsReceipts: goodsReceiptViewModel,
+                                                        goodsIssueLots: _goodsIssueLots);
+
+            return newGoodsReceiptViewModel;
+        }
 
         private async Task<IEnumerable<GoodsReceiptViewModel>> Filter(IEnumerable<GoodsReceiptViewModel> goodsReceipts, IQueryable<GoodsIssueLot> goodsIssueLots)
         {

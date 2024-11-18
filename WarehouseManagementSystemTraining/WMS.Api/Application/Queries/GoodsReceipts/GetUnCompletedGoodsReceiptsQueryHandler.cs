@@ -36,6 +36,17 @@
 
             return await Filter(goodsReceiptViewModels, _goodsIssueLots);
         }
+        public async Task<IEnumerable<GoodsReceiptViewModel>> GetUnCompleteGoodsReceipt()
+        {
+            var completedGoodsReceipts = await _goodsReceipts
+                                        .Where(g => g.Lots
+                                        .All(lot => lot.ProductionDate == null && lot.ExpirationDate == null && lot.Sublots.Count == 0) && g.Supplier == null)
+                                        .ToListAsync();
+
+            var goodsReceiptViewModels = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(completedGoodsReceipts);
+
+            return await Filter(goodsReceiptViewModels, _goodsIssueLots);
+        }
 
         private async Task<IEnumerable<GoodsReceiptViewModel>> Filter(IEnumerable<GoodsReceiptViewModel> goodsReceipts, IQueryable<GoodsIssueLot> goodsIssueLots)
         {
