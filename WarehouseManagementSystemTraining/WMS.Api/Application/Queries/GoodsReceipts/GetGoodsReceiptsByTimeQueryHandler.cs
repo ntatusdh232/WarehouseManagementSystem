@@ -1,37 +1,35 @@
-﻿namespace WMS.Api.Application.Queries.GoodsReceipts
+﻿public class GetGoodsReceiptsByTimeQueryHandler : IRequestHandler<GetGoodsReceiptsByTimeQuery, IEnumerable<GoodsReceiptViewModel>>
 {
-    public class GetGoodsReceiptsByTimeQueryHandler : IRequestHandler<GetGoodsReceiptsByTimeQuery, IEnumerable<GoodsReceiptViewModel>>
+    private readonly IMapper _mapper;
+    private readonly ApplicationDbContext _context;
+    private readonly IMediator _mediator;
+
+    public GetGoodsReceiptsByTimeQueryHandler(IMapper mapper, ApplicationDbContext context, IMediator mediator)
     {
-        private readonly IMapper _mapper;
-        private readonly ApplicationDbContext _context;
-        private readonly GetCompletedGoodsReceiptsQueryHandler _completedGoodsReceipt;
-        private readonly GetUnCompletedGoodsReceiptsQueryHandler _uncompletedGoodsReceipt;
+        _mapper = mapper;
+        _context = context;
+        _mediator = mediator;
+    }
 
-        public GetGoodsReceiptsByTimeQueryHandler(IMapper mapper, ApplicationDbContext context, GetCompletedGoodsReceiptsQueryHandler completedGoodsReceipt, GetUnCompletedGoodsReceiptsQueryHandler uncompletedGoodsReceipt)
+    public async Task<IEnumerable<GoodsReceiptViewModel>> Handle(GetGoodsReceiptsByTimeQuery request, CancellationToken cancellationToken)
+    {
+        IEnumerable<GoodsReceiptViewModel> goodsReceipts = new List<GoodsReceiptViewModel>();
+
+        if (request.IsCompleted is true)
         {
-            _mapper = mapper;
-            _context = context;
-            _completedGoodsReceipt = completedGoodsReceipt;
-            _uncompletedGoodsReceipt = uncompletedGoodsReceipt;
+            goodsReceipts = await _mediator.Send(new GetCompletedGoodsReceiptsQuery());
+        }
+        else
+        {
+            goodsReceipts = await _mediator.Send(new GetUnCompletedGoodsReceiptsQuery());
         }
 
-        public async Task<IEnumerable<GoodsReceiptViewModel>> Handle(GetGoodsReceiptsByTimeQuery request, CancellationToken cancellationToken)
-        {
-            IEnumerable<GoodsReceiptViewModel> goodsReceipts = new List<GoodsReceiptViewModel>();
+        var resultedGoodsReceipts = goodsReceipts
+            .Where(gr => gr.Timestamp >= request.Query.StartTime && gr.Timestamp <= request.Query.EndTime)
+            .Skip((request.Query.Page - 1) * request.Query.ItemsPerPage)
+            .Take(request.Query.ItemsPerPage)
+            .ToList();
 
-            if (request.IsCompleted is true)
-            {
-                goodsReceipts = await _completedGoodsReceipt.GetCompleteGoodsReceipt();
-            }
-            else
-            {
-                goodsReceipts = await _uncompletedGoodsReceipt.GetUnCompleteGoodsReceipt();
-            }
-            var resultedGoodsReceipts = goodsReceipts.Where(gr => gr.Timestamp >= request.Query.StartTime && gr.Timestamp <= request.Query.EndTime)
-                                                     .Skip((request.Query.Page - 1) * request.Query.ItemsPerPage)
-                                                     .Take(request.Query.ItemsPerPage).ToList();
-            return resultedGoodsReceipts;
-
-        }
+        return resultedGoodsReceipts;
     }
 }
