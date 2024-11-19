@@ -1,19 +1,35 @@
-﻿namespace WMS.Api.Application.Queries.GoodsReceipts
+﻿public class GetGoodsReceiptsByTimeQueryHandler : IRequestHandler<GetGoodsReceiptsByTimeQuery, IEnumerable<GoodsReceiptViewModel>>
 {
-    public class GetGoodsReceiptsByTimeQueryHandler : IRequestHandler<GetGoodsReceiptsByTimeQuery, IEnumerable<GoodsReceiptViewModel>>
+    private readonly IMapper _mapper;
+    private readonly ApplicationDbContext _context;
+    private readonly IMediator _mediator;
+
+    public GetGoodsReceiptsByTimeQueryHandler(IMapper mapper, ApplicationDbContext context, IMediator mediator)
     {
-        private readonly IMapper _mapper;
-        private readonly IGoodsReceiptRepository _goodsReceiptRepository;
+        _mapper = mapper;
+        _context = context;
+        _mediator = mediator;
+    }
 
-        public GetGoodsReceiptsByTimeQueryHandler(IMapper mapper, IGoodsReceiptRepository goodsReceiptRepository)
+    public async Task<IEnumerable<GoodsReceiptViewModel>> Handle(GetGoodsReceiptsByTimeQuery request, CancellationToken cancellationToken)
+    {
+        IEnumerable<GoodsReceiptViewModel> goodsReceipts = new List<GoodsReceiptViewModel>();
+
+        if (request.IsCompleted is true)
         {
-            _mapper = mapper;
-            _goodsReceiptRepository = goodsReceiptRepository;
+            goodsReceipts = await _mediator.Send(new GetCompletedGoodsReceiptsQuery());
+        }
+        else
+        {
+            goodsReceipts = await _mediator.Send(new GetUnCompletedGoodsReceiptsQuery());
         }
 
-        public async Task<IEnumerable<GoodsReceiptViewModel>> Handle(GetGoodsReceiptsByTimeQuery request, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();    
-        }
+        var resultedGoodsReceipts = goodsReceipts
+            .Where(gr => gr.Timestamp >= request.Query.StartTime && gr.Timestamp <= request.Query.EndTime)
+            .Skip((request.Query.Page - 1) * request.Query.ItemsPerPage)
+            .Take(request.Query.ItemsPerPage)
+            .ToList();
+
+        return resultedGoodsReceipts;
     }
 }
