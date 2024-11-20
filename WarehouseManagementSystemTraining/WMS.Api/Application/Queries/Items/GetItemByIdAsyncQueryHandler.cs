@@ -1,37 +1,24 @@
-﻿namespace WMS.Api.Application.Queries.Items
+﻿
+namespace WMS.Api.Application.Queries.Items;
+
+public class GetItemByIdAsyncQueryHandler : IRequestHandler<GetItemByIdAsyncQuery, ItemViewModel>
 {
-    public class GetItemByIdAsyncQueryHandler : IRequestHandler<GetItemByIdAsyncQuery, ItemViewModel>
+    private readonly IMapper _mapper;
+    private readonly ApplicationDbContext _context;
+
+    public GetItemByIdAsyncQueryHandler(IMapper mapper, ApplicationDbContext context)
     {
-        private readonly IMapper _mapper;
-        private readonly IItemRepository _itemRepository;
-        private Item item { get; set; }
+        _mapper = mapper;
+        _context = context;
+    }
+    private IQueryable<Item> _items => _context.items.AsNoTracking();
 
-        public GetItemByIdAsyncQueryHandler(IMapper mapper, IItemRepository itemRepository)
-        {
-            _mapper = mapper;
-            _itemRepository = itemRepository;
-        }
+    public async Task<ItemViewModel> Handle(GetItemByIdAsyncQuery request, CancellationToken cancellationToken)
+    {
+        var item = await _items.Where(x => x.ItemId == request.ItemId && x.Unit == request.Unit).FirstOrDefaultAsync();
 
+        var viewModel = _mapper.Map<ItemViewModel>(item);
 
-
-        public async Task<ItemViewModel> Handle(GetItemByIdAsyncQuery request, CancellationToken cancellationToken)
-        {
-            if (request.Unit is null)
-            {
-                item = await _itemRepository.GetItemById(request.ItemId);
-            }
-            else
-            {
-                item = await _itemRepository.GetItemByIdAndUnit(request.ItemId, request.Unit);
-            }
-
-            if (item == null)
-            {
-                throw new EntityNotFoundException(nameof(Item), request.ItemId);
-            }
-            var ItemViewModel = _mapper.Map<ItemViewModel>(item);
-            return ItemViewModel;
-
-        }
+        return viewModel;
     }
 }
