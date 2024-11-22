@@ -1,4 +1,6 @@
-﻿namespace WMS.Api.Controllers
+﻿using WMS.Domain.AggregateModels.StorageAggregate;
+
+namespace WMS.Api.Controllers
 {
     [Route("API/[controller]")]
     [ApiController]
@@ -20,6 +22,13 @@
             return await _mediator.Send(query);
         }
 
+        [HttpGet("GetWarehouseById/{Id}")]
+        public async Task<QueryResult<WarehouseViewModel>> GetWarehouseById(string warehouseId)
+        {
+            var query = new GetWarehouseByIdQuery(warehouseId);
+
+            return await _mediator.Send(query);
+        }
 
     }
 
