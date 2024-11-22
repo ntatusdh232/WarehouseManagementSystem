@@ -20,10 +20,10 @@ namespace WMS.Api.Application.Queries.LotAdjustments
             .Include(a => a.Employee)
             .Include(a => a.SublotAdjustments);
 
-        public async Task<IEnumerable<LotAdjustmentViewModel>> Handle(GetAdjustmentsByTimeQuery query, CancellationToken cancellationToken)
+        public async Task<IEnumerable<LotAdjustmentViewModel>> Handle(GetAdjustmentsByTimeQuery request, CancellationToken cancellationToken)
         {
             var adjustments = await _lotAdjustments
-                .Where(s => s.Timestamp >= query.StartTime && s.Timestamp <= query.EndTime)
+                .Where(s => s.Timestamp >= request.Query.StartTime && s.Timestamp <= request.Query.EndTime)
                 .Where(s => s.IsConfirmed)
                 .ToListAsync();
 

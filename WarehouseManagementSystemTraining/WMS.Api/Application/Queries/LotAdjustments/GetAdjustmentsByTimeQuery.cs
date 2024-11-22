@@ -2,13 +2,11 @@
 {
     public class GetAdjustmentsByTimeQuery : PaginatedQuery, IRequest<IEnumerable<LotAdjustmentViewModel>>
     {
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public TimeRangeQuery Query;
 
-        public GetAdjustmentsByTimeQuery(DateTime startTime, DateTime endTime)
+        public GetAdjustmentsByTimeQuery(TimeRangeQuery query)
         {
-            StartTime = startTime;
-            EndTime = endTime;
+            Query = query;
         }
     }
 }

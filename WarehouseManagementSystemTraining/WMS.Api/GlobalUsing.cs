@@ -17,6 +17,8 @@ global using WMS.Api.Application.Queries.FinishedProductReceipts;
 global using WMS.Api.Application.Queries.GoodsIssues;
 global using WMS.Api.Application.Queries.GoodsReceipts;
 global using WMS.Api.Application.Queries.Items;
+global using WMS.Api.Application.Queries.ItemLots;
+global using WMS.Api.Application.Queries.LotAdjustments;
 global using WMS.Api.Application.Queries.Warehouses;
 global using WMS.Api.Exceptions;
 global using WMS.Domain.AggregateModels.DepartmentAggregate;
