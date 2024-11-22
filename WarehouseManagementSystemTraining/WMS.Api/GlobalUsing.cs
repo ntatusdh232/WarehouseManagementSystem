@@ -12,6 +12,7 @@ global using WMS.Api.Application.Queries;
 global using WMS.Api.Application.Queries.Departments;
 global using WMS.Api.Application.Queries.Employees;
 global using WMS.Api.Application.Queries.FinishedProductInventories;
+global using WMS.Api.Application.Queries.FinishedProductIssues;
 global using WMS.Api.Application.Queries.FinishedProductReceipts;
 global using WMS.Api.Application.Queries.GoodsIssues;
 global using WMS.Api.Application.Queries.GoodsReceipts;

@@ -1,6 +1,6 @@
 ﻿namespace WMS.Api.Application.Queries.FinishedProductIssues
 {
-    public class GetProductIssueByIdQueryHandler : IRequestHandler<GetProductIssueByIdQuery, QueryResult<FinishedProductIssueViewModel>>
+    public class GetProductIssueByIdQueryHandler : IRequestHandler<GetProductIssueByIdQuery, FinishedProductIssueViewModel>
     {
         private readonly IFinishedProductIssueRepository _finishedProductIssueRepository;
         private readonly IMapper _mapper;
@@ -11,15 +11,16 @@
             _mapper = mapper;
         }
 
-        public async Task<QueryResult<FinishedProductIssueViewModel>> Handle(GetProductIssueByIdQuery request, CancellationToken cancellationToken)
+        public async Task<FinishedProductIssueViewModel> Handle(GetProductIssueByIdQuery request, CancellationToken cancellationToken)
         {
             var productIssue = await _finishedProductIssueRepository.GetIssueById(request.ProductIssueId);
+
             if (productIssue is null)
             {
                 throw new EntityNotFoundException(nameof(FinishedProductIssue), request.ProductIssueId);
             }
 
-            var productIssueViewModel = _mapper.Map<QueryResult<FinishedProductIssueViewModel>>(productIssue);
+            var productIssueViewModel = _mapper.Map<FinishedProductIssueViewModel>(productIssue);
 
             return productIssueViewModel;
 

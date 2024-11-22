@@ -1,6 +1,6 @@
 ﻿namespace WMS.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("API/[controller]")]
     [ApiController]
     public class FinishedProductInventoryController : ControllerBase
     {
@@ -11,7 +11,7 @@
             _mediator = mediator;
         }
 
-        [HttpGet("FinishedProductInventory/GetPOs")]
+        [HttpGet("GetPOs")]
         public async Task<IEnumerable<string>> GetPOs()
         {
             var query = new GetPOsQuery();
@@ -19,7 +19,7 @@
             return await _mediator.Send(query);
         }
 
-        [HttpGet("FinishedProductInventory/GetProductInventoriesByItemId/{Id}")]
+        [HttpGet("GetProductInventoriesByItemId/{Id}")]
         public async Task<IEnumerable<FinishedProductInventoryViewModel>> GetProductInventoriesByItemId(string Id)
         {
             var query = new GetProductInventoriesByItemIdQuery(Id);

@@ -1,6 +1,6 @@
 ﻿namespace WMS.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("API/[controller]")]
     [ApiController]
     public class WarehouseController : ControllerBase
     {
@@ -12,7 +12,7 @@
         }
 
 
-        [HttpGet("Warehouse/GetAll")]
+        [HttpGet("GetAll")]
         public async Task<IEnumerable<WarehouseViewModel>> GetAll()
         {
             var query = new GetAllWarehousesQuery();

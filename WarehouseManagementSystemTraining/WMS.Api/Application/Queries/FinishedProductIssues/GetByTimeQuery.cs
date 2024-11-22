@@ -1,11 +1,14 @@
-﻿namespace WMS.Api.Application.Queries.FinishedProductIssues;
-
-public class GetByTimeQuery : PaginatedQuery, IRequest<IEnumerable<FinishedProductIssueViewModel>>
+﻿namespace WMS.Api.Application.Queries.FinishedProductIssues
 {
-    public TimeRangeQuery Query { get; set; }
-
-    public GetByTimeQuery(TimeRangeQuery query)
+    public class GetByTimeQuery : PaginatedQuery, IRequest<IEnumerable<FinishedProductIssueViewModel>>
     {
-        Query = query;
+        public TimeRangeQuery Query { get; set; }
+
+        public GetByTimeQuery(TimeRangeQuery query)
+        {
+            Query = query;
+        }
     }
+
 }
+
