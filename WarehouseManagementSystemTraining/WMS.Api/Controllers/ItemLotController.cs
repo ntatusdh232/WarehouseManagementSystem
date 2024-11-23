@@ -28,7 +28,7 @@
         }
 
         [HttpGet("GetItemLotByLotId/{LotId}")]
-        public async Task<QueryResult<ItemLotViewModel>> GetItemLotByLotId(string lotId)
+        public async Task<ItemLotViewModel> GetItemLotByLotId(string lotId)
         {
             var query = new GetItemLotByLotIdQuery(lotId);
 

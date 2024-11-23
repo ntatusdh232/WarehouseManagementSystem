@@ -21,7 +21,7 @@
             return await _mediator.Send(query);
         }
         [HttpGet("GetReceiptById/{Id}")]
-        public async Task<QueryResult<FinishedProductReceiptViewModel>> GetReceiptById(string Id)
+        public async Task<FinishedProductReceiptViewModel> GetReceiptById(string Id)
         {
             var query = new GetReceiptByIdQuery(Id);
 

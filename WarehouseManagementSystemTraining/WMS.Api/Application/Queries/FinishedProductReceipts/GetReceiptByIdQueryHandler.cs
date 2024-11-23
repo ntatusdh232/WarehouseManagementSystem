@@ -1,7 +1,7 @@
 ﻿
 namespace WMS.Api.Application.Queries.FinishedProductReceipts;
 
-public class GetReceiptByIdQueryHandler : IRequestHandler<GetReceiptByIdQuery, QueryResult<FinishedProductReceiptViewModel>>
+public class GetReceiptByIdQueryHandler : IRequestHandler<GetReceiptByIdQuery,FinishedProductReceiptViewModel>
 {
     private readonly ApplicationDbContext _context;
     private readonly IMapper _mapper;
@@ -12,7 +12,7 @@ public class GetReceiptByIdQueryHandler : IRequestHandler<GetReceiptByIdQuery, Q
         _mapper = mapper;
     }
 
-    public async Task<QueryResult<FinishedProductReceiptViewModel>> Handle(GetReceiptByIdQuery request, CancellationToken cancellationToken)
+    public async Task<FinishedProductReceiptViewModel> Handle(GetReceiptByIdQuery request, CancellationToken cancellationToken)
     {
         var goodsReceipt = _context.finishedProductReceipts.AsNoTracking();
 
@@ -32,6 +32,6 @@ public class GetReceiptByIdQueryHandler : IRequestHandler<GetReceiptByIdQuery, Q
 
         var queryResult = new QueryResult<FinishedProductReceipt>(requests, totalItems);
 
-        return _mapper.Map<QueryResult<FinishedProductReceipt>, QueryResult<FinishedProductReceiptViewModel>>(queryResult);
+        return _mapper.Map<FinishedProductReceiptViewModel>(queryResult);
     }
 }

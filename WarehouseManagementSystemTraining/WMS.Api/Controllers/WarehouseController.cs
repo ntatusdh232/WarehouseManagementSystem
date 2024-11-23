@@ -22,8 +22,8 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetWarehouseById/{Id}")]
-        public async Task<QueryResult<WarehouseViewModel>> GetWarehouseById(string warehouseId)
+        [HttpGet("GetWarehouseById/{warehouseId}")]
+        public async Task<WarehouseViewModel> GetWarehouseById(string warehouseId)
         {
             var query = new GetWarehouseByIdQuery(warehouseId);
 
