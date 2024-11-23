@@ -43,15 +43,8 @@
         {
             var lotAdjustments = await _context.lotAdjustments.FindAsync(LotId);
 
-            if (lotAdjustments == null)
-            {
-                throw new Exception("Lot Adjustment does not exist");
-            }
-            else
-            {
-                return lotAdjustments;
+            return lotAdjustments;
 
-            }
 
         }
 
@@ -59,15 +52,9 @@
         {
             var lotAdjustments = await _context.lotAdjustments.Where(l => l.IsConfirmed == false).ToListAsync();
 
-            if (lotAdjustments == null)
-            {
-                throw new Exception("Lot Adjustment does not exist");
-            }
-            else
-            {
-                return lotAdjustments;
+            return lotAdjustments;
 
-            }
+
         }
 
     }

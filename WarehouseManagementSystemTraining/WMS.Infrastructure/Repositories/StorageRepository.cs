@@ -41,10 +41,6 @@ namespace WMS.Infrastructure.Repositories
         public async Task<Location> GetLocationById(string locationId)
         {
             var location = await _context.locations.FindAsync(locationId);
-            if (location is null)
-            {
-                throw new Exception("Not Found");
-            }
 
             return location;
         }
@@ -57,10 +53,7 @@ namespace WMS.Infrastructure.Repositories
         public async Task<Warehouse> GetWarehouseById(string warehouseId)
         {
             var warehouse = await _context.warehouses.FindAsync(warehouseId);
-            if (warehouse is null)
-            {
-                throw new ArgumentException($"Warehouse does not exist.");
-            }
+
             return warehouse;
         }
 

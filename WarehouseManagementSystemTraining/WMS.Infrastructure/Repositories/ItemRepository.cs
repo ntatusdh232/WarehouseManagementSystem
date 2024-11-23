@@ -16,22 +16,12 @@
         {
             var item = await _context.items.FindAsync(entityId);
 
-            if (item == null)
-            {
-                throw new KeyNotFoundException($"Item with ID {entityId} not found.");
-            }
-
             return item;
         }
 
         public async Task<Item> GetItemByIdAndUnit(string itemId, string Unit)
         {
             var existingItem = await _context.items.Where(s => s.ItemId == itemId && s.Unit == Unit).FirstOrDefaultAsync();
-
-            if (existingItem is null)
-            {
-                throw new Exception("Not Found");
-            }
 
             return existingItem;
 
@@ -85,11 +75,6 @@
         {
             var item = await _context.items.FindAsync(itemId);
 
-            if (item == null)
-            {
-                throw new KeyNotFoundException($"Item with ID {itemId} not found.");
-            }
-
             return item;
         }
 
@@ -135,10 +120,6 @@
                 ))
                 .FirstOrDefaultAsync();
 
-            if (item == null)
-            {
-                throw new KeyNotFoundException($"Item with ID {itemId} not found.");
-            } 
             return item;
         }
 
@@ -158,7 +139,7 @@
                     x.ItemClassId
 
                 ))
-                .ToList()?? throw new KeyNotFoundException("Item not found");
+                .ToList();
         }
 
         public IEnumerable<Item> GetSort(string sortField, string sortDirection, IEnumerable<Item> items)

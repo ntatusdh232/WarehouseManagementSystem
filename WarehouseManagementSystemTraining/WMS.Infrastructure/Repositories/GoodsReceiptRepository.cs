@@ -113,22 +113,15 @@ namespace WMS.Infrastructure.Repositories
         {
             var existingItem = await _context.goodsReceipts.FindAsync(goodsReceiptId);
 
-            if (existingItem == null)
-            {
-                throw new ArgumentException($"GoodsReceipt with ID {goodsReceiptId} does not exist.");
-            }
-
             return existingItem;
 
         }
 
         public async Task<GoodsReceiptLot> GetGoodsReceiptLotById(string goodsReceiptId, string goodsReceiptLotId)
         {
-            var existingGoodsReceipt = await _context.goodsReceipts.FindAsync(goodsReceiptId)
-                ?? throw new ArgumentException($"GoodsReceipt with ID {goodsReceiptId} does not exist.");
+            var existingGoodsReceipt = await _context.goodsReceipts.FindAsync(goodsReceiptId);
 
-            var lot = existingGoodsReceipt.Lots.FirstOrDefault(x => x.GoodsReceiptLotId == goodsReceiptLotId)
-                ?? throw new ArgumentException($"GoodsReceiptLot with ID {goodsReceiptLotId} does not exist.");
+            var lot = existingGoodsReceipt.Lots.FirstOrDefault(x => x.GoodsReceiptLotId == goodsReceiptLotId);
 
             return lot;
         }
@@ -137,10 +130,6 @@ namespace WMS.Infrastructure.Repositories
         {
             var existingItem = await _context.goodsReceipts.FindAsync(goodsReceiptId);
 
-            if (existingItem == null)
-            {
-                throw new ArgumentException($"GoodsReceipt with ID {goodsReceiptId} does not exist.");
-            }
             var goodsReceipt = await _context.goodsReceipts
                 .Where(x => x.GoodsReceiptId == goodsReceiptId)
                 .ToListAsync();

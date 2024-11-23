@@ -16,11 +16,9 @@ namespace WMS.Infrastructure.Repositories
 
         public async Task<FinishedProductIssue> GetIssueById(string finishedProductIssueId)
         {
-            var existingItem = await _context.finishedProductIssues.FindAsync(finishedProductIssueId)
-                ?? throw new ArgumentException($"Item with ID {finishedProductIssueId} does not exist.");
+            var existingItem = await _context.finishedProductIssues.FindAsync(finishedProductIssueId);
 
-            var employee = await _context.employees.FindAsync(existingItem.EmployeeId)
-                ?? throw new ArgumentException($"Item with ID {finishedProductIssueId} does not exist.");
+            var employee = await _context.employees.FindAsync(existingItem.EmployeeId);
 
             existingItem.Employee = employee;
 
@@ -49,8 +47,7 @@ namespace WMS.Infrastructure.Repositories
             var receivers = await _context.finishedProductIssues
                 .AsNoTracking()
                 .Select(s => s.Receiver)
-                .ToArrayAsync()
-                ?? throw new ArgumentException("No receivers found.");
+                .ToArrayAsync();
 
             return receivers;
         }
@@ -67,12 +64,6 @@ namespace WMS.Infrastructure.Repositories
             var finishedProductIssueEntryList = await _context.finishedProductIssues
                 .SelectMany(s => s.Entries) 
                 .ToListAsync();
-
-
-            if (finishedProductIssueEntryList == null || !finishedProductIssueEntryList.Any())
-            {
-                throw new ArgumentException("No entries found.");
-            }
 
             return finishedProductIssueEntryList;
         }

@@ -12,11 +12,6 @@ namespace WMS.Infrastructure.Repositories
         {
             var existingItemLot = await _context.isolatedItemLots.FindAsync(lotId);
 
-            if (existingItemLot == null)
-            {
-                throw new Exception("Not Found");
-            }
-
             return existingItemLot;
            
 

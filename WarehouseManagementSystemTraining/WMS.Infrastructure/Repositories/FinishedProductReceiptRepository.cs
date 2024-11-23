@@ -23,11 +23,6 @@
         {
             var existingItem = await _context.finishedProductReceipts.FindAsync(finishedProductReceiptId);
 
-            if (existingItem == null)
-            {
-                throw new ArgumentException($"Item with ID {finishedProductReceiptId} does not exist.");
-            }
-
             return existingItem;
         }
 
@@ -48,7 +43,7 @@
         {
             var existingItem = await _context.finishedProductReceipts.FindAsync(finishedProductReceipt.FinishedProductReceiptId);
 
-            if (existingItem == null)
+            if (existingItem != null)
             {
                 throw new ArgumentException($"Item with ID {finishedProductReceipt.FinishedProductReceiptId} does not exist.");
             }

@@ -25,11 +25,6 @@ namespace WMS.Infrastructure.Repositories
         {
             var goodsIssue = await _context.goodsIssues.FindAsync(goodsIssueId);
 
-            if (goodsIssue == null )
-            {
-                throw new ArgumentException($"GoodsIssue with ID {goodsIssueId} does not exist.");
-            }
-
             return goodsIssue;
         }
 
@@ -71,11 +66,6 @@ namespace WMS.Infrastructure.Repositories
         public async Task<GoodsIssueEntry> GetEntryByGoodsIssueIdAndItemId(string goodsIssueId, string itemId)
         {
             var Entry = await _context.goodsIssuesEntry.FirstOrDefaultAsync(s => s.GoodsIssueId == goodsIssueId && s.ItemId == itemId);
-
-            if (Entry is null)
-            {
-                throw new ArgumentException($"GoodsIssue with ID {goodsIssueId} does not exist.");
-            }
 
             return Entry;
         }

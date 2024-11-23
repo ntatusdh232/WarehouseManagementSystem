@@ -16,10 +16,6 @@
         {
             var employee = await _context.employees.FirstOrDefaultAsync(s => s.EmployeeId == employeeId);
 
-            if (employee == null)
-            {
-                throw new Exception("Employee does not exist");
-            }
 
             return employee;
         }
@@ -34,11 +30,6 @@
                     e.EmployeeId,
                     e.EmployeeName
                 )).FirstOrDefaultAsync();
-
-            if (employee == null)
-            {
-                throw new Exception("Employee does not exist");
-            }
 
             return employee;
         }
@@ -89,10 +80,6 @@
 
             );
         }
-
-
-
-
 
         public IEnumerable<Employee> GetEmployees()
         {

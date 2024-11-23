@@ -27,12 +27,12 @@
 
         public async Task<IEnumerable<GoodsReceiptViewModel>> Handle(GetUnCompletedGoodsReceiptsQuery request, CancellationToken cancellationToken)
         {
-            var completedGoodsReceipts = await _goodsReceipts
+            var uncompletedGoodsReceipts = await _goodsReceipts
                                         .Where(g => g.Lots
                                         .All(lot => lot.ProductionDate == null && lot.ExpirationDate == null && lot.Sublots.Count == 0) && g.Supplier == null)
                                         .ToListAsync();
 
-            var goodsReceiptViewModels = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(completedGoodsReceipts);
+            var goodsReceiptViewModels = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(uncompletedGoodsReceipts);
 
             return await Filter(goodsReceiptViewModels, _goodsIssueLots);
         }

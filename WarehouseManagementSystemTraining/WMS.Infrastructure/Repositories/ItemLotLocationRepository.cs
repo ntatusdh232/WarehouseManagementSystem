@@ -10,17 +10,7 @@
         {
             var existingItemLot = await _context.itemsLot.FindAsync(lotId);
 
-            if (existingItemLot == null)
-            {
-                throw new Exception("ItemLot does not exist");
-            }
-
             var locationlist = existingItemLot.Locations;
-
-            if (locationlist == null)
-            {
-                throw new Exception("ItemLot does not Locaiton");
-            }
 
             return locationlist;
 

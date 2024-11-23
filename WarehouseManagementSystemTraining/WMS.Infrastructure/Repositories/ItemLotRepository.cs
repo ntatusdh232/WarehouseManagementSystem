@@ -60,30 +60,21 @@
         public async Task<IEnumerable<ItemLot>> GetIsolatedItemLots()
         {
             var isolatedItemLots = await _context.itemsLot.Where(lot => !_context.items.Any(items => items.ItemId == lot.ItemId)).ToListAsync();   
-            if (isolatedItemLots is null)
-            {
-                throw new ArgumentException($"IsolatedItemLot does not exists.");
-            }
+
             return isolatedItemLots;
         }
 
         public async Task<ItemLot> GetItemLotById(string lotId)
         {
             var existingLot = await _context.itemsLot.FindAsync(lotId); 
-            if (existingLot is null)
-            {
-                throw new ArgumentException($"ItemLot does not exists.");
-            }
+
             return existingLot;
         }
 
         public async Task<IEnumerable<ItemLot>> GetLotsByItemId(string itemId)
         {
             var existingLot = await _context.itemsLot.Where(x => x.ItemId == itemId).ToListAsync();
-            if(existingLot is null)
-            {
-                throw new ArgumentException($"ItemLot does not exists.");
-            }
+
             return existingLot;
         }
 

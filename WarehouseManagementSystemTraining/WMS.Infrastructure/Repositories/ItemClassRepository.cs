@@ -9,10 +9,6 @@
         public async Task<ItemClass?> GetById(string itemClassId)
         {
             var existingItemClass = await _context.itemsClass.FindAsync(itemClassId);
-            if (existingItemClass is null)
-            {
-                throw new ArgumentException($"ItemClass does not exists.");
-            }
             return existingItemClass;
         }
     }
