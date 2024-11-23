@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WMS.Infrastructure;
 
@@ -11,9 +12,11 @@ using WMS.Infrastructure;
 namespace WMS.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241123092426_UpdateDepartmentTable1")]
+    partial class UpdateDepartmentTable1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,14 +43,12 @@ namespace WMS.Api.Migrations
             modelBuilder.Entity("WMS.Domain.AggregateModels.DepartmentAggregate.Department", b =>
                 {
                     b.Property<string>("DepartmentId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
-
-                    b.HasKey("DepartmentId");
 
                     b.ToTable("departments");
                 });

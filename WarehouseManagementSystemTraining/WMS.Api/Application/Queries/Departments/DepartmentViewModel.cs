@@ -2,15 +2,19 @@
 {
     public class DepartmentViewModel
     {
+        public string DepartmentId { get; set; }
         public string Name { get; set; }
 
 #pragma warning disable CS8618
         private DepartmentViewModel() { }
-#pragma warning restore CS8618 
 
-        public DepartmentViewModel(string name)
+        public DepartmentViewModel(string departmentId, string name)
         {
+            DepartmentId = departmentId;
             Name = name;
         }
+#pragma warning restore CS8618
+
+
     }
 }

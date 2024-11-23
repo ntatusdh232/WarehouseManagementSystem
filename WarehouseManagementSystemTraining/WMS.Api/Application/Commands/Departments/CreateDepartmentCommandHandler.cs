@@ -1,6 +1,4 @@
-﻿using WMS.Domain.AggregateModels.DepartmentAggregate;
-
-namespace WMS.Api.Application.Commands.Departments
+﻿namespace WMS.Api.Application.Commands.Departments
 {
     public class CreateDepartmentCommandHandler : IRequestHandler<CreateDepartmentCommand, bool>
     {
@@ -13,7 +11,9 @@ namespace WMS.Api.Application.Commands.Departments
 
         public async Task<bool> Handle(CreateDepartmentCommand request, CancellationToken cancellationToken)
         {
-            var department = new Department(request.Name);
+            var department = new Department(departmentId: request.Id,
+                                            name: request.Name);
+
             _departmentRepository.Add(department);
             return await _departmentRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
 

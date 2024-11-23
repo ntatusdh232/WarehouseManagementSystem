@@ -1,4 +1,6 @@
-﻿namespace WMS.Api.Controllers
+﻿using WMS.Api.Application.Commands.Departments;
+
+namespace WMS.Api.Controllers
 {
     [Route("API/[controller]")]
     [ApiController]
@@ -21,6 +23,16 @@
             var query = new GetAllDepartmentsQuery();
 
             return await _mediator.Send(query);
+        }
+
+        [HttpPost("CreateDepartment")]
+        public async Task<IActionResult> CreateDepartment([FromBody] CreateDepartmentCommand command)
+        {
+
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+            
         }
 
 
