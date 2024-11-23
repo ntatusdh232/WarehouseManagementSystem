@@ -10,7 +10,7 @@ public class GetWarehouseByIdQueryHandler : IRequestHandler<GetWarehouseByIdQuer
     }
     public async Task<WarehouseViewModel> Handle(GetWarehouseByIdQuery request, CancellationToken cancellationToken)
     {
-        var warehouse = await _context.warehouses.Include(w => w.Locations).FirstOrDefaultAsync();
+        var warehouse = await _context.warehouses.Include(w => w.Locations).FirstOrDefaultAsync(x => x.WarehouseId == request.WarehouseId);
 
         var viewModel = _mapper.Map<WarehouseViewModel>(warehouse);
 
