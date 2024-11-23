@@ -14,24 +14,15 @@ public class GetReceiptByIdQueryHandler : IRequestHandler<GetReceiptByIdQuery,Fi
 
     public async Task<FinishedProductReceiptViewModel> Handle(GetReceiptByIdQuery request, CancellationToken cancellationToken)
     {
-        var goodsReceipt = _context.finishedProductReceipts.AsNoTracking();
+        var goodsReceipt = await _context.finishedProductReceipts.FirstOrDefaultAsync(x => x.FinishedProductReceiptId == request.FinishedProductReceiptId);
 
-        if(request.FinishedProductReceiptId is not null)
+        if(goodsReceipt is null)
         {
-            goodsReceipt = goodsReceipt.Where(g => g.FinishedProductReceiptId == request.FinishedProductReceiptId);
+            throw new EntityNotFoundException(nameof(FinishedProductReceipt), request.FinishedProductReceiptId);
         }
 
-        int totalItems = await goodsReceipt.CountAsync();
+        return _mapper.Map<FinishedProductReceiptViewModel>(goodsReceipt);
 
-        goodsReceipt = goodsReceipt
-                .OrderBy(x => x.FinishedProductReceiptId)
-                .Skip((request.PageIndex - 1) * request.PageSize)
-                .Take(request.PageSize);
-
-        var requests = await goodsReceipt.ToListAsync();
-
-        var queryResult = new QueryResult<FinishedProductReceipt>(requests, totalItems);
-
-        return _mapper.Map<FinishedProductReceiptViewModel>(queryResult);
+        
     }
 }

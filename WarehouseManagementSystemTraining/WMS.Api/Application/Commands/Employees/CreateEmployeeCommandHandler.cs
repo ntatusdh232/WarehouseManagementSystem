@@ -21,7 +21,8 @@ public class CreateEmployeeCommandHandler : IRequestHandler<CreateEmployeeComman
         }
 
         var newEmployee = new Employee(request.EmployeeId, request.EmployeeName);
-        _employeeRepository.Add(newEmployee);
+
+        await _employeeRepository.Add(newEmployee);
 
        return await _employeeRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
     }
