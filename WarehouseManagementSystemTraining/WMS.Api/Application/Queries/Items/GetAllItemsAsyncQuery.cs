@@ -1,6 +1,6 @@
 ﻿namespace WMS.Api.Application.Queries.Items
 {
-    public class GetAllItemsAsyncQuery : PaginatedQuery, IRequest<IEnumerable<ItemViewModel>>
+    public class GetAllItemsAsyncQuery : PaginatedQuery, IRequest<IEnumerable<string>>
     {
         public string ItemClassId { get; set; }
 

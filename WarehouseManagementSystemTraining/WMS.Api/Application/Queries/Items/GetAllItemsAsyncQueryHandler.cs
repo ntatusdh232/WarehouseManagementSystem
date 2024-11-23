@@ -1,6 +1,6 @@
 ﻿namespace WMS.Api.Application.Queries.Items
 {
-    public class GetAllItemsAsyncQueryHandler : IRequestHandler<GetAllItemsAsyncQuery, IEnumerable<ItemViewModel>>
+    public class GetAllItemsAsyncQueryHandler : IRequestHandler<GetAllItemsAsyncQuery, IEnumerable<string>>
     {
         private readonly IMapper _mapper;
         private readonly IItemRepository _itemRepository;
@@ -15,7 +15,7 @@
 
         private IQueryable<Item> _items => _context.items.AsNoTracking();
 
-        public async Task<IEnumerable<ItemViewModel>> Handle(GetAllItemsAsyncQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<string>> Handle(GetAllItemsAsyncQuery request, CancellationToken cancellationToken)
         {
             var items = new List<Item>();
 
@@ -28,9 +28,9 @@
                 items = await _items.ToListAsync();
             }
 
-            var itemViewModels = _mapper.Map<IEnumerable<ItemViewModel>>(items);
+            var itemIds = items.Select(s => s.ItemId).ToList();
 
-            return itemViewModels;
+            return itemIds;
 
         }
 

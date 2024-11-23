@@ -14,7 +14,7 @@
         }
 
         [HttpGet("GetAll")]
-        public async Task<IEnumerable<ItemViewModel>> GetAllItems([FromQuery] string? itemClassId = null)
+        public async Task<IEnumerable<string>> GetAllItems([FromQuery] string? itemClassId = null)
         {
             var query = new GetAllItemsAsyncQuery(itemClassId);
             return await _mediator.Send(query);
