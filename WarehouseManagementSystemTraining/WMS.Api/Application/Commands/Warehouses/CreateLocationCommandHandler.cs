@@ -1,30 +1,32 @@
-﻿
-using WMS.Domain.AggregateModels.StorageAggregate;
+﻿using WMS.Domain.AggregateModels.StorageAggregate;
 
-namespace WMS.Api.Application.Commands.Warehouses;
-
-public class CreateLocationCommandHandler : IRequestHandler<CreateLocationCommand, bool>
+namespace WMS.Api.Application.Commands.Warehouses
 {
-    private readonly IStorageRepository _storageRepository;
-
-    public CreateLocationCommandHandler(IStorageRepository storageRepository)
+    public class CreateLocationCommandHandler : IRequestHandler<CreateLocationCommand, bool>
     {
-        _storageRepository = storageRepository;
-    }
+        private readonly IStorageRepository _storageRepository;
 
-    public async Task<bool> Handle(CreateLocationCommand request, CancellationToken cancellationToken)
-    {
-        var warehouse = await _storageRepository.GetWarehouseById(request.WarehouseId);
-        if (warehouse is null)
+        public CreateLocationCommandHandler(IStorageRepository storageRepository)
         {
-            throw new EntityNotFoundException(nameof(Warehouse), request.WarehouseId);
+            _storageRepository = storageRepository;
         }
-        var location = new Location(request.LocationId);
 
-        warehouse.Locations.Add(location);
+        public async Task<bool> Handle(CreateLocationCommand request, CancellationToken cancellationToken)
+        {
+            var warehouse = await _storageRepository.GetWarehouseById(request.WarehouseId);
+            if (warehouse is null)
+            {
+                throw new EntityNotFoundException(nameof(Warehouse), request.WarehouseId);
+            }
+            var location = new Location(request.LocationId, request.WarehouseId);
 
-        await _storageRepository.AddLocation(location);
+            warehouse.AddLocation(location);
 
-        return await _storageRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
+            await _storageRepository.AddLocation(location);
+
+            return await _storageRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
+        }
     }
+
 }
+

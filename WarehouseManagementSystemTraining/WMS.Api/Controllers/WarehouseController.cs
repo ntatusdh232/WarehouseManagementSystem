@@ -1,4 +1,5 @@
-﻿using WMS.Domain.AggregateModels.StorageAggregate;
+﻿using WMS.Api.Application.Commands.Warehouses;
+using WMS.Domain.AggregateModels.StorageAggregate;
 
 namespace WMS.Api.Controllers
 {

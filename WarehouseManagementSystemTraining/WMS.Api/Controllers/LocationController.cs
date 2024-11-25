@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using WMS.Api.Application.Commands.Warehouses;
 
 namespace WMS.Api.Controllers
 {
@@ -21,5 +20,16 @@ namespace WMS.Api.Controllers
 
             return await _mediator.Send(query);
         }
+
+        [HttpPost("Create")]
+        public async Task<IActionResult> CreateWarehouse([FromBody] CreateLocationCommand command)
+        {
+
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+
+        }
+
     }
 }

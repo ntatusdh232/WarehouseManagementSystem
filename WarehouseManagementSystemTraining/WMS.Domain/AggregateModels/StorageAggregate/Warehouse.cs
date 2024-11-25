@@ -17,7 +17,14 @@
             WarehouseName = warehouseName;
         }
 
-
+        public void AddLocation(Location location)
+        {
+            if (Locations == null)
+            {
+                Locations = new List<Location>();
+            }
+            Locations.Add(location);
+        }
 
 #pragma warning restore CS8618
 

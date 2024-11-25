@@ -18,9 +18,10 @@ namespace WMS.Domain.AggregateModels.LocationAggregate
 #pragma warning disable CS8618
         private Location() { }
 
-        public Location(string locationId)
+        public Location(string locationId, string warehouseId)
         {
             LocationId = locationId;
+            WarehouseId = warehouseId;
         }
         public Location(string locationId, List<ItemLot> itemLots)
         {
