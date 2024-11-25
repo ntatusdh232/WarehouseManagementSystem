@@ -1,4 +1,6 @@
 ﻿
+using DocumentFormat.OpenXml.Drawing;
+
 namespace WMS.Domain.AggregateModels.FinishedProductAggregate
 {
     public class FinishedProductIssue : Entity, IAggregateRoot
@@ -9,7 +11,7 @@ namespace WMS.Domain.AggregateModels.FinishedProductAggregate
         public string? Receiver { get; set; }
         public DateTime Timestamp { get; set; }
 
-        public List<FinishedProductIssueEntry> Entries { get; set; }
+        public List<FinishedProductIssueEntry> Entries { get; set; } 
 
         [ForeignKey("Employee")]
         public string EmployeeId { get; set; }
@@ -32,11 +34,13 @@ namespace WMS.Domain.AggregateModels.FinishedProductAggregate
             FinishedProductIssueId = finishedProductIssueId;
             Receiver = receiver;
             EmployeeId = employeeId;
+            Entries = new List<FinishedProductIssueEntry>();
         }
 
         public void AddIssueEntry(FinishedProductIssueEntry inputEntry)
         {
             bool isEntryExist = false;
+
             foreach (var entry in Entries)
             {
                 if (inputEntry.PurchaseOrderNumber == entry.PurchaseOrderNumber && entry.Item == inputEntry.Item)
@@ -45,7 +49,7 @@ namespace WMS.Domain.AggregateModels.FinishedProductAggregate
                 }
             }
 
-            if (!isEntryExist)
+            if (isEntryExist == false)
             {
                 Entries.Add(inputEntry);
             }

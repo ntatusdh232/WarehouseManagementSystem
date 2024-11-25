@@ -1,5 +1,4 @@
-﻿using DocumentFormat.OpenXml.Vml.Office;
-using WMS.Api.ErrorNotifications;
+﻿using WMS.Api.ErrorNotifications;
 
 namespace WMS.Api.Application.Commands.FinishedProductIssues
 {
@@ -23,8 +22,9 @@ namespace WMS.Api.Application.Commands.FinishedProductIssues
             {
                 new DuplicatedRecordErrorDetail(nameof(FinishedProductIssue), request.FinishedProductIssueId);
             }
-                
-            var employee = _employeeRepository.GetEmployeeById(request.EmployeeId);
+
+
+            var employee = await _employeeRepository.GetEmployeeById(request.EmployeeId);
 
             if (employee == null)
             {

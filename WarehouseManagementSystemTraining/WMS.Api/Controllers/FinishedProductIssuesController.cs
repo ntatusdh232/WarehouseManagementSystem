@@ -1,4 +1,6 @@
-﻿namespace WMS.Api.Controllers
+﻿using WMS.Api.Application.Commands.FinishedProductIssues;
+
+namespace WMS.Api.Controllers
 {
     [Route("API/[controller]")]
     [ApiController]
@@ -44,6 +46,31 @@
 
             return await _mediator.Send(query);
         }
+
+        [HttpPost("Create - Error")]
+        public async Task<IActionResult> CreateProductIssue([FromBody] CreateFinishedProductIssueCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpPost("AddFinishedProductIssueEntries - Error")]
+        public async Task<IActionResult> AddFinishedProductIssueEntries([FromBody] AddFinishedProductIssueEntriesCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("RemoveFinishedProductIssueEntry - Not Test")]
+        public async Task<IActionResult> RemoveFinishedProductIssueEntry([FromBody] RemoveFinishedProductIssueEntryCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
 
     }
 }
