@@ -75,6 +75,13 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
+        [HttpPut("Update")]
+        public async Task<IActionResult> UpdateGoodsIssueEntry([FromBody] UpdateGoodsIssueEntryCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
 
     }
 }

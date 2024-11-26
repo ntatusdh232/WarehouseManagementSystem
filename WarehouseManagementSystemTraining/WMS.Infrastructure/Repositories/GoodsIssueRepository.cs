@@ -25,6 +25,24 @@ namespace WMS.Infrastructure.Repositories
         {
             var goodsIssue = await _context.goodsIssues.FindAsync(goodsIssueId);
 
+            var entries = await _context.goodsIssuesEntry.Where(s => s.GoodsIssueId == goodsIssueId).ToListAsync();
+
+            var items = await _context.items.ToListAsync();
+
+            foreach (var entry in entries)
+            {
+                var item = items.FirstOrDefault(s => s.ItemId == entry.ItemId);
+                if (item != null)
+                {
+                    entry.Item = item;
+                }
+            }
+
+            if (goodsIssue != null)
+            {
+                goodsIssue.Entries = entries;
+            }
+
             return goodsIssue;
         }
 

@@ -101,9 +101,9 @@
 
         public void UpdateEntry(string itemId, string unit, double quantity)
         {
-            var entry = Entries.SingleOrDefault(entry => entry.Item.ItemId == itemId && entry.Item.Unit == unit);
+            var entry = Entries.FirstOrDefault(entry => entry.Item.ItemId == itemId && entry.Item.Unit == unit);
             if (entry == null)
-            {
+            {   
                 throw new WarehouseDomainException($"Entry having item {itemId} with unit {unit} doesn't exist in the current GoodsIssue.");
             }
             entry.UpdateEntry(quantity);
