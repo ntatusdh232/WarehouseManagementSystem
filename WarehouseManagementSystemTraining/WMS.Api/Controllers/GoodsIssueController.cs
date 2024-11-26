@@ -65,10 +65,27 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
+        [HttpPost("AddLots - Do not Test")]
+        public async Task<IActionResult> AddLotsToGoodsIssue([FromBody] AddLotsToGoodsIssueCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
         [HttpDelete("Remove/{goodsIssueId}")]
         public async Task<IActionResult> RemoveGoodsIssue(string goodsIssueId)
         {
             var command = new RemoveGoodsIssueCommand(goodsIssueId);
+
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("RemoveEntry")]
+        public async Task<IActionResult> RemoveGoodsIssueEntry([FromBody] RemoveGoodsIssueEntryCommand command)
+        {
 
             var result = await _mediator.Send(command);
 
