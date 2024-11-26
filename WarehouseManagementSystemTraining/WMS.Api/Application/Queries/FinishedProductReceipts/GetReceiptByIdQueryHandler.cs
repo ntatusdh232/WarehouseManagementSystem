@@ -14,7 +14,12 @@ public class GetReceiptByIdQueryHandler : IRequestHandler<GetReceiptByIdQuery,Fi
 
     public async Task<FinishedProductReceiptViewModel> Handle(GetReceiptByIdQuery request, CancellationToken cancellationToken)
     {
-        var goodsReceipt = await _context.finishedProductReceipts.FirstOrDefaultAsync(x => x.FinishedProductReceiptId == request.FinishedProductReceiptId);
+        var goodsReceipt = await _context.finishedProductReceipts
+            .Include(s => s.Entries)
+                .ThenInclude(x => x.Item)
+            .Include(s => s.Employee)
+            .FirstOrDefaultAsync(x => x.FinishedProductReceiptId == request.FinishedProductReceiptId);
+
 
         if(goodsReceipt is null)
         {
