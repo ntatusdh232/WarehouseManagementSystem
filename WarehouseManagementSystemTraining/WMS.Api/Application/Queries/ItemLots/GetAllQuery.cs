@@ -1,5 +1,11 @@
-﻿namespace WMS.Api.Application.Queries.ItemLots;
-
-public class GetAllQuery : PaginatedQuery, IRequest<IEnumerable<ItemLotViewModel>>
+﻿namespace WMS.Api.Application.Queries.ItemLots
 {
+
+    public class GetAllQuery : PaginatedQuery, IRequest<IEnumerable<ItemLotViewModel>>
+    {
+        public GetAllQuery()
+        {
+        }
+    }
 }
+

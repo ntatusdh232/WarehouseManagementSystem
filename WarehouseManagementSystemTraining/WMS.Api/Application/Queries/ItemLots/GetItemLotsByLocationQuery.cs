@@ -1,13 +1,16 @@
-﻿namespace WMS.Api.Application.Queries.ItemLots;
-
-public class GetItemLotsByLocationQuery : PaginatedQuery, IRequest<IEnumerable<ItemLotViewModel>>
+﻿namespace WMS.Api.Application.Queries.ItemLots
 {
-    public string LocationId {  get; set; }
-
-    public GetItemLotsByLocationQuery(string locationId)
+    public class GetItemLotsByLocationQuery : PaginatedQuery, IRequest<IEnumerable<ItemLotViewModel>>
     {
-        LocationId = locationId;
+        public string LocationId { get; set; }
+
+        public GetItemLotsByLocationQuery(string locationId)
+        {
+            LocationId = locationId;
+        }
     }
 }
+
+
 
 

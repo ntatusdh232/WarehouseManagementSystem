@@ -1,7 +1,4 @@
-﻿using WMS.Api.Application.Queries.FinishedProductIssues;
-using WMS.Api.Application.Queries.ItemLots;
-using WMS.Api.Application.Queries.LotAdjustments;
-using WMS.Domain.AggregateModels.LotAdjustmentAggregate;
+﻿using WMS.Domain.AggregateModels.LotAdjustmentAggregate;
 using WMS.Domain.AggregateModels.StorageAggregate;
 
 namespace WMS.Api.Application.Mapping

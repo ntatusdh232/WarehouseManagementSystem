@@ -14,7 +14,7 @@
         private IQueryable<ItemLot> _itemLots => _context.itemsLot
         .AsNoTracking()
         .Include(il => il.ItemLotLocations)
-        .ThenInclude(ill => ill.Location)
+            .ThenInclude(ill => ill.Location)
         .Include(il => il.Item);
 
         public async Task<IEnumerable<ItemLotViewModel>> Handle(GetItemLotsByLocationQuery request, CancellationToken cancellationToken)

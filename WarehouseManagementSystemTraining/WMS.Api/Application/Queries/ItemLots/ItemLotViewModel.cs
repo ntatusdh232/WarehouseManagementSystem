@@ -11,6 +11,10 @@ public class ItemLotViewModel
     public ItemViewModel Item { get; set; }
     public double NumOfPackets {  get; set; }
 
+    public ItemLotViewModel()
+    {
+    }
+
     public ItemLotViewModel(string lotId, bool isIsolated, double quantity, DateTime productionDate, DateTime expirationDate, List<ItemSublotViewModel> itemLotLocations, ItemViewModel item, double numOfPackets)
     {
         LotId = lotId;

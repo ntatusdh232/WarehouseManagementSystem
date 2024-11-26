@@ -1,6 +1,5 @@
 ﻿using WMS.Domain.AggregateModels.ItemLotLocationAggregate;
 using WMS.Domain.DomainEvents.GoodsReceiptEvents;
-using WMS.Domain.DomainEvents.InventoryLogEntryEvents;
 using WMS.Domain.DomainEvents.ItemLotEvents;
 
 namespace WMS.Domain.AggregateModels.ItemAggregate
