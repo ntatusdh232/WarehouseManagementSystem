@@ -22,6 +22,12 @@ namespace WMS.Infrastructure.Repositories
             {
                 var employee = await _context.employees.FindAsync(existingItem.EmployeeId);
                 existingItem.Employee = employee;
+
+                var entries = await _context.finishedProductIssuesEntry
+                    .Where(s => s.FinishedProductIssueId == finishedProductIssueId)
+                    .ToListAsync();
+                existingItem.Entries = entries;
+
             }
 
             return existingItem;

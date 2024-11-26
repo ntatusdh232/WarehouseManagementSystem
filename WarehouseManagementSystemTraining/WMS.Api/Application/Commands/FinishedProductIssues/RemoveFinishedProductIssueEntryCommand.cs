@@ -7,8 +7,7 @@
         public string Unit { get; set; }
         public string PurchaseOrderNumber { get; set; }
 
-        public RemoveFinishedProductIssueEntryCommand(string finishedProductIssueEntryId, string finishedProductIssueId, string itemId, 
-                                                      string unit, string purchaseOrderNumber)
+        public RemoveFinishedProductIssueEntryCommand(string finishedProductIssueId, string itemId, string unit, string purchaseOrderNumber)
         {
             FinishedProductIssueId = finishedProductIssueId;
             ItemId = itemId;

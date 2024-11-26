@@ -62,7 +62,7 @@ namespace WMS.Domain.AggregateModels.FinishedProductAggregate
 
             foreach (var entry in Entries)
             {
-                if (entry.Item.ItemId == inputItemId && entry.PurchaseOrderNumber == inputPurchaseOrderNumber)
+                if (entry.ItemId == inputItemId && entry.PurchaseOrderNumber == inputPurchaseOrderNumber)
                 {
                     isEntryExist = true;
                     entryExist.Add(entry);

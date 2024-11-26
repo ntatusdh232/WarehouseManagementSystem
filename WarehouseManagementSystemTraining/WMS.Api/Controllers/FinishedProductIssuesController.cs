@@ -47,7 +47,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpPost("Create - Error")]
+        [HttpPost("Create")]
         public async Task<IActionResult> CreateProductIssue([FromBody] CreateFinishedProductIssueCommand command)
         {
             var result = await _mediator.Send(command);
@@ -55,7 +55,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPost("AddFinishedProductIssueEntries - Error")]
+        [HttpPost("AddFinishedProductIssueEntries - Do not Test")]
         public async Task<IActionResult> AddFinishedProductIssueEntries([FromBody] AddFinishedProductIssueEntriesCommand command)
         {
             var result = await _mediator.Send(command);
@@ -63,7 +63,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("RemoveFinishedProductIssueEntry - Not Test")]
+        [HttpDelete("RemoveFinishedProductIssueEntry")]
         public async Task<IActionResult> RemoveFinishedProductIssueEntry([FromBody] RemoveFinishedProductIssueEntryCommand command)
         {
             var result = await _mediator.Send(command);
