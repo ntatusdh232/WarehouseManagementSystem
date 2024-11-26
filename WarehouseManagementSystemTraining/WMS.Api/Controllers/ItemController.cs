@@ -1,4 +1,6 @@
-﻿namespace WMS.Api.Controllers
+﻿using WMS.Api.Application.Commands.Items;
+
+namespace WMS.Api.Controllers
 {
     [Route("API/[controller]")]
     [ApiController]
@@ -27,6 +29,35 @@
             var query = new GetItemByIdAsyncQuery(ItemId, Unit);
             return await _mediator.Send(query);
         }
+
+        // Post
+        [HttpPost("Create")]
+        public async Task<IActionResult> CreateItem([FromBody] CreateItemCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpPost("CreateItems")]
+        public async Task<IActionResult> CreateItems([FromBody] CreateItemsCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpPut("Update")]
+        public async Task<IActionResult> UpdateItem([FromBody] UpdateItemCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+
+
+        
 
 
     }

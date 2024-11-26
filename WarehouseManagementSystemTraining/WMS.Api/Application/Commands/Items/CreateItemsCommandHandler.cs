@@ -25,7 +25,8 @@ namespace WMS.Api.Application.Commands.Items
 
                 if (existedItem != null) continue;
 
-                var newItem = new Item(itemId: item.ItemId,
+                var newItem = new Item(itemType: item.ItemType,
+                                       itemId: item.ItemId,
                                        itemName: item.ItemName,
                                        unit: item.Unit,
                                        minimumStockLevel: item.MinimumStockLevel,

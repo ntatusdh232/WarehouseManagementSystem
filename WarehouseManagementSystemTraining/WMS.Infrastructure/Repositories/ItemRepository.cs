@@ -6,9 +6,7 @@
 
         public async Task Add(Item item)
         {
-            
-            var existingItem = await _context.items.FindAsync(item.ItemId) ?? throw new Exception("Not Found");
-
+            // ADD ITEM
             await _context.items.AddAsync(item);
         }
 
@@ -21,9 +19,16 @@
 
         public async Task<Item> GetItemByIdAndUnit(string itemId, string Unit)
         {
-            var existingItem = await _context.items.Where(s => s.ItemId == itemId && s.Unit == Unit).FirstOrDefaultAsync();
-
-            return existingItem;
+            if (Unit != null)
+            {
+                var existingItem = await _context.items.Where(s => s.ItemId == itemId && s.Unit == Unit).FirstOrDefaultAsync();
+                return existingItem;
+            }
+            else
+            {
+                var existingItem = await _context.items.Where(s => s.ItemId == itemId).FirstOrDefaultAsync();
+                return existingItem;
+            }
 
         }
 

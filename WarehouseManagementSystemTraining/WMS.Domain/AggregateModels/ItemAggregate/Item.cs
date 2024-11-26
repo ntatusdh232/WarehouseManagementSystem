@@ -82,8 +82,9 @@
             ItemClassId = itemClassId;
 
         }
-        public void Update(string itemName, string unit, double minimumStockLevel, decimal price, string itemClassId, double? packetSize, string? packetUnit)
+        public void Update(string itemType ,string itemName, string unit, double minimumStockLevel, decimal price, string itemClassId, double? packetSize, string? packetUnit)
         {
+            ItemType = itemType;
             ItemName = itemName;
             Unit = unit;
             MinimumStockLevel = minimumStockLevel;

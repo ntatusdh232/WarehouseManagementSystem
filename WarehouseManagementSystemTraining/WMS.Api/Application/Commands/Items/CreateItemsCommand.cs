@@ -1,6 +1,4 @@
-﻿
-
-namespace WMS.Api.Application.Commands.Items
+﻿namespace WMS.Api.Application.Commands.Items
 {
     public class CreateItemsCommand : IRequest<bool>
     {
