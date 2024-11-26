@@ -16,7 +16,7 @@
 
 
 #pragma warning disable CS8618
-        private Item() { }
+        public Item() { }
 
         public Item(string itemType, string itemId, string itemName, string unit, double minimumStockLevel, 
                     decimal price, double? packetSize, string? packetUnit, string itemClassId, ItemClass itemClasses)

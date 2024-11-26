@@ -1,4 +1,6 @@
-﻿namespace WMS.Api.Controllers
+﻿using WMS.Api.Application.Commands.GoodsIssues;
+
+namespace WMS.Api.Controllers
 {
     [Route("API/[controller]")]
     [ApiController]
@@ -55,6 +57,13 @@
             return await _mediator.Send(query);
         }
 
+        [HttpPost("Create")]
+        public async Task<IActionResult> CreateGoodsIssue([FromBody] CreateGoodsIssueCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
 
 
     }

@@ -21,8 +21,12 @@
         private GoodsIssueEntry() { }
         public GoodsIssueEntry(Item item, double requestedQuantity)
         {
+            GoodsIssueEntryId = Guid.NewGuid().ToString();
             RequestedQuantity = requestedQuantity;
             Item = item;
+            Lots = new List<GoodsIssueLot>();
+
+
         }
         public GoodsIssueEntry(string goodsIssueEntryId, double requestedQuantity, Item item, List<GoodsIssueLot> lots, string itemId, string goodsIssueId)
         {

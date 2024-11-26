@@ -74,15 +74,20 @@
         public void AddEntry(Item item, double requestedQuantity)
         {
             var newEntry = new GoodsIssueEntry(item, requestedQuantity);
-            foreach (var existedEntry in Entries)
+
+            if (Entries == null)
             {
-                if (newEntry.Item == existedEntry.Item)
-                {
-                    throw new WarehouseDomainException($"Entry with Item {newEntry.Item.ItemId} has already existed in the GoodsIssue");
-                }
+                Entries = new List<GoodsIssueEntry>();
             }
+
+            if (Entries.Any(entry => entry.Item.ItemId == newEntry.Item.ItemId))
+            {
+                throw new WarehouseDomainException($"Entry with Item {newEntry.Item.ItemId} has already existed in the GoodsIssue");
+            }
+
             Entries.Add(newEntry);
         }
+
 
         public void AddLot(string itemId, string unit, GoodsIssueLot lot)
         {

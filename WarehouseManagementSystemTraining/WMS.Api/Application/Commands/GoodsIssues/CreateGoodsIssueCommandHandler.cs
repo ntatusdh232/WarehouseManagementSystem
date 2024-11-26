@@ -22,21 +22,17 @@ public class CreateGoodsIssueCommandHandler : IRequestHandler<CreateGoodsIssueCo
         {
             throw new DuplicatedRecordException(nameof(GoodsIssue), request.GoodsIssueId);
         }
-        var employee = await _employeeRepository.GetEmployeeById(request.EmployeeId);
-        if (employee is null)
-        {
-            throw new EntityNotFoundException(nameof(Employee), request.EmployeeId);
-        }
+        var employee = await _employeeRepository.GetEmployeeById(request.EmployeeId)
+            ?? throw new EntityNotFoundException(nameof(Employee), request.EmployeeId);
+
         var newGoodsIssue = new GoodsIssue(goodsIssueId: request.GoodsIssueId,
                                            receiver: request.Receiver,
                                            employeeId: request.EmployeeId);
         foreach (var entry in request.Entries)
         {
-            var item = await _itemRepository.GetItemById(entry.ItemId);
-            if (item is null)
-            {
-                throw new EntityNotFoundException(nameof(Item), entry.ItemId);
-            }
+            var item = await _itemRepository.GetItemById(entry.ItemId)
+                ?? throw new EntityNotFoundException(nameof(Item), entry.ItemId);
+
             newGoodsIssue.AddEntry(item, entry.RequestedQuantity);
         }
         await _goodsIssueRepository.Add(newGoodsIssue, cancellationToken);
