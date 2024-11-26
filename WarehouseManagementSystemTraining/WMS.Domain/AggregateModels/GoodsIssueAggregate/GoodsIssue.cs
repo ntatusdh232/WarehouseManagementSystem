@@ -8,7 +8,7 @@
         public string Receiver { get; set; }
         public DateTime Timestamp { get; set; }
 
-        public List<GoodsIssueEntry> Entries { get; set; }
+        public List<GoodsIssueEntry> Entries { get; set; } = new List<GoodsIssueEntry>();
 
         [ForeignKey("Employee")]
         public string EmployeeId { get; set; }

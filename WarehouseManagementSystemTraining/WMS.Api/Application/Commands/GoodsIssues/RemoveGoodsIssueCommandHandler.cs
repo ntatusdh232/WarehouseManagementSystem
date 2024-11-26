@@ -18,7 +18,8 @@ public class RemoveGoodsIssueCommandHandler : IRequestHandler<RemoveGoodsIssueCo
         {
             throw new EntityNotFoundException(nameof(GoodsIssue), request.GoodsIssueId);
         }
-        if (goodsIssue.Entries.Count == 0)
+
+        if (goodsIssue.Entries.Count == 0 || goodsIssue.Entries is null)
         {
             await _goodsIssueRepository.Remove(request.GoodsIssueId, cancellationToken);
         }

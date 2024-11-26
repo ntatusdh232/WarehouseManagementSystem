@@ -65,6 +65,16 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
+        [HttpDelete("Remove/{goodsIssueId}")]
+        public async Task<IActionResult> RemoveGoodsIssue(string goodsIssueId)
+        {
+            var command = new RemoveGoodsIssueCommand(goodsIssueId);
+
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
 
     }
 }
