@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace WMS.Infrastructure.Repositories
+﻿namespace WMS.Infrastructure.Repositories
 {
     public class FinishedProductIssueRepository : BaseRepository, IFinishedProductIssueRepository
     {
@@ -27,6 +25,12 @@ namespace WMS.Infrastructure.Repositories
                     .Where(s => s.FinishedProductIssueId == finishedProductIssueId)
                     .ToListAsync();
                 existingItem.Entries = entries;
+
+                foreach (var entry in entries)
+                {
+                    var item = await _context.items.FindAsync(entry.ItemId);
+                    entry.Item = item;
+                }
 
             }
 
