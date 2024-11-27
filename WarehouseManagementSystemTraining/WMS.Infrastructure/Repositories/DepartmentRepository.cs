@@ -1,7 +1,7 @@
 ﻿using WMS.Domain.AggregateModels.DepartmentAggregate;
 
 namespace WMS.Infrastructure.Repositories
-{
+{           
     public class DepartmentRepository : BaseRepository, IDepartmentRepository
     {
         public DepartmentRepository(ApplicationDbContext context) : base(context) { }
@@ -15,7 +15,7 @@ namespace WMS.Infrastructure.Repositories
 
         public async Task<List<Department>> GetAllAsync()
         {
-            return await _context.departments.ToListAsync();
+            return await _context.departments.OrderBy(s => s.DepartmentId).ToListAsync();
         }
 
 
