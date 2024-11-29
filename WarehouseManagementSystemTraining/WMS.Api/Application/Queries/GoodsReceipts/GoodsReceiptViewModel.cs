@@ -8,7 +8,7 @@ namespace WMS.Api.Application.Queries.GoodsReceipts
         public String Supplier { get; set; }
         public DateTime Timestamp { get; set; }
         public EmployeeViewModel Employee { get; set; }
-        public List<GoodsReceiptLotViewModel> GoodsReceiptLots { get; set; } = new List<GoodsReceiptLotViewModel>();
+        public List<GoodsReceiptLotViewModel> GoodsReceiptLots { get; set; } 
 
         public GoodsReceiptViewModel()
         {

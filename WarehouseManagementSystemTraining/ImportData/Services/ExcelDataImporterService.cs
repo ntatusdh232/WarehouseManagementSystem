@@ -99,7 +99,7 @@
             existingItem.PacketSize = DataParser.GetFloatValue(row["PacketSize"]);
             existingItem.PacketUnit = DataParser.GetPacketUnitValue(row["PacketUnit"]);
             existingItem.ItemType = row["ItemType"]?.ToString() ?? "Null";
-            existingItem.ItemClassId = Guid.NewGuid().ToString();
+            existingItem.ItemClassId = row["ItemType"]?.ToString() ?? "Null";
 
             _itemRepository.UpdateItem(existingItem);
         }
@@ -116,7 +116,7 @@
                 DataParser.GetDecimalValue(row["Price"]),
                 DataParser.GetFloatValue(row["PacketSize"]),
                 DataParser.GetPacketUnitValue(row["PacketUnit"]),
-                Guid.NewGuid().ToString()
+                row["ItemType"]?.ToString() ?? "Null"
             );
         }
     }

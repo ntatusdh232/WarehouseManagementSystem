@@ -39,6 +39,7 @@
             Item = item;
             Note = note;
             GoodsReceiptId = goodsReceiptId;
+            Sublots = new List<GoodsReceiptSublot>();
 
         }
 

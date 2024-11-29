@@ -24,6 +24,7 @@ namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
             GoodsReceiptId = goodsReceiptId;
             Supplier = supplier;
             EmployeeId = employeeId;
+            Lots = new List<GoodsReceiptLot>();
         }
         public GoodsReceipt(string goodsReceiptId, string supplier, DateTime timestamp, 
                             Employee employee, string employeeId, List<GoodsReceiptLot> lots)

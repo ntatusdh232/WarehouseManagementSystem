@@ -11,7 +11,7 @@
             _mediator = mediator;
         }
 
-        [HttpGet("GetByTime")]
+        [HttpGet("GetByTime - ERROR")]
         public async Task<IEnumerable<FinishedProductReceiptViewModel>> GetByTime([FromQuery] DateTime start, [FromQuery] DateTime stop)
         {
             var request = new TimeRangeQuery(start.Date, stop.Date);

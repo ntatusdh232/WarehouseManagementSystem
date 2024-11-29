@@ -15,13 +15,14 @@ namespace WMS.Api.Application.Queries.GoodsReceipts
         }
 
         private IQueryable<GoodsReceipt> _goodsReceipts => _context.goodsReceipts
-            .AsNoTracking().Include(gr => gr.Employee)
-            .Include(gr => gr.Lots)
-            .ThenInclude(grl => grl.Item)
-            .Include(gr => gr.Lots)
-            .ThenInclude(grl => grl.Employee)
-            .Include(gr => gr.Lots)
-            .ThenInclude(gr => gr.Sublots);
+            .Include(gr => gr.Employee)
+            .Include(s => s.Lots)
+                .ThenInclude(gil => gil.Sublots)
+            .Include(s => s.Lots)
+                .ThenInclude(z => z.Employee)
+            .Include(s => s.Lots)
+                .ThenInclude(z => z.Item)
+            .AsNoTracking();
 
         public IQueryable<GoodsIssueLot> _goodsIssueLots => _context.goodsIssues
             .AsNoTracking()
@@ -34,7 +35,7 @@ namespace WMS.Api.Application.Queries.GoodsReceipts
 
             var goodsReceiptViewModels = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(goodsReceipts);
 
-            return await Filter(goodsReceiptViewModels, _goodsIssueLots);
+            return goodsReceiptViewModels;
 
         }
 

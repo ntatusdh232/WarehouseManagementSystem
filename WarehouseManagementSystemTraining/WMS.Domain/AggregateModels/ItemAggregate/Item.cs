@@ -47,6 +47,19 @@
             ItemClassId = itemClassId;
         }
 
+        public Item(string itemType, string itemId, string itemName, string unit, double minimumStockLevel,
+            decimal price, double? packetSize, string? packetUnit)
+        {
+            ItemType = itemType;
+            ItemId = itemId;
+            ItemName = itemName;
+            Unit = unit;
+            MinimumStockLevel = minimumStockLevel;
+            Price = price;
+            PacketSize = packetSize;
+            PacketUnit = packetUnit;
+        }
+
         public Item(string itemId, string itemName, string unit, double minimumStockLevel,
             decimal price, double? packetSize, string? packetUnit, string itemClassId)
         {
