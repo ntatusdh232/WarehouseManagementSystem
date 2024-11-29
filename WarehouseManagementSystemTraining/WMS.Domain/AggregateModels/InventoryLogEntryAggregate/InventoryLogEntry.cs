@@ -3,8 +3,9 @@
     public class InventoryLogEntry : IAggregateRoot
     {
         [Key]
-        public string ItemLotId { get; set; }
+        public string Id { get; set; }
 
+        public string ItemLotId { get; set; }
         public double BeforeQuantity { get; set; } 
         public double ChangedQuantity { get; set; }
         public double ReceivedQuantity { get; set; }

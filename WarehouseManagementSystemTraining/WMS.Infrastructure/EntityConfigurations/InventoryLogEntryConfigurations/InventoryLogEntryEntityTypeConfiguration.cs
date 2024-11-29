@@ -4,7 +4,10 @@
     {
         public void Configure(EntityTypeBuilder<InventoryLogEntry> builder)
         {
-            builder.HasKey(t => t.ItemLotId);
+            builder.HasKey(t => t.Id);
+
+            builder.Property(t => t.Id)
+                   .ValueGeneratedOnAdd();
 
             builder.HasOne(t => t.Item)
                    .WithMany()
