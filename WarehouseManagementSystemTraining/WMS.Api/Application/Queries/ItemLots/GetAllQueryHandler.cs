@@ -5,11 +5,13 @@ namespace WMS.Api.Application.Queries.ItemLots
     {
         private readonly IMapper _mapper;
         private readonly ApplicationDbContext _context;
+        private readonly IItemLotRepository _itemLotRepository;
 
-        public GetAllQueryHandler(IMapper mapper, ApplicationDbContext context)
+        public GetAllQueryHandler(IMapper mapper, ApplicationDbContext context, IItemLotRepository itemLotRepository)
         {
             _mapper = mapper;
             _context = context;
+            _itemLotRepository = itemLotRepository;
         }
 
         private IQueryable<ItemLot> _itemLots => _context.itemsLot

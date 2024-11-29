@@ -5,6 +5,10 @@ public class ItemSublotViewModel
     public string LocationId { get; set; }
     public double QuantityPerLocation {  get; set; }
 
+    public ItemSublotViewModel()
+    {
+    }
+
     public ItemSublotViewModel(string locationId, double quantityPerLocation)
     {
         LocationId = locationId;
