@@ -18,7 +18,7 @@ namespace WMS.Api.Application.Commands.FinishedProductIssues
         public async Task<bool> Handle(CreateFinishedProductIssueCommand request, CancellationToken cancellationToken)
         {
             var finishedProductIssue = await _finishedProductIssueRepository.GetIssueById(request.FinishedProductIssueId);
-            if (finishedProductIssue != null)
+            if (finishedProductIssue is not null)
             {
                 new DuplicatedRecordErrorDetail(nameof(FinishedProductIssue), request.FinishedProductIssueId);
             }

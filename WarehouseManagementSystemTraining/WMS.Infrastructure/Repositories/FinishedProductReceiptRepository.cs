@@ -9,11 +9,6 @@
         public async Task<FinishedProductReceipt> Add(FinishedProductReceipt finishedProductReceipt)
         {
             var existingItem = await _context.finishedProductReceipts.FindAsync(finishedProductReceipt.FinishedProductReceiptId);
-            if (existingItem != null)
-            {
-                throw new ArgumentException($"Item with ID {finishedProductReceipt.FinishedProductReceiptId} already exists.");
-            }
-
             await _context.finishedProductReceipts.AddAsync(finishedProductReceipt);
             await _context.SaveChangesAsync();
             return finishedProductReceipt;
@@ -43,11 +38,6 @@
         {
             var existingItem = await _context.finishedProductReceipts.FindAsync(finishedProductReceipt.FinishedProductReceiptId);
 
-            if (existingItem != null)
-            {
-                throw new ArgumentException($"Item with ID {finishedProductReceipt.FinishedProductReceiptId} does not exist.");
-            }
-
             existingItem.UpdateFinishedProductReceipt(finishedProductReceipt.Timestamp, finishedProductReceipt.Employee, finishedProductReceipt.Entries);
 
             await _context.SaveChangesAsync();
@@ -57,13 +47,8 @@
         public async Task Remove(string finishedProductReceiptId)
         {
             var existingItem = _context.finishedProductReceipts.Find(finishedProductReceiptId);
-            if (existingItem == null)
-            {
-                throw new KeyNotFoundException();
-            }
-            _context.finishedProductReceipts.Remove(existingItem);
 
-            
+            _context.finishedProductReceipts.Remove(existingItem);
 
         }
     }

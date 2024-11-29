@@ -15,7 +15,7 @@ namespace WMS.Infrastructure.Repositories
             foreach (var i in goodsReceiptLotCompleted)
             {
                 var receipt = await _context.goodsReceipts.FirstOrDefaultAsync(s => s.GoodsReceiptId == i.GoodsReceiptId);
-                if (receipt != null)
+                if (receipt is not null)
                 {
                     goodsReceipts.Add(receipt);
                 }
@@ -30,7 +30,7 @@ namespace WMS.Infrastructure.Repositories
             foreach (var i in goodsReceiptLotCompleted)
             {
                 var receipt = await _context.goodsReceipts.FirstOrDefaultAsync(s => s.GoodsReceiptId == i.GoodsReceiptId);
-                if (receipt != null)
+                if (receipt is not null)
                 {
                     goodsReceipts.Add(receipt);
                 }
@@ -67,13 +67,10 @@ namespace WMS.Infrastructure.Repositories
         {
             var exitingItem = await _context.goodsReceipts.FindAsync(goodsReceipt.GoodsReceiptId);
 
-            if (exitingItem != null)
-            {
-                throw new ArgumentException($"GoodsReceipt with ID {goodsReceipt.GoodsReceiptId} already exists.");
-            }
-
             await _context.goodsReceipts.AddAsync(goodsReceipt);
+
             await _context.SaveChangesAsync();
+
             return goodsReceipt;
 
         }
@@ -81,11 +78,6 @@ namespace WMS.Infrastructure.Repositories
         public async Task<GoodsReceipt> Update(GoodsReceipt goodsReceipt)
         {
             var existingItem = await _context.goodsReceipts.FindAsync(goodsReceipt.GoodsReceiptId);
-
-            if (existingItem == null)
-            {
-                throw new ArgumentException($"GoodsReceipt with ID {goodsReceipt.GoodsReceiptId} does not exist.");
-            }
 
             existingItem.UpdateGoodsReceipt(goodsReceipt.GoodsReceiptId, goodsReceipt.Supplier, goodsReceipt.Timestamp,
                                        goodsReceipt.Employee, goodsReceipt.Lots);
@@ -98,11 +90,6 @@ namespace WMS.Infrastructure.Repositories
         public async Task Remove(string goodsReceiptId)
         {
             var existingItem = await _context.goodsReceipts.FindAsync(goodsReceiptId);
-
-            if (existingItem == null)
-            {
-                throw new ArgumentException($"GoodsReceipt with ID {goodsReceiptId} does not exist.");
-            }
 
             _context.goodsReceipts.Remove(existingItem);
             await _context.SaveChangesAsync();

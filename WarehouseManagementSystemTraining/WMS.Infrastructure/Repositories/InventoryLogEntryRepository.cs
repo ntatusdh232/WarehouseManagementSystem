@@ -9,10 +9,6 @@
         public async Task<InventoryLogEntry> Add(InventoryLogEntry inventoryLogEntry)
         {
             var existingInventoryLogEntry = await _context.inventoryLogEntries.FindAsync(inventoryLogEntry.ItemLotId);
-            if (existingInventoryLogEntry == inventoryLogEntry)
-            {
-                throw new ArgumentException($"InventoryLogEntry with ID {existingInventoryLogEntry.ItemLotId} already exists.");
-            }
             await _context.inventoryLogEntries.AddAsync(inventoryLogEntry);
             await _context.SaveChangesAsync();
             return inventoryLogEntry;
@@ -45,10 +41,6 @@
         public async Task Remove(string itemLotId)
         {
             var existingLogEntry = await _context.inventoryLogEntries.FindAsync(itemLotId);
-            if (existingLogEntry is null)
-            {
-                throw new ArgumentException($"LogEntry does not exists.");
-            }
             _context.inventoryLogEntries.Remove(existingLogEntry);
             await _context.SaveChangesAsync();
         }
@@ -56,10 +48,6 @@
         public async Task<InventoryLogEntry> Update(InventoryLogEntry inventoryLogEntry)
         {
             var existingLogEntry = await _context.inventoryLogEntries.FindAsync(inventoryLogEntry.ItemLotId);
-            if (existingLogEntry is null)
-            {
-                throw new ArgumentException($"LogEntry does not exists.");
-            }
             existingLogEntry.Update(inventoryLogEntry.BeforeQuantity, inventoryLogEntry.ChangedQuantity, inventoryLogEntry.ReceivedQuantity, inventoryLogEntry.ShippedQuantity, inventoryLogEntry.Timestamp, inventoryLogEntry.TrackingTime);
             await _context.SaveChangesAsync();
             return inventoryLogEntry;
@@ -76,10 +64,6 @@
 
             var notFoundIds = itemLotIds.Except(existingLogEntries.Select(entry => entry.ItemLotId)).ToList();
 
-            if (notFoundIds.Any())
-            {
-                throw new ArgumentException($"InventoryLogEntries with ItemLotId {string.Join(", ", notFoundIds)} not found.");
-            }
 
             foreach (var existingEntry in existingLogEntries)
             {

@@ -11,10 +11,7 @@ namespace WMS.Infrastructure.Repositories
         public async Task<Location> AddLocation(Location location)
         {
             var existingLocation = await _context.locations.FirstOrDefaultAsync(s => s.LocationId == location.LocationId);
-            if (existingLocation == location)
-            {
-                throw new ArgumentException($"Location already exists.");
-            }
+
             await _context.locations.AddAsync(location);
             await _context.SaveChangesAsync();
             return location;
@@ -23,10 +20,7 @@ namespace WMS.Infrastructure.Repositories
         public async Task<Warehouse> AddWarehouse(Warehouse warehouse)
         {
             var existingWarehouse = await _context.warehouses.FindAsync(warehouse.WarehouseId);
-            if (existingWarehouse == warehouse)
-            {
-                throw new ArgumentException($"Warehouse already exists.");
-            }
+
             await _context.warehouses.AddAsync(warehouse);
             await _context.SaveChangesAsync();
             return warehouse;

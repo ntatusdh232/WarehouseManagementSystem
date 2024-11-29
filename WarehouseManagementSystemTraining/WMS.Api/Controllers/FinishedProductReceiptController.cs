@@ -1,4 +1,8 @@
-﻿namespace WMS.Api.Controllers
+﻿using WMS.Api.Application.Commands.Employees;
+using WMS.Api.Application.Commands.FinishedProductIssues;
+using WMS.Api.Application.Commands.FinishedProductReceipts;
+
+namespace WMS.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -14,7 +18,7 @@
         [HttpGet("GetByTime - ERROR")]
         public async Task<IEnumerable<FinishedProductReceiptViewModel>> GetByTime([FromQuery] DateTime start, [FromQuery] DateTime stop)
         {
-            var request = new TimeRangeQuery(start.Date, stop.Date);
+            var request = new TimeRangeQuery(start,stop);
 
             var query = new Application.Queries.FinishedProductReceipts.GetByTimeQuery(request);
 
@@ -34,6 +38,50 @@
             var query = new GetReceiptIdsQuery();
 
             return await _mediator.Send(query);
+        }
+
+        [HttpPost("AddEntryToFinishedProductReceipt")]
+        public async Task<IActionResult> AddEntryToFinishedProductReceipt([FromBody] AddEntryToFinishedProductReceiptCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpPost("CreateProductReceipt")]
+        public async Task<IActionResult> CreateProductReceipt([FromBody] CreateFinishedProductReceiptCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("DeleteFinishedProductReceipt{finishProductReceiptId}")]
+        public async Task<IActionResult> DeleteFinishedProductReceipt(string finishProductReceiptId)
+        {
+            var command = new DeleteFinishedProductReceiptCommand(finishProductReceiptId);
+
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("RemoveFinishedProductReceiptEntries")]
+        public async Task<IActionResult> RemoveFinishedProductReceiptEntries([FromBody] RemoveFinishedProductReceiptEntriesCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpPut("UpdateFinishedProductReceiptEntry{id}")]
+        public async Task<IActionResult> UpdateFinishedProductReceiptEntry(string id, [FromBody] UpdateFinishedProductReceiptEntryCommand request)
+        {
+            var command = new UpdateFinishedProductReceiptEntryCommand(id, request.Entries);
+
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
         }
     }
 }

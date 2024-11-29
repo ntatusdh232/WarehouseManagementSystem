@@ -14,7 +14,7 @@
         public async Task<bool> Handle(RemoveFinishedProductIssueEntryCommand request, CancellationToken cancellationToken)
         {
             var finishedProductIssue = await _finishedProductIssueRepository.GetIssueById(request.FinishedProductIssueId);
-            if (finishedProductIssue == null)
+            if (finishedProductIssue is null)
             {
                 throw new EntityNotFoundException(nameof(FinishedProductIssue), request.FinishedProductIssueId);
             }

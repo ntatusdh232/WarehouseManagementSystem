@@ -54,7 +54,7 @@
             return POsList;
         }
 
-        public async Task<FinishedProductInventory> GetInventory(string itemId, string unit, string purchaseOrderNumber)
+        public async Task<FinishedProductInventory?> GetInventory(string itemId, string unit, string purchaseOrderNumber)
         {
             var Inventory = await _context.finishedProductInventories
                 .FirstOrDefaultAsync(s => s.ItemId == itemId && s.PurchaseOrderNumber == purchaseOrderNumber && s.Item.Unit == unit);
@@ -66,17 +66,9 @@
 
         public async Task Update(FinishedProductReceiptEntry Entry)
         {
-            if (Entry == null)
-            {
-                throw new ArgumentNullException();
-            }
 
             var existingItem = await _context.finishedProductInventories.FindAsync(Entry.ItemId);
 
-            if (existingItem == null)
-            {
-                throw new KeyNotFoundException($"FinishedProductInventory with ID {Entry.ItemId} not found.");
-            }
 
             existingItem.UpdateFinishedProductInventory(Entry.PurchaseOrderNumber, Entry.Quantity, DateTime.Now, Entry.Item);
 

@@ -1,4 +1,6 @@
-﻿namespace WMS.Api.Controllers
+﻿using WMS.Api.Application.Commands.Employees;
+
+namespace WMS.Api.Controllers
 {
     [Route("API/[controller]")]
     [ApiController]
@@ -29,7 +31,22 @@
             return await _mediator.Send(query);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> CreateEmployee([FromBody] CreateEmployeeCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateEmployee(string id, [FromBody] UpdateEmployeeCommand request)
+        {
+            var command = new UpdateEmployeeCommand(id, request.EmployeeName);
+
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
 
     }
 }

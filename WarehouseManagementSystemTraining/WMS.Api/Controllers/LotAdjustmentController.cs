@@ -1,4 +1,8 @@
-﻿namespace WMS.Api.Controllers
+﻿using WMS.Api.Application.Commands.FinishedProductReceipts;
+using WMS.Api.Application.Commands.ItemLots;
+using WMS.Api.Application.Commands.LotAdjustments;
+
+namespace WMS.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -36,5 +40,35 @@
 
             return await _mediator.Send(query);
         }
+
+        [HttpPost("CreateLotAdjustment")]
+        public async Task<IActionResult> CreateLotAdjustment([FromBody] CreateLotAdjustmentCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("RemoveLotAdjustment{lotId}")]
+        public async Task<IActionResult> RemoveLotAdjustment(string lotId)
+        {
+            var command = new RemoveLotAdjustmentCommand(lotId);
+
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+
+        }
+
+        [HttpPut("ConfirmLotAdjustment{id}")]
+        public async Task<IActionResult> ConfirmLotAdjustment(string id, [FromBody] ConfirmLotAdjustmentCommand request)
+        {
+            var command = new ConfirmLotAdjustmentCommand(id);
+
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
     }
 }

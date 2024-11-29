@@ -9,10 +9,6 @@
         public async Task<LotAdjustment> Add(LotAdjustment lotAdjustment)
         {
             var existingLot = await _context.lotAdjustments.FindAsync(lotAdjustment.LotId);
-            if (existingLot != null)
-            {
-                throw new Exception("Lot Adjustment already exists");
-            }
 
             await _context.lotAdjustments.AddAsync(lotAdjustment);
             await _context.SaveChangesAsync();
@@ -22,8 +18,8 @@
 
         public async Task Update(LotAdjustment lotAdjustment)
         {
-            var existingLot = await _context.lotAdjustments.FindAsync(lotAdjustment.LotId)
-                ?? throw new Exception("Lot Adjustment does not exist");
+            var existingLot = await _context.lotAdjustments.FindAsync(lotAdjustment.LotId);
+
 
             existingLot.Update(lotAdjustment);
 
@@ -32,8 +28,8 @@
 
         public async Task Remove(string LotId)
         {
-            var existingLot = await _context.lotAdjustments.FindAsync(LotId)
-                ?? throw new Exception("Lot Adjustment does not exist");
+            var existingLot = await _context.lotAdjustments.FindAsync(LotId);
+
 
             _context.lotAdjustments.Remove(existingLot);
 

@@ -20,17 +20,8 @@
         {
             var existingItemLot = await _context.itemsLot.FindAsync(lotId);
 
-            if (existingItemLot == null)
-            {
-                throw new Exception("ItemLot does not exist");
-            }
-
-            if (location == null)
-            {
-                throw new Exception("Location is null");
-            }
-
             existingItemLot.Locations.Add(location);
+
             await _context.SaveChangesAsync();
 
             return location;
@@ -41,20 +32,7 @@
         {
             var existingItemLot = await _context.itemsLot.FindAsync(lotId);
 
-            if (existingItemLot == null)
-            {
-                throw new Exception("ItemLot does not exist");
-            }
-
             var existingLocation = existingItemLot.Locations.FirstOrDefault(x => x.LocationId == location.LocationId);
-            if (existingLocation == null)
-            {
-                throw new Exception("Location does not exist");
-            }
-            if (location == null)
-            {
-                throw new Exception("Location is null");
-            }
 
             existingLocation.LocationUpdate(location.LocationId, location.ItemLots);
 
@@ -68,18 +46,10 @@
         {
             var existingItemLot = await _context.itemsLot.FindAsync(lotId);
 
-            if (existingItemLot == null)
-            {
-                throw new Exception("ItemLot does not exist");
-            }
-
             var existingLocation = existingItemLot.Locations.FirstOrDefault(x => x.LocationId == locationId);
-            if (existingLocation == null)
-            {
-                throw new Exception("Location does not exist");
-            }
 
             existingItemLot.Locations.Remove(existingLocation);
+
             await _context.SaveChangesAsync();
 
         }

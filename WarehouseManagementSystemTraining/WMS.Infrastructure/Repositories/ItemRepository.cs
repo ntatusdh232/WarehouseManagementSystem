@@ -49,7 +49,7 @@
 
         public async Task Update(Item item, string itemClassId, CancellationToken cancellationToken)
         {
-            if (item == null) throw new ArgumentNullException(nameof(item));
+
 
             item.Update(item, itemClassId);
 
@@ -61,19 +61,11 @@
 
             var existingItem = await _context.items.FindAsync(itemList.ItemId);
 
-            if (existingItem != null)
-            {
-                existingItem.Update(itemList.Unit, itemList.MinimumStockLevel, itemList.Price);
+            existingItem.Update(itemList.Unit, itemList.MinimumStockLevel, itemList.Price);
 
-                await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
-                return itemList;
-            }
-            else
-            {
-
-                throw new KeyNotFoundException($"Item with ID {itemList.ItemId} not found.");
-            }
+            return itemList;
         }
 
         public async Task<Item> GetItemById(string itemId)
@@ -204,10 +196,6 @@
         public IXLWorksheet? GetItemListWorkSheet(IEnumerable<Item> items, IXLWorksheet? worksheet)
         {
 
-            if (worksheet == null)
-            {
-                throw new ArgumentNullException(nameof(worksheet), "Worksheet cannot be null.");
-            }
 
             worksheet.Cell(1, 1).Value = "ID Item";
             worksheet.Cell(1, 2).Value = "Tên Item";
@@ -235,18 +223,10 @@
         }
 
         public async Task<Item> AddItem(Item item)
-        {        
-            try
-            {
-                await _context.items.AddAsync(item); 
-                await _context.SaveChangesAsync(); 
-                return item;
-            }
-            catch (Exception ex)
-            {
-                
-                throw new InvalidOperationException("Không thể thêm vật phẩm vào cơ sở dữ liệu: " + ex.Message);
-            }
+        {
+            await _context.items.AddAsync(item);
+            await _context.SaveChangesAsync();
+            return item;
         }
         public List<Item> GetPageItems(IEnumerable<Item> items, int pageNumber, int pageSize)
         {

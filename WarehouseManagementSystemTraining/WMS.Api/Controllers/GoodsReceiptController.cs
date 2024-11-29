@@ -1,4 +1,10 @@
-﻿namespace WMS.Api.Controllers
+﻿using WMS.Api.Application.Commands.Employees;
+using WMS.Api.Application.Commands.FinishedProductIssues;
+using WMS.Api.Application.Commands.FinishedProductReceipts;
+using WMS.Api.Application.Commands.GoodsIssues;
+using WMS.Api.Application.Commands.GoodsReceipts;
+
+namespace WMS.Api.Controllers
 {
     [Route("API/[controller]")]
     [ApiController]
@@ -61,6 +67,49 @@
             return await _mediator.Send(query);
         }
 
+        [HttpPost("CCreateGoodsReceipt")]
+        public async Task<IActionResult> CreateGoodsReceipt([FromBody] CreateGoodsReceiptCommand command)
+        {
+            var result = await _mediator.Send(command);
 
+            return Ok(result);
+        }
+
+        [HttpPost("AddLots - Do not Test")]
+        public async Task<IActionResult> AddLotsToGoodsReceipt([FromBody] AddLotsToGoodsReceiptCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("DeleteGoodsReceipt/{goodsReceiptId}")]
+        public async Task<IActionResult> RemoveGoodsReceipt(string goodsReceiptId)
+        {
+            var command = new DeleteGoodsReceiptCommand(goodsReceiptId);
+
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("RemoveGoodsReceiptLots")]
+        public async Task<IActionResult> RemoveGoodsReceiptLots([FromBody] RemoveGoodsReceiptLotsCommand command)
+        {
+
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpPut("UpdateGoodsReceipt{id}")]
+        public async Task<IActionResult> UpdateGoodsReceipt(string id, [FromBody] UpdateGoodsReceiptCommand request)
+        {
+            var command = new UpdateGoodsReceiptCommand(id, request.GoodsReceiptLots);
+
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
     }
 }

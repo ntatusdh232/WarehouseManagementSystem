@@ -12,11 +12,11 @@
             await _context.finishedProductIssues.AddAsync(finishedProductIssue);
         }
 
-        public async Task<FinishedProductIssue> GetIssueById(string finishedProductIssueId)
+        public async Task<FinishedProductIssue?> GetIssueById(string finishedProductIssueId)
         {
             var existingItem = await _context.finishedProductIssues.FindAsync(finishedProductIssueId);
 
-            if (existingItem != null)
+            if (existingItem is not null)
             {
                 var employee = await _context.employees.FindAsync(existingItem.EmployeeId);
                 existingItem.Employee = employee;
@@ -41,11 +41,6 @@
         public async Task<FinishedProductIssue> Update(FinishedProductIssue finishedProductIssue)
         {
             var existingItem = await _context.finishedProductIssues.FindAsync(finishedProductIssue.FinishedProductIssueId);
-
-            if (existingItem == null)
-            {
-                throw new ArgumentException($"Item with ID {finishedProductIssue.FinishedProductIssueId} does not exist.");
-            }
 
             existingItem.UpdateFinishedProductIssue(finishedProductIssue.Receiver, finishedProductIssue.Timestamp, finishedProductIssue.Employee, finishedProductIssue.Entries);
 

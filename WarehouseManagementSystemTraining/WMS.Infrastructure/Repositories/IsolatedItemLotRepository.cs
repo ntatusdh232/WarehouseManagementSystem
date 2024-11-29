@@ -25,10 +25,6 @@ namespace WMS.Infrastructure.Repositories
         public async Task Update(IsolatedItemLot itemLot)
         {
             var updateItem = await _context.isolatedItemLots.FindAsync(itemLot.ItemLotId);
-            if (updateItem is null)
-            {
-                throw new Exception("Not found");
-            }
 
             _context.isolatedItemLots.Update(updateItem);
 
@@ -37,10 +33,7 @@ namespace WMS.Infrastructure.Repositories
         public async Task Remove(string lotId)
         {
             var removeItem = await _context.isolatedItemLots.FindAsync(lotId);
-            if (removeItem is null)
-            {
-                throw new Exception("Not Found");
-            }
+
             _context.isolatedItemLots.Remove(removeItem);
 
         }

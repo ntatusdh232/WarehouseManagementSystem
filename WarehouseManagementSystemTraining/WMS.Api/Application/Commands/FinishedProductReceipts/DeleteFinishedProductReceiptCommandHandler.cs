@@ -15,7 +15,7 @@
         {
             var finishedProductReceipt = await _finishedProductReceiptRepository.GetReceiptById(request.FinishedProductReceiptId);
 
-            if (finishedProductReceipt == null)
+            if (finishedProductReceipt is null)
             {
                 throw new EntityNotFoundException(nameof(FinishedProductReceipt), request.FinishedProductReceiptId);
             }

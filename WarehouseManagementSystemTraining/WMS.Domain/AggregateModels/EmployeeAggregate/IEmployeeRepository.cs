@@ -3,8 +3,8 @@
     public interface IEmployeeRepository : IRepository<Employee>
     {
         Task<List<Employee>> GettAllAsync();
-        Task<Employee> GetEmployeeById(string employeeId);
-        Task<Employee> GetEmployeeByName(string employeeName);
+        Task<Employee?> GetEmployeeById(string employeeId);
+        Task<Employee?> GetEmployeeByName(string employeeName);
         Task<Employee> Add(Employee employee);
         Task<Employee?> Update(Employee updatedEmployee);
 

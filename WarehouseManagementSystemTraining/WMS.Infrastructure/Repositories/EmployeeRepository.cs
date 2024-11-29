@@ -12,7 +12,7 @@
             return employees;
         }
 
-        public async Task<Employee> GetEmployeeById(string employeeId)
+        public async Task<Employee?> GetEmployeeById(string employeeId)
         {
             var employee = await _context.employees.FirstOrDefaultAsync(s => s.EmployeeId == employeeId);
 
@@ -20,7 +20,7 @@
             return employee;
         }
 
-        public async Task<Employee> GetEmployeeByName(string employeeName)
+        public async Task<Employee?> GetEmployeeByName(string employeeName)
         {
             var employee = await _context.employees
                 .AsNoTracking()
@@ -130,17 +130,9 @@
 
         public async Task<Employee> AddEmployee(Employee employee)
         {
-            try
-            {
                 _context.employees.Add(employee); 
                 await _context.SaveChangesAsync(); 
                 return employee;
-            }
-            catch (Exception ex)
-            {
-
-                throw new InvalidOperationException("Không thể thêm nhân viên vào cơ sở dữ liệu: " + ex.Message);
-            }
         }
 
         public List<Employee> GetPageEmployees(IEnumerable<Employee> employees, int pageNumber, int pageSize)

@@ -2,8 +2,8 @@
 {
     public class TimeRangeQuery : Query
     {
-        public DateTime StartTime { get; set; } = DateTime.MinValue;
-        public DateTime EndTime { get; set; } = DateTime.Now;
+        public DateTime StartTime { get; set; } 
+        public DateTime EndTime { get; set; } 
 
         public TimeRangeQuery(DateTime startTime, DateTime endTime)
         {

@@ -9,10 +9,6 @@
         public async Task<ItemLot> AddLot(ItemLot itemLot)
         {
             var existingItemLot = await _context.itemsLot.FindAsync(itemLot.LotId);
-            if (existingItemLot == itemLot)
-            {
-                throw new ArgumentException($"ItemLot already exists.");
-            }
             await _context.itemsLot.AddAsync(itemLot);
             await _context.SaveChangesAsync();
             return itemLot;
@@ -25,10 +21,6 @@
                                              .Select(lot => lot.LotId)
                                              .ToListAsync();
 
-            if (existingIds.Any())
-            {
-                throw new ArgumentException($"ItemLots with IDs {string.Join(", ", existingIds)} already exist.");
-            }
             await _context.itemsLot.AddRangeAsync(itemLots);
 
             await _context.SaveChangesAsync();
@@ -39,20 +31,14 @@
         public async Task Remove(string lotId)
         {
             var existingLot = await _context.itemsLot.FindAsync(lotId);
-            if (existingLot is null)
-            {
-                throw new ArgumentException($"ItemLot does not exists.");
-            }
+
             _context.itemsLot.Remove(existingLot);
         }
 
         public async Task DeleteLots(string lotId)
         {
             var existingLots = await _context.itemsLot.Where(x => x.LotId == lotId).ToListAsync();
-            if (existingLots is null)
-            {
-                throw new ArgumentException($"ItemLot does not exists.");
-            }
+
             _context.itemsLot.RemoveRange(existingLots);
             await _context.SaveChangesAsync();
         }
@@ -81,11 +67,9 @@
         public async Task<ItemLot> UpdateLot(ItemLot itemLot)
         {
             var existingLot = await _context.itemsLot.FindAsync(itemLot.LotId);
-            if(existingLot is null)
-            {
-                throw new ArgumentException($"ItemLot does not exists.");
-            }
+
             existingLot.Update(itemLot.Quantity, itemLot.Timestamp, itemLot.ProductionDate, itemLot.ExpirationDate);
+
             return existingLot;
         }
 
@@ -102,10 +86,6 @@
 
                 var notFoundIds = lotIds.Except(existingLots.Select(lot => lot.LotId)).ToList();
 
-                if (notFoundIds.Any())
-                {
-                    throw new ArgumentException($"ItemLots with IDs {string.Join(", ", notFoundIds)} not found.");
-                }
 
                 foreach (var existingLot in existingLots)
                 {

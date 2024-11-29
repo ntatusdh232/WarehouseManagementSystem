@@ -1,4 +1,6 @@
-﻿using WMS.Api.Application.Commands.IsolatedItemLots;
+﻿using WMS.Api.Application.Commands.GoodsReceipts;
+using WMS.Api.Application.Commands.IsolatedItemLots;
+using WMS.Api.Application.Commands.ItemLots;
 
 namespace WMS.Api.Controllers
 {
@@ -59,6 +61,27 @@ namespace WMS.Api.Controllers
             var result = await _mediator.Send(command);
 
             return Ok(result);
+        }
+
+        [HttpPut("IsolateItemLot{id}")]
+        public async Task<IActionResult> IsolateItemLot(string id, [FromBody] IsolateItemLotCommand request)
+        {
+            var command = new IsolateItemLotCommand(id, request.IsolatedItemSublots);
+
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("RemoveItemLot {itemLotId}")]
+        public async Task<IActionResult> RemoveItemLot(string itemLotId)
+        {
+            var command = new RemoveItemLotCommand(itemLotId);
+
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+            
         }
     }
 }
