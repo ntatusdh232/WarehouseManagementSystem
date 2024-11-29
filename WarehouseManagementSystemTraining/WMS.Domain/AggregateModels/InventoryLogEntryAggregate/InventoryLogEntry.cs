@@ -21,8 +21,7 @@
 #pragma warning disable CS8618 
         private InventoryLogEntry(){}
 
-        public InventoryLogEntry(string itemLotId, double beforeQuantity, double changedQuantity, double receivedQuantity, 
-                                 double shippedQuantity, DateTime timestamp, DateTime trackingTime, Item item, string itemId)
+        public InventoryLogEntry(string itemLotId, double beforeQuantity, double changedQuantity, double receivedQuantity, double shippedQuantity, DateTime timestamp, DateTime trackingTime, string itemId)
         {
             ItemLotId = itemLotId;
             BeforeQuantity = beforeQuantity;
@@ -31,12 +30,13 @@
             ShippedQuantity = shippedQuantity;
             Timestamp = timestamp;
             TrackingTime = trackingTime;
-            Item = item;
             ItemId = itemId;
         }
 
 
-#pragma warning restore CS8618 
+
+
+#pragma warning restore CS8618
 
 
         public void Update(double beforeQuantity, double changedQuantity, double receivedQuantity, double shippedQuantity, DateTime timestamp, DateTime trackingTime)

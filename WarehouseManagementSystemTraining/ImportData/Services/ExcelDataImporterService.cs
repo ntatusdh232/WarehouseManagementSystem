@@ -1,4 +1,7 @@
-﻿using WMS.Domain.AggregateModels.ItemLotLocationAggregate;
+﻿using DocumentFormat.OpenXml.InkML;
+using WMS.Domain.AggregateModels.InventoryLogEntryAggregate;
+using WMS.Domain.AggregateModels.ItemAggregate;
+using WMS.Domain.AggregateModels.ItemLotLocationAggregate;
 
 namespace ImportData.Services
 {
@@ -7,23 +10,26 @@ namespace ImportData.Services
         private readonly ApplicationDbContext _context;
         private readonly ItemRepository _itemRepository;
         private readonly ItemLotLocationRepository _itemLotLocation;
+        private readonly InventoryLogEntryRepository _inventoryLogEntryRepository;
+
         public ExcelDataImporterService(ApplicationDbContext context)
         {
             _context = context;
             _itemRepository = new ItemRepository(_context);
-            _itemLotLocation = new ItemLotLocationRepository(_context);   
+            _itemLotLocation = new ItemLotLocationRepository(_context);
+            _inventoryLogEntryRepository = new InventoryLogEntryRepository(_context);
         }
 
-        public void ImportData(string filePath, string itemLotLocationFilePath)
+        public void ImportData(string filePath, string itemLotLocationFilePath, string InventoryLogEntryExcelFilePath)
         {
             var itemExcelData = ReadExcelFile(filePath);
             InsertDataIntoSqlServer(itemExcelData);
 
             var itemLotLocationExcelData = ReadExcelFile(itemLotLocationFilePath);
-
-            Console.WriteLine("ItemLotLocation Data: " + itemLotLocationExcelData.Rows);
-
             InsertItemLotLocationDataIntoSqlServer(itemLotLocationExcelData);
+
+            var inventoryLogEntryExcelData = ReadExcelFile(InventoryLogEntryExcelFilePath);
+            InsertInventoryLogEntryDataIntoSqlServer(inventoryLogEntryExcelData);
 
         }
 
@@ -38,7 +44,7 @@ namespace ImportData.Services
 
             if (!File.Exists(filePath))
             {
-                throw new FileNotFoundException($"The file at path {filePath} does not exist.");
+                throw new FileNotFoundException($"    The file at path {filePath} does not exist.");
             }
 
             try
@@ -72,7 +78,7 @@ namespace ImportData.Services
             }
         }
 
-
+        #region
         private void InsertDataIntoSqlServer(DataTable dataTable)
         {
             if (dataTable.Rows.Count == 0)
@@ -86,7 +92,7 @@ namespace ImportData.Services
             {
                 ProcessDataRows(dataTable);
                 transaction.Commit();
-                Console.WriteLine("Import Data Success.");
+                Console.WriteLine("Import Item Data Success.");
             }
             catch (Exception ex)
             {
@@ -161,7 +167,9 @@ namespace ImportData.Services
                 itemClassId: row["ItemType"]?.ToString() ?? "Null"
             );
         }
+        #endregion
 
+        #region
         private void InsertItemLotLocationDataIntoSqlServer(DataTable dataTable)
         {
             if (dataTable.Rows.Count == 0)
@@ -208,12 +216,11 @@ namespace ImportData.Services
             string lotId = row["LotId"]?.ToString()?.Trim() ?? throw new Exception("LotId Not Found");
             string locationId = row["LocationId"]?.ToString()?.Trim() ?? throw new Exception("LocationId Not Found");
 
-            // Kiểm tra nếu LotId và LocationId đã tồn tại
             var existingItemLotLocation = _itemLotLocation.GetItemLotLocationByLotAndLocation(lotId, locationId);
             if (existingItemLotLocation != null)
             {
-                Console.WriteLine($"ItemLotLocation already exists for LotId: {lotId}, LocationId: {locationId}");
-                return false; // Không thêm mới
+                //Console.WriteLine($"     ItemLotLocation already exists for LotId: {lotId}, LocationId: {locationId}");
+                return false;
             }
 
             var itemLotLocation = CreateNewItemLotLocation(row);
@@ -265,8 +272,130 @@ namespace ImportData.Services
             );
         }
 
+        #endregion
+
+        #region
+
+        private void InsertInventoryLogEntryDataIntoSqlServer(DataTable dataTable)
+        {
+            if (dataTable.Rows.Count == 0)
+            {
+                Console.WriteLine("Dont Have Date In Execl.");
+                return;
+            }
+
+            using var transaction = _context.Database.BeginTransaction();
+            try
+            {
+                ProcessInventoryLogEntryDataRows(dataTable);
+                transaction.Commit();
+                Console.WriteLine("Import InventoryLogEntry Data Success.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error InventoryLogEntry when Import: {ex.Message}");
+                if (ex.InnerException != null)
+                {
+                    Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
+                }
+                transaction.Rollback();
+            }
+        }
+
+        private void ProcessInventoryLogEntryDataRows(DataTable dataTable)
+        {
+            int batchSize = 100; 
+            int processedRecords = 0;
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                if (!ValidateForeignKeys2(row))
+                {
+                    Console.WriteLine("Data validation failed. Skipping row.");
+                    continue; 
+                }
+
+                if (TryProcessInventoryLogEntryRow(row))
+                {
+                    processedRecords++;
+
+                    if (processedRecords % batchSize == 0)
+                    {
+                        _inventoryLogEntryRepository.SaveChanges();
+                    }
+                }
+            }
+
+            if (processedRecords % batchSize != 0)
+            {
+                _inventoryLogEntryRepository.SaveChanges();
+            }
+        }
 
 
+        private bool TryProcessInventoryLogEntryRow(DataRow row)
+        {
+            if (!ValidateForeignKeys2(row)) return false;
+
+            string itemId = row["ItemId"]?.ToString()?.Trim() ?? throw new Exception("LotId Not Found");
+            string itemLotId = row["ItemLotId"]?.ToString()?.Trim() ?? throw new Exception("LocationId Not Found");
+
+            var existingItemLotLocation = _inventoryLogEntryRepository.GetInventoryLogEntryByLotAndItem(itemId, itemLotId);
+            if (existingItemLotLocation != null)
+            {
+                Console.WriteLine($"ItemLotLocation already exists for LotId: {itemId}, LocationId: {itemLotId}");
+                return false; 
+            }
+
+            var inventoryLogEntry = CreateNewInventoryLogEntry(row);
+            _inventoryLogEntryRepository.AddItem(inventoryLogEntry);
+
+            return true;
+        }
+
+        private bool ValidateForeignKeys2(DataRow row)
+        {
+            string itemId = row["ItemId"]?.ToString()?.Trim();
+            string itemLotId = row["ItemLotId"]?.ToString()?.Trim();
+
+            if (string.IsNullOrEmpty(itemId) || !_context.items.Any(i => i.ItemId == itemId))
+            {
+                Console.WriteLine($"Validation Error: ItemId {itemId} not found in database.");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(itemLotId) || !_context.itemsLot.Any(l => l.LotId == itemLotId))
+            {
+                Console.WriteLine($"Validation Error: ItemLotId {itemLotId} not found in database.");
+                return false;
+            }
+
+            return true;
+        }
+
+
+
+        private InventoryLogEntry CreateNewInventoryLogEntry(DataRow row)
+        {
+            if (row["BeforeQuantity"] == null || row["ChangedQuantity"] == null)
+                throw new Exception("Missing required quantity fields.");
+
+
+            return new InventoryLogEntry
+            (
+                itemLotId: row["ItemId"]?.ToString()?.Trim(),
+                itemId: row["ItemLotId"]?.ToString()?.Trim() ,
+                beforeQuantity: DataParser.GetFloatValue(row["BeforeQuantity"]),
+                changedQuantity: DataParser.GetFloatValue(row["ChangedQuantity"]),
+                receivedQuantity: DataParser.GetFloatValue(row["ReceivedQuantity"]),
+                shippedQuantity: DataParser.GetFloatValue(row["ShippedQuantity"]),
+                timestamp: DataParser.GetDateTimeValue(row["Timestamp"]),
+                trackingTime: DataParser.GetDateTimeValue(row["TrackingTime"])
+            );
+        }
+
+
+        #endregion
 
     }
 }
