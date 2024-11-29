@@ -19,6 +19,7 @@
 
         public ItemLotLocation(string itemLotId, string locationId, double quantityPerLocation)
         {
+            ItemLotLocationId = Guid.NewGuid().ToString();
             LotId = itemLotId;
             LocationId = locationId;
             QuantityPerLocation = quantityPerLocation;
