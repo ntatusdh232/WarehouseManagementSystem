@@ -35,7 +35,7 @@
         public string Position { get; set; }
 
 #pragma warning disable CS8618
-        private UserAccountList() { }
+        public UserAccountList() { }
 
         public UserAccountList(int userAccountId, string account, string password, string name, string email, 
                                string phone, string address, string position)
