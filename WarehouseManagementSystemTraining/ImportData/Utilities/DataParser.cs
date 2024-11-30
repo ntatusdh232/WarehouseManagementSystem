@@ -37,7 +37,7 @@
         {
             if (value == null || value == DBNull.Value)
             {
-                throw new ArgumentNullException(nameof(value), "Giá trị không thể là null hoặc DBNull.");
+                return new DateTime(1900, 1, 1);
             }
 
             string[] formats = { "dd/MM/yyyy HH:mm:ss", "MM/dd/yyyy HH:mm:ss", "yyyy-MM-dd HH:mm:ss" };
@@ -46,7 +46,12 @@
                 return result;
             }
 
-            throw new FormatException($"Giá trị '{value}' không đúng định dạng ngày giờ.");
+            return new DateTime(1900, 1, 1);
+        }
+
+        public static bool GetBoolValue(object value)
+        {
+            return bool.TryParse(value?.ToString(), out bool result) ? result : false;
         }
 
     }

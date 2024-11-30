@@ -9,6 +9,7 @@
             string ItemLotLocationExcelFilePath = @"D:\CODE\VisualStudio\C#\TRAINING\Week15\SQLCODE\ItemLotLocation.xlsx";
             string InventoryLogEntryExcelFilePath = @"D:\CODE\VisualStudio\C#\TRAINING\Week15\SQLCODE\InventoryLogEntry.xlsx";
             string ItemExcelFilePath = @"D:\CODE\VisualStudio\C#\TRAINING\Week11\Data\ITEMS.xlsx";
+            string ItemLotExcelFilePath = @"D:\CODE\VisualStudio\C#\TRAINING\Week15\SQLCODE\ItemLots.xlsx";
 
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
             optionsBuilder.UseSqlServer(connectionString);
@@ -18,7 +19,11 @@
                 using (var context = new ApplicationDbContext(optionsBuilder.Options))
                 {
                     var importer = new ExcelDataImporterService(context);
-                    importer.ImportData(ItemExcelFilePath, ItemLotLocationExcelFilePath, InventoryLogEntryExcelFilePath);
+
+                    importer.ImportData(filePath: ItemExcelFilePath, 
+                                        itemLotLocationFilePath: ItemLotLocationExcelFilePath,
+                                        InventoryLogEntryExcelFilePath: InventoryLogEntryExcelFilePath, 
+                                        ItemLotExcelFilePath: ItemLotExcelFilePath);
 
                 }
             }

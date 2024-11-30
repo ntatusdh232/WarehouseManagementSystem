@@ -47,6 +47,18 @@ namespace WMS.Domain.AggregateModels.ItemAggregate
             ItemId = itemId;
         }
 
+        public ItemLot(string lotId, double quantity, DateTime timestamp, DateTime productionDate, DateTime expirationDate, bool isIsolated, string itemId)
+        {
+            LotId = lotId;
+            Quantity = quantity;
+            Timestamp = timestamp;
+            ProductionDate = productionDate;
+            ExpirationDate = expirationDate;
+            IsIsolated = isIsolated;
+            ItemId = itemId;
+        }
+
+
 
 
 #pragma warning restore CS8618
