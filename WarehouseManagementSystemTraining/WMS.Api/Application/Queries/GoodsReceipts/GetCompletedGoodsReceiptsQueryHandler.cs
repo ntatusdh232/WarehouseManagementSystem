@@ -1,4 +1,6 @@
-﻿namespace WMS.Api.Application.Queries.GoodsReceipts
+﻿using WMS.Domain.AggregateModels.GoodsReceiptAggregate;
+
+namespace WMS.Api.Application.Queries.GoodsReceipts
 {
     public class GetCompletedGoodsReceiptsQueryHandler : IRequestHandler<GetCompletedGoodsReceiptsQuery, IEnumerable<GoodsReceiptViewModel>>
     {
@@ -34,11 +36,31 @@
                                            && lot.ExpirationDate != null
                                            && lot.Sublots.Count > 0)
                          && g.Supplier != null)
-                .ToListAsync();
+            .ToListAsync();
 
-            var goodsReceiptViewModel = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(completedGoodsReceipts);
 
-            var newGoodsReceiptViewModel = await Filter(goodsReceipts: goodsReceiptViewModel,
+            var goodsReceiptViewModels = completedGoodsReceipts.Select(gr => new GoodsReceiptViewModel(
+                gr.GoodsReceiptId,
+                gr.Supplier,
+                gr.Timestamp,
+                _mapper.Map<EmployeeViewModel>(gr.Employee),
+                gr.Lots.Select(lot => new GoodsReceiptLotViewModel(
+                    lot.GoodsReceiptLotId,
+                    lot.Quantity,
+                    lot.ProductionDate ?? DateTime.MinValue,
+                    lot.ExpirationDate ?? DateTime.MinValue,
+                    lot.Note,
+                    lot.IsExported,
+                    _mapper.Map<EmployeeViewModel>(lot.Employee),
+                    _mapper.Map<ItemViewModel>(lot.Item),
+                    lot.Sublots.Select(sublot => new GoodsReceiptSublotViewModel(
+                        sublot.LocationId,
+                        sublot.QuantityPerLocation
+                    )).ToList()
+                )).ToList()
+            ));
+
+            var newGoodsReceiptViewModel = await Filter(goodsReceipts: goodsReceiptViewModels,
                                                         goodsIssueLots: _goodsIssueLots);
 
             return newGoodsReceiptViewModel;

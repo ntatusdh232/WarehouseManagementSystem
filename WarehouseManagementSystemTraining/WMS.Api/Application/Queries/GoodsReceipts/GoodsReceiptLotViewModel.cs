@@ -4,8 +4,8 @@
     {
         public string GoodsReceiptLotId { get; set; }
         public double Quantity { get; set; }
-        public DateTime ProductionDate { get; set; }
-        public DateTime ExpirationDate { get; set; }
+        public DateTime? ProductionDate { get; set; }
+        public DateTime? ExpirationDate { get; set; }
         public string Note { get; set; }
         public bool IsExported { get; set; }
         public EmployeeViewModel Employee { get; set; }

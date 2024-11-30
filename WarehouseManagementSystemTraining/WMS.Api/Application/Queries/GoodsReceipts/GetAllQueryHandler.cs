@@ -1,4 +1,5 @@
-﻿using WMS.Api.Application.Queries.GoodsIssues;
+﻿using System.Linq;
+using WMS.Api.Application.Queries.GoodsIssues;
 using WMS.Domain.AggregateModels.GoodsReceiptAggregate;
 
 namespace WMS.Api.Application.Queries.GoodsReceipts
@@ -16,30 +17,49 @@ namespace WMS.Api.Application.Queries.GoodsReceipts
 
         private IQueryable<GoodsReceipt> _goodsReceipts => _context.goodsReceipts
             .Include(gr => gr.Employee)
-            .Include(s => s.Lots)
-                .ThenInclude(gil => gil.Sublots)
-            .Include(s => s.Lots)
-                .ThenInclude(z => z.Employee)
-            .Include(s => s.Lots)
-                .ThenInclude(z => z.Item)
+            .Include(gr => gr.Lots)
+                .ThenInclude(grl => grl.Item)
+            .Include(gr => gr.Lots)
+                .ThenInclude(grl => grl.Employee)
+            .Include(gr => gr.Lots)
+                .ThenInclude(grl => grl.Sublots)
             .AsNoTracking();
 
-        public IQueryable<GoodsIssueLot> _goodsIssueLots => _context.goodsIssues
-            .AsNoTracking()
-            .SelectMany(gi => gi.Entries)
-            .SelectMany(e => e.Lots);
 
         public async Task<IEnumerable<GoodsReceiptViewModel>> Handle(GetAllQuery request, CancellationToken cancellationToken)
         {
             var goodsReceipts = await _goodsReceipts.ToListAsync();
 
-            var goodsReceiptViewModels = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(goodsReceipts);
+            //var goodsReceiptViewModels = _mapper.Map<IEnumerable<GoodsReceiptViewModel>>(goodsReceipts);
+
+            var goodsReceiptViewModels = goodsReceipts.Select(gr => new GoodsReceiptViewModel(
+                gr.GoodsReceiptId,
+                gr.Supplier,
+                gr.Timestamp,
+                _mapper.Map<EmployeeViewModel>(gr.Employee),
+                gr.Lots.Select(lot => new GoodsReceiptLotViewModel(
+                    lot.GoodsReceiptLotId,
+                    lot.Quantity,
+                    lot.ProductionDate ?? DateTime.MinValue,
+                    lot.ExpirationDate ?? DateTime.MinValue,
+                    lot.Note,
+                    lot.IsExported,
+                    _mapper.Map<EmployeeViewModel>(lot.Employee),
+                    _mapper.Map<ItemViewModel>(lot.Item),
+                    lot.Sublots.Select(sublot => new GoodsReceiptSublotViewModel(
+                        sublot.LocationId,
+                        sublot.QuantityPerLocation
+                    )).ToList()
+                )).ToList()
+            ));
+
+
 
             return goodsReceiptViewModels;
 
         }
 
-        private async Task<IEnumerable<GoodsReceiptViewModel>> Filter(IEnumerable<GoodsReceiptViewModel> goodsReceipts,IQueryable<GoodsIssueLot> goodsIssueLots)
+        private async Task<IEnumerable<GoodsReceiptViewModel>> Filter(IEnumerable<GoodsReceiptViewModel> goodsReceipts,IQueryable<GoodsReceiptLot> goodsReceiptLots)
         {
             if (goodsReceipts == null)
             {
@@ -51,8 +71,8 @@ namespace WMS.Api.Application.Queries.GoodsReceipts
                 .SelectMany(gr => gr.GoodsReceiptLots.Select(lot => lot.GoodsReceiptLotId))
                 .ToList();
 
-            var exportedGoodsIssueLots = await goodsIssueLots
-                .Where(il => goodsReceiptLotIds.Contains(il.GoodsIssueLotId))
+            var exportedGoodsIssueLots = await goodsReceiptLots
+                .Where(il => goodsReceiptLotIds.Contains(il.GoodsReceiptLotId))
                 .ToListAsync();
 
             foreach (var goodsReceipt in goodsReceipts)
@@ -60,7 +80,7 @@ namespace WMS.Api.Application.Queries.GoodsReceipts
                 if (goodsReceipt.GoodsReceiptLots == null) continue;
 
                 foreach (var receiptLot in goodsReceipt.GoodsReceiptLots
-                    .Where(receiptLot => exportedGoodsIssueLots.Exists(il => il.GoodsIssueLotId == receiptLot.GoodsReceiptLotId)))
+                    .Where(receiptLot => exportedGoodsIssueLots.Exists(il => il.GoodsReceiptLotId == receiptLot.GoodsReceiptLotId)))
                 {
                     receiptLot.IsExported = true;
                 }

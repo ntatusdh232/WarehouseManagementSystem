@@ -33,7 +33,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetGoodsReceiptsById - Error/{Id}")]
+        [HttpGet("GetGoodsReceiptsById - success/{Id}")]
         public async Task<GoodsReceiptViewModel> GetGoodsReceiptsById(string Id)
         {
             var query = new GetGoodsReceiptByIdQuery(Id);

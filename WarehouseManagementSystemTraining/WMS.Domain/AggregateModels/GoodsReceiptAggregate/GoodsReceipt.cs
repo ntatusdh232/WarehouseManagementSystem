@@ -15,7 +15,7 @@ namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
         public string EmployeeId { get; set; }
         public Employee Employee { get; set; }
 
-        public List<GoodsReceiptLot> Lots { get; set; }
+        public List<GoodsReceiptLot> Lots { get; set; } = new List<GoodsReceiptLot>();
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private GoodsReceipt() { }
@@ -24,7 +24,6 @@ namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
             GoodsReceiptId = goodsReceiptId;
             Supplier = supplier;
             EmployeeId = employeeId;
-            Lots = new List<GoodsReceiptLot>();
         }
         public GoodsReceipt(string goodsReceiptId, string supplier, DateTime timestamp, 
                             Employee employee, string employeeId, List<GoodsReceiptLot> lots)
