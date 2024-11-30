@@ -17,7 +17,7 @@ namespace WMS.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet("GetAll - success")]
         public async Task<IEnumerable<GoodsReceiptViewModel>> GetAll()
         {
             var query = new Application.Queries.GoodsReceipts.GetAllQuery();
@@ -25,7 +25,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetCompletedGoodsReceipts")]
+        [HttpGet("GetCompletedGoodsReceipts - Not sure")]
         public async Task<IEnumerable<GoodsReceiptViewModel>> GetCompletedGoodsReceipts()
         {
             var query = new GetCompletedGoodsReceiptsQuery();
@@ -33,7 +33,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetGoodsReceiptsById/{Id}")]
+        [HttpGet("GetGoodsReceiptsById - Error/{Id}")]
         public async Task<GoodsReceiptViewModel> GetGoodsReceiptsById(string Id)
         {
             var query = new GetGoodsReceiptByIdQuery(Id);
@@ -41,7 +41,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetGoodsReceiptByTime")]
+        [HttpGet("GetGoodsReceiptByTime - success")]
         public async Task<IEnumerable<GoodsReceiptViewModel>> GetGoodsReceiptByTime([FromQuery] DateTime start, 
                                                                                     [FromQuery] DateTime stop, 
                                                                                     [FromQuery] bool isExported)
@@ -51,7 +51,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetSuppliers")]
+        [HttpGet("GetSuppliers - success")]
         public async Task<IList<string>> GetSuppliers()
         {
             var query = new GetSuppliersQuery();
@@ -59,7 +59,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetUnCompletedGoodsReceipts")]
+        [HttpGet("GetUnCompletedGoodsReceipts - Not sure")]
         public async Task<IEnumerable<GoodsReceiptViewModel>> GetUnCompletedGoodsReceipts()
         {
             var query = new GetUnCompletedGoodsReceiptsQuery();
@@ -67,7 +67,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpPost("CCreateGoodsReceipt")]
+        [HttpPost("CreateGoodsReceipt")]
         public async Task<IActionResult> CreateGoodsReceipt([FromBody] CreateGoodsReceiptCommand command)
         {
             var result = await _mediator.Send(command);
@@ -75,7 +75,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPost("AddLots - Do not Test")]
+        [HttpPost("AddLots")]
         public async Task<IActionResult> AddLotsToGoodsReceipt([FromBody] AddLotsToGoodsReceiptCommand command)
         {
             var result = await _mediator.Send(command);

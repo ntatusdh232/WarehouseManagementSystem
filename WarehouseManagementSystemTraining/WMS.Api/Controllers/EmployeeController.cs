@@ -17,14 +17,14 @@ namespace WMS.Api.Controllers
 
         private IActionResult HandleInternalError(Exception ex) => StatusCode(500, $"Internal server error: {ex.Message}");
 
-        [HttpGet("GetAllEmployees")]
+        [HttpGet("GetAllEmployees - success")]
         public async Task<IEnumerable<EmployeeViewModel>> GetEmployeeALl()
         {
             var query = new GetAllEmployeeQuery();
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetEmployeeById/{EmployeeId}")]
+        [HttpGet("GetEmployeeById - success/{EmployeeId}")]
         public async Task<EmployeeViewModel> GetEmployeeById(string EmployeeId)
         {
             var query = new GetEmployeeByIdQuery(EmployeeId);

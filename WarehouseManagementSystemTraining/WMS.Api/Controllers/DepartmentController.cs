@@ -17,7 +17,7 @@ namespace WMS.Api.Controllers
 
         private IActionResult HandleInternalError(Exception ex) => StatusCode(500, $"Internal server error: {ex.Message}");
 
-        [HttpGet("GetAll")]
+        [HttpGet("GetAll - success")]
         public async Task<IEnumerable<DepartmentViewModel>> GetAll()
         {
             var query = new GetAllDepartmentsQuery();
@@ -25,7 +25,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpPost("CreateDepartment")]
+        [HttpPost("CreateDepartment - success")]
         public async Task<IActionResult> CreateDepartment([FromBody] CreateDepartmentCommand command)
         {
 

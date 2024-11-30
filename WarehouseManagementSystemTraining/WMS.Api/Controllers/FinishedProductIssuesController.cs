@@ -13,7 +13,7 @@ namespace WMS.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("GetAllIds")]
+        [HttpGet("GetAllIds - success")]
         public async Task<IEnumerable<string>> GetAllIds()
         {
             var query = new GetAllIdsQuery();
@@ -21,7 +21,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetAllReceivers")]
+        [HttpGet("GetAllReceivers - success")]
         public async Task<IEnumerable<string>> GetAllReceivers()
         {
             var query = new GetAllReceiversQuery();
@@ -29,7 +29,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetProductIssueById/{Id}")]
+        [HttpGet("GetProductIssueById - success/{Id}")]
         public async Task<FinishedProductIssueViewModel> GetProductIssueById(string Id)
         {
             var query = new GetProductIssueByIdQuery(Id);
@@ -37,7 +37,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetProductIssueByTime")]
+        [HttpGet("GetProductIssueByTime - success")]
         public async Task<IEnumerable<FinishedProductIssueViewModel>> GetProductIssueByTime([FromQuery] DateTime start, [FromQuery] DateTime stop)
         {
             var Request = new TimeRangeQuery(start.Date, stop.Date);
@@ -47,7 +47,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpPost("Create")]
+        [HttpPost("Create - success")]
         public async Task<IActionResult> CreateProductIssue([FromBody] CreateFinishedProductIssueCommand command)
         {
             var result = await _mediator.Send(command);
@@ -55,7 +55,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPost("AddFinishedProductIssueEntries - Do not Test")]
+        [HttpPost("AddFinishedProductIssueEntries - Error")]
         public async Task<IActionResult> AddFinishedProductIssueEntries([FromBody] AddFinishedProductIssueEntriesCommand command)
         {
             var result = await _mediator.Send(command);
@@ -63,7 +63,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("RemoveFinishedProductIssueEntry")]
+        [HttpDelete("RemoveFinishedProductIssueEntry - success")]
         public async Task<IActionResult> RemoveFinishedProductIssueEntry([FromBody] RemoveFinishedProductIssueEntryCommand command)
         {
             var result = await _mediator.Send(command);

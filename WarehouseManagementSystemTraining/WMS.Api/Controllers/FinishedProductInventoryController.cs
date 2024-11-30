@@ -11,7 +11,7 @@
             _mediator = mediator;
         }
 
-        [HttpGet("GetPOs")]
+        [HttpGet("GetPOs - success")]
         public async Task<IEnumerable<string>> GetPOs()
         {
             var query = new GetPOsQuery();
@@ -19,7 +19,7 @@
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetProductInventoriesByItemId/{Id}")]
+        [HttpGet("GetProductInventoriesByItemId - success/{Id}")]
         public async Task<IEnumerable<FinishedProductInventoryViewModel>> GetProductInventoriesByItemId(string Id)
         {
             var query = new GetProductInventoriesByItemIdQuery(Id);

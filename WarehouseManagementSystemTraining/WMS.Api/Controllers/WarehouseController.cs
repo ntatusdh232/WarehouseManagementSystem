@@ -15,7 +15,7 @@ namespace WMS.Api.Controllers
         }
 
 
-        [HttpGet("GetAll")]
+        [HttpGet("GetAll - success")]
         public async Task<IEnumerable<WarehouseViewModel>> GetAll()
         {
             var query = new GetAllWarehousesQuery();
@@ -23,7 +23,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetWarehouseById/{warehouseId}")]
+        [HttpGet("GetWarehouseById - success/{warehouseId}")]
         public async Task<WarehouseViewModel> GetWarehouseById(string warehouseId)
         {
             var query = new GetWarehouseByIdQuery(warehouseId);

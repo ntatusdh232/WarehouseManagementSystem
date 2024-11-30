@@ -16,7 +16,7 @@ namespace WMS.Api.Controllers
         }
 
 
-        [HttpGet("GetAll")]
+        [HttpGet("GetAll - success")]
         public async Task<IEnumerable<GoodsIssueViewModel>> GetAll()
         {
             var query = new Application.Queries.GoodsIssues.GetAllQuery();
@@ -24,7 +24,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetIds/{isExported}")]
+        [HttpGet("GetIds - success/{isExported}")]
         public async Task<IEnumerable<string>> GetAllIds(bool isExported)
         {
             var query = new GetAllGoodsIssueIdsQuery(isExported);
@@ -32,7 +32,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetGoodsIssueById/{Id}")]
+        [HttpGet("GetGoodsIssueById - success/{Id}")]
         public async Task<GoodsIssueViewModel> GetGoodsIssueById(string Id)
         {
             var query = new GetGoodsIssueByIdQuery(Id);
@@ -40,7 +40,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetGoodsIssueByTime")]
+        [HttpGet("GetGoodsIssueByTime - success")]
         public async Task<IEnumerable<GoodsIssueViewModel>> GetGoodsIssueByTime([FromQuery] DateTime start, [FromQuery] DateTime stop, [FromQuery] bool isExported)
         {
             var timeRange = new TimeRangeQuery(start.Date, stop.Date);
@@ -49,7 +49,7 @@ namespace WMS.Api.Controllers
         }
 
 
-        [HttpGet("GetReceivers")]
+        [HttpGet("GetReceivers - success")]
         public async Task<IEnumerable<string>> GetReceivers()
         {
             var query = new GetReceiversQuery();
@@ -57,7 +57,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpPost("Create")]
+        [HttpPost("Create - success")]
         public async Task<IActionResult> CreateGoodsIssue([FromBody] CreateGoodsIssueCommand command)
         {
             var result = await _mediator.Send(command);
@@ -65,7 +65,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPost("AddLots - Do not Test")]
+        [HttpPost("AddLots")]
         public async Task<IActionResult> AddLotsToGoodsIssue([FromBody] AddLotsToGoodsIssueCommand command)
         {
             var result = await _mediator.Send(command);
@@ -73,7 +73,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("Remove/{goodsIssueId}")]
+        [HttpDelete("Remove - If GoodsIssue don't have any Entry - success/{goodsIssueId}")]
         public async Task<IActionResult> RemoveGoodsIssue(string goodsIssueId)
         {
             var command = new RemoveGoodsIssueCommand(goodsIssueId);
@@ -83,7 +83,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("RemoveEntry")]
+        [HttpDelete("RemoveEntry - success")]
         public async Task<IActionResult> RemoveGoodsIssueEntry([FromBody] RemoveGoodsIssueEntryCommand command)
         {
 
@@ -92,7 +92,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPut("Update")]
+        [HttpPut("Update - success")]
         public async Task<IActionResult> UpdateGoodsIssueEntry([FromBody] UpdateGoodsIssueEntryCommand command)
         {
             var result = await _mediator.Send(command);

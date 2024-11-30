@@ -15,7 +15,7 @@ namespace WMS.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet("GetAll - success")]
         public async Task<IEnumerable<LotAdjustmentViewModel>> GetAll()
         {
             var query = new Application.Queries.LotAdjustments.GetAllQuery();
@@ -23,7 +23,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetAdjustmentsByTime")]
+        [HttpGet("GetAdjustmentsByTime - Error")]
         public async Task<IEnumerable<LotAdjustmentViewModel>> GetAdjustmentsByTime([FromQuery] DateTime start, [FromQuery] DateTime stop)
         {
             var request = new TimeRangeQuery(start.Date, stop.Date);
@@ -33,7 +33,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetIsConfirmedAdjustments")]
+        [HttpGet("GetIsConfirmedAdjustments - success")]
         public async Task<IEnumerable<LotAdjustmentViewModel>> GetIsConfirmedAdjustments([FromQuery] bool isConfirmed)
         {
             var query = new GetIsConfirmedAdjustmentsQuery(isConfirmed);

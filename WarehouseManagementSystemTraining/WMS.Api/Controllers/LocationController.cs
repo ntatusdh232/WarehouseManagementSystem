@@ -13,7 +13,7 @@ namespace WMS.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet("GetAll - success")]
         public async Task<IEnumerable<LocationViewModel>> GetAll()
         {
             var query = new GetAllLocationsQuery();
@@ -21,7 +21,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpPost("Create")]
+        [HttpPost("Create - success")]
         public async Task<IActionResult> CreateWarehouse([FromBody] CreateLocationCommand command)
         {
 

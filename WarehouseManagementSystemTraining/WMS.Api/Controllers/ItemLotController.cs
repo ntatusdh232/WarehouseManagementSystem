@@ -15,7 +15,7 @@ namespace WMS.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet("GetAll - success")]
         public async Task<IEnumerable<ItemLotViewModel>> GetAll()
         {
             var query = new Application.Queries.ItemLots.GetAllQuery();
@@ -31,7 +31,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetItemLotByLotId/{LotId}")]
+        [HttpGet("GetItemLotByLotId - success/{LotId}")]
         public async Task<ItemLotViewModel> GetItemLotByLotId(string LotId)
         {
             var query = new GetItemLotByLotIdQuery(LotId);
@@ -39,7 +39,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetItemLotsByLocation/{LocationId}")]
+        [HttpGet("GetItemLotsByLocation - success/{LocationId}")]
         public async Task<IEnumerable<ItemLotViewModel>> GetItemLotsByLocation(string LocationId)
         {
             var query = new GetItemLotsByLocationQuery(LocationId);
@@ -47,7 +47,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetItemLots/{ItemId}")]
+        [HttpGet("GetItemLots - success/{ItemId}")]
         public async Task<IEnumerable<ItemLotViewModel>> GetItemLots(string ItemId)
         {
             var query = new GetItemLotsQuery(ItemId);
@@ -55,7 +55,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpPut("UnisolateItemLot - DO NOT TEST")]
+        [HttpPut("UnisolateItemLot")]
         public async Task<IActionResult> UnisolateItemLot([FromBody] UnisolateItemLotCommand command)
         {
             var result = await _mediator.Send(command);

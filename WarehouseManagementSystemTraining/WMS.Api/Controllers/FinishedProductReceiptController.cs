@@ -24,7 +24,7 @@ namespace WMS.Api.Controllers
 
             return await _mediator.Send(query);
         }
-        [HttpGet("GetReceiptById/{Id}")]
+        [HttpGet("GetReceiptById - success/{Id}")]
         public async Task<FinishedProductReceiptViewModel> GetReceiptById(string Id)
         {
             var query = new GetReceiptByIdQuery(Id);
@@ -32,7 +32,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetReceiptIds")]
+        [HttpGet("GetReceiptIds - success")]
         public async Task<IEnumerable<string>> GetReceiptIds()
         {
             var query = new GetReceiptIdsQuery();
