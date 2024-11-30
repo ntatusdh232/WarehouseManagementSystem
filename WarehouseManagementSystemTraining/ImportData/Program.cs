@@ -4,10 +4,11 @@
     {
         static void Main(string[] args)
         {
-            string ItemExcelFilePath = @"D:\CODE\VisualStudio\C#\TRAINING\Week11\Data\ITEMS.xlsx";
             string connectionString = "Data Source=PhatHuyBK\\SQLEXPRESS;Initial Catalog=WarehouseManagementSystem;Integrated Security=True;Encrypt=False";
+
             string ItemLotLocationExcelFilePath = @"D:\CODE\VisualStudio\C#\TRAINING\Week15\SQLCODE\ItemLotLocation.xlsx";
             string InventoryLogEntryExcelFilePath = @"D:\CODE\VisualStudio\C#\TRAINING\Week15\SQLCODE\InventoryLogEntry.xlsx";
+            string ItemExcelFilePath = @"D:\CODE\VisualStudio\C#\TRAINING\Week11\Data\ITEMS.xlsx";
 
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
             optionsBuilder.UseSqlServer(connectionString);
@@ -18,7 +19,6 @@
                 {
                     var importer = new ExcelDataImporterService(context);
                     importer.ImportData(ItemExcelFilePath, ItemLotLocationExcelFilePath, InventoryLogEntryExcelFilePath);
-
 
                 }
             }

@@ -2,6 +2,17 @@
 {
     public static class DataParser
     {
+        //Get String Value
+        public static string GetStringValue(object value)
+        {
+            return value?.ToString()?.Trim();
+        }
+
+        public static string GetStringValueOrNull(object value)
+        {
+            return value?.ToString() ?? "Null";
+        }
+
         public static int GetIntValue(object value)
         {
             return int.TryParse(value?.ToString(), out int result) ? result : 0;
