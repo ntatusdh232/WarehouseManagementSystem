@@ -9,11 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WMS.Domain", "WMS.Domain\WM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WMS.Infrastructure", "WMS.Infrastructure\WMS.Infrastructure.csproj", "{7E9FAC58-0CB1-44BF-B431-AB2347556B78}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportDataFromExcel", "ImportDataFromExcel\ImportDataFromExcel.csproj", "{5CDBD7BD-806B-4923-BEAF-E4DB9D3D2C1F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportData", "ImportData\ImportData.csproj", "{336CC5F3-AAAB-4434-A01D-FC73998897BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMS.View", "WMS.View\WMS.View.csproj", "{64192DA2-627D-4857-93A3-8A395085042D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WMS.View", "WMS.View\WMS.View.csproj", "{64192DA2-627D-4857-93A3-8A395085042D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +31,6 @@ Global
 		{7E9FAC58-0CB1-44BF-B431-AB2347556B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E9FAC58-0CB1-44BF-B431-AB2347556B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E9FAC58-0CB1-44BF-B431-AB2347556B78}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5CDBD7BD-806B-4923-BEAF-E4DB9D3D2C1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5CDBD7BD-806B-4923-BEAF-E4DB9D3D2C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5CDBD7BD-806B-4923-BEAF-E4DB9D3D2C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5CDBD7BD-806B-4923-BEAF-E4DB9D3D2C1F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{336CC5F3-AAAB-4434-A01D-FC73998897BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{336CC5F3-AAAB-4434-A01D-FC73998897BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{336CC5F3-AAAB-4434-A01D-FC73998897BE}.Release|Any CPU.ActiveCfg = Release|Any CPU

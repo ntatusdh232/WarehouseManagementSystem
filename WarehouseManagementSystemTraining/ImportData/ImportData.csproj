@@ -8,7 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ImportDataFromExcel\ImportDataFromExcel.csproj" />
+    <PackageReference Include="ExcelDataReader" Version="3.7.0" />
+    <PackageReference Include="ExcelDataReader.DataSet" Version="3.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\WMS.Infrastructure\WMS.Infrastructure.csproj" />
   </ItemGroup>
 
