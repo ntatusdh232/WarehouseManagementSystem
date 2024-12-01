@@ -15,16 +15,16 @@ namespace WMS.Api.Application.Queries.LotAdjustments
         }
 
         private IQueryable<LotAdjustment> _lotAdjustments => _context.lotAdjustments
-            .AsNoTracking()
             .Include(a => a.Item)
             .Include(a => a.Employee)
-            .Include(a => a.SublotAdjustments);
+            .Include(a => a.SublotAdjustments)
+            .AsNoTracking();
 
         public async Task<IEnumerable<LotAdjustmentViewModel>> Handle(GetAdjustmentsByTimeQuery request, CancellationToken cancellationToken)
         {
             var adjustments = await _lotAdjustments
                 .Where(s => s.Timestamp >= request.Query.StartTime && s.Timestamp <= request.Query.EndTime)
-                .Where(s => s.IsConfirmed)
+                .Where(s => s.IsConfirmed == true)
                 .ToListAsync();
 
             var adjustmentViewModels = _mapper.Map<IEnumerable<LotAdjustmentViewModel>>(adjustments);

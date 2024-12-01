@@ -23,7 +23,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpGet("GetAdjustmentsByTime - Error")]
+        [HttpGet("GetAdjustmentsByTime - success")]
         public async Task<IEnumerable<LotAdjustmentViewModel>> GetAdjustmentsByTime([FromQuery] DateTime start, [FromQuery] DateTime stop)
         {
             var request = new TimeRangeQuery(start.Date, stop.Date);
