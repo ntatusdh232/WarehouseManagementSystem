@@ -15,7 +15,7 @@ namespace WMS.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("GetByTime - ERROR")]
+        [HttpGet("GetByTime - success")]
         public async Task<IEnumerable<FinishedProductReceiptViewModel>> GetByTime([FromQuery] DateTime start, [FromQuery] DateTime stop)
         {
             var request = new TimeRangeQuery(start,stop);

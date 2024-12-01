@@ -15,10 +15,13 @@ public class GetByTimeQueryHandler : IRequestHandler<GetByTimeQuery, IEnumerable
     }
     public async Task<IEnumerable<FinishedProductReceiptViewModel>> Handle(GetByTimeQuery request, CancellationToken cancellationToken)
     {
-        var productReceipts = _context.finishedProductReceipts.AsNoTracking();
+        var productReceipts = await _context.finishedProductReceipts
+            .AsNoTracking()
+            .Include(p => p.Employee)
+            .Where(p => p.Timestamp >= request.Query.StartTime && p.Timestamp <= request.Query.EndTime)
+            .ToListAsync(cancellationToken);
 
-        await productReceipts.Where(p => p.Timestamp >= request.Query.StartTime && p.Timestamp <= request.Query.EndTime).ToArrayAsync();
-
-        return _mapper.Map<IEnumerable<FinishedProductReceipt>, IEnumerable<FinishedProductReceiptViewModel>>(productReceipts);
+        return _mapper.Map<IEnumerable<FinishedProductReceiptViewModel>>(productReceipts);
     }
+
 }

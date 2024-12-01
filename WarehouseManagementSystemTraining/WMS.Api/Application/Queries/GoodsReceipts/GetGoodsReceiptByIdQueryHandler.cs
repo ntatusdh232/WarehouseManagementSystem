@@ -18,8 +18,6 @@ namespace WMS.Api.Application.Queries.GoodsReceipts
         private IQueryable<GoodsReceiptLot> _goodsReceiptLots => _context.goodsReceiptsLot
             .Include(lot => lot.Sublots)
             .AsNoTracking();
-
-
         public IQueryable<GoodsReceipt> _goodsReceipts => _context.goodsReceipts
             .AsNoTracking().Include(gr => gr.Employee)
             .Include(gr => gr.Lots)
@@ -44,15 +42,15 @@ namespace WMS.Api.Application.Queries.GoodsReceipts
                 goodsReceipt.Timestamp,
                 _mapper.Map<EmployeeViewModel>(goodsReceipt.Employee),
                 goodsReceipt.Lots.Select(lot => new GoodsReceiptLotViewModel(
-                    lot.GoodsReceiptLotId,
-                    lot.Quantity,
-                    lot.ProductionDate ?? DateTime.MinValue,
-                    lot.ExpirationDate ?? DateTime.MinValue,
-                    lot.Note,
-                    lot.IsExported,
-                    _mapper.Map<EmployeeViewModel>(lot.Employee),
-                    _mapper.Map<ItemViewModel>(lot.Item),
-                    lot.Sublots.Select(sublot => new GoodsReceiptSublotViewModel(
+                    goodsReceiptLotId: lot.GoodsReceiptLotId,
+                    quantity: lot.Quantity,
+                    productionDate: lot.ProductionDate ?? DateTime.MinValue,
+                    expirationDate: lot.ExpirationDate ?? DateTime.MinValue,
+                    note: lot.Note,
+                    isExported: lot.IsExported,
+                    employee: _mapper.Map<EmployeeViewModel>(lot.Employee),
+                    item: _mapper.Map<ItemViewModel>(lot.Item),
+                    goodsReceiptSublots: lot.Sublots.Select(sublot => new GoodsReceiptSublotViewModel(
                         sublot.LocationId,
                         sublot.QuantityPerLocation
                     )).ToList()
