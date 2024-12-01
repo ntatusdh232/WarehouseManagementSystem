@@ -4,9 +4,7 @@
     {
         public string ItemClassId { get; set; }
 
-        [ForeignKey("Item")]
-        public string ItemId{ get; set; }
-        public Item Item { get; set; }
+        public List<Item> Item { get; set; }
 
 #pragma warning disable CS8618
         private ItemClass() { }

@@ -5,6 +5,8 @@
         public void Configure(EntityTypeBuilder<ItemClass> builder)
         {
             builder.HasKey(t => t.ItemClassId);
+
+
         }
 
     }

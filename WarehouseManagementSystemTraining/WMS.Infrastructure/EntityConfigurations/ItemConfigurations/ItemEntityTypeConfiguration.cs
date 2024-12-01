@@ -9,8 +9,8 @@
                    .HasColumnType("decimal(18, 2)");
 
             builder.HasOne(s => s.ItemClasses)
-                   .WithOne(s => s.Item)
-                   .HasForeignKey<ItemClass>(s => s.ItemId)
+                   .WithMany(s => s.Item)
+                   .HasForeignKey(s => s.ItemClassId)
                    .IsRequired(false);
 
         }
