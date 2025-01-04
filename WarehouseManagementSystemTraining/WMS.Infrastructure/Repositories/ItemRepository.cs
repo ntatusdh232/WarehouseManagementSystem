@@ -72,6 +72,10 @@
         {
             var item = await _context.items.FindAsync(itemId);
 
+            var itemClass = await _context.itemsClass.FindAsync(item.ItemClassId);
+
+            item.UpdateItemClass(itemClass);
+
             return item;
         }
 

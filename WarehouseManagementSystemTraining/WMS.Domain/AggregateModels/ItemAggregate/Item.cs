@@ -107,6 +107,11 @@
             PacketUnit = packetUnit;
         }
 
+        public void UpdateItemClass(ItemClass itemClass)
+        {
+            ItemClasses = itemClass;
+        }
+
     }
 
 }

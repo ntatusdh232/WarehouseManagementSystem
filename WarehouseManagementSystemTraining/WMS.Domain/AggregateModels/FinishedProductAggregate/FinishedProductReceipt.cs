@@ -126,15 +126,17 @@ namespace WMS.Domain.AggregateModels.FinishedProductAggregate
         {
             var groupedEntries = Entries
                 .GroupBy(entry => new { entry.PurchaseOrderNumber, entry.ItemId })
-                .Select(group => new FinishedProductReceiptEntry
+                .Select
                 (
-                    group.Key.PurchaseOrderNumber,
-                    group.Sum(entry => entry.Quantity),
-                    group.First().Note,
-                    Entries[0].FinishedProductReceiptId,
-                    group.First().Item
-
-                ))
+                    group => new FinishedProductReceiptEntry
+                       (
+                            group.Key.PurchaseOrderNumber,
+                            group.Sum(entry => entry.Quantity),
+                            group.First().Note,
+                            Entries[0].FinishedProductReceiptId,
+                            group.First().Item
+                        )
+                )
                 .ToList();
 
             Entries = groupedEntries;

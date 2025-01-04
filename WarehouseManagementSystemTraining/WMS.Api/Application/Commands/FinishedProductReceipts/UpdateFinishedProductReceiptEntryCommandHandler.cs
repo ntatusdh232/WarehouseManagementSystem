@@ -15,8 +15,6 @@
 
         public FinishedProductReceiptEntry? oldEntry { get; set; }
 
-
-
         public async Task<bool> Handle(UpdateFinishedProductReceiptEntryCommand request, CancellationToken cancellationToken)
         {
             var finishedProductReceipt = await _finishedProductReceiptRepository.GetReceiptById(request.FinishedProductReceiptId);
@@ -34,12 +32,13 @@
                     throw new EntityNotFoundException(nameof(Item), entry.ItemId);
                 }
 
-                oldEntry = finishedProductReceipt.Entries.Find(x => x.Item == entry.Item && x.PurchaseOrderNumber == entry.OldPurchaseOrderNumber);
+                oldEntry = finishedProductReceipt.Entries.Find(x => x.Item.ItemId == entry.Item.ItemId && x.PurchaseOrderNumber == entry.OldPurchaseOrderNumber);
 
                 if (oldEntry == null)
                 {
                     throw new EntityNotFoundException(nameof(FinishedProductReceiptEntry), entry.ItemId);
                 }
+
 
                 finishedProductReceipt.UpdateFinishedProductInventory(item: item,
                                                                       oldPurchaseOrderNumber: entry.OldPurchaseOrderNumber,
@@ -53,7 +52,7 @@
  
             }
 
-            finishedProductReceipt.GroupAndSumEntries();
+            //finishedProductReceipt.GroupAndSumEntries();
 
             foreach (var entry in finishedProductReceipt.Entries)
             {

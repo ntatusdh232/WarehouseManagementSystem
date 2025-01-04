@@ -65,7 +65,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPost("AddLots")]
+        [HttpPost("AddLots - Error(Not Event Handler)")]
         public async Task<IActionResult> AddLotsToGoodsIssue([FromBody] AddLotsToGoodsIssueCommand command)
         {
             var result = await _mediator.Send(command);

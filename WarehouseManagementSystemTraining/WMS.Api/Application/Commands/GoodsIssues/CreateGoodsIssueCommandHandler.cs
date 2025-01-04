@@ -1,43 +1,44 @@
-﻿using WMS.Domain.AggregateModels.GoodsIssueAggregate;
-
-namespace WMS.Api.Application.Commands.GoodsIssues;
-
-public class CreateGoodsIssueCommandHandler : IRequestHandler<CreateGoodsIssueCommand, bool>
+﻿namespace WMS.Api.Application.Commands.GoodsIssues
 {
-    private readonly IGoodsIssueRepository _goodsIssueRepository;
-    private readonly IEmployeeRepository _employeeRepository;
-    private readonly IItemRepository _itemRepository;
-
-    public CreateGoodsIssueCommandHandler(IGoodsIssueRepository goodsIssueRepository, IEmployeeRepository employeeRepository, IItemRepository itemRepository)
+    public class CreateGoodsIssueCommandHandler : IRequestHandler<CreateGoodsIssueCommand, bool>
     {
-        _goodsIssueRepository = goodsIssueRepository;
-        _employeeRepository = employeeRepository;
-        _itemRepository = itemRepository;
-    }
+        private readonly IGoodsIssueRepository _goodsIssueRepository;
+        private readonly IEmployeeRepository _employeeRepository;
+        private readonly IItemRepository _itemRepository;
 
-    public async Task<bool> Handle(CreateGoodsIssueCommand request, CancellationToken cancellationToken)
-    {
-        var goodsIssue = await _goodsIssueRepository.GetGoodsIssueById(request.GoodsIssueId);
-        if (goodsIssue != null)
+        public CreateGoodsIssueCommandHandler(IGoodsIssueRepository goodsIssueRepository, IEmployeeRepository employeeRepository, IItemRepository itemRepository)
         {
-            throw new DuplicatedRecordException(nameof(GoodsIssue), request.GoodsIssueId);
+            _goodsIssueRepository = goodsIssueRepository;
+            _employeeRepository = employeeRepository;
+            _itemRepository = itemRepository;
         }
-        var employee = await _employeeRepository.GetEmployeeById(request.EmployeeId)
-            ?? throw new EntityNotFoundException(nameof(Employee), request.EmployeeId);
 
-        var newGoodsIssue = new GoodsIssue(goodsIssueId: request.GoodsIssueId,
-                                           receiver: request.Receiver,
-                                           employeeId: request.EmployeeId);
-        foreach (var entry in request.Entries)
+        public async Task<bool> Handle(CreateGoodsIssueCommand request, CancellationToken cancellationToken)
         {
-            var item = await _itemRepository.GetItemById(entry.ItemId)
-                ?? throw new EntityNotFoundException(nameof(Item), entry.ItemId);
+            var goodsIssue = await _goodsIssueRepository.GetGoodsIssueById(request.GoodsIssueId);
+            if (goodsIssue != null)
+            {
+                throw new DuplicatedRecordException(nameof(GoodsIssue), request.GoodsIssueId);
+            }
+            var employee = await _employeeRepository.GetEmployeeById(request.EmployeeId)
+                ?? throw new EntityNotFoundException(nameof(Employee), request.EmployeeId);
 
-            newGoodsIssue.AddEntry(item, entry.RequestedQuantity);
+            var newGoodsIssue = new GoodsIssue(goodsIssueId: request.GoodsIssueId,
+                                               receiver: request.Receiver,
+                                               employeeId: request.EmployeeId);
+            foreach (var entry in request.Entries)
+            {
+                var item = await _itemRepository.GetItemById(entry.ItemId)
+                    ?? throw new EntityNotFoundException(nameof(Item), entry.ItemId);
+
+                newGoodsIssue.AddEntry(item, entry.RequestedQuantity);
+            }
+            await _goodsIssueRepository.Add(newGoodsIssue, cancellationToken);
+
+            return await _goodsIssueRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
+
         }
-        await _goodsIssueRepository.Add(newGoodsIssue, cancellationToken);
-
-        return await _goodsIssueRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
-
     }
 }
+
+

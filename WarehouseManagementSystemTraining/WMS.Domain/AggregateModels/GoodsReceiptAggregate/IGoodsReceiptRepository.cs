@@ -11,11 +11,11 @@
 
 
 
-        Task<GoodsReceipt> Add(GoodsReceipt goodsReceipt);
-        Task<GoodsReceipt> Update(GoodsReceipt goodsReceipt);
+        Task Add(GoodsReceipt goodsReceipt);
+        Task Update(GoodsReceipt goodsReceipt);
         Task Remove(string goodsReceiptId);
         Task<GoodsReceipt> GetGoodsReceiptById(string goodsReceiptId);
         Task<GoodsReceiptLot> GetGoodsReceiptLotById(string goodsReceiptId, string goodsReceiptLotId);
-        Task<IEnumerable<GoodsReceipt>> GetGoodsReceiptByGoodsReceiptId(string goodsReceiptId);
+        Task<GoodsReceipt> GetGoodsReceiptByGoodsReceiptId(string goodsReceiptId);
     }
 }

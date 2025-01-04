@@ -72,10 +72,10 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPut("UpdateFinishedProductReceiptEntry{id}")]
-        public async Task<IActionResult> UpdateFinishedProductReceiptEntry(string id, [FromBody] UpdateFinishedProductReceiptEntryCommand request)
+        [HttpPut("UpdateFinishedProductReceiptEntry - Error(GroupAndSum)")]
+        public async Task<IActionResult> UpdateFinishedProductReceiptEntry([FromBody] UpdateFinishedProductReceiptEntryCommand request)
         {
-            var command = new UpdateFinishedProductReceiptEntryCommand(id, request.Entries);
+            var command = new UpdateFinishedProductReceiptEntryCommand(request.FinishedProductReceiptId,request.Entries);
 
             var result = await _mediator.Send(command);
 

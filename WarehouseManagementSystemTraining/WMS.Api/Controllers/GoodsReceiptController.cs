@@ -67,7 +67,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpPost("CreateGoodsReceipt")]
+        [HttpPost("CreateGoodsReceipt - success(CheckError)")]
         public async Task<IActionResult> CreateGoodsReceipt([FromBody] CreateGoodsReceiptCommand command)
         {
             var result = await _mediator.Send(command);
@@ -75,7 +75,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPost("AddLots")]
+        [HttpPost("AddLots - success(CheckError)")]
         public async Task<IActionResult> AddLotsToGoodsReceipt([FromBody] AddLotsToGoodsReceiptCommand command)
         {
             var result = await _mediator.Send(command);

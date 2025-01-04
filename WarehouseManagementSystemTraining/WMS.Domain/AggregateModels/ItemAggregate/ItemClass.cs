@@ -4,7 +4,6 @@
     {
         public string ItemClassId { get; set; }
 
-        public List<Item> Item { get; set; }
 
 #pragma warning disable CS8618
         private ItemClass() { }

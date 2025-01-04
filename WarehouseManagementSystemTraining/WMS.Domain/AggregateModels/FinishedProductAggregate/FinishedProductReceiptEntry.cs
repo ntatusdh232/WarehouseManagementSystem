@@ -41,6 +41,7 @@
 
         public void UpdateEntry(string purchaseOrderNumber, double quantity, Item item)
         {
+            FinishedProductReceiptEntryId = this.FinishedProductReceiptEntryId;
             PurchaseOrderNumber = purchaseOrderNumber;
             Quantity = quantity;
             Item = item;

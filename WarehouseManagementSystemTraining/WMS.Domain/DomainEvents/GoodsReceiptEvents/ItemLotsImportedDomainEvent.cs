@@ -1,12 +1,15 @@
 ﻿
-namespace WMS.Domain.DomainEvents.GoodsReceiptEvents;
-
-public class ItemLotsImportedDomainEvent : INotification
+namespace WMS.Domain.DomainEvents.GoodsReceiptEvents
 {
-    public List<ItemLot> ItemLots { get; set; }
-
-    public ItemLotsImportedDomainEvent(List<ItemLot> itemLots)
+    public class ItemLotsImportedDomainEvent : INotification
     {
-        ItemLots = itemLots;
+        public List<ItemLot> ItemLots { get; set; }
+
+        public ItemLotsImportedDomainEvent(List<ItemLot> itemLots)
+        {
+            ItemLots = itemLots;
+        }
     }
 }
+
+

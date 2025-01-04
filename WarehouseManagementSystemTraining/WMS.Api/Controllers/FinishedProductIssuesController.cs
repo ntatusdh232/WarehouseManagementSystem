@@ -55,7 +55,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPost("AddFinishedProductIssueEntries - Error")]
+        [HttpPost("AddFinishedProductIssueEntries - Error (Not EventHandler)")]
         public async Task<IActionResult> AddFinishedProductIssueEntries([FromBody] AddFinishedProductIssueEntriesCommand command)
         {
             var result = await _mediator.Send(command);

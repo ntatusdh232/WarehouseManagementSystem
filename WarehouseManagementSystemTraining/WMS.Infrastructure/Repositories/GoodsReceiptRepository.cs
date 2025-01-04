@@ -63,27 +63,19 @@ namespace WMS.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<GoodsReceipt> Add(GoodsReceipt goodsReceipt)
+        public async Task Add(GoodsReceipt goodsReceipt)
         {
-            var exitingItem = await _context.goodsReceipts.FindAsync(goodsReceipt.GoodsReceiptId);
 
             await _context.goodsReceipts.AddAsync(goodsReceipt);
 
-            await _context.SaveChangesAsync();
-
-            return goodsReceipt;
-
         }
 
-        public async Task<GoodsReceipt> Update(GoodsReceipt goodsReceipt)
+        public async Task Update(GoodsReceipt goodsReceipt)
         {
             var existingItem = await _context.goodsReceipts.FindAsync(goodsReceipt.GoodsReceiptId);
 
-            existingItem.UpdateGoodsReceipt(goodsReceipt.GoodsReceiptId, goodsReceipt.Supplier, goodsReceipt.Timestamp,
+            existingItem.UpdateGoodsReceipt(goodsReceipt.Supplier, goodsReceipt.Timestamp,
                                        goodsReceipt.Employee, goodsReceipt.Lots);
-
-            await _context.SaveChangesAsync();
-            return existingItem;
 
         }
 
@@ -113,13 +105,9 @@ namespace WMS.Infrastructure.Repositories
             return lot;
         }
 
-        public async Task<IEnumerable<GoodsReceipt>> GetGoodsReceiptByGoodsReceiptId(string goodsReceiptId)
+        public async Task<GoodsReceipt> GetGoodsReceiptByGoodsReceiptId(string goodsReceiptId)
         {
-            var existingItem = await _context.goodsReceipts.FindAsync(goodsReceiptId);
-
-            var goodsReceipt = await _context.goodsReceipts
-                .Where(x => x.GoodsReceiptId == goodsReceiptId)
-                .ToListAsync();
+            var goodsReceipt = await _context.goodsReceipts.FindAsync(goodsReceiptId);
 
             return goodsReceipt;
 

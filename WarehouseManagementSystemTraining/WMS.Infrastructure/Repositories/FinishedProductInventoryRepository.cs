@@ -68,9 +68,11 @@
         {
 
             var existingItem = await _context.finishedProductInventories.FindAsync(Entry.ItemId);
+            if (existingItem != null)
+            {
+                existingItem.UpdateFinishedProductInventory(Entry.PurchaseOrderNumber, Entry.Quantity, DateTime.Now, Entry.Item);
 
-
-            existingItem.UpdateFinishedProductInventory(Entry.PurchaseOrderNumber, Entry.Quantity, DateTime.Now, Entry.Item);
+            }
 
         }
 

@@ -9,7 +9,7 @@
                    .HasColumnType("decimal(18, 2)");
 
             builder.HasOne(s => s.ItemClasses)
-                   .WithMany(s => s.Item)
+                   .WithMany()
                    .HasForeignKey(s => s.ItemClassId)
                    .IsRequired(false);
 

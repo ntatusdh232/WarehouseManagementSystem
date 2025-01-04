@@ -80,10 +80,9 @@ namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
 
         }
 
-        public void UpdateGoodsReceipt(String goodsReceiptId, String supplier, DateTime timestamp,
+        public void UpdateGoodsReceipt(String supplier, DateTime timestamp,
                                        Employee employee, List<GoodsReceiptLot> lots)
         {
-            GoodsReceiptId = goodsReceiptId;
             Supplier = supplier;
             Timestamp = Timestamp;
             Employee = Employee;
