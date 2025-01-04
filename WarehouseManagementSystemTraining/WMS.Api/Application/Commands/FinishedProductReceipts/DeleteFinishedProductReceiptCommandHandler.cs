@@ -20,6 +20,12 @@
                 throw new EntityNotFoundException(nameof(FinishedProductReceipt), request.FinishedProductReceiptId);
             }
 
+            if (finishedProductReceipt.Entries.Count == 0)
+            {
+                await _finishedProductReceiptRepository.Remove(finishedProductReceipt.FinishedProductReceiptId);
+                return await _finishedProductReceiptRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
+            }
+
             foreach (var entry in finishedProductReceipt.Entries)
             {
                 var item = await _itemRepository.GetItemById(entry.ItemId);

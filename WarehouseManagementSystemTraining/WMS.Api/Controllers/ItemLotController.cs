@@ -63,7 +63,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPut("IsolateItemLot{id}")]
+        [HttpPut("IsolateItemLot/{id}")]
         public async Task<IActionResult> IsolateItemLot(string id, [FromBody] IsolateItemLotCommand request)
         {
             var command = new IsolateItemLotCommand(id, request.IsolatedItemSublots);
@@ -73,7 +73,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("RemoveItemLot {itemLotId}")]
+        [HttpDelete("RemoveItemLot - success /{itemLotId}")]
         public async Task<IActionResult> RemoveItemLot(string itemLotId)
         {
             var command = new RemoveItemLotCommand(itemLotId);

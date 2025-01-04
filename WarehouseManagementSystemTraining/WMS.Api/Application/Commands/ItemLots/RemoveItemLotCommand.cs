@@ -1,11 +1,14 @@
-﻿namespace WMS.Api.Application.Commands.ItemLots;
-
-public class RemoveItemLotCommand : IRequest<bool>
+﻿namespace WMS.Api.Application.Commands.ItemLots
 {
-    public string ItemLotId { get; set; }
-
-    public RemoveItemLotCommand(string itemLotId)
+    public class RemoveItemLotCommand : IRequest<bool>
     {
-        ItemLotId = itemLotId;
+        public string ItemLotId { get; set; }
+
+        public RemoveItemLotCommand(string itemLotId)
+        {
+            ItemLotId = itemLotId;
+        }
     }
 }
+
+

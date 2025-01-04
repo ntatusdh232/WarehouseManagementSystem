@@ -1,7 +1,4 @@
-﻿using DocumentFormat.OpenXml.Packaging;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using WMS.Domain.DomainEvents.FinishedProductReceiptEvents;
+﻿using WMS.Domain.DomainEvents.FinishedProductReceiptEvents;
 
 namespace WMS.Domain.AggregateModels.FinishedProductAggregate
 {
@@ -33,10 +30,18 @@ namespace WMS.Domain.AggregateModels.FinishedProductAggregate
         {
             FinishedProductReceiptId = finishedProductReceiptId;
             EmployeeId = employeeId;
+            Entries = new List<FinishedProductReceiptEntry>();
         }
+
         public void AddReceiptEntry(FinishedProductReceiptEntry inputEntry)
         {
             bool isEntryExist = false;
+
+            if (Entries == null)
+            {
+                Entries = new List<FinishedProductReceiptEntry>();
+            }
+
             foreach (var entry in Entries)
             {
                 if (inputEntry.PurchaseOrderNumber == entry.PurchaseOrderNumber && entry.Item == inputEntry.Item)
@@ -45,11 +50,17 @@ namespace WMS.Domain.AggregateModels.FinishedProductAggregate
                 }
             }
 
-            if (!isEntryExist)
+            if (isEntryExist == false)
             {
                 Entries.Add(inputEntry);
             }
         }
+
+        public void AddEntries(List<FinishedProductReceiptEntry> entries)
+        {
+            Entries = entries;
+        }
+
 
         public void UpdateFinishedProductReceipt(DateTime timestamp, Employee employee,
                                                  List<FinishedProductReceiptEntry> entries)

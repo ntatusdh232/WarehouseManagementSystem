@@ -2,8 +2,8 @@
 {
     public interface IFinishedProductReceiptRepository : IRepository<FinishedProductReceipt>
     {
-        Task<FinishedProductReceipt> Add(FinishedProductReceipt finishedProductReceipt);
-        Task<FinishedProductReceipt> Update(FinishedProductReceipt finishedProductReceipt);
+        Task Add(FinishedProductReceipt finishedProductReceipt);
+        Task Update(FinishedProductReceipt finishedProductReceipt);
         Task Remove(string finishedProductReceiptId);
         Task<FinishedProductReceipt> GetReceiptById(string finishedProductReceiptId);
         Task<IEnumerable<string>> GetReceiptIds();

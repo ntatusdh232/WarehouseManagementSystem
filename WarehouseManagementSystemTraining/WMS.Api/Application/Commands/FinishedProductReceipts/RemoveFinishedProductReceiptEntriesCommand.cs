@@ -1,13 +1,16 @@
-﻿namespace WMS.Api.Application.Commands.FinishedProductReceipts;
-
-public class RemoveFinishedProductReceiptEntriesCommand : IRequest<bool>
+﻿namespace WMS.Api.Application.Commands.FinishedProductReceipts
 {
-    public string FinishedProductReceiptId { get; set; }
-    public List<RemoveFinishedProductEntryViewModel> Entries { get; set; }
-
-    public RemoveFinishedProductReceiptEntriesCommand(string finishedProductReceiptId, List<RemoveFinishedProductEntryViewModel> entries)
+    public class RemoveFinishedProductReceiptEntriesCommand : IRequest<bool>
     {
-        FinishedProductReceiptId = finishedProductReceiptId;
-        Entries = entries;
+        public string FinishedProductReceiptId { get; set; }
+        public List<RemoveFinishedProductEntryViewModel> Entries { get; set; }
+
+        public RemoveFinishedProductReceiptEntriesCommand(string finishedProductReceiptId, List<RemoveFinishedProductEntryViewModel> entries)
+        {
+            FinishedProductReceiptId = finishedProductReceiptId;
+            Entries = entries;
+        }
     }
+
 }
+

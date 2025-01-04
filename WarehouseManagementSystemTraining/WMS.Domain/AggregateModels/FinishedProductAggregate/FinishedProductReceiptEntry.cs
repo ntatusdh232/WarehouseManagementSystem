@@ -20,8 +20,9 @@
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         private FinishedProductReceiptEntry() { }
 
-        public FinishedProductReceiptEntry( string purchaseOrderNumber, double quantity, string note, Item item, string itemId)
+        public FinishedProductReceiptEntry(string purchaseOrderNumber, double quantity, string note, Item item, string itemId)
         {
+            FinishedProductReceiptEntryId = Guid.NewGuid().ToString();
             PurchaseOrderNumber = purchaseOrderNumber;
             Quantity = quantity;
             Note = note;

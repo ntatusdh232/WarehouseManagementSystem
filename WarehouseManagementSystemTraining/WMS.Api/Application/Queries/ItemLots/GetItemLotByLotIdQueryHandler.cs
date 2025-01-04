@@ -21,6 +21,11 @@
         {
             var itemLot =  await _itemLots.FirstOrDefaultAsync(i => i.LotId == request.LotId);
 
+            if (itemLot == null)
+            {
+                throw new EntityNotFoundException(nameof(ItemLot), request.LotId);
+            }
+
             var itemLotViewModel = _mapper.Map<ItemLotViewModel>(itemLot);
 
             return itemLotViewModel;

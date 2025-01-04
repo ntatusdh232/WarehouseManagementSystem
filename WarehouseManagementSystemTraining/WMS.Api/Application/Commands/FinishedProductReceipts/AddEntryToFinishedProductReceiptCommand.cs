@@ -1,13 +1,16 @@
-﻿namespace WMS.Api.Application.Commands.FinishedProductReceipts;
-
-public class AddEntryToFinishedProductReceiptCommand : IRequest<bool>
+﻿namespace WMS.Api.Application.Commands.FinishedProductReceipts
 {
-    public string FinishedProductReceiptId { get; set; }
-    public List<CreateFinishedProductReceiptEntryViewModel> Entries { get; set; }
-
-    public AddEntryToFinishedProductReceiptCommand(string finishedProductReceiptId, List<CreateFinishedProductReceiptEntryViewModel> entries)
+    public class AddEntryToFinishedProductReceiptCommand : IRequest<bool>
     {
-        FinishedProductReceiptId = finishedProductReceiptId;
-        Entries = entries;
+        public string FinishedProductReceiptId { get; set; }
+        public List<CreateFinishedProductReceiptEntryViewModel> Entries { get; set; }
+
+        public AddEntryToFinishedProductReceiptCommand(string finishedProductReceiptId, List<CreateFinishedProductReceiptEntryViewModel> entries)
+        {
+            FinishedProductReceiptId = finishedProductReceiptId;
+            Entries = entries;
+        }
     }
+
 }
+

@@ -31,14 +31,14 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpPost]
+        [HttpPost("Create New Employee - success")]
         public async Task<IActionResult> CreateEmployee([FromBody] CreateEmployeeCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("Update Employee - success/{id}")]
         public async Task<IActionResult> UpdateEmployee(string id, [FromBody] UpdateEmployeeCommand request)
         {
             var command = new UpdateEmployeeCommand(id, request.EmployeeName);

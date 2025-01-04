@@ -1,11 +1,14 @@
-﻿namespace WMS.Api.Application.Commands.LotAdjustments;
-
-public class RemoveLotAdjustmentCommand : IRequest<bool>
+﻿namespace WMS.Api.Application.Commands.LotAdjustments
 {
-    public string LotId {  get; set; }
-
-    public RemoveLotAdjustmentCommand(string lotId)
+    public class RemoveLotAdjustmentCommand : IRequest<bool>
     {
-        LotId = lotId;
+        public string LotId { get; set; }
+
+        public RemoveLotAdjustmentCommand(string lotId)
+        {
+            LotId = lotId;
+        }
     }
 }
+
+

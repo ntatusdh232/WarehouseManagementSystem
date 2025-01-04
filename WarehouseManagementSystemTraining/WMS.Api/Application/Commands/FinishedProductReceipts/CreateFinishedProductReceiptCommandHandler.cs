@@ -1,46 +1,64 @@
 ﻿
-namespace WMS.Api.Application.Commands.FinishedProductReceipts;
+using Azure.Core;
+using System.Threading;
+using WMS.Api.ErrorNotifications;
 
-public class CreateFinishedProductReceiptCommandHandler : IRequestHandler<CreateFinishedProductReceiptCommand, bool>
+namespace WMS.Api.Application.Commands.FinishedProductReceipts
 {
-    private readonly IEmployeeRepository _employeeRepository;
-    private readonly IFinishedProductReceiptRepository _finishedProductReceiptRepository;
-    private readonly IItemRepository _itemRepository;
-
-    public CreateFinishedProductReceiptCommandHandler(IEmployeeRepository employeeRepository, IFinishedProductReceiptRepository finishedProductReceiptRepository, IItemRepository itemRepository)
+    public class CreateFinishedProductReceiptCommandHandler : IRequestHandler<CreateFinishedProductReceiptCommand, bool>
     {
-        _employeeRepository = employeeRepository;
-        _finishedProductReceiptRepository = finishedProductReceiptRepository;
-        _itemRepository = itemRepository;
-    }
+        private readonly IEmployeeRepository _employeeRepository;
+        private readonly IFinishedProductReceiptRepository _finishedProductReceiptRepository;
+        private readonly IItemRepository _itemRepository;
+        private readonly ApplicationDbContext _context;
 
-    public async Task<bool> Handle(CreateFinishedProductReceiptCommand request, CancellationToken cancellationToken)
-    {
-        var employee = await _employeeRepository.GetEmployeeById(request.EmployeeId);
-        if(employee is null)
+        public CreateFinishedProductReceiptCommandHandler(IEmployeeRepository employeeRepository, IFinishedProductReceiptRepository finishedProductReceiptRepository, 
+                                                          IItemRepository itemRepository, ApplicationDbContext context)
         {
-            throw new EntityNotFoundException(nameof(FinishedProductReceipt), request.EmployeeId);
+            _employeeRepository = employeeRepository;
+            _finishedProductReceiptRepository = finishedProductReceiptRepository;
+            _itemRepository = itemRepository;
+            _context = context;
         }
-        var newFinishedProductReceipt = new FinishedProductReceipt(finishedProductReceiptId: request.FinishedProductReceiptId,
-                                                                   employeeId: request.EmployeeId);
-        foreach (var entry in request.Entries)
+
+        public async Task<bool> Handle(CreateFinishedProductReceiptCommand request, CancellationToken cancellationToken)
         {
-            var item = await _itemRepository.GetItemById(entry.ItemId);
-            if (item == null)
+            var finishedProductReceipt = await _finishedProductReceiptRepository.GetReceiptById(request.FinishedProductReceiptId);
+            if (finishedProductReceipt is not null)
             {
-                throw new EntityNotFoundException(nameof(Item), entry.ItemId);
+                new DuplicatedRecordErrorDetail(nameof(FinishedProductReceipt), request.FinishedProductReceiptId);
             }
-            var newfinishedProductReceiptEntry = new FinishedProductReceiptEntry(purchaseOrderNumber: entry.PurchaseOrderNumber,
-                                                                             quantity: entry.Quantity,
-                                                                             note: entry.Note,
-                                                                             item: item,
-                                                                             itemId: item.ItemId);
 
-            newFinishedProductReceipt.AddReceiptEntry(newfinishedProductReceiptEntry);
+            var employee = await _employeeRepository.GetEmployeeById(request.EmployeeId);
+            if (employee is null)
+            {
+                throw new EntityNotFoundException(nameof(Employee), request.EmployeeId);
+            }
+
+            var newReceipt = new FinishedProductReceipt(finishedProductReceiptId: request.FinishedProductReceiptId,
+                                                         employeeId: request.EmployeeId);
+
+            foreach (var entry in request.Entries)
+            {
+                var item = await _itemRepository.GetItemById(entry.ItemId);
+                if (item == null)
+                {
+                    throw new EntityNotFoundException(nameof(Item), entry.ItemId);
+                }
+
+                var newEntry = new FinishedProductReceiptEntry(
+                    purchaseOrderNumber: entry.PurchaseOrderNumber,
+                    quantity: entry.Quantity,
+                    note: entry.Note,
+                    item: item,
+                    itemId: item.ItemId
+                );
+
+                newReceipt.AddReceiptEntry(newEntry);
+            }
+
+            await _finishedProductReceiptRepository.Add(newReceipt);
+            return await _finishedProductReceiptRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
         }
-
-        await _finishedProductReceiptRepository.Add(newFinishedProductReceipt);
-
-        return await _finishedProductReceiptRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
     }
 }

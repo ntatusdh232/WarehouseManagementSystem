@@ -49,7 +49,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("RemoveLotAdjustment{lotId}")]
+        [HttpDelete("RemoveLotAdjustment - success /{lotId}")]
         public async Task<IActionResult> RemoveLotAdjustment(string lotId)
         {
             var command = new RemoveLotAdjustmentCommand(lotId);

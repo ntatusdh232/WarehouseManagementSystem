@@ -6,17 +6,18 @@
         {
         }
 
-        public async Task<FinishedProductReceipt> Add(FinishedProductReceipt finishedProductReceipt)
+        public async Task Add(FinishedProductReceipt finishedProductReceipt)
         {
-            var existingItem = await _context.finishedProductReceipts.FindAsync(finishedProductReceipt.FinishedProductReceiptId);
             await _context.finishedProductReceipts.AddAsync(finishedProductReceipt);
-            await _context.SaveChangesAsync();
-            return finishedProductReceipt;
         }
 
         public async Task<FinishedProductReceipt> GetReceiptById(string finishedProductReceiptId)
         {
             var existingItem = await _context.finishedProductReceipts.FindAsync(finishedProductReceiptId);
+
+            var entries = await _context.finishedProductReceiptsEntry.Where(s => s.FinishedProductReceiptId == finishedProductReceiptId).ToListAsync();
+
+            existingItem.AddEntries(entries);
 
             return existingItem;
         }
@@ -34,14 +35,12 @@
             return receiptList;
         }
 
-        public async Task<FinishedProductReceipt> Update(FinishedProductReceipt finishedProductReceipt)
+        public async Task Update(FinishedProductReceipt finishedProductReceipt)
         {
             var existingItem = await _context.finishedProductReceipts.FindAsync(finishedProductReceipt.FinishedProductReceiptId);
 
             existingItem.UpdateFinishedProductReceipt(finishedProductReceipt.Timestamp, finishedProductReceipt.Employee, finishedProductReceipt.Entries);
 
-            await _context.SaveChangesAsync();
-            return existingItem;
         }
 
         public async Task Remove(string finishedProductReceiptId)

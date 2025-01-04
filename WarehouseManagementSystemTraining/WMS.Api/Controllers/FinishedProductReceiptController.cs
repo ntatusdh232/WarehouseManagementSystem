@@ -1,6 +1,4 @@
-﻿using WMS.Api.Application.Commands.Employees;
-using WMS.Api.Application.Commands.FinishedProductIssues;
-using WMS.Api.Application.Commands.FinishedProductReceipts;
+﻿using WMS.Api.Application.Commands.FinishedProductReceipts;
 
 namespace WMS.Api.Controllers
 {
@@ -40,7 +38,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpPost("AddEntryToFinishedProductReceipt")]
+        [HttpPost("AddEntryToFinishedProductReceipt - Erorr (Not EventHandler)")]
         public async Task<IActionResult> AddEntryToFinishedProductReceipt([FromBody] AddEntryToFinishedProductReceiptCommand command)
         {
             var result = await _mediator.Send(command);
@@ -48,7 +46,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPost("CreateProductReceipt")]
+        [HttpPost("CreateProductReceipt - success")]
         public async Task<IActionResult> CreateProductReceipt([FromBody] CreateFinishedProductReceiptCommand command)
         {
             var result = await _mediator.Send(command);
@@ -56,7 +54,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("DeleteFinishedProductReceipt{finishProductReceiptId}")]
+        [HttpDelete("DeleteFinishedProductReceipt - Error (not EventHandler)/{finishProductReceiptId}")]
         public async Task<IActionResult> DeleteFinishedProductReceipt(string finishProductReceiptId)
         {
             var command = new DeleteFinishedProductReceiptCommand(finishProductReceiptId);
@@ -66,7 +64,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("RemoveFinishedProductReceiptEntries")]
+        [HttpDelete("RemoveFinishedProductReceiptEntries - Error( not EventHandler)")]
         public async Task<IActionResult> RemoveFinishedProductReceiptEntries([FromBody] RemoveFinishedProductReceiptEntriesCommand command)
         {
             var result = await _mediator.Send(command);

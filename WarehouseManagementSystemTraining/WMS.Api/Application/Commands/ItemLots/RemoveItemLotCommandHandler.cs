@@ -19,7 +19,7 @@
                 throw new EntityNotFoundException(nameof(ItemLot), request.ItemLotId);
             }
 
-            await _itemLotRepository.Remove(itemLot.LotId);
+            await _itemLotRepository.Remove(request.ItemLotId);
 
             return await _itemLotRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
         }
