@@ -1,47 +1,52 @@
 ﻿
-namespace WMS.Api.Application.Commands.ItemLots;
-
-public class IsolateItemLotCommandHandler : IRequestHandler<IsolateItemLotCommand, bool>
+namespace WMS.Api.Application.Commands.ItemLots
 {
-    private readonly IItemLotRepository _itemLotRepository;
-    private readonly IStorageRepository _storageRepository;
-
-    public IsolateItemLotCommandHandler(IItemLotRepository itemLotRepository, IStorageRepository storageRepository)
+    public class IsolateItemLotCommandHandler : IRequestHandler<IsolateItemLotCommand, bool>
     {
-        _itemLotRepository = itemLotRepository;
-        _storageRepository = storageRepository;
-    }
+        private readonly IItemLotRepository _itemLotRepository;
+        private readonly IStorageRepository _storageRepository;
 
-    public async Task<bool> Handle(IsolateItemLotCommand request, CancellationToken cancellationToken)
-    {
-        var itemLot = await _itemLotRepository.GetItemLotById(request.ItemLotId);
-        if (itemLot is null)
+        public IsolateItemLotCommandHandler(IItemLotRepository itemLotRepository, IStorageRepository storageRepository)
         {
-            throw new EntityNotFoundException(nameof(ItemLot), request.ItemLotId);
+            _itemLotRepository = itemLotRepository;
+            _storageRepository = storageRepository;
         }
-        var isolatedQuantity = request.IsolatedItemSublots.Sum(s => s.Quantity);
-        foreach (var sublot in request.IsolatedItemSublots)
+
+        public async Task<bool> Handle(IsolateItemLotCommand request, CancellationToken cancellationToken)
         {
-            var location = await _storageRepository.GetLocationById(sublot.LocationId);
-            if (location is null)
+            var itemLot = await _itemLotRepository.GetItemLotById(request.ItemLotId);
+            if (itemLot is null)
             {
-                throw new EntityNotFoundException(nameof(Location), sublot.LocationId);
+                throw new EntityNotFoundException(nameof(ItemLot), request.ItemLotId);
             }
-            var isolatedSublot = itemLot.ItemLotLocations.Find(ill => ill.LotId == itemLot.LotId && ill.LocationId == location.LocationId);
-            if (isolatedSublot is null)
+            var isolatedQuantity = request.IsolatedItemSublots.Sum(s => s.Quantity);
+            foreach (var sublot in request.IsolatedItemSublots)
             {
-                throw new EntityNotFoundException(nameof(ItemLotLocation), location.LocationId);
+                var location = await _storageRepository.GetLocationById(sublot.LocationId);
+                if (location is null)
+                {
+                    throw new EntityNotFoundException(nameof(Location), sublot.LocationId);
+                }
+
+                var isolatedSublot = itemLot.ItemLotLocations.Find(ill => ill.LotId == itemLot.LotId && ill.LocationId == location.LocationId);
+                if (isolatedSublot is null)
+                {
+                    throw new EntityNotFoundException(nameof(ItemLotLocation), location.LocationId);
+                }
+
+                isolatedSublot.UpdateQuantity(-sublot.Quantity);
+                if (isolatedSublot.QuantityPerLocation == 0)
+                {
+                    itemLot.ItemLotLocations.Remove(isolatedSublot);
+                }
             }
-            isolatedSublot.UpdateQuantity(-sublot.Quantity);
-            if (isolatedSublot.QuantityPerLocation == 0)
-            {
-                itemLot.ItemLotLocations.Remove(isolatedSublot);
-            }
+            itemLot.Isolate(isolatedQuantity);
+
+            await _itemLotRepository.UpdateLot(itemLot);
+
+            return await _itemLotRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
         }
-        itemLot.Isolate(isolatedQuantity);
-
-        await _itemLotRepository.UpdateLot(itemLot);
-
-        return await _itemLotRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
     }
 }
+
+

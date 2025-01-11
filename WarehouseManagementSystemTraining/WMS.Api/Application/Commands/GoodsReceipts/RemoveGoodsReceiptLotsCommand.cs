@@ -1,13 +1,16 @@
-﻿namespace WMS.Api.Application.Commands.GoodsReceipts;
-
-public class RemoveGoodsReceiptLotsCommand : IRequest<bool>
+﻿namespace WMS.Api.Application.Commands.GoodsReceipts
 {
-    public string GoodsReceiptId {  get; set; }
-    public List<string> GoodsReceiptLotIds { get; set; }
-
-    public RemoveGoodsReceiptLotsCommand(string goodsReceiptId, List<string> goodsReceiptLotIds)
+    public class RemoveGoodsReceiptLotsCommand : IRequest<bool>
     {
-        GoodsReceiptId = goodsReceiptId;
-        GoodsReceiptLotIds = goodsReceiptLotIds;
+        public string GoodsReceiptId { get; set; }
+        public List<string> GoodsReceiptLotIds { get; set; }
+
+        public RemoveGoodsReceiptLotsCommand(string goodsReceiptId, List<string> goodsReceiptLotIds)
+        {
+            GoodsReceiptId = goodsReceiptId;
+            GoodsReceiptLotIds = goodsReceiptLotIds;
+        }
     }
 }
+
+

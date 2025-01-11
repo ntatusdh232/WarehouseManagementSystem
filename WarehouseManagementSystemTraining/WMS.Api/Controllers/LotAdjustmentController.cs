@@ -41,7 +41,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpPost("CreateLotAdjustment")]
+        [HttpPost("CreateLotAdjustment - Error(logic)")]
         public async Task<IActionResult> CreateLotAdjustment([FromBody] CreateLotAdjustmentCommand command)
         {
             var result = await _mediator.Send(command);
@@ -60,8 +60,8 @@ namespace WMS.Api.Controllers
 
         }
 
-        [HttpPut("ConfirmLotAdjustment{id}")]
-        public async Task<IActionResult> ConfirmLotAdjustment(string id, [FromBody] ConfirmLotAdjustmentCommand request)
+        [HttpPut("ConfirmLotAdjustment - Error(NotEvent)/{id}")]
+        public async Task<IActionResult> ConfirmLotAdjustment(string id)
         {
             var command = new ConfirmLotAdjustmentCommand(id);
 

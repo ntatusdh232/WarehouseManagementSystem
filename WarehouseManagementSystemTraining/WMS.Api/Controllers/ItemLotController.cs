@@ -55,7 +55,7 @@ namespace WMS.Api.Controllers
             return await _mediator.Send(query);
         }
 
-        [HttpPut("UnisolateItemLot")]
+        [HttpPut("UnisolateItemLot - Error(Not Database)")]
         public async Task<IActionResult> UnisolateItemLot([FromBody] UnisolateItemLotCommand command)
         {
             var result = await _mediator.Send(command);
@@ -63,17 +63,17 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPut("IsolateItemLot/{id}")]
-        public async Task<IActionResult> IsolateItemLot(string id, [FromBody] IsolateItemLotCommand request)
+        [HttpPut("IsolateItemLot  - Error(Not Event)")]
+        public async Task<IActionResult> IsolateItemLot([FromBody] IsolateItemLotCommand request)
         {
-            var command = new IsolateItemLotCommand(id, request.IsolatedItemSublots);
+            var command = new IsolateItemLotCommand(request.ItemLotId, request.IsolatedItemSublots);
 
             var result = await _mediator.Send(command);
 
             return Ok(result);
         }
 
-        [HttpDelete("RemoveItemLot - success /{itemLotId}")]
+        [HttpDelete("RemoveItemLot - success/{itemLotId}")]
         public async Task<IActionResult> RemoveItemLot(string itemLotId)
         {
             var command = new RemoveItemLotCommand(itemLotId);

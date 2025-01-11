@@ -39,6 +39,15 @@
         {
             var lotAdjustments = await _context.lotAdjustments.FindAsync(LotId);
 
+            var sublotAdjustments = await _context.sublotAdjustments.Where(x => x.LotAdjustmentId == LotId).ToListAsync();
+
+            if (sublotAdjustments is null)
+            {
+                sublotAdjustments = new List<SublotAdjustment>();
+            }
+
+            lotAdjustments.SublotAdjustments = sublotAdjustments;
+
             return lotAdjustments;
 
 

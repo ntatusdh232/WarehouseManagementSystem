@@ -1,18 +1,20 @@
 ﻿
-
-namespace WMS.Api.Application.DomainEventHandlers.ItemLotEventHandlers;
-
-public class IsolateItemLotsDomainEventHandler : INotificationHandler<IsolateItemLotsDomainEvent>
+namespace WMS.Api.Application.DomainEventHandlers.ItemLotEventHandlers
 {
-    private readonly IIsolatedItemLotRepository _isolatedItemLotRepository;
-
-    public IsolateItemLotsDomainEventHandler(IIsolatedItemLotRepository isolatedItemLotRepository)
+    public class IsolateItemLotsDomainEventHandler : INotificationHandler<IsolateItemLotsDomainEvent>
     {
-        _isolatedItemLotRepository = isolatedItemLotRepository;
-    }
+        private readonly IIsolatedItemLotRepository _isolatedItemLotRepository;
 
-    public Task Handle(IsolateItemLotsDomainEvent notification, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
+        public IsolateItemLotsDomainEventHandler(IIsolatedItemLotRepository isolatedItemLotRepository)
+        {
+            _isolatedItemLotRepository = isolatedItemLotRepository;
+        }
+
+        public Task Handle(IsolateItemLotsDomainEvent notification, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
+
+

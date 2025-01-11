@@ -18,16 +18,16 @@
 
             var removeGoodsReceiptLots = new List<GoodsReceiptLot>();
 
-            foreach (var lot in request.GoodsReceiptLotIds)
+            foreach (var lotId in request.GoodsReceiptLotIds)
             {
-                var goodsReceiptLot = await _goodsReceiptRepository.GetGoodsReceiptLotById(request.GoodsReceiptId,lot)
-                    ?? throw new EntityNotFoundException(nameof(GoodsReceiptLot), lot);
+                var goodsReceiptLot = await _goodsReceiptRepository.GetGoodsReceiptLotById(request.GoodsReceiptId,lotId)
+                    ?? throw new EntityNotFoundException(nameof(GoodsReceiptLot), lotId);
 
-                var exportedGoodsIssueLot = await _goodsIssueRepository.GetGoodsIssueLotById(lot);
+                var exportedGoodsIssueLot = await _goodsIssueRepository.GetGoodsIssueLotById(lotId);
 
                 if (exportedGoodsIssueLot != null)
                 {
-                    throw new ExportedItemLotException(lot);
+                    throw new ExportedItemLotException(lotId);
                 }
 
                 removeGoodsReceiptLots.Add(goodsReceiptLot);

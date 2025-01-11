@@ -52,7 +52,9 @@
 
         public async Task<ItemLot> GetItemLotById(string lotId)
         {
-            var existingLot = await _context.itemsLot.FindAsync(lotId); 
+            var existingLot = await _context.itemsLot.FindAsync(lotId);
+            
+            existingLot.ItemLotLocations = await _context.itemLotLocations.Where(x => x.LotId == lotId).ToListAsync();
 
             return existingLot;
         }

@@ -17,7 +17,7 @@
 
         public async Task Handle(LotAdjustedDomainEvent notification, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            throw new Exception("NotFound");
         }
 
 

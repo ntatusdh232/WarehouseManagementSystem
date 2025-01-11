@@ -1,17 +1,20 @@
 ﻿
-namespace WMS.Api.Application.DomainEventHandlers.GoodsReceiptEventHandlers;
-
-public class RemoveItemLotsDomainEventHandler : INotificationHandler<RemoveItemLotsDomainEvent>
+namespace WMS.Api.Application.DomainEventHandlers.GoodsReceiptEventHandlers
 {
-    private readonly IGoodsReceiptRepository _goodsReceiptRepository;
-
-    public RemoveItemLotsDomainEventHandler(IGoodsReceiptRepository goodsReceiptRepository)
+    public class RemoveItemLotsDomainEventHandler : INotificationHandler<RemoveItemLotsDomainEvent>
     {
-        _goodsReceiptRepository = goodsReceiptRepository;
+        private readonly IGoodsReceiptRepository _goodsReceiptRepository;
+
+        public RemoveItemLotsDomainEventHandler(IGoodsReceiptRepository goodsReceiptRepository)
+        {
+            _goodsReceiptRepository = goodsReceiptRepository;
+        }
+
+        public Task Handle(RemoveItemLotsDomainEvent notification, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 
-    public Task Handle(RemoveItemLotsDomainEvent notification, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
 }
+

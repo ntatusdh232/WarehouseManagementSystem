@@ -83,7 +83,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("DeleteGoodsReceipt/{goodsReceiptId}")]
+        [HttpDelete("DeleteGoodsReceipt - Error (not Event)/{goodsReceiptId}")]
         public async Task<IActionResult> RemoveGoodsReceipt(string goodsReceiptId)
         {
             var command = new DeleteGoodsReceiptCommand(goodsReceiptId);
@@ -93,7 +93,7 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("RemoveGoodsReceiptLots")]
+        [HttpDelete("RemoveGoodsReceiptLots - Error (not Event")]
         public async Task<IActionResult> RemoveGoodsReceiptLots([FromBody] RemoveGoodsReceiptLotsCommand command)
         {
 
@@ -102,10 +102,10 @@ namespace WMS.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPut("UpdateGoodsReceipt{id}")]
-        public async Task<IActionResult> UpdateGoodsReceipt(string id, [FromBody] UpdateGoodsReceiptCommand request)
+        [HttpPut("UpdateGoodsReceipt - Error(LotId)")]
+        public async Task<IActionResult> UpdateGoodsReceipt([FromBody] UpdateGoodsReceiptCommand request)
         {
-            var command = new UpdateGoodsReceiptCommand(id, request.GoodsReceiptLots);
+            var command = new UpdateGoodsReceiptCommand(request.GoodsReceiptId ,request.GoodsReceiptLots);
 
             var result = await _mediator.Send(command);
 

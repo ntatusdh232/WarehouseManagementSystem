@@ -1,11 +1,14 @@
-﻿namespace WMS.Domain.DomainEvents.GoodsReceiptEvents;
-
-public class RemoveItemLotsDomainEvent : INotification
+﻿namespace WMS.Domain.DomainEvents.GoodsReceiptEvents
 {
-    public List<GoodsReceiptLot> ItemLots { get; set; }
-
-    public RemoveItemLotsDomainEvent(List<GoodsReceiptLot> itemLots)
+    public class RemoveItemLotsDomainEvent : INotification
     {
-        ItemLots = itemLots;
+        public List<GoodsReceiptLot> ItemLots { get; set; }
+
+        public RemoveItemLotsDomainEvent(List<GoodsReceiptLot> itemLots)
+        {
+            ItemLots = itemLots;
+        }
     }
 }
+
+

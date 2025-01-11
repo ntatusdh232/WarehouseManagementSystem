@@ -1,4 +1,4 @@
-﻿using WMS.Domain.AggregateModels.GoodsReceiptAggregate;
+﻿using DocumentFormat.OpenXml.VariantTypes;
 
 namespace WMS.Infrastructure.Repositories
 {
@@ -84,7 +84,6 @@ namespace WMS.Infrastructure.Repositories
             var existingItem = await _context.goodsReceipts.FindAsync(goodsReceiptId);
 
             _context.goodsReceipts.Remove(existingItem);
-            await _context.SaveChangesAsync();
 
         }
 
@@ -98,11 +97,9 @@ namespace WMS.Infrastructure.Repositories
 
         public async Task<GoodsReceiptLot> GetGoodsReceiptLotById(string goodsReceiptId, string goodsReceiptLotId)
         {
-            var existingGoodsReceipt = await _context.goodsReceipts.FindAsync(goodsReceiptId);
-
-            var lot = existingGoodsReceipt.Lots.FirstOrDefault(x => x.GoodsReceiptLotId == goodsReceiptLotId);
-
-            return lot;
+            var goodsReceiptLot = await _context.goodsReceiptsLot.FirstOrDefaultAsync(s => s.GoodsReceiptId == goodsReceiptId && s.GoodsReceiptLotId == goodsReceiptLotId);
+            
+            return goodsReceiptLot;
         }
 
         public async Task<GoodsReceipt> GetGoodsReceiptByGoodsReceiptId(string goodsReceiptId)

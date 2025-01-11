@@ -84,9 +84,9 @@ namespace WMS.Domain.AggregateModels.GoodsReceiptAggregate
                                        Employee employee, List<GoodsReceiptLot> lots)
         {
             Supplier = supplier;
-            Timestamp = Timestamp;
-            Employee = Employee;
-            Lots = Lots;
+            Timestamp = timestamp;
+            Employee = employee;
+            Lots = lots;
         }
         public void RemoveItemLotEntities()
         {

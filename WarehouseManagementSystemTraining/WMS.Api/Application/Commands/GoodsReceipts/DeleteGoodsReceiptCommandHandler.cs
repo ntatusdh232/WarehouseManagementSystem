@@ -18,7 +18,8 @@ namespace WMS.Api.Application.Commands.GoodsReceipts
                 throw new EntityNotFoundException(nameof(GoodsReceipt), request.GoodsReceiptId);
             }
             removedGoodsReceipt.RemoveItemLotEntities();
-            await _goodsReceiptRepository.Remove(request.GoodsReceiptId);
+
+            await _goodsReceiptRepository.Remove(removedGoodsReceipt.GoodsReceiptId);
             return await _goodsReceiptRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
         }
     }
